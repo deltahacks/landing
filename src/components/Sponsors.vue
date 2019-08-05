@@ -4,12 +4,19 @@
     <h1>PAST SPONSORS</h1>
     <hr>
     <p>Interested in sponsoring? Contact us at <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a></p>
-
     <div class="square level--1">
-      <div v-for='sponsor in sponsorList'>
-        <a :href="sponsor.href" target="_blank"> 
-          <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
-        </a>
+      <div v-for='sponsor in this.main()'>
+          <a :href="sponsor.href" target="_blank"> 
+            <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
+          </a>
+      </div>
+    </div>
+
+    <div class="square level--2">
+      <div v-for='sponsor in this.secondary()'>
+          <a :href="sponsor.href" target="_blank"> 
+            <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
+          </a>
       </div>
     </div>
 
@@ -21,6 +28,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 export default Vue.extend({
   name: 'Sponsors',
   components: {
@@ -28,9 +36,21 @@ export default Vue.extend({
   props: {
     sponsorList: Array,
   },
+  computed: {},
+
   mounted() {
     const VanillaTilt = require('vanilla-tilt');
+  },
+
+  methods: {
+    main: function() {
+      return this.sponsorList.filter(sponsor => sponsor.main);
+    },
+    secondary: function() {
+      return this.sponsorList.filter(sponsor => !sponsor.main);
+    }
   }
+  
 })
 </script>
 
@@ -86,7 +106,8 @@ Classes
 
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  align-items: center; 
   
   margin-bottom: 40px;
 }
@@ -122,6 +143,11 @@ div > p > a {
   margin: 0 auto;
   margin-top: 25px;
   line-height: 30px;
+}
+
+.level--2 > div > a > img {
+  max-width: 225px;
+  max-height: 225px;
 }
 
 </style>
