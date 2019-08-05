@@ -7,25 +7,14 @@
 
     <div class="square level--1">
       <div v-for='sponsor in sponsorList'>
-        <a :href="sponsor.href">
-          <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt>
+        <a :href="sponsor.href" target="_blank"> 
+          <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
         </a>
       </div>
     </div>
-    
-      <h1 class="level">LEVEL 2</h1>
-<!--    <div class="square level--2">
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-      </div>      -->
-      <h1>PARTNERS</h1>
-      <hr>
+
+    <h1>PARTNERS</h1>
+    <hr>
       <!-- PARTNERS LIST GOES HERE -->
   </div>
 </template>
@@ -40,29 +29,12 @@ export default Vue.extend({
     sponsorList: Array,
   },
   mounted() {
-    window.VanillaTilt = require('vanilla-tilt');
-    VanillaTilt.init(this.$refs.tilt);
+    const VanillaTilt = require('vanilla-tilt');
   }
 })
 </script>
 
 <style>
-/*
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: DodgerBlue;
-}
-
-.flex-container > div {
-  background-color: #f1f1f1;
-  width: 100%;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-}
-*/
 
 /*
 
@@ -117,7 +89,6 @@ Classes
   flex-wrap: wrap; 
   
   margin-bottom: 40px;
-  transform: perspective(1000px)
 }
 
 .level {
@@ -152,29 +123,6 @@ div > p > a {
   margin-top: 25px;
   line-height: 30px;
 }
-/*
-.level--2 > div:hover {
-  animation: shake 0.5s; 
 
-}*/
-/*
-
-Animations
-
-*/
-/*
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}*/
 </style>
 
