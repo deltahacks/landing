@@ -4,39 +4,45 @@
     <h1>PAST SPONSORS</h1>
     <hr>
     <p>Interested in sponsoring? Contact us at <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a></p>
-      <h1 class="level">LEVEL 1</h1>
-      <div class="square level--1">
-        <div><a href="https://jobs.td.com/en-CA/campus-recruitment/technology/"><img src="https://d33wubrfki0l68.cloudfront.net/6e1756dae8e5dcbfc76ce11111de63ebd5caa630/96736/img/sponsors/td.jpg"></a></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/bfea261bb3cd8907917ae7697046d3564eea043f/0d064/img/sponsors/arcelormittal.png"></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/69362d963adbdcff20fdd1c0b7fd856ad56d8009/403d0/img/sponsors/rogers.png"></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/0e4c0d2948408b89ddf105e62b646c5fcdef7ccf/0aa29/img/sponsors/microsoft.png"></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/c886ec835d208031833aa739318e694375b36e0a/b95ba/img/sponsors/innovationfactory.gif"></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/bfaf84ccc2a7cba0a12b6b565a52f0165de0228b/27b5d/img/sponsors/loyaltyone.png"></div>
-        <div><img src="https://d33wubrfki0l68.cloudfront.net/2930acce9df0cd572eb2a4613fda77f3b752529a/54371/img/sponsors/rbc.png"></div>
-      </div>
-      
-      <h1 class="level">LEVEL 2</h1>
-      <div class="square level--2">
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
-        <div><img src="https://via.placeholder.com/200x100"></div>
 
+    <div class="square level--1">
+      <div v-for='sponsor in sponsorList'>
+        <a :href="sponsor.href">
+          <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt>
+        </a>
       </div>
     </div>
+    
+      <h1 class="level">LEVEL 2</h1>
+<!--    <div class="square level--2">
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+        <div><img src="https://via.placeholder.com/200x100"></div>
+      </div>      -->
+      <h1>PARTNERS</h1>
+      <hr>
+      <!-- PARTNERS LIST GOES HERE -->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
   name: 'Sponsors',
-  components: {}
+  components: {
+  },
+  props: {
+    sponsorList: Array,
+  },
+  mounted() {
+    window.VanillaTilt = require('vanilla-tilt');
+    VanillaTilt.init(this.$refs.tilt);
+  }
 })
 </script>
 
@@ -58,20 +64,40 @@ export default Vue.extend({
 }
 */
 
-hr {
-  width: 50%;
-  color: red;
-}
+/*
 
-img {
-  user-select: none;
+Psuedo Elements
 
-}
+*/
 
 ::selection {
   color: white;
   background: grey;
 }
+
+/*
+
+Block level elements
+
+*/
+
+hr { 
+  background-color: white; 
+  height: 3px; 
+  border: 0; 
+  width: 50%;
+}
+
+img {
+  user-select: none;
+}
+
+
+/*
+
+Classes
+
+*/
 
 .container {
   padding-top: 30px;
@@ -91,6 +117,7 @@ img {
   flex-wrap: wrap; 
   
   margin-bottom: 40px;
+  transform: perspective(1000px)
 }
 
 .level {
@@ -114,11 +141,8 @@ div > p > a {
   line-height: 25px;
 }
 
-.level--1 > div:hover {
-  animation: shake 0.5s; 
-}
 
-.level--1 > div > img {
+.level--1 > div > a > img {
   max-width: 300px;
   max-height: 300px;
 }
@@ -128,12 +152,17 @@ div > p > a {
   margin-top: 25px;
   line-height: 30px;
 }
-
+/*
 .level--2 > div:hover {
   animation: shake 0.5s; 
 
-}
+}*/
+/*
 
+Animations
+
+*/
+/*
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -146,6 +175,6 @@ div > p > a {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
+}*/
 </style>
 
