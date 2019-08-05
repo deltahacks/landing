@@ -97,7 +97,7 @@ Classes
   padding-bottom: 50px;
   width: 75%;
   margin: 0 auto;
-  background-color: #2052f5;
+  background-color: #9fc9fff1;
   color: white;
 }
 
