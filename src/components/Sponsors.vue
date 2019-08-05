@@ -2,37 +2,41 @@
 <template>
   <div class="container">
     <h1>PAST SPONSORS</h1>
-    <hr>
-    <p>Interested in sponsoring? Contact us at <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a></p>
+    <hr />
+    <p>
+      Interested in sponsoring? Contact us at
+      <a
+        href="mailto:sponsorship@deltahacks.com"
+      >sponsorship@deltahacks.com</a>
+    </p>
     <div class="square level--1">
-      <div v-for='sponsor in this.main()'>
-          <a :href="sponsor.href" target="_blank"> 
-            <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
-          </a>
+      <div v-for="sponsor in this.main()" v-bind:key="sponsor">
+        <a :href="sponsor.href" target="_blank">
+          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
+        </a>
       </div>
     </div>
 
     <div class="square level--2">
-      <div v-for='sponsor in this.secondary()'>
-          <a :href="sponsor.href" target="_blank"> 
-            <img :src='sponsor.logo' :alt='sponsor.alt' data-tilt data-tilt-perspective="500">
-          </a>
+      <div v-for="sponsor in this.secondary()" v-bind:key="sponsor">
+        <a :href="sponsor.href" target="_blank">
+          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
+        </a>
       </div>
     </div>
 
     <h1>PARTNERS</h1>
-    <hr>
-      <!-- PARTNERS LIST GOES HERE -->
+    <hr />
+    <!-- PARTNERS LIST GOES HERE -->
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Sponsors',
-  components: {
-  },
+  components: {},
   props: {
     sponsorList: Array,
   },
@@ -48,14 +52,12 @@ export default Vue.extend({
     },
     secondary: function() {
       return this.sponsorList.filter(sponsor => !sponsor.main);
-    }
-  }
-  
-})
+    },
+  },
+});
 </script>
 
 <style>
-
 /*
 
 Psuedo Elements
@@ -73,17 +75,16 @@ Block level elements
 
 */
 
-hr { 
-  background-color: white; 
-  height: 3px; 
-  border: 0; 
+hr {
+  background-color: white;
+  height: 3px;
+  border: 0;
   width: 50%;
 }
 
 img {
   user-select: none;
 }
-
 
 /*
 
@@ -96,7 +97,7 @@ Classes
   padding-bottom: 50px;
   width: 75%;
   margin: 0 auto;
-  background-color: #2052F5;
+  background-color: #2052f5;
   color: white;
 }
 
@@ -107,8 +108,8 @@ Classes
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center; 
-  
+  align-items: center;
+
   margin-bottom: 40px;
 }
 
@@ -133,7 +134,6 @@ div > p > a {
   line-height: 25px;
 }
 
-
 .level--1 > div > a > img {
   max-width: 300px;
   max-height: 300px;
@@ -149,6 +149,5 @@ div > p > a {
   max-width: 225px;
   max-height: 225px;
 }
-
 </style>
 
