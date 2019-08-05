@@ -7,15 +7,15 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-import Sponsors from "@/components/Sponsors.vue";
+import Vue from 'vue';
+import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Sponsors from '@/components/Sponsors.vue';
 
 export default Vue.extend({
-  name: "home",
+  name: 'home',
   components: {
     HelloWorld,
-    Sponsors
-  }
+    Sponsors,
+  },
 });
 </script>
