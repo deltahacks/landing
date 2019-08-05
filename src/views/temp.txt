@@ -1,0 +1,83 @@
+<template>
+<div id="app">
+	<div class="wrapper" v-bind:style="bgc">
+		<div class="content">
+			<!-- <h1>{{description}}</h1> -->
+			<input type="text" v-on:input="bgc.backgroundColor = $event.target.value"/>
+            <h1>{{scr}}</h1>
+		</div>
+    <div style="background-color: white; height:300px;">
+      </div>
+	</div>
+</div>
+</template>
+<style scoped>
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #111;
+  /* position: absolute; */
+  left: 0;
+  /* top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.5s; */
+}
+.wrapper h1 {
+  position: absolute;
+  top: 10%;
+  width: 70%;
+  left: 0px;
+  margin-left: 15%;
+  text-align: center;
+  display: block;
+  font-family: Josefin Sans;
+}
+.wrapper input {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: #fff;
+  width: 180%;
+  height: 100px;
+  color: #fff;
+  font-size: 4em;
+  outline: none;
+  text-align: center;
+  font-family: Josefin Sans, sans-serif;
+  margin-left: -40%;
+}
+</style>
+<script>
+import Vue from 'vue';
+
+
+export default Vue.extend({
+  name: "app",
+  data() {
+		return{
+         scrolled: false,
+      description: 'Type any colour name, rgb, hex or hsl in the input below and see what happens!',
+		bgc:{
+			backgroundColor: ''
+    },
+    fin: "background: linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%);",
+    scr: 0
+    }
+	},
+  methods: {
+  handleScroll () {
+    this.scrolled = window.scrollY > 0;
+    this.scr=window.scrollY;
+  }
+},
+created () {
+  window.addEventListener('scroll', this.handleScroll);
+},
+destroyed () {
+  window.removeEventListener('scroll', this.handleScroll);
+}
+});
+
+</script>
