@@ -1,6 +1,6 @@
 
 <template>
-  <div class="topnav">
+  <div class="topnav navbar">
     <p style="float: left; padding-left: 8%;">DELTAHCACKS VI</p>
     <a class="active" href="#home">ABOUT</a>
     <a href="#news">RECAP</a>
@@ -20,6 +20,15 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: transparent;
