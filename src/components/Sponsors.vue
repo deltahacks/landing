@@ -9,22 +9,13 @@
         href="mailto:sponsorship@deltahacks.com"
       >sponsorship@deltahacks.com</a>
     </p>
-    <div class="square level--1">
-      <div v-for="sponsor in this.main()" v-bind:key="sponsor">
+    <div :class='["square", "level--1"]'>
+      <div v-for="sponsor in sponsorList" v-bind:key="sponsor">
         <a :href="sponsor.href" target="_blank">
           <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
       </div>
     </div>
-
-    <div class="square level--2">
-      <div v-for="sponsor in this.secondary()" v-bind:key="sponsor">
-        <a :href="sponsor.href" target="_blank">
-          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
-        </a>
-      </div>
-    </div>
-
     <h1>PARTNERS</h1>
     <hr />
     <!-- PARTNERS LIST GOES HERE -->
@@ -36,24 +27,27 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'Sponsors',
-  components: {},
+  components: {
+  },
   props: {
     sponsorList: Array,
+    main: Boolean,
+    secondary: Boolean,
   },
-  computed: {},
+  computed: {
+    getClass() {
+      if (this.main) {
+        return 'level--1';
+      } else if (this.secondary) {
+        return 'level--2';
+      }
+    },
+  },
 
   mounted() {
     const VanillaTilt = require('vanilla-tilt');
   },
 
-  methods: {
-    main: function() {
-      return this.sponsorList.filter(sponsor => sponsor.main);
-    },
-    secondary: function() {
-      return this.sponsorList.filter(sponsor => !sponsor.main);
-    },
-  },
 });
 </script>
 
