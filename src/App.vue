@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <app-nav></app-nav>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,19 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+  import Navigation from './components/Navigation.vue';
+  export default {
+    components: {
+      appNav: Navigation,
+    },
+  };
+</script>
+
+
+
+
 
 <style>
 #app {
