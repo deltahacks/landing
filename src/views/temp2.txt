@@ -1,0 +1,36 @@
+-#dhlogo {
+ position: absolute;
+ top: 5%;
+ left: 20%;
+}
+
+.bg {
+  position: relative;
+  display: block;
+	/* Background image and gradient */
+   background: linear-gradient(to bottom, #252440 13%,#20525F 27%,#205273 40%,#205287 50%,#20529B 60%, #2052AF 70%, #2052C3 75%,
+   #2052CD 87%, #2052E1  94%, #2052F5 100%      
+   );
+  
+	/* 	Background blend mode 
+		 	for blending the image and thegradient.
+ 	 		The blend modes are: 
+				screen, 
+				overlay, 
+				darken, 
+				lighten, 		
+				color-dodge, 
+				color-burn, 
+				hard-light, 
+				soft-light, 			
+				difference, 
+				exclusion, 
+				hue, 
+				saturation, 
+				color, 
+				luminosity. 
+				And also *normal* which reset it.
+				*/
+  background-blend-mode: overlay;
+  padding-top: 500vw;
+}
