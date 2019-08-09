@@ -12,12 +12,12 @@
     </div>
 </template>
 <style scoped>
-.blen{
+.blen {
    background-blend-mode: overlay;
 }
-.section{
+.section {
   /* background-color: rgb(69, 111, 225); */
-    background: linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%);
+  background: linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%);
   height:100vh;
 }
 h1 {
@@ -32,54 +32,53 @@ h1 {
 }
 
 </style>
-<script>
+<script lang="ts">
 import Vue from 'vue';
 
-
 export default Vue.extend({
-  name: "app",
+  name: 'app',
   data() {
-		return{
-         scrolled: false,
+    return{
+      scrolled: false,
       description: 'Type any colour name, rgb, hex or hsl in the input below and see what happens!',
-		bgc:{
-			backgroundColor: ''
-    },
-    fin: "background: linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%);",
-    scr: 0,
-    col:'',
-    }
-	},
+      bgc: {
+        backgroundColor: '',
+      },
+      fin: 'background: linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%);',
+      scr: 0,
+      col: '',
+    };
+  },
   methods: {
-  handleScroll () {
-    this.scr=window.scrollY;
-  var y = (window.scrollY || window.pageYOffset)
-   if(y<440){
-     
-     document.getElementById("d1").style.background = "linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%)";}
-  if(y>440){
-     document.getElementById("d2").style.background = "linear-gradient(180deg, rgba(32,82,95,1) 0%, rgba(32,82,115,1)"+(y/12.8)+"%)";}
-      if(y>840){
-     document.getElementById("d3").style.background = "linear-gradient(180deg, rgba(32,82,115,1) 0%, rgba(32,82,135,1)"+(y/23.44)+"%)";}
-      if(y>1504){
-     document.getElementById("d4").style.background = "linear-gradient(180deg, rgba(32,82,135,1) 0%, rgba(32,82,155,1)"+(y/38.4)+"%)";}
-    if(y>2300){
-     document.getElementById("d5").style.background = "linear-gradient(180deg, rgba(32,82,155,1) 0%, rgba(32,82,175,1)"+(y/54)+"%)";}
-  if(y>3100){
-     document.getElementById("d6").style.background = "linear-gradient(180deg, rgba(32,82,175,1) 0%, rgba(32,82,195,1)"+(y/69)+"%)";}
-  if(y>3800){
-     document.getElementById("d7").style.background = "linear-gradient(180deg, rgba(32,82,195,1) 0%, rgba(32,82,205,1)"+(y/84)+"%)";}
-       if(y>4600){ 
-     document.getElementById("d8").style.background = "linear-gradient(180deg, rgba(32,82,205,1) 0%, rgba(32,82,225,1)"+(y/96)+"%)";}
-       if(y>5000){
-     document.getElementById("d9").style.background = "linear-gradient(180deg, rgba(32,82,225,1) 0%, rgba(32,82,245,1)"+(y/114)+ "%)";}
-}},
-created () {
-  window.addEventListener('scroll', this.handleScroll);
-},
-destroyed () {
-  window.removeEventListener('scroll', this.handleScroll);
-},
+    handleScroll() {
+      this.scr = window.scrollY;
+      const y = (window.scrollY || window.pageYOffset);
+      if (y < 440) {
+        document.getElementById('d1')!.style.background = 'linear-gradient(180deg, rgba(37,36,64,1) 0%, rgba(32,82,95,1) 100%)'; }
+      if (y > 440) {
+        document.getElementById('d2')!.style.background = 'linear-gradient(180deg, rgba(32,82,95,1) 0%, rgba(32,82,115,1)' + (y / 12.8) + '%)'; }
+      if (y > 840) {
+        document.getElementById('d3')!.style.background = 'linear-gradient(180deg, rgba(32,82,115,1) 0%, rgba(32,82,135,1)' + (y / 23.44) + '%)'; }
+      if (y > 1504) {
+        document.getElementById('d4')!.style.background = 'linear-gradient(180deg, rgba(32,82,135,1) 0%, rgba(32,82,155,1)' + (y / 38.4) + '%)'; }
+      if (y > 2300) {
+        document.getElementById('d5')!.style.background = 'linear-gradient(180deg, rgba(32,82,155,1) 0%, rgba(32,82,175,1)' + (y / 54) + '%)'; }
+      if (y > 3100) {
+        document.getElementById('d6')!.style.background = 'linear-gradient(180deg, rgba(32,82,175,1) 0%, rgba(32,82,195,1)' + (y / 69) + '%)'; }
+      if (y > 3800) {
+        document.getElementById('d7')!.style.background = 'linear-gradient(180deg, rgba(32,82,195,1) 0%, rgba(32,82,205,1)' + (y / 84) + '%)'; }
+      if (y > 4600) {
+        document.getElementById('d8')!.style.background = 'linear-gradient(180deg, rgba(32,82,205,1) 0%, rgba(32,82,225,1)' + (y / 96) + '%)'; }
+      if (y > 5000) {
+        document.getElementById('d9')!.style.background = 'linear-gradient(180deg, rgba(32,82,225,1) 0%, rgba(32,82,245,1)' + (y / 114) + '%)'; }
+    },
+  },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 });
 
 </script>
