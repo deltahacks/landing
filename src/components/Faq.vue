@@ -5,11 +5,11 @@
                 {{ name.charAt(0).toUpperCase()+name.substring(1) }}
             </div>
         </div>
-        <div class='faq-area'>
+        <div class='faq-area'>  
             <div v-for="(elm,index) in faqData[selected]" :key="elm.q" @click="expanded = expanded!==index ? index:null" class="question-box">
                 <div class="question"> 
                     {{ elm.q }} 
-                    <span class="arrow">^</span>
+                    <span :class="{arrow:true, rotate:index===expanded}"><i class="fa fa-caret-up fa-xs"></i></span>
                 </div>
                 <transition name="open">
                 <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">
@@ -103,5 +103,17 @@ export default Vue.extend({
 .open-enter, .open-leave-to {
   max-height: 0;
 
+}
+.arrow {
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    display: inline-block;
+}
+.rotate {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
 </style>
