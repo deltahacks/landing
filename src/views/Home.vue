@@ -13,6 +13,17 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Sponsors from '@/components/Sponsors.vue';
 
 import TD from '@/assets/sponsors/TD_Bank.svg';
+import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
+import Rogers from '@/assets/sponsors/Rogers_logo.svg';
+import Microsoft from '@/assets/sponsors/Microsoft.svg';
+import InnovationFactory from '@/assets/sponsors/InnovationFactory.svg';
+import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
+import RBC from '@/assets/sponsors/RBC.svg';
+import Synopsys from '@/assets/sponsors/Synopsys.svg';
+import FDM from '@/assets/sponsors/FDM.svg';
+import Bitalino from '@/assets/sponsors/Bitalino.png';
+import Coinberry from '@/assets/sponsors/Coinberry.png';
+
 
 interface Sponsor {
   logo: any;
@@ -41,61 +52,61 @@ export default Vue.extend({
         },
         {
           logo:
-            'https://upload.wikimedia.org/wikipedia/en/a/a0/ArcelorMittal.svg',
+            ArcelorMittal,
           href: 'http://dofasco.arcelormittal.com/',
           alt: 'Dofasco Arcelor Mittal',
         },
         {
           logo:
-            'https://upload.wikimedia.org/wikipedia/commons/0/09/Rogers_logo.svg',
+            Rogers,
           href: 'https://jobs.rogers.com/',
           alt: 'Rogers',
         },
         {
           logo:
-            'https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg',
+            Microsoft,
           href: 'https://www.microsoft.com/',
           alt: 'Microsoft Corporation',
         },
         {
           logo:
-            'https://d33wubrfki0l68.cloudfront.net/c886ec835d208031833aa739318e694375b36e0a/b95ba/img/sponsors/innovationfactory.gif',
+            InnovationFactory,
           href: 'https://www.innovationfactory.com/',
           alt: 'Innovation Factory',
         },
         {
           logo:
-            'http://www.torontoagilecommunity.org/download/attachments/14943235/LOYALTYONE.png?version=1&modificationDate=1467159171758&api=v2',
+            LoyaltyOne,
           href: 'https://www.loyalty.com/',
           alt: 'Loyalty One',
         },
         {
           logo:
-            'https://cdn.freebiesupply.com/logos/large/2x/rbc-royal-bank-logo-png-transparent.png',
+            RBC,
           href: 'http://www.rbc.com/techjobs',
           alt: 'Royal Bank of Canada',
         },
         {
           logo:
-            'https://upload.wikimedia.org/wikipedia/commons/6/6c/Synopsys_Logo.svg',
+            Synopsys,
           href: 'https://www.synopsys.com/',
           alt: 'Synopsys',
         },
         {
           logo:
-            'https://d33wubrfki0l68.cloudfront.net/a2f762f1eba2b12c29b5246c6c67b373bac470bb/df6a0/img/sponsors/fdmgroup.jpg',
+            FDM,
           href: 'https://www.fdmgroup.com/en-ca/ca-home/',
           alt: 'FDM',
         },
         {
           logo:
-            'https://d33wubrfki0l68.cloudfront.net/71e7ec9aed080ec1c75b6008066bd429dd97c267/a9143/img/sponsors/bitalino.png',
+            Bitalino,
           href: 'https://www.bitalino.com/',
           alt: 'Bitalino',
         },
         {
           logo:
-            'https://d33wubrfki0l68.cloudfront.net/ce64cba831b56d3f1c48c17e3762f56197783b4f/c410e/img/sponsors/coinberry.png',
+            Coinberry,
           href: 'http://www.coinberry.com/',
           alt: 'Coinberry',
         },

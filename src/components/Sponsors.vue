@@ -9,7 +9,7 @@
         href="mailto:sponsorship@deltahacks.com"
       >sponsorship@deltahacks.com</a>
     </p>
-    <div :class='["square", "level--1"]'>
+    <div :class='["square", getClass]'>
       <div v-for="sponsor in sponsorList" v-bind:key="sponsor">
         <a :href="sponsor.href" target="_blank">
           <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
