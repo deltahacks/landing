@@ -16,7 +16,7 @@ import TD from '@/assets/sponsors/TD_Bank.svg';
 import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
 import Rogers from '@/assets/sponsors/Rogers_logo.svg';
 import Microsoft from '@/assets/sponsors/Microsoft.svg';
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.svg';
+import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
 import RBC from '@/assets/sponsors/RBC.svg';
 import Synopsys from '@/assets/sponsors/Synopsys.svg';
