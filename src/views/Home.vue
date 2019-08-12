@@ -18,7 +18,7 @@ export default Vue.extend({
   components: {
     HelloWorld,
     Sponsors,
-    AboutUsStats
+    AboutUsStats,
   },
 });
 </script>
