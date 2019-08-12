@@ -2,7 +2,7 @@
 <template>
   <div class="topnav navbar">
     <p style="float: left; padding-left: 8%;">DELTAHACKS VI</p>
-    <a class="active" href="#home">ABOUT</a>
+    <a class="active" v-scroll-to="'#example'">ABOUT</a>
     <a href="#news">RECAP</a>
     <a href="#contact">FAQ</a>
     <a href="#about">CONTACT</a>
