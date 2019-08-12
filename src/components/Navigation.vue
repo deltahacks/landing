@@ -1,7 +1,7 @@
 
 <template>
   <div class="topnav navbar">
-    <p style="float: left; padding-left: 8%;">DELTAHCACKS VI</p>
+    <p style="float: left; padding-left: 8%;">DELTAHACKS VI</p>
     <a class="active" href="#home">ABOUT</a>
     <a href="#news">RECAP</a>
     <a href="#contact">FAQ</a>
@@ -27,6 +27,9 @@ export default Vue.extend({
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  background: rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(225,225,225,0.5);
+  z-index: 1000;
 }
 
 /* Add a black background color to the top navigation */
@@ -47,8 +50,8 @@ export default Vue.extend({
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background: rgba(255,255,255, 0.2);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.15);
 }
 
 /* Add a color to the active/current link */
