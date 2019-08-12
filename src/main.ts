@@ -5,14 +5,13 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-var VueScrollTo = require('vue-scrollto');
- 
- 
+const VueScrollTo = require('vue-scrollto');
+const VueTypedJs = require('vue-typed-js');
 // You can also pass in the default options
 Vue.use(VueScrollTo, {
-     container: "body",
+     container: 'body',
      duration: 1500,
-     easing: "ease",
+     easing: 'ease',
      offset: 0,
      force: true,
      cancelable: true,
@@ -20,8 +19,10 @@ Vue.use(VueScrollTo, {
      onDone: false,
      onCancel: false,
      x: false,
-     y: true
- })
+     y: true,
+ });
+
+Vue.use(VueTypedJs);
 
 new Vue({
   router,
