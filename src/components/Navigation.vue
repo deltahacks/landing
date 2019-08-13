@@ -1,7 +1,7 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold';">
+    <vue-typed-js :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0px; color: #5fb9c9; font-family: 'Montserrat SemiBold';">
         <p class="typing"></p>  
     </vue-typed-js>
     <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="500" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat';">
@@ -25,7 +25,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 .navbar {
   position: fixed;
   top: 0;
