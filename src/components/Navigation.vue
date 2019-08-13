@@ -26,49 +26,49 @@ export default Vue.extend({
   },
   methods:{
       handleSCroll (event) {
-        let header = document.querySelector("#about");
+        let header = document.querySelector('#about');
         console.log(window.scrollY)
         if (window.scrollY > 0) {
-          header = document.querySelector("#recap")
-          header.classList.remove("active");
-          header = document.querySelector("#about")
-          header.classList.add("active")          
+          header = document.querySelector('#recap')
+          if (header != null) {header.classList.remove('active'); }           
+          header = document.querySelector('#about');
+          if (header != null ) {header.classList.add('active'); }
         }if (window.scrollY > 50) {
-          header = document.querySelector("#faq")
-          header.classList.remove("active");
-          header = document.querySelector("#about")
-          header.classList.remove("active");
-          header = document.querySelector("#recap")
-          header.classList.add("active")
+          header = document.querySelector('#faq');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#about');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#recap');
+          if (header != null ) {header.classList.add('active'); }
         }if (window.scrollY > 100) {
-          header = document.querySelector("#contact")
-          header.classList.remove("active");
-          header = document.querySelector("#recap")
-          header.classList.remove("active");
-          header = document.querySelector("#faq")
-          header.classList.add("active")
+          header = document.querySelector('#contact');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#recap');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#faq');
+          if (header != null ) {header.classList.add('active'); }
         }if (window.scrollY > 150) {
-          header = document.querySelector("#proj")
-          header.classList.remove("active");
-          header = document.querySelector("#faq")
-          header.classList.remove("active");
-          header = document.querySelector("#contact")
-          header.classList.add("active")
+          header = document.querySelector('#proj');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#faq');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#contact');
+          if (header != null ) {header.classList.add('active'); }
         }if (window.scrollY > 200) {
-          header = document.querySelector("#contact")
-          header.classList.remove("active");
-          header = document.querySelector("#proj")
-          header.classList.add("active")
+          header = document.querySelector('#contact');
+          if (header != null ) {header.classList.remove('active'); }
+          header = document.querySelector('#proj');
+          if (header != null ) {header.classList.add('active'); }
         }
-      }
+      },
     },
-    created () {
+    created() {
       window.addEventListener('scroll', this.handleSCroll);
 
     },
-    destroyed () {
+    destroyed() {
       window.removeEventListener('scroll', this.handleSCroll);
-    } 
+    },
 });
 </script>
 
