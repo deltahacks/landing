@@ -1,13 +1,13 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0px; color: #5fb9c9; font-family: 'Montserrat SemiBold';">
+    <vue-typed-js  :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="500" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat';">
+    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="500" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <a href="#news">RECAP</a>
+    <a href="#news" :class="{active: scrollPosition > 100}">RECAP</a>
     <a href="#contact">FAQ</a>
     <a href="#about">CONTACT</a>
     <a href="#proj">DH5 PROJECTS</a>
@@ -21,11 +21,23 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'Navigation',
   components: {},
+  data: {
+    scrollPosition: 0,
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
+      console.log(this.scrollPosition);
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
 });
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
 .navbar {
   position: fixed;
   top: 0;
