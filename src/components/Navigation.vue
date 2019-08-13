@@ -1,7 +1,7 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js  :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
+    <vue-typed-js  :strings="['DELTA']" :showCursor="true" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
     <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
@@ -24,37 +24,40 @@ export default Vue.extend({
   data: {
     scrollPosition: 0,
   },
-  methods:{
-      handleSCroll (event) {
+  methods: {
+      handleSCroll(event: any) {
         let header = document.querySelector('#about');
-        console.log(window.scrollY)
         if (window.scrollY > 0) {
-          header = document.querySelector('#recap')
-          if (header != null) {header.classList.remove('active'); }           
+          header = document.querySelector('#recap');
+          if (header != null) {header.classList.remove('active'); }
           header = document.querySelector('#about');
           if (header != null ) {header.classList.add('active'); }
-        }if (window.scrollY > 50) {
+        }
+        if (window.scrollY > 50) {
           header = document.querySelector('#faq');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#about');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#recap');
           if (header != null ) {header.classList.add('active'); }
-        }if (window.scrollY > 100) {
+        }
+        if (window.scrollY > 100) {
           header = document.querySelector('#contact');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#recap');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#faq');
           if (header != null ) {header.classList.add('active'); }
-        }if (window.scrollY > 150) {
+        }
+        if (window.scrollY > 150) {
           header = document.querySelector('#proj');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#faq');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#contact');
           if (header != null ) {header.classList.add('active'); }
-        }if (window.scrollY > 200) {
+        }
+        if (window.scrollY > 200) {
           header = document.querySelector('#contact');
           if (header != null ) {header.classList.remove('active'); }
           header = document.querySelector('#proj');
