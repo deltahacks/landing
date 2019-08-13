@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <HelloWorld  v-scroll-reveal.reset="{ delay: 100 }" msg="Welcome to Your Vue.js + TypeScript App" />
     <Sponsors/>
     <br>
     <h1 v-scroll-reveal.reset >Test for Scroll Reveal</h1>
     <h1 v-scroll-reveal.reset="{ delay: 250 }" >Another test for Scroll Reveal</h1>
+    <div style="height:800px;"><hr>Empty Space for scroll testing</div>
   </div>
 </template>
 
