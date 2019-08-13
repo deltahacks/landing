@@ -4,14 +4,14 @@
     <vue-typed-js  :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="500" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
+    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <a href="#news" :class="{active: scrollPosition > 100}">RECAP</a>
-    <a href="#contact">FAQ</a>
-    <a href="#about">CONTACT</a>
-    <a href="#proj">DH5 PROJECTS</a>
-    <a v-scroll-to="'#example'">ABOUT</a>
+    <a href="#proj" id="proj">DH5 PROJECTS</a>
+    <a href="#about" id="contact">CONTACT</a>
+    <a href="#contact" @scroll="handleSCroll" id="faq">FAQ</a>
+    <a href="#news" id="recap">RECAP</a>
+    <a v-scroll-to="'#example'" id="about" class="active">ABOUT</a>
   </div>
 </template>
 
@@ -24,15 +24,51 @@ export default Vue.extend({
   data: {
     scrollPosition: 0,
   },
-  methods: {
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
-      console.log(this.scrollPosition);
+  methods:{
+      handleSCroll (event) {
+        let header = document.querySelector("#about");
+        console.log(window.scrollY)
+        if (window.scrollY > 0) {
+          header = document.querySelector("#recap")
+          header.classList.remove("active");
+          header = document.querySelector("#about")
+          header.classList.add("active")          
+        }if (window.scrollY > 50) {
+          header = document.querySelector("#faq")
+          header.classList.remove("active");
+          header = document.querySelector("#about")
+          header.classList.remove("active");
+          header = document.querySelector("#recap")
+          header.classList.add("active")
+        }if (window.scrollY > 100) {
+          header = document.querySelector("#contact")
+          header.classList.remove("active");
+          header = document.querySelector("#recap")
+          header.classList.remove("active");
+          header = document.querySelector("#faq")
+          header.classList.add("active")
+        }if (window.scrollY > 150) {
+          header = document.querySelector("#proj")
+          header.classList.remove("active");
+          header = document.querySelector("#faq")
+          header.classList.remove("active");
+          header = document.querySelector("#contact")
+          header.classList.add("active")
+        }if (window.scrollY > 200) {
+          header = document.querySelector("#contact")
+          header.classList.remove("active");
+          header = document.querySelector("#proj")
+          header.classList.add("active")
+        }
+      }
     },
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-  },
+    created () {
+      window.addEventListener('scroll', this.handleSCroll);
+
+    },
+    destroyed () {
+      window.removeEventListener('scroll', this.handleSCroll);
+    } 
 });
 </script>
 
