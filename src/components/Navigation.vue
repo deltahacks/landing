@@ -1,14 +1,17 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js :strings="['DELTAHACKS VI']" :showCursor="false" style="padding-left: 8%;">
-      <p class="typing" ></p>
+    <vue-typed-js :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold';">
+        <p class="typing"></p>  
     </vue-typed-js>
-    <a class="active" v-scroll-to="'#example'">ABOUT</a>
+    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="500" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat';">
+        <p class="typing"></p>  
+    </vue-typed-js>
     <a href="#news">RECAP</a>
     <a href="#contact">FAQ</a>
     <a href="#about">CONTACT</a>
     <a href="#proj">DH5 PROJECTS</a>
+    <a v-scroll-to="'#example'">ABOUT</a>
   </div>
 </template>
 
@@ -48,27 +51,26 @@ export default Vue.extend({
   text-decoration: none;
   font-size: 15px;
   margin-right: 10px;
+  font-family: 'Montserrat'
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
   background: rgba(255,255,255, 0.2);
   text-shadow: 0 1px 5px rgba(0,0,0,0.15);
+  -moz-border-radius:422px;
+  -webkit-border-radius:42px;
+  border-radius:42px;
 }
 
 
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color:#49ad63;
-	-moz-border-radius:422px;
-	-webkit-border-radius:42px;
-	border-radius:42px;
-	border:1px solid #2e6934;
-	display:inline-block;
 	cursor:pointer;
 	color:#5fb9c9;
-  padding: 8px 12px;
-  margin-top: 5px;
+  -moz-border-radius:422px;
+  -webkit-border-radius:42px;
+  border-radius:42px;
 }
 </style>
