@@ -7,10 +7,10 @@
     <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <a href="#proj" id="proj">DH5 PROJECTS</a>
-    <a href="#about" id="contact">CONTACT</a>
-    <a href="#contact" @scroll="handleSCroll" id="faq">FAQ</a>
-    <a href="#news" id="recap">RECAP</a>
+    <a v-scroll-to="'#example'" href="#proj" id="proj">DH5 PROJECTS</a>
+    <a v-scroll-to="'#example'" href="#about" id="contact">CONTACT</a>
+    <a v-scroll-to="'#example'" href="#contact" @scroll="handleSCroll" id="faq">FAQ</a>
+    <a v-scroll-to="'#example'" href="#news" id="recap">RECAP</a>
     <a v-scroll-to="'#example'" id="about" class="active">ABOUT</a>
   </div>
 </template>
