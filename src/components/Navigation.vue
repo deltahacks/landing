@@ -1,17 +1,15 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js  :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
+    <img src="../assets/logolarge.png" alt="" style="float: left; height: 20px; width: 20px; padding: 15px 45px;">
+    <vue-typed-js  :strings="['DELTAHACKS VI']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 70px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 98px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
-        <p class="typing" style=""></p>  
-    </vue-typed-js>
-    <a v-scroll-to="'#example'" href="#proj" id="proj">DH5 PROJECTS</a>
-    <a v-scroll-to="'#example'" href="#about" id="contact">CONTACT</a>
-    <a v-scroll-to="'#example'" href="#contact" @scroll="handleSCroll" id="faq">FAQ</a>
-    <a v-scroll-to="'#example'" href="#news" id="recap">RECAP</a>
-    <a v-scroll-to="'#example'" id="about" class="active">ABOUT</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="proj">DH5 PROJECTS</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="contact">CONTACT</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="faq">FAQ</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="recap">RECAP</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="about" class="active">ABOUT</a>
   </div>
 </template>
 
@@ -22,7 +20,7 @@ export default Vue.extend({
   name: 'Navigation',
   components: {},
   data: {
-    scrollPosition: 0,
+    show: true,
   },
   methods: {
       handleSCroll(event: any) {
@@ -98,7 +96,7 @@ export default Vue.extend({
   float: right;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 5px;
   text-decoration: none;
   font-size: 15px;
   margin-right: 10px;
