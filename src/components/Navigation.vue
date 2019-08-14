@@ -5,11 +5,11 @@
     <vue-typed-js  :strings="['DELTAHACKS VI']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 70px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="proj">DH5 PROJECTS</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="contact">CONTACT</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="faq">FAQ</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="recap">RECAP</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="about" class="active">ABOUT</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="proj" class="browser">DH5 PROJECTS</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="contact" class="browser">CONTACT</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="faq" class="browser">FAQ</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="recap" class="browser">RECAP</a>
+    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="about" class="active browser">ABOUT</a>
   </div>
 </template>
 
@@ -112,8 +112,6 @@ export default Vue.extend({
   border-radius:42px;
 }
 
-
-
 /* Add a color to the active/current link */
 .topnav a.active {
 	cursor:pointer;
@@ -121,5 +119,11 @@ export default Vue.extend({
   -moz-border-radius:422px;
   -webkit-border-radius:42px;
   border-radius:42px;
+}
+
+@media only screen and (max-width: 700px) {
+    .browser {
+        display: none;
+    }
 }
 </style>
