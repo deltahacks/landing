@@ -2,12 +2,11 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import VueScrollTo from 'vue-scrollto'
 
 Vue.config.productionTip = false;
 
-const VueScrollTo = require('vue-scrollto');
-const VueTypedJs = require('vue-typed-js');
+const VueScrollTo = require('vue-scrollto'); // tslint:disable-line
+const VueTypedJs = require('vue-typed-js'); // tslint:disable-line
 // You can also pass in the default options
 Vue.use(VueScrollTo, {
      container: 'body',

@@ -1,11 +1,11 @@
 
 <template>
   <div class="topnav navbar">
-    <vue-typed-js  :strings="['DELTA']" :showCursor="true" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: 0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
+    <vue-typed-js  :strings="['DELTA']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 50px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 102px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
-        <p class="typing"></p>  
+    <vue-typed-js :strings="['HACKS VI']" :showCursor="false" :typeSpeed="100" :startDelay="600" style=" position: fixed; padding-left 20px; left: 98px; color: #5fb9c9; font-family: 'Montserrat', sans-serif;">
+        <p class="typing" style=""></p>  
     </vue-typed-js>
     <a v-scroll-to="'#example'" href="#proj" id="proj">DH5 PROJECTS</a>
     <a v-scroll-to="'#example'" href="#about" id="contact">CONTACT</a>
