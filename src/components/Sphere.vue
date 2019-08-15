@@ -687,8 +687,8 @@ export default Vue.extend({
           ],
           2: [
             function(require, module, exports) {
-              let Get = require('./get');
-              let get = new Get();
+              const Get = require('./get');
+              const get = new Get();
 
               exports = function() {
                 let Camera = function() {
@@ -714,8 +714,7 @@ export default Vue.extend({
                     50,
                     this.width / this.height,
                     1,
-                    10000
-                  );
+                    10000);
                   this.setPosition(this.rad1, this.rad2, this.r);
                   this.initTrackBall();
                 };
@@ -734,8 +733,7 @@ export default Vue.extend({
                 Camera.prototype.initTrackBall = function() {
                   this.trackball = new THREE.TrackballControls(
                     this.obj,
-                    this.canvas
-                  );
+                    this.canvas);
                   this.trackball.screen.width = this.width;
                   this.trackball.screen.height = this.height;
                   this.trackball.noRotate = false;
@@ -767,8 +765,7 @@ export default Vue.extend({
                       callback(event);
                     }, 500);
                   },
-                  false
-                );
+                  false);
               };
             },
             {},
@@ -776,7 +773,7 @@ export default Vue.extend({
           4: [
             function(require, module, exports) {
               exports = function() {
-                let Get = function() {};
+                const Get = function() {};
 
                 Get.prototype.randomInt = function(min, max) {
                   return Math.floor(Math.random() * (max - min)) + min;
@@ -792,7 +789,7 @@ export default Vue.extend({
 
                 Get.prototype.pointSphere = function(rad1, rad2, r) {
                   const x = Math.cos(rad1) * Math.cos(rad2) * r;
-                  let z = Math.cos(rad1) * Math.sin(rad2) * r;
+                  const z = Math.cos(rad1) * Math.sin(rad2) * r;
                   const y = Math.sin(rad1) * r;
                   return [x, y, z];
                 };
@@ -806,8 +803,8 @@ export default Vue.extend({
           ],
           5: [
             function(require, module, exports) {
-              let Get = require('./get');
-              let get = new Get();
+              const Get = require('./get');
+              const get = new Get();
 
               exports = function() {
                 let HemiLight = function() {
@@ -849,8 +846,8 @@ export default Vue.extend({
           ],
           6: [
             function(require, module, exports) {
-              let Get = require('./get');
-              let get = new Get();
+              const Get = require('./get');
+              const get = new Get();
 
               exports = function() {
                 const Mesh = function() {
