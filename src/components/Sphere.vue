@@ -607,8 +607,8 @@ export default Vue.extend({
               };
 
               const init = function() {
-                let ballGeometry = new THREE.SphereGeometry(360, 20, 20);
-                let ballMaterial = new THREE.MeshLambertMaterial({
+                const ballGeometry = new THREE.SphereGeometry(360, 20, 20);
+                const ballMaterial = new THREE.MeshLambertMaterial({
                   color: 0xffffff,
                   shading: THREE.FlatShading,
                 });
@@ -620,8 +620,7 @@ export default Vue.extend({
                   get.radian(45),
                   get.radian(0),
                   bodyWidth,
-                  bodyHeight
-                );
+                  bodyHeight);
 
                 light = new HemiLight();
                 light.init(
@@ -631,8 +630,7 @@ export default Vue.extend({
                   1000,
                   0x66ff99,
                   0x3366aa,
-                  1
-                );
+                  1);
 
                 ball = new Mesh();
                 ball.init(scene, ballGeometry, ballMaterial);
@@ -643,7 +641,7 @@ export default Vue.extend({
                 });
               };
 
-              let render = function() {
+              const render = function() {
                 renderer.clear();
 
                 ball.updateVertices();
@@ -651,8 +649,8 @@ export default Vue.extend({
                 renderer.render(scene, camera.obj);
               };
 
-              let renderloop = function() {
-                let now = +new Date();
+              const renderloop = function() {
+                const now = +new Date();
                 requestAnimationFrame(renderloop);
 
                 if (now - lastTimeRender > 1000 / fps) {
