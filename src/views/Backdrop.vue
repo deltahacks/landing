@@ -1,6 +1,8 @@
 <template>
   <div class="app blend">
-    <div class="scroll" />
+    <div class="scroll">
+      Example component in scroll
+    </div>
     <div class="gradient" id="d1">
       <h1>{{scr}}</h1>
     </div>
@@ -12,7 +14,7 @@
 }
 .scroll {
   top: 20px;
-  height: 700vh;
+  height: 7000px;
 }
 .gradient {
   /* background-color: rgb(69, 111, 225); */
@@ -21,14 +23,14 @@
     rgba(37, 36, 64, 1) 0%,
     rgba(32, 82, 95, 1) 100%
   );
-  position: absolute;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100vh;  
   width: 100vw;
   top: 0;
   left: 0;
   position: fixed;
+  z-index: -1
 }
 h1 {
   position: fixed;
@@ -103,7 +105,7 @@ export default Vue.extend({
       } else {
         document.getElementById('d1')!.style.opacity = String((-1 / 500) * y + 12);
       }
-      if(y < 5500) {
+      if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
     },
