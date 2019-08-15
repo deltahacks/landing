@@ -572,8 +572,10 @@ THREE.TrackballControls.prototype.constructor = THREE.TrackballControls;
         var HemiLight = require("./hemiLight");
         var Mesh = require("./mesh");
 
-        var bodyWidth = document.body.clientWidth;
-        var bodyHeight = document.body.clientHeight;
+        // var bodyWidth = document.body.clientWidth;
+        // var bodyHeight = document.body.clientHeight;
+        var bodyWidth = 250;
+        var bodyHeight = 300;
         var fps = 60;
         var frameTime;
         var lastTimeRender = +new Date();
@@ -958,18 +960,14 @@ THREE.TrackballControls.prototype.constructor = THREE.TrackballControls;
   },
   });
 </script>
-<style>
+<style scoped>
 * {
   margin: 0;
   padding: 0
 }
 
-body {
-  height: 100%;
-}
-
 .canvas {
-  position: absolute
+  position: absolute;
 }
 </style>
 
