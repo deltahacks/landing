@@ -596,7 +596,7 @@ export default Vue.extend({
               var globe;
               var ball;
 
-              var initThree = function() {
+              const initThree = function() {
                 canvas = document.getElementById('canvas');
                 renderer = new THREE.WebGLRenderer({
                   antialias: true,
@@ -611,7 +611,7 @@ export default Vue.extend({
                 scene = new THREE.Scene();
               };
 
-              var init = function() {
+              const init = function() {
                 var ballGeometry = new THREE.SphereGeometry(360, 20, 20);
                 var ballMaterial = new THREE.MeshLambertMaterial({
                   color: 0xffffff,
@@ -726,7 +726,7 @@ export default Vue.extend({
                 };
 
                 Camera.prototype.setPosition = function(rad1, rad2) {
-                  var points = get.pointSphere(rad1, rad2, this.r);
+                  const points = get.pointSphere(rad1, rad2, this.r);
                   this.obj.position.set(points[0], points[1], points[2]);
                   this.obj.up.set(0, 1, 0);
                   this.obj.lookAt({
@@ -841,7 +841,7 @@ export default Vue.extend({
                 };
 
                 HemiLight.prototype.setPosition = function(rad1, rad2) {
-                  var points = get.pointSphere(rad1, rad2, this.r);
+                  const points = get.pointSphere(rad1, rad2, this.r);
                   this.obj.position.set(points[0], points[1], points[2]);
                 };
 
@@ -936,7 +936,7 @@ export default Vue.extend({
               var get = new Get();
 
               var exports = function() {
-                var PointLight = function() {
+                const PointLight = function() {
                   this.rad1 = 0;
                   this.rad2 = 0;
                   this.x = 0;
@@ -953,7 +953,7 @@ export default Vue.extend({
                   r,
                   hex,
                   intensity,
-                  distance
+                  distance,
                 ) {
                   this.r = r;
                   this.obj = new THREE.PointLight(hex, intensity, distance);
@@ -962,7 +962,7 @@ export default Vue.extend({
                 };
 
                 PointLight.prototype.setPosition = function(rad1, rad2) {
-                  var points = get.pointSphere(rad1, rad2, this.r);
+                  const points = get.pointSphere(rad1, rad2, this.r);
                   this.obj.position.set(points[0], points[1], points[2]);
                 };
 
