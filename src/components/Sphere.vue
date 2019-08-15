@@ -213,7 +213,7 @@ export default Vue.extend({
         };
 
         this.panCamera = (function() {
-          let mouseChange = new THREE.Vector2(),
+          const mouseChange = new THREE.Vector2(),
             objectUp = new THREE.Vector3(),
             pan = new THREE.Vector3();
 
@@ -238,9 +238,7 @@ export default Vue.extend({
                 _panStart.add(
                   mouseChange
                     .subVectors(_panEnd, _panStart)
-                    .multiplyScalar(_this.dynamicDampingFactor)
-                );
-              }
+                    .multiplyScalar(_this.dynamicDampingFactor)); }
             }
           };
         })();
@@ -250,14 +248,12 @@ export default Vue.extend({
             if (_eye.lengthSq() > _this.maxDistance * _this.maxDistance) {
               _this.object.position.addVectors(
                 _this.target,
-                _eye.setLength(_this.maxDistance)
-              );
-            }
+                _eye.setLength(_this.maxDistance)); }
 
             if (_eye.lengthSq() < _this.minDistance * _this.minDistance) {
               _this.object.position.addVectors(
                 _this.target,
-                _eye.setLength(_this.minDistance)
+                _eye.setLength(_this.minDistance),
               );
             }
           }
@@ -311,7 +307,9 @@ export default Vue.extend({
         // listeners
 
         function keydown(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {
+            return;
+          }
 
           window.removeEventListener('keydown', keydown);
 
@@ -335,7 +333,9 @@ export default Vue.extend({
         }
 
         function keyup(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {
+            return;
+          }
 
           _state = _prevState;
 
@@ -343,7 +343,9 @@ export default Vue.extend({
         }
 
         function mousedown(event) {
-          if (_this.enabled === false) {return; }
+          if (_this.enabled === false) {
+            return;
+          }
 
           event.preventDefault();
           event.stopPropagation();
@@ -370,7 +372,9 @@ export default Vue.extend({
         }
 
         function mousemove(event) {
-          if (_this.enabled === false) {return; }
+          if (_this.enabled === false) {
+            return;
+          }
 
           event.preventDefault();
           event.stopPropagation();
@@ -386,7 +390,9 @@ export default Vue.extend({
         }
 
         function mouseup(event) {
-          if (_this.enabled === false) {return; }
+          if (_this.enabled === false) {
+            return;
+          }
 
           event.preventDefault();
           event.stopPropagation();
@@ -399,7 +405,9 @@ export default Vue.extend({
         }
 
         function mousewheel(event) {
-          if (_this.enabled === false) {return;}
+          if (_this.enabled === false) {
+            return;
+          }
 
           event.preventDefault();
           event.stopPropagation();
@@ -422,27 +430,24 @@ export default Vue.extend({
         }
 
         function touchstart(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {
+            return;
+          }
 
           switch (event.touches.length) {
             case 1:
               _state = STATE.TOUCH_ROTATE;
-              _moveCurr.copy(
-                getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY)
-              );
+              _moveCurr.copy(getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY));
               _movePrev.copy(_moveCurr);
               break;
 
             case 2:
               _state = STATE.TOUCH_ZOOM_PAN;
-              let dx = event.touches[0].pageX - event.touches[1].pageX;
-              let dy = event.touches[0].pageY - event.touches[1].pageY;
-              _touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt(
-                dx * dx + dy * dy
-              );
-
-              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              const dx = event.touches[0].pageX - event.touches[1].pageX;
+              const dy = event.touches[0].pageY - event.touches[1].pageY;
+              _touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt(dx * dx + dy * dy);
+              const x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              const y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panStart.copy(getMouseOnScreen(x, y));
               _panEnd.copy(_panStart);
               break;
@@ -454,7 +459,7 @@ export default Vue.extend({
         }
 
         function touchmove(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return; }
 
           event.preventDefault();
           event.stopPropagation();
@@ -953,7 +958,7 @@ export default Vue.extend({
                   r,
                   hex,
                   intensity,
-                  distance,
+                  distance
                 ) {
                   this.r = r;
                   this.obj = new THREE.PointLight(hex, intensity, distance);
@@ -975,7 +980,7 @@ export default Vue.extend({
           ],
         },
         {},
-        [1],
+        [1]
       );
     },
   },
