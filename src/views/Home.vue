@@ -11,7 +11,7 @@
 import Vue from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Sponsors from '@/components/Sponsors.vue';
-import Sphere from '@/components/Sphere.vue'; 
+import Sphere from '@/components/Sphere.vue';
 
 export default Vue.extend({
   name: 'home',

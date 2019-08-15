@@ -1,6 +1,6 @@
 
 <template>
- <div id="canvas" >
+ <div id="canvas">
    <button @click="sphere">Load Sphere</button>
      </div>
 </template>
@@ -963,7 +963,6 @@ THREE.TrackballControls.prototype.constructor = THREE.TrackballControls;
   margin: 0;
   padding: 0
 }
-
 
 body {
   height: 100%;
