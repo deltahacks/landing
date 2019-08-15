@@ -660,7 +660,7 @@ export default Vue.extend({
                 camera.trackball.update();
               };
 
-              let resizeRenderer = function() {
+              const resizeRenderer = function() {
                 bodyWidth = document.body.clientWidth;
                 bodyHeight = document.body.clientHeight;
                 renderer.setSize(bodyWidth, bodyHeight);
@@ -668,8 +668,7 @@ export default Vue.extend({
                   get.radian(45),
                   get.radian(0),
                   bodyWidth,
-                  bodyHeight
-                );
+                  bodyHeight);
               };
 
               init();
