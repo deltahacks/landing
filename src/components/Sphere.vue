@@ -1,6 +1,7 @@
 
 <template>
- <div :class='["canvas", sphere]'>
+ <div id="canvas" >
+   <button @click="sphere">Load Sphere</button>
      </div>
 </template>
 
@@ -8,10 +9,8 @@
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Sphere',
-//   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
-  computed: {
+  methods: {
       sphere(){
-
 THREE.TrackballControls = function(object, domElement) {
   var _this = this;
   var STATE = {
@@ -965,13 +964,9 @@ THREE.TrackballControls.prototype.constructor = THREE.TrackballControls;
   padding: 0
 }
 
-html {
-  height: 100%
-}
 
 body {
   height: 100%;
-  overflow: hidden
 }
 
 .canvas {
