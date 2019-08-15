@@ -737,7 +737,7 @@ export default Vue.extend({
                   this.trackball.rotateSpeed = 3;
                   this.trackball.noZoom = true;
                   this.trackball.zoomSpeed = 1;
-                  this.trackball.noPan = false;
+                  this.trackball.noPan = true;
                   this.trackball.maxDistance = 3000;
                   this.trackball.minDistance = 500;
                 };
