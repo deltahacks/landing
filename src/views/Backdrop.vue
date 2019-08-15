@@ -82,6 +82,12 @@ export default Vue.extend({
           'linear-gradient(180deg, rgba(32,82,135,1), rgba(32,82,155,1)' +
           Math.floor((-1 / 8) * y + 388) +
           '%, rgba(32,82,175,1) 100%)';
+      } else if (y < 4600) {
+        document.getElementById('d1')!.style.backgroundImage =
+          'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,185,1)' +
+          Math.floor((-1 / 9) * y + 444) +
+          '%, rgba(32,82,215,1) 100%)';
+/*
       } else if (y < 3800) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,175,1)' +
@@ -92,14 +98,15 @@ export default Vue.extend({
           'linear-gradient(180deg, rgba(32,82,175,1), rgba(32,82,195,1)' +
           Math.floor((-1 / 8) * y + 575) +
           '%, rgba(32,82,205,1) 100%)';
+*/
       } else if (y < 5000) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,195,1), rgba(32,82,205,1)' +
+          'linear-gradient(180deg, rgba(32,82,185,1), rgba(32,82,215,1)' +
           Math.floor((-1 / 4) * y + 1250) +
-          '%, rgba(32,82,225,1) 100%)';
+          '%, rgba(32,82,235,1) 100%)';
       } else if (y < 5500) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,205,1), rgba(32,82,225,1)' +
+          'linear-gradient(180deg, rgba(32,82,215,1), rgba(32,82,235,1)' +
           Math.floor((-1 / 5) * y + 1100) +
           '%, rgba(125,152,249,1) 100%)';
       } else {
