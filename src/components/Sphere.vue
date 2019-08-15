@@ -77,9 +77,9 @@ export default Vue.extend({
 
         // events
 
-        let changeEvent = { type: 'change' };
-        let startEvent = { type: 'start' };
-        let endEvent = { type: 'end' };
+        const changeEvent = { type: 'change' };
+        const startEvent = { type: 'start' };
+        const endEvent = { type: 'end' };
 
         // methods
 
@@ -90,9 +90,9 @@ export default Vue.extend({
             this.screen.width = window.innerWidth;
             this.screen.height = window.innerHeight;
           } else {
-            let box = this.domElement.getBoundingClientRect();
+            const box = this.domElement.getBoundingClientRect();
             // adjustments come from similar code in the jquery offset() function
-            let d = this.domElement.ownerDocument.documentElement;
+            const d = this.domElement.ownerDocument.documentElement;
             this.screen.left = box.left + window.pageXOffset - d.clientLeft;
             this.screen.top = box.top + window.pageYOffset - d.clientTop;
             this.screen.width = box.width;
@@ -101,7 +101,7 @@ export default Vue.extend({
         };
 
         this.handleEvent = function(event) {
-          if (typeof this[event.type] == 'function') {
+          if (typeof this[event.type] === 'function') {
             this[event.type](event);
           }
         };
@@ -123,10 +123,9 @@ export default Vue.extend({
 
           return function(pageX, pageY) {
             vector.set(
-              (pageX - _this.screen.width * 0.5 - _this.screen.left) /
-                (_this.screen.width * 0.5),
-              (_this.screen.height + 2 * (_this.screen.top - pageY)) /
-                _this.screen.width // screen.width intentional);
+              (pageX - _this.screen.width * 0.5 - _this.screen.left) / (_this.screen.width * 0.5),
+              ((_this.screen.height + 2 * (_this.screen.top - pageY)) / _this.screen.width) // screen.width intentional
+            );
 
             return vector;
           };
@@ -483,21 +482,19 @@ export default Vue.extend({
         }
 
         function touchend(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return; }
 
           switch (event.touches.length) {
             case 1:
               _movePrev.copy(_moveCurr);
-              _moveCurr.copy(
-                getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY)
-              );
+              _moveCurr.copy(getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY));
               break;
 
             case 2:
               _touchZoomDistanceStart = _touchZoomDistanceEnd = 0;
 
-              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              const x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              const y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panEnd.copy(getMouseOnScreen(x, y));
               _panStart.copy(_panEnd);
               break;
@@ -542,17 +539,17 @@ export default Vue.extend({
         function s(o, u) {
           if (!n[o]) {
             if (!t[o]) {
-              let a = typeof require == 'function' && require;
-              if (!u && a) return a(o, !0);
-              if (i) return i(o, !0);
-              let f = new Error("Cannot find module '" + o + "'");
+              const a = typeof require === 'function' && require;
+              if (!u && a) {return a(o, !0); }
+              if (i) {return i(o, !0); }
+              const f = new Error("Cannot find module '" + o + "'");
               throw ((f.code = 'MODULE_NOT_FOUND'), f);
             }
-            let l = (n[o] = { exports: {} });
+            const l = (n[o] = { exports: {} });
             t[o][0].call(
               l.exports,
               function(e) {
-                let n = t[o][1][e];
+                const n = t[o][1][e];
                 return s(n ? n : e);
               },
               l,
@@ -560,7 +557,7 @@ export default Vue.extend({
               e,
               t,
               n,
-              r
+              r,
             );
           }
           return n[o].exports;
@@ -796,9 +793,9 @@ export default Vue.extend({
                 };
 
                 Get.prototype.pointSphere = function(rad1, rad2, r) {
-                  let x = Math.cos(rad1) * Math.cos(rad2) * r;
+                  const x = Math.cos(rad1) * Math.cos(rad2) * r;
                   let z = Math.cos(rad1) * Math.sin(rad2) * r;
-                  let y = Math.sin(rad1) * r;
+                  const y = Math.sin(rad1) * r;
                   return [x, y, z];
                 };
 
