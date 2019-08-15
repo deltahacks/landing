@@ -10,7 +10,7 @@
       >sponsorship@deltahacks.com</a>
     </p>
     <div :class='["square", getClass]'>
-      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal.reset>
+      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
         <a :href="sponsor.href" target="_blank">
           <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
@@ -108,7 +108,7 @@ Classes
 .container {
   padding-top: 30px;
   padding-bottom: 50px;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
   background-color: #9fc9fff1;
   color: white;
@@ -168,8 +168,8 @@ div > p > a {
 }
 
 .level--2 > div > a > img {
-  max-width: 225px;
-  max-height: 225px;
+  max-width: 230px;
+  max-height: 230px;
 }
 </style>
 
