@@ -1,13 +1,13 @@
 <template>
-  <div class="app blen">
+  <div class="app blend">
     <div class="scroll" />
-    <div class="section" id="d1">
+    <div class="gradient" id="d1">
       <h1>{{scr}}</h1>
     </div>
   </div>
 </template>
 <style scoped>
-.blen {
+.blend {
   background-blend-mode: overlay;
 }
 .scroll {
