@@ -10,7 +10,7 @@
       >sponsorship@deltahacks.com</a>
     </p>
     <div :class='["square", getClass]'>
-      <div v-for="sponsor in sponsorList" v-bind:key="sponsor" v-scroll-reveal>
+      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal.reset>
         <a :href="sponsor.href" target="_blank">
           <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
@@ -26,12 +26,13 @@
 import Vue from 'vue';
 import VueScrollReveal from 'vue-scroll-reveal';
 
+
 Vue.use(VueScrollReveal, {
   class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
   duration: 1000,
   scale: 1.35,
   distance: '10px',
-  mobile: false
+  mobile: true
 });
 
 export default Vue.extend({
@@ -42,6 +43,15 @@ export default Vue.extend({
     sponsorList: Array,
     main: Boolean,
     secondary: Boolean,
+  },
+  methods: {
+    shuffle: function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
   },
   computed: {
     getClass() {
@@ -112,7 +122,8 @@ Classes
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-
+  justify-content: center;
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -145,6 +156,7 @@ div > p > a {
 }
 
 .level--1 > div > a > img {
+  box-sizing: border-box;
   max-width: 300px;
   max-height: 300px;
 }
