@@ -106,29 +106,27 @@ export default Vue.extend({
           }
         };
 
-        let getMouseOnScreen = (function() {
-          let vector = new THREE.Vector2();
+        const getMouseOnScreen = (function() {
+          const vector = new THREE.Vector2();
 
           return function(pageX, pageY) {
             vector.set(
               (pageX - _this.screen.left) / _this.screen.width,
-              (pageY - _this.screen.top) / _this.screen.height
-            );
+              (pageY - _this.screen.top) / _this.screen.height);
 
             return vector;
           };
         })();
 
-        let getMouseOnCircle = (function() {
-          let vector = new THREE.Vector2();
+        const getMouseOnCircle = (function() {
+          const vector = new THREE.Vector2();
 
           return function(pageX, pageY) {
             vector.set(
               (pageX - _this.screen.width * 0.5 - _this.screen.left) /
                 (_this.screen.width * 0.5),
               (_this.screen.height + 2 * (_this.screen.top - pageY)) /
-                _this.screen.width // screen.width intentional
-            );
+                _this.screen.width // screen.width intentional);
 
             return vector;
           };
@@ -147,8 +145,7 @@ export default Vue.extend({
             moveDirection.set(
               _moveCurr.x - _movePrev.x,
               _moveCurr.y - _movePrev.y,
-              0
-            );
+              0);
             angle = moveDirection.length();
 
             if (angle) {
@@ -164,8 +161,7 @@ export default Vue.extend({
               objectSidewaysDirection.setLength(_moveCurr.x - _movePrev.x);
 
               moveDirection.copy(
-                objectUpDirection.add(objectSidewaysDirection)
-              );
+                objectUpDirection.add(objectSidewaysDirection));
 
               axis.crossVectors(moveDirection, _eye).normalize();
 
@@ -468,17 +464,16 @@ export default Vue.extend({
             case 1:
               _movePrev.copy(_moveCurr);
               _moveCurr.copy(
-                getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY)
-              );
+                getMouseOnCircle(event.touches[0].pageX, event.touches[0].pageY));
               break;
 
             case 2:
-              let dx = event.touches[0].pageX - event.touches[1].pageX;
-              let dy = event.touches[0].pageY - event.touches[1].pageY;
+              const dx = event.touches[0].pageX - event.touches[1].pageX;
+              const dy = event.touches[0].pageY - event.touches[1].pageY;
               _touchZoomDistanceEnd = Math.sqrt(dx * dx + dy * dy);
 
-              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              const x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              const y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panEnd.copy(getMouseOnScreen(x, y));
               break;
 
@@ -837,7 +832,7 @@ export default Vue.extend({
                   r,
                   hex1,
                   hex2,
-                  intensity
+                  intensity,
                 ) {
                   this.r = r;
                   this.obj = new THREE.HemisphereLight(hex1, hex2, intensity);
@@ -863,7 +858,7 @@ export default Vue.extend({
               let get = new Get();
 
               exports = function() {
-                let Mesh = function() {
+                const Mesh = function() {
                   this.r = 0;
                   this.x = 0;
                   this.y = 0;
@@ -896,7 +891,7 @@ export default Vue.extend({
                 };
 
                 Mesh.prototype.updateVerticesInt = function() {
-                  let vertices = this.mesh.geometry.vertices;
+                  const vertices = this.mesh.geometry.vertices;
                   for (let i = 0; i < vertices.length; i++) {
                     let r = this.r;
                     this.vertexArr[i] = r;
@@ -911,7 +906,7 @@ export default Vue.extend({
                 };
 
                 Mesh.prototype.updateVertices = function() {
-                  let vertices = this.mesh.geometry.vertices;
+                  const vertices = this.mesh.geometry.vertices;
                   for (let i = 0; i < this.vertexArr.length; i++) {
                     let r;
                     this.vertexDeg[i] += 8;
@@ -937,8 +932,8 @@ export default Vue.extend({
           ],
           7: [
             function(require, module, exports) {
-              let Get = require('./get');
-              let get = new Get();
+              const Get = require('./get');
+              const get = new Get();
 
               exports = function() {
                 const PointLight = function() {
@@ -958,7 +953,7 @@ export default Vue.extend({
                   r,
                   hex,
                   intensity,
-                  distance
+                  distance,
                 ) {
                   this.r = r;
                   this.obj = new THREE.PointLight(hex, intensity, distance);
@@ -980,7 +975,7 @@ export default Vue.extend({
           ],
         },
         {},
-        [1]
+        [1],
       );
     },
   },
