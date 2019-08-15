@@ -12,9 +12,9 @@
 }
 .scroll {
   top: 20px;
-  height: 900vh;
+  height: 700vh;
 }
-.section {
+.gradient {
   /* background-color: rgb(69, 111, 225); */
   background-image: linear-gradient(
     180deg,
@@ -95,9 +95,16 @@ export default Vue.extend({
           'linear-gradient(180deg, rgba(32,82,195,1), rgba(32,82,205,1)' +
           Math.floor((-1 / 4) * y + 1250) +
           '%, rgba(32,82,225,1) 100%)';
-      } else {
+      } else if (y < 5500) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,205,1), rgba(32,82,225,1), rgba(32,82,245,1) 100%)';
+          'linear-gradient(180deg, rgba(32,82,205,1), rgba(32,82,225,1)' +
+          Math.floor((-1 / 5) * y + 1100) +
+          '%, rgba(125,152,249,1) 100%)';
+      } else {
+        document.getElementById('d1')!.style.opacity = String((-1 / 500) * y + 12);
+      }
+      if(y < 5500) {
+        document.getElementById('d1')!.style.opacity = '1';
       }
     },
   },
