@@ -597,7 +597,7 @@ export default Vue.extend({
                   antialias: true,
                 });
                 if (!renderer) {
-                  alert('Three.jsの初期化に失敗しました。');
+                  alert('Three.js initialization failed.');
                 }
                 renderer.setSize(bodyWidth, bodyHeight);
                 canvas.appendChild(renderer.domElement);
