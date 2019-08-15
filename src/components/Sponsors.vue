@@ -9,7 +9,7 @@
         href="mailto:sponsorship@deltahacks.com"
       >sponsorship@deltahacks.com</a>
     </p>
-    <div :class='["square", getClass]'>
+    <div :class='["square", getClass]' v-scroll-reveal>
       <div v-for="sponsor in sponsorList" v-bind:key="sponsor">
         <a :href="sponsor.href" target="_blank">
           <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
@@ -24,6 +24,15 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import VueScrollReveal from 'vue-scroll-reveal';
+
+Vue.use(VueScrollReveal, {
+  class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+  duration: 800,
+  scale: 1,
+  distance: '10px',
+  mobile: false
+});
 
 export default Vue.extend({
   name: 'Sponsors',
@@ -46,8 +55,6 @@ export default Vue.extend({
 
   mounted() {
     const VanillaTilt = require('vanilla-tilt');
-    const ScrollReveal = require('scrollreveal');
-
   },
 
 });
