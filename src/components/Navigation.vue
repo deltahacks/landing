@@ -33,71 +33,36 @@ export default Vue.extend({
     show: true,
   },
   methods: {
-      handleSCroll(event: any) {
-        let header = document.querySelector('#about');
-        if (window.scrollY > 0) {
-          header = document.querySelector('#recap');
-          if (header != null) {header.classList.remove('active'); }
-          header = document.querySelector('#about');
-          if (header != null ) {header.classList.add('active'); }
-          header = document.querySelector('#recapDrop');
-          if (header != null) {header.classList.remove('activeDrop'); }
-          header = document.querySelector('#about');
-          if (header != null ) {header.classList.add('activeDrop'); }
-        }
-        if (window.scrollY > 50) {
-          header = document.querySelector('#faq');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#about');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#recap');
-          if (header != null ) {header.classList.add('active'); }
-          header = document.querySelector('#faqDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#aboutDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#recapDrop');
-          if (header != null ) {header.classList.add('active'); }
-        }
-        if (window.scrollY > 100) {
-          header = document.querySelector('#contact');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#recap');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#faq');
-          if (header != null ) {header.classList.add('active'); }
-          header = document.querySelector('#contactDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#recapDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#faqDrop');
-          if (header != null ) {header.classList.add('active'); }
-        }
-        if (window.scrollY > 150) {
-          header = document.querySelector('#proj');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#faq');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#contact');
-          if (header != null ) {header.classList.add('active'); }
-          header = document.querySelector('#projDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#faqDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#contactDrop');
-          if (header != null ) {header.classList.add('active'); }
-        }
-        if (window.scrollY > 200) {
-          header = document.querySelector('#contact');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#proj');
-          if (header != null ) {header.classList.add('active'); }
-          header = document.querySelector('#contactDrop');
-          if (header != null ) {header.classList.remove('active'); }
-          header = document.querySelector('#projDrop');
-          if (header != null ) {header.classList.add('active'); }
-        }
-      },
+      pickActive(element: any) {
+    const divs = ['#about', '#recap', '#faq', '#contact', '#proj', '#aboutDrop', '#recapDrop', '#faqDrop', '#contactDrop', '#projDrop']; // tslint:disable-line
+    for (let i = 0; i < divs.length; i++) { // tslint:disable-line
+        const header = document.querySelector(divs[i]); // tslint:disable-line
+        if (header != null) {header.classList.remove('active'); }
+    }
+    let header = document.querySelector(element);
+    if (header != null) { header.classList.add('active'); }
+    header = document.querySelector(element + 'Drop');
+    if (header != null) { header.classList.add('active'); }
+},
+handleSCroll(event: any) {
+    if (window.scrollY > 0) {
+        this.pickActive('#about');
+    }
+    if (window.scrollY > 50) {
+        this.pickActive('#recap');
+    }
+    if (window.scrollY > 100) {
+        this.pickActive('#faq');
+    }
+    if (window.scrollY > 150) {
+        this.pickActive('#contact');
+    }
+    if (window.scrollY > 200) {
+        this.pickActive('#proj');
+    }
+},
+
+
     },
     created() {
       window.addEventListener('scroll', this.handleSCroll);
