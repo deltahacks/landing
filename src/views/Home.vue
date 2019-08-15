@@ -1,14 +1,13 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld  v-scroll-reveal.reset="{ delay: 100 }" msg="Welcome to Your Vue.js + TypeScript App" />
-    <Sponsors/>
-    <br>
+    <Landing />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Landing from '@/components/Landing.vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Sponsors from '@/components/Sponsors.vue';
 import VueScrollReveal from 'vue-scroll-reveal';
@@ -20,7 +19,7 @@ export default Vue.extend({
   name: 'home',
   components: {
     HelloWorld,
-    Sponsors,
+    Landing,
   },
 });
 </script>
