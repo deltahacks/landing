@@ -23,8 +23,15 @@ import Synopsys from '@/assets/sponsors/Synopsys.svg';
 import FDM from '@/assets/sponsors/FDM.svg';
 import Bitalino from '@/assets/sponsors/Bitalino.png';
 import Coinberry from '@/assets/sponsors/Coinberry.png';
-
-
+import Wolfram from '@/assets/sponsors/Wolfram.svg';
+import Hypercare from '@/assets/sponsors/Hypercare.png';
+import Obie from '@/assets/sponsors/Obie.svg';
+import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
+import CSE from '@/assets/sponsors/CSE.svg';
+import TripIt from '@/assets/sponsors/TripIt.svg';
+import MapleSoft from '@/assets/sponsors/MapleSoft.png';
+import Sketch from '@/assets/sponsors/Sketch.svg';
+import TWN from '@/assets/sponsors/TWN.svg';
 interface Sponsor {
   logo: any;
   href: string;
@@ -110,6 +117,60 @@ export default Vue.extend({
           href: 'http://www.coinberry.com/',
           alt: 'Coinberry',
         },
+        {
+          logo:
+            Wolfram,
+          href: 'http://www.wolfram.com/',
+          alt: 'Wolfram',
+        },
+        {
+          logo:
+            Hypercare,
+          href: 'http://www.hypercare.com/',
+          alt: 'Hypercare',
+        },
+        {
+          logo:
+            Obie,
+          href: 'http://www.obie.ai/',
+          alt: 'Obie AI',
+        },
+        {
+          logo:
+            Balsamiq,
+          href: 'http://www.balsamiq.com/',
+          alt: 'Balsamiq',
+        },
+        {
+          logo:
+            CSE,
+          href: 'https://www.cse-cst.gc.ca/',
+          alt: 'CSE',
+        },
+        {
+          logo:
+            TripIt,
+          href: 'https://www.tripit.com/',
+          alt: 'TripIt',
+        },
+        {
+          logo:
+            MapleSoft,
+          href: 'https://www.maplesoft.com/',
+          alt: 'MapleSoft',
+        },
+        {
+          logo:
+            Sketch,
+          href: 'https://www.sketchapp.com/',
+          alt: 'Sketch',
+        },
+        {
+          logo:
+            TWN,
+          href: 'https://www.theweathernetwork.com/',
+          alt: 'The Weather Network',
+        }
       ],
     };
   },

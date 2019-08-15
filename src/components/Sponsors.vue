@@ -46,6 +46,8 @@ export default Vue.extend({
 
   mounted() {
     const VanillaTilt = require('vanilla-tilt');
+    const ScrollReveal = require('scrollreveal');
+
   },
 
 });
@@ -117,6 +119,13 @@ div > h1.level:nth-of-type(2) {
 
 div > p > a {
   color: red;
+}
+
+@media screen and (max-width: 500px) {
+ .level--1 > div > a > img {
+    max-width: 300px;
+    max-height: 300px;
+  }
 }
 
 .level--1 {
