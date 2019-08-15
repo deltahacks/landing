@@ -343,7 +343,7 @@ export default Vue.extend({
         }
 
         function mousedown(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return; }
 
           event.preventDefault();
           event.stopPropagation();
@@ -370,7 +370,7 @@ export default Vue.extend({
         }
 
         function mousemove(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return; }
 
           event.preventDefault();
           event.stopPropagation();
@@ -386,7 +386,7 @@ export default Vue.extend({
         }
 
         function mouseup(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return; }
 
           event.preventDefault();
           event.stopPropagation();
@@ -399,7 +399,7 @@ export default Vue.extend({
         }
 
         function mousewheel(event) {
-          if (_this.enabled === false) return;
+          if (_this.enabled === false) {return;}
 
           event.preventDefault();
           event.stopPropagation();
