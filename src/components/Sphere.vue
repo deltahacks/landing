@@ -12,7 +12,7 @@ export default Vue.extend({
   methods: {
     sphere() {
       THREE.TrackballControls = function(object, domElement) {
-        let _this = this;
+        const _this = this;
         let STATE = {
           NONE: -1,
           ROTATE: 0,
@@ -51,9 +51,9 @@ export default Vue.extend({
 
         this.target = new THREE.Vector3();
 
-        let EPS = 0.000001;
+        const EPS = 0.000001;
 
-        let lastPosition = new THREE.Vector3();
+        const lastPosition = new THREE.Vector3();
 
         let _state = STATE.NONE,
           _prevState = STATE.NONE,
@@ -509,8 +509,7 @@ export default Vue.extend({
           function(event) {
             event.preventDefault();
           },
-          false
-        );
+          false);
 
         this.domElement.addEventListener('mousedown', mousedown, false);
 
@@ -531,8 +530,7 @@ export default Vue.extend({
       };
 
       THREE.TrackballControls.prototype = Object.create(
-        THREE.EventDispatcher.prototype
-      );
+        THREE.EventDispatcher.prototype);
       THREE.TrackballControls.prototype.constructor = THREE.TrackballControls;
 
       (function e(t, n, r) {
@@ -562,20 +560,20 @@ export default Vue.extend({
           }
           return n[o].exports;
         }
-        let i = typeof require == 'function' && require;
-        for (let o = 0; o < r.length; o++) s(r[o]);
+        const i = typeof require === 'function' && require;
+        for (let o = 0; o < r.length; o++) {s(r[o]); }
         return s;
       })(
         {
           1: [
             function(require, module, exports) {
-              let Get = require('./get');
-              let get = new Get();
-              let debounce = require('./debounce');
-              let Camera = require('./camera');
-              let PointLight = require('./pointLight');
-              let HemiLight = require('./hemiLight');
-              let Mesh = require('./mesh');
+              const Get = require('./get');
+              const get = new Get();
+              const debounce = require('./debounce');
+              const Camera = require('./camera');
+              const PointLight = require('./pointLight');
+              const HemiLight = require('./hemiLight');
+              const Mesh = require('./mesh');
 
               // let bodyWidth = document.body.clientWidth;
               // let bodyHeight = document.body.clientHeight;
@@ -890,7 +888,7 @@ export default Vue.extend({
                 Mesh.prototype.updateVerticesInt = function() {
                   const vertices = this.mesh.geometry.vertices;
                   for (let i = 0; i < vertices.length; i++) {
-                    let r = this.r;
+                    const r = this.r;
                     this.vertexArr[i] = r;
                     this.vertexDeg[i] = get.randomInt(0, 360);
                     vertices[i].normalize().multiplyScalar(r);
