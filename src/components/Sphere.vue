@@ -13,7 +13,7 @@ export default Vue.extend({
     sphere() {
       THREE.TrackballControls = function(object, domElement) {
         const pThis = this;
-        let STATE = {
+        const STATE = {
           NONE: -1,
           ROTATE: 0,
           ZOOM: 1,
@@ -55,7 +55,7 @@ export default Vue.extend({
 
         const lastPosition = new THREE.Vector3();
 
-        let pState = STATE.NONE,
+        const pState = STATE.NONE,
           pPrevState = STATE.NONE,
           pEye = new THREE.Vector3(),
           pMovePrev = new THREE.Vector2(),
