@@ -12,8 +12,8 @@ export default Vue.extend({
   methods: {
     sphere() {
       THREE.TrackballControls = function(object, domElement) {
-        var _this = this;
-        var STATE = {
+        let _this = this;
+        let STATE = {
           NONE: -1,
           ROTATE: 0,
           ZOOM: 1,
@@ -51,11 +51,11 @@ export default Vue.extend({
 
         this.target = new THREE.Vector3();
 
-        var EPS = 0.000001;
+        let EPS = 0.000001;
 
-        var lastPosition = new THREE.Vector3();
+        let lastPosition = new THREE.Vector3();
 
-        var _state = STATE.NONE,
+        let _state = STATE.NONE,
           _prevState = STATE.NONE,
           _eye = new THREE.Vector3(),
           _movePrev = new THREE.Vector2(),
@@ -77,9 +77,9 @@ export default Vue.extend({
 
         // events
 
-        var changeEvent = { type: 'change' };
-        var startEvent = { type: 'start' };
-        var endEvent = { type: 'end' };
+        let changeEvent = { type: 'change' };
+        let startEvent = { type: 'start' };
+        let endEvent = { type: 'end' };
 
         // methods
 
@@ -90,9 +90,9 @@ export default Vue.extend({
             this.screen.width = window.innerWidth;
             this.screen.height = window.innerHeight;
           } else {
-            var box = this.domElement.getBoundingClientRect();
+            let box = this.domElement.getBoundingClientRect();
             // adjustments come from similar code in the jquery offset() function
-            var d = this.domElement.ownerDocument.documentElement;
+            let d = this.domElement.ownerDocument.documentElement;
             this.screen.left = box.left + window.pageXOffset - d.clientLeft;
             this.screen.top = box.top + window.pageYOffset - d.clientTop;
             this.screen.width = box.width;
@@ -106,8 +106,8 @@ export default Vue.extend({
           }
         };
 
-        var getMouseOnScreen = (function() {
-          var vector = new THREE.Vector2();
+        let getMouseOnScreen = (function() {
+          let vector = new THREE.Vector2();
 
           return function(pageX, pageY) {
             vector.set(
@@ -119,8 +119,8 @@ export default Vue.extend({
           };
         })();
 
-        var getMouseOnCircle = (function() {
-          var vector = new THREE.Vector2();
+        let getMouseOnCircle = (function() {
+          let vector = new THREE.Vector2();
 
           return function(pageX, pageY) {
             vector.set(
@@ -135,7 +135,7 @@ export default Vue.extend({
         })();
 
         this.rotateCamera = (function() {
-          var axis = new THREE.Vector3(),
+          let axis = new THREE.Vector3(),
             quaternion = new THREE.Quaternion(),
             eyeDirection = new THREE.Vector3(),
             objectUpDirection = new THREE.Vector3(),
@@ -190,7 +190,7 @@ export default Vue.extend({
         })();
 
         this.zoomCamera = function() {
-          var factor;
+          let factor;
 
           if (_state === STATE.TOUCH_ZOOM_PAN) {
             factor = _touchZoomDistanceStart / _touchZoomDistanceEnd;
@@ -213,7 +213,7 @@ export default Vue.extend({
         };
 
         this.panCamera = (function() {
-          var mouseChange = new THREE.Vector2(),
+          let mouseChange = new THREE.Vector2(),
             objectUp = new THREE.Vector3(),
             pan = new THREE.Vector3();
 
@@ -404,7 +404,7 @@ export default Vue.extend({
           event.preventDefault();
           event.stopPropagation();
 
-          var delta = 0;
+          let delta = 0;
 
           if (event.wheelDelta) {
             // WebKit / Opera / Explorer 9
@@ -435,14 +435,14 @@ export default Vue.extend({
 
             case 2:
               _state = STATE.TOUCH_ZOOM_PAN;
-              var dx = event.touches[0].pageX - event.touches[1].pageX;
-              var dy = event.touches[0].pageY - event.touches[1].pageY;
+              let dx = event.touches[0].pageX - event.touches[1].pageX;
+              let dy = event.touches[0].pageY - event.touches[1].pageY;
               _touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt(
                 dx * dx + dy * dy
               );
 
-              var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panStart.copy(getMouseOnScreen(x, y));
               _panEnd.copy(_panStart);
               break;
@@ -468,12 +468,12 @@ export default Vue.extend({
               break;
 
             case 2:
-              var dx = event.touches[0].pageX - event.touches[1].pageX;
-              var dy = event.touches[0].pageY - event.touches[1].pageY;
+              let dx = event.touches[0].pageX - event.touches[1].pageX;
+              let dy = event.touches[0].pageY - event.touches[1].pageY;
               _touchZoomDistanceEnd = Math.sqrt(dx * dx + dy * dy);
 
-              var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panEnd.copy(getMouseOnScreen(x, y));
               break;
 
@@ -496,8 +496,8 @@ export default Vue.extend({
             case 2:
               _touchZoomDistanceStart = _touchZoomDistanceEnd = 0;
 
-              var x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
-              var y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+              let x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+              let y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
               _panEnd.copy(getMouseOnScreen(x, y));
               _panStart.copy(_panEnd);
               break;
@@ -542,17 +542,17 @@ export default Vue.extend({
         function s(o, u) {
           if (!n[o]) {
             if (!t[o]) {
-              var a = typeof require == 'function' && require;
+              let a = typeof require == 'function' && require;
               if (!u && a) return a(o, !0);
               if (i) return i(o, !0);
-              var f = new Error("Cannot find module '" + o + "'");
+              let f = new Error("Cannot find module '" + o + "'");
               throw ((f.code = 'MODULE_NOT_FOUND'), f);
             }
-            var l = (n[o] = { exports: {} });
+            let l = (n[o] = { exports: {} });
             t[o][0].call(
               l.exports,
               function(e) {
-                var n = t[o][1][e];
+                let n = t[o][1][e];
                 return s(n ? n : e);
               },
               l,
@@ -565,36 +565,36 @@ export default Vue.extend({
           }
           return n[o].exports;
         }
-        var i = typeof require == 'function' && require;
-        for (var o = 0; o < r.length; o++) s(r[o]);
+        let i = typeof require == 'function' && require;
+        for (let o = 0; o < r.length; o++) s(r[o]);
         return s;
       })(
         {
           1: [
             function(require, module, exports) {
-              var Get = require('./get');
-              var get = new Get();
-              var debounce = require('./debounce');
-              var Camera = require('./camera');
-              var PointLight = require('./pointLight');
-              var HemiLight = require('./hemiLight');
-              var Mesh = require('./mesh');
+              let Get = require('./get');
+              let get = new Get();
+              let debounce = require('./debounce');
+              let Camera = require('./camera');
+              let PointLight = require('./pointLight');
+              let HemiLight = require('./hemiLight');
+              let Mesh = require('./mesh');
 
-              // var bodyWidth = document.body.clientWidth;
-              // var bodyHeight = document.body.clientHeight;
-              var bodyWidth = 250;
-              var bodyHeight = 300;
-              var fps = 60;
-              var frameTime;
-              var lastTimeRender = +new Date();
+              // let bodyWidth = document.body.clientWidth;
+              // let bodyHeight = document.body.clientHeight;
+              let bodyWidth = 250;
+              let bodyHeight = 300;
+              let fps = 60;
+              let frameTime;
+              let lastTimeRender = +new Date();
 
-              var canvas;
-              var renderer;
-              var scene;
-              var camera;
-              var light;
-              var globe;
-              var ball;
+              let canvas;
+              let renderer;
+              let scene;
+              let camera;
+              let light;
+              let globe;
+              let ball;
 
               const initThree = function() {
                 canvas = document.getElementById('canvas');
@@ -612,8 +612,8 @@ export default Vue.extend({
               };
 
               const init = function() {
-                var ballGeometry = new THREE.SphereGeometry(360, 20, 20);
-                var ballMaterial = new THREE.MeshLambertMaterial({
+                let ballGeometry = new THREE.SphereGeometry(360, 20, 20);
+                let ballMaterial = new THREE.MeshLambertMaterial({
                   color: 0xffffff,
                   shading: THREE.FlatShading,
                 });
@@ -648,7 +648,7 @@ export default Vue.extend({
                 });
               };
 
-              var render = function() {
+              let render = function() {
                 renderer.clear();
 
                 ball.updateVertices();
@@ -656,8 +656,8 @@ export default Vue.extend({
                 renderer.render(scene, camera.obj);
               };
 
-              var renderloop = function() {
-                var now = +new Date();
+              let renderloop = function() {
+                let now = +new Date();
                 requestAnimationFrame(renderloop);
 
                 if (now - lastTimeRender > 1000 / fps) {
@@ -667,7 +667,7 @@ export default Vue.extend({
                 camera.trackball.update();
               };
 
-              var resizeRenderer = function() {
+              let resizeRenderer = function() {
                 bodyWidth = document.body.clientWidth;
                 bodyHeight = document.body.clientHeight;
                 renderer.setSize(bodyWidth, bodyHeight);
@@ -692,11 +692,11 @@ export default Vue.extend({
           ],
           2: [
             function(require, module, exports) {
-              var Get = require('./get');
-              var get = new Get();
+              let Get = require('./get');
+              let get = new Get();
 
-              var exports = function() {
-                var Camera = function() {
+              exports = function() {
+                let Camera = function() {
                   this.width = 0;
                   this.height = 0;
                   this.rad1 = 0;
@@ -762,7 +762,7 @@ export default Vue.extend({
           3: [
             function(require, module, exports) {
               module.exports = function(object, eventType, callback) {
-                var timer;
+                let timer;
 
                 object.addEventListener(
                   eventType,
@@ -780,8 +780,8 @@ export default Vue.extend({
           ],
           4: [
             function(require, module, exports) {
-              var exports = function() {
-                var Get = function() {};
+              exports = function() {
+                let Get = function() {};
 
                 Get.prototype.randomInt = function(min, max) {
                   return Math.floor(Math.random() * (max - min)) + min;
@@ -796,9 +796,9 @@ export default Vue.extend({
                 };
 
                 Get.prototype.pointSphere = function(rad1, rad2, r) {
-                  var x = Math.cos(rad1) * Math.cos(rad2) * r;
-                  var z = Math.cos(rad1) * Math.sin(rad2) * r;
-                  var y = Math.sin(rad1) * r;
+                  let x = Math.cos(rad1) * Math.cos(rad2) * r;
+                  let z = Math.cos(rad1) * Math.sin(rad2) * r;
+                  let y = Math.sin(rad1) * r;
                   return [x, y, z];
                 };
 
@@ -811,11 +811,11 @@ export default Vue.extend({
           ],
           5: [
             function(require, module, exports) {
-              var Get = require('./get');
-              var get = new Get();
+              let Get = require('./get');
+              let get = new Get();
 
-              var exports = function() {
-                var HemiLight = function() {
+              exports = function() {
+                let HemiLight = function() {
                   this.rad1 = 0;
                   this.rad2 = 0;
                   this.x = 0;
@@ -854,11 +854,11 @@ export default Vue.extend({
           ],
           6: [
             function(require, module, exports) {
-              var Get = require('./get');
-              var get = new Get();
+              let Get = require('./get');
+              let get = new Get();
 
-              var exports = function() {
-                var Mesh = function() {
+              exports = function() {
+                let Mesh = function() {
                   this.r = 0;
                   this.x = 0;
                   this.y = 0;
@@ -891,9 +891,9 @@ export default Vue.extend({
                 };
 
                 Mesh.prototype.updateVerticesInt = function() {
-                  var vertices = this.mesh.geometry.vertices;
-                  for (var i = 0; i < vertices.length; i++) {
-                    var r = this.r;
+                  let vertices = this.mesh.geometry.vertices;
+                  for (let i = 0; i < vertices.length; i++) {
+                    let r = this.r;
                     this.vertexArr[i] = r;
                     this.vertexDeg[i] = get.randomInt(0, 360);
                     vertices[i].normalize().multiplyScalar(r);
@@ -906,9 +906,9 @@ export default Vue.extend({
                 };
 
                 Mesh.prototype.updateVertices = function() {
-                  var vertices = this.mesh.geometry.vertices;
-                  for (var i = 0; i < this.vertexArr.length; i++) {
-                    var r;
+                  let vertices = this.mesh.geometry.vertices;
+                  for (let i = 0; i < this.vertexArr.length; i++) {
+                    let r;
                     this.vertexDeg[i] += 8;
                     r =
                       this.vertexArr[i] +
@@ -932,10 +932,10 @@ export default Vue.extend({
           ],
           7: [
             function(require, module, exports) {
-              var Get = require('./get');
-              var get = new Get();
+              let Get = require('./get');
+              let get = new Get();
 
-              var exports = function() {
+              exports = function() {
                 const PointLight = function() {
                   this.rad1 = 0;
                   this.rad2 = 0;
