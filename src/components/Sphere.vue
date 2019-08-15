@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
+import Vue from 'vue'; // tslint:disable
 export default Vue.extend({
   name: 'Sphere',
-  methods: {
-    sphere() {
+  methods: { 
+    sphere() { 
       THREE.TrackballControls = function(object, domElement) {
         const pThis = this;
         let STATE = {
@@ -968,7 +968,7 @@ export default Vue.extend({
       );
     },
   },
-});
+}); // tslint:enable
 </script>
 <style scoped>
 * {
