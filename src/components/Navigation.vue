@@ -45,7 +45,7 @@ export default Vue.extend({
     if (header != null) { header.classList.add('active'); }
 },
 handleSCroll(event: any) {
-    if (window.scrollY > 0) {
+    if (window.scrollY >= 0) {
         this.pickActive('#about');
     }
     if (window.scrollY > 50) {
