@@ -33,7 +33,7 @@ export default Vue.extend({
     show: true,
   },
   methods: {
-      pickActive(element: any) {
+      pickActive(element: string) {
     const divs = ['#about', '#recap', '#faq', '#contact', '#proj', '#aboutDrop', '#recapDrop', '#faqDrop', '#contactDrop', '#projDrop']; // tslint:disable-line
     for (let i = 0; i < divs.length; i++) { // tslint:disable-line
         const header = document.querySelector(divs[i]); // tslint:disable-line
@@ -44,7 +44,7 @@ export default Vue.extend({
     header = document.querySelector(element + 'Drop');
     if (header != null) { header.classList.add('active'); }
 },
-handleSCroll(event: any) {
+handleSCroll(event: EventListener) {
     if (window.scrollY >= 0) {
         this.pickActive('#about');
     }
