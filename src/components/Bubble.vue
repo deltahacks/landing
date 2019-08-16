@@ -27,7 +27,7 @@ export default Vue.extend({
       time: 0,
       phase: Math.random() * 2 * Math.PI,
       period: 40 / (2 + this.depth),
-      amplitude: this.depth / 2
+      amplitude: this.depth / 4
     }
   },
   mounted: function() {
@@ -39,7 +39,7 @@ export default Vue.extend({
   methods: {
     tick: function() {
       this.time += 1;
-      this.yVal += this.amplitude * Math.sin(this.time/this.period + this.phase);
+      this.yVal += this.amplitude * Math.sin(this.time*0.5/this.period + this.phase);
     }
   }
 });
