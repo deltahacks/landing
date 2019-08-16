@@ -1,7 +1,7 @@
 <template>
   <div class="app blend">
     <div class="scroll">
-      Example component in scroll
+      <Landing />Example component in scroll
     </div>
     <div class="gradient" id="d1">
       <h1>{{scr}}</h1>
@@ -25,12 +25,12 @@
   );
   background-size: cover;
   background-position: center;
-  height: 100vh;  
+  height: 100vh;
   width: 100vw;
   top: 0;
   left: 0;
   position: fixed;
-  z-index: -1
+  z-index: -1;
 }
 h1 {
   position: fixed;
@@ -45,9 +45,13 @@ h1 {
 </style>
 <script lang="ts">
 import Vue from 'vue';
+import Landing from '@/components/Landing.vue';
 
 export default Vue.extend({
   name: 'app',
+  components: {
+    Landing,
+  },
   data() {
     return {
       scr: 0,
@@ -87,7 +91,7 @@ export default Vue.extend({
           'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,185,1)' +
           Math.floor((-1 / 9) * y + 444) +
           '%, rgba(32,82,215,1) 100%)';
-/*
+        /*
       } else if (y < 3800) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,175,1)' +
@@ -110,7 +114,9 @@ export default Vue.extend({
           Math.floor((-1 / 5) * y + 1100) +
           '%, rgba(125,152,249,1) 100%)';
       } else {
-        document.getElementById('d1')!.style.opacity = String((-1 / 500) * y + 12);
+        document.getElementById('d1')!.style.opacity = String(
+          (-1 / 500) * y + 12
+        );
       }
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';

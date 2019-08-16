@@ -4,7 +4,6 @@
       v-scroll-reveal.reset="{ delay: 100 }"
       msg="Welcome to Your Vue.js + TypeScript App"
     />
-    <Landing />
   </div>
 </template>
 
