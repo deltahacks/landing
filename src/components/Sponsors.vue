@@ -161,6 +161,11 @@ div > p > a {
   max-height: 300px;
 }
 
+.level--2 {
+  width: 80%;
+  margin-left: 10%;
+}
+
 .level--2 > div {
   margin: 0 auto;
   margin-top: 25px;
