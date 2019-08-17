@@ -1,17 +1,15 @@
 
 <template>
   <div class="flex-container">
-    <div id="particles-js">
-      <div id="left">
-        <h1 class="landing-title">
-          Delta
-          <span style="font-weight: lighter">Hacks</span> VI
-        </h1>
-        <a class="act-btn" href>Sign Up</a>
-        <a class="act-btn" href>Sponsors</a>
-      </div>
-      <div id="right"></div>
+    <div id="particles-js"> </div>
+    <div id="left">
+      <h1 class="landing-title">
+        Delta<span style="font-weight: lighter">Hacks</span> VI
+      </h1>
+      <a class="act-btn" href="#">Sign Up</a>
+      <a class="act-btn" href="#">Sponsors</a>
     </div>
+    <div id="right"></div>
   </div>
 </template>
 
@@ -169,7 +167,7 @@ export default {
 .landing-title {
   font-size: 5em;
   color: white;
-  margin-top: 40%;
+  margin-top: 30%;
 }
 /* .flex-container > div {
     background: transparent;
