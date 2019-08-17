@@ -4,8 +4,7 @@
     <div id="particles-js">
       <div id="left">
         <h1 class="landing-title">
-          Delta
-          <span style="font-weight: lighter">Hacks</span> VI
+          Delta<span style="font-weight: lighter">Hacks</span> VI
         </h1>
         <a class="act-btn" href>Sign Up</a>
         <a class="act-btn" href>Sponsors</a>
