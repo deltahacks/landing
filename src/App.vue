@@ -1,20 +1,40 @@
 <template>
   <div id="app">
+    <app-nav></app-nav>
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> | 
+      <router-link to="/backdrop">Background</router-link>
     </div>
     <router-view/>
+    <div style="margin: 200px;" id="example">Asdsadas</div>
   </div>
 </template>
 
+<script>
+  import Navigation from './components/Navigation.vue';
+  export default {
+    components: {
+      appNav: Navigation,
+    },
+  };
+</script>
+
+
+
+
+
 <style>
+body {
+  margin: 0 !important
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: lightblue
 }
 #nav {
   padding: 30px;
