@@ -1,6 +1,7 @@
 
 <template>
   <div class="flex-container">
+<<<<<<< HEAD
     <div id="particles-js"> </div>
     <div id="left">
       <h1 class="landing-title">
@@ -8,6 +9,17 @@
       </h1>
       <a class="act-btn" href="#">Sign Up</a>
       <a class="act-btn" href="#">Sponsors</a>
+=======
+    <div id="particles-js">
+      <div id="left">
+        <h1 class="landing-title">
+          Delta<span style="font-weight: lighter">Hacks</span> VI
+        </h1>
+        <a class="act-btn" href>Sign Up</a>
+        <a class="act-btn" href>Sponsors</a>
+      </div>
+      <div id="right"></div>
+>>>>>>> 48d38f8882f95c053b8a8f73aa631e06579df455
     </div>
     <div id="right"></div>
   </div>
