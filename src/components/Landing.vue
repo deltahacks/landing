@@ -17,9 +17,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 import 'particles.js';
-
 export default {
   name: 'particles',
   mounted() {
@@ -150,14 +148,12 @@ export default {
   top: 0;
   left: 0;
 }
-
 #left {
   width: 50%;
   height: 100%;
   float: left;
-  background-image: url('../assets/landing-bg.svg');
+  /* background-image: url('../assets/landing-bg.svg'); */
 }
-
 .act-btn {
   text-decoration: none;
   color: black;
@@ -167,17 +163,14 @@ export default {
   display: inline-block;
   margin: 0 3%;
 }
-
 .act-btn:hover {
   opacity: 0.8;
 }
-
 .landing-title {
   font-size: 5em;
   color: white;
-  margin-top: 30%;
+  margin-top: 40%;
 }
-
 /* .flex-container > div {
     background: transparent;
   width: 100%;
@@ -187,4 +180,3 @@ export default {
   font-size: 30px;
 } */
 </style>
-
