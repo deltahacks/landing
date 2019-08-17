@@ -5,19 +5,19 @@
     <vue-typed-js  :strings="['DELTAHACKS VI']" :showCursor="false" :typeSpeed="100" style="position: fixed; padding-left 20px; left: 70px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;">
         <p class="typing"></p>  
     </vue-typed-js>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="proj" class="browser">DH5 PROJECTS</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="contact" class="browser">CONTACT</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="faq" class="browser">FAQ</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="recap" class="browser">RECAP</a>
-    <a v-scroll-to="'#example'" @scroll="handleSCroll" id="about" class="active browser">ABOUT</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="proj" class="browser">DH5 PROJECTS</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="contact" class="browser">CONTACT</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="faq" class="browser">FAQ</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="recap" class="browser">RECAP</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="about" class="active browser">ABOUT</a>
     <div class="dropdown mobile">
       <button class="dropbtn mobile"><img src="../assets/hamburger.png" alt="" style="height: 20px; width: 20px;"></button>
       <div class="dropdown-content mobile" style="right:0;">
-        <a v-scroll-to="'#example'" @scroll="handleSCroll" id="aboutDrop" class="active browser">ABOUT</a>
-        <a v-scroll-to="'#example'" @scroll="handleSCroll" id="recapDrop" class="browser">RECAP</a>
-        <a v-scroll-to="'#example'" @scroll="handleSCroll" id="faqDrop" class="browser">FAQ</a>
-        <a v-scroll-to="'#example'" @scroll="handleSCroll" id="contactDrop" class="browser">CONTACT</a>
-        <a v-scroll-to="'#example'" @scroll="handleSCroll" id="projDrop" class="browser">DH5 PROJECTS</a>
+        <a v-scroll-to="'#example'" @scroll="handleScroll" id="aboutDrop" class="active browser">ABOUT</a>
+        <a v-scroll-to="'#example'" @scroll="handleScroll" id="recapDrop" class="browser">RECAP</a>
+        <a v-scroll-to="'#example'" @scroll="handleScroll" id="faqDrop" class="browser">FAQ</a>
+        <a v-scroll-to="'#example'" @scroll="handleScroll" id="contactDrop" class="browser">CONTACT</a>
+        <a v-scroll-to="'#example'" @scroll="handleScroll" id="projDrop" class="browser">DH5 PROJECTS</a>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default Vue.extend({
     header = document.querySelector(element + 'Drop');
     if (header != null) { header.classList.add('active'); }
 },
-handleSCroll(event: EventListener) {
+handleScroll(event: any) {
     if (window.scrollY >= 0) {
         this.pickActive('#about');
     }
@@ -61,15 +61,13 @@ handleSCroll(event: EventListener) {
         this.pickActive('#proj');
     }
 },
-
-
     },
     created() {
-      window.addEventListener('scroll', this.handleSCroll);
+      window.addEventListener('scroll', this.handleScroll);
 
     },
     destroyed() {
-      window.removeEventListener('scroll', this.handleSCroll);
+      window.removeEventListener('scroll', this.handleScroll);
     },
 });
 </script>
