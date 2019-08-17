@@ -33,9 +33,6 @@ export default Vue.extend({
   mounted: function() {
     setInterval(this.tick, 30);
   },
-  created: function() {
-
-  },
   methods: {
     tick: function() {
       this.time += 1;
