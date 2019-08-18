@@ -1,15 +1,13 @@
 
 <template>
   <div class="flex-container">
-    <div id="particles-js">
-      <div id="left">
-        <h1 class="landing-title">
-          Delta<span style="font-weight: lighter">Hacks</span> VI
-        </h1>
-        <a class="act-btn" href>Sign Up</a>
-        <a class="act-btn" href>Sponsors</a>
-      </div>
-      <div id="right"></div>
+    <div id="particles-js"> </div>
+    <div id="left">
+      <h1 class="landing-title">
+        Delta<span style="font-weight: lighter">Hacks</span> VI
+      </h1>
+      <a class="act-btn" href="#">Sign Up</a>
+      <a class="act-btn" href="#">Sponsors</a>
     </div>
     <div id="right"></div>
   </div>
@@ -148,29 +146,66 @@ export default {
   top: 0;
   left: 0;
 }
+
 #left {
   width: 50%;
   height: 100%;
   float: left;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
-.act-btn {
-  text-decoration: none;
-  color: black;
-  padding: 2% 5%;
-  background: white;
-  border-radius: 5%;
-  display: inline-block;
-  margin: 0 3%;
-}
-.act-btn:hover {
-  opacity: 0.8;
-}
+
 .landing-title {
   font-size: 5em;
   color: white;
   margin-top: 30%;
 }
+
+.act-btn:hover {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1b50b3 !important;
+  background: #1b50b3 !important;
+  color: #b5cefb !important;
+}
+
+.act-btn {
+  font-family: Lato, 'Noto Sans', sans-serif !important;
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  margin: 0px !important;
+  position: relative !important;
+  display: -webkit-inline-box !important;
+  display: -moz-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: -webkit-inline-flex !important;
+  display: inline-flex !important;
+  -webkit-align-items: center !important;
+  align-items: center !important;
+  -webkit-justify-content: center !important;
+  justify-content: center !important;
+  height: 40px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  text-decoration: none !important;
+  -moz-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  -ms-touch-action: manipulation !important;
+  touch-action: manipulation !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  background: #1865f2 !important;
+  color: #ffffff !important;
+  margin-right: 10px !important;
+}
+
 /* .flex-container > div {
     background: transparent;
   width: 100%;
