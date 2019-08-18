@@ -17,7 +17,7 @@ const VueScrollReveal = require('vue-scroll-reveal');
 // Using ScrollReveal's default configuration
 Vue.use(VueScrollReveal);
 
-import TD from '@/assets/sponsors/TD_Bank.svg';
+import TD from '@/assets/sponsors/TD_Bank.png';
 import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
 import Rogers from '@/assets/sponsors/Rogers_logo.svg';
 import Microsoft from '@/assets/sponsors/Microsoft.svg';
@@ -30,7 +30,7 @@ import Bitalino from '@/assets/sponsors/Bitalino.png';
 import Coinberry from '@/assets/sponsors/Coinberry.png';
 import Wolfram from '@/assets/sponsors/Wolfram.svg';
 import Hypercare from '@/assets/sponsors/Hypercare.png';
-import Obie from '@/assets/sponsors/Obie.svg';
+import Obie from '@/assets/sponsors/Obie.png';
 import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
 import CSE from '@/assets/sponsors/CSE.svg';
 import TripIt from '@/assets/sponsors/TripIt.svg';
@@ -52,6 +52,7 @@ export default Vue.extend({
   components: {
     HelloWorld,
     Landing,
+    Sponsors,
   },
   data(): SponsorsData {
     return {
@@ -175,7 +176,7 @@ export default Vue.extend({
             TWN,
           href: 'https://www.theweathernetwork.com/',
           alt: 'The Weather Network',
-        }
+        },
       ],
     };
   },

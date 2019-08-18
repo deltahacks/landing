@@ -32,7 +32,7 @@ Vue.use(VueScrollReveal, {
   duration: 1000,
   scale: 1.35,
   distance: '10px',
-  mobile: true
+  mobile: true,
 });
 
 export default Vue.extend({
@@ -51,7 +51,7 @@ export default Vue.extend({
             [a[i], a[j]] = [a[j], a[i]];
         }
         return a;
-    }
+    },
   },
   computed: {
     getClass() {
@@ -141,13 +141,14 @@ div > p > a {
 
 @media screen and (max-width: 500px) {
  .level--1 > div > a > img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 250px;
+    max-height: 250px;
   }
 }
 
 .level--1 {
-  width: 100%;
+  width: 95%;
+  margin-left: 3%
 }
 .level--1 > div {
   margin: 0 auto;

@@ -115,7 +115,7 @@ export default Vue.extend({
           '%, rgba(125,152,249,1) 100%)';
       } else {
         document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12
+          (-1 / 500) * y + 12,
         );
       }
       if (y < 5500) {
