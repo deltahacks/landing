@@ -4,7 +4,7 @@
     <div id="particles-js"> </div>
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: lighter">Hacks</span> VI
+        Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <a class="act-btn" href="#">Sign Up</a>
       <a class="act-btn" href="#">Sponsors</a>
@@ -139,6 +139,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
+
+.flex-container {
+  font-family: 'Montserrat';
+}
+
 #particles-js {
   width: 100%;
   height: 100%;
@@ -158,6 +164,7 @@ export default {
   font-size: 5em;
   color: white;
   margin-top: 30%;
+  font-weight: 700;
 }
 
 .act-btn:hover {
@@ -167,7 +174,7 @@ export default {
 }
 
 .act-btn {
-  font-family: Lato, 'Noto Sans', sans-serif !important;
+  /* font-family: Lato, 'Noto Sans', sans-serif !important; */
   -webkit-box-pack: center !important;
   -ms-flex-pack: center !important;
   -webkit-box-align: center !important;

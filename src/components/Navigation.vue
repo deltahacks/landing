@@ -14,14 +14,40 @@
     >
       <p class="typing"></p>
     </vue-typed-js>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="proj" class="browser">DH5 PROJECTS</a>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="contact" class="browser">CONTACT</a>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="faq" class="browser">FAQ</a>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="recap" class="browser">RECAP</a>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="about" class="active browser">ABOUT</a>
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="proj" class="browser"
+      >DH5 PROJECTS</a
+    >
+    <a
+      v-scroll-to="'#example'"
+      @scroll="handleScroll"
+      id="contact"
+      class="browser"
+      >CONTACT</a
+    >
+    <a v-scroll-to="'#example'" @scroll="handleScroll" id="faq" class="browser"
+      >FAQ</a
+    >
+    <a
+      v-scroll-to="'#example'"
+      @scroll="handleScroll"
+      id="recap"
+      class="browser"
+      >RECAP</a
+    >
+    <a
+      v-scroll-to="'#example'"
+      @scroll="handleScroll"
+      id="about"
+      class="active browser"
+      >ABOUT</a
+    >
     <div class="dropdown mobile">
       <button class="dropbtn mobile">
-        <img src="../assets/hamburger.png" alt style="height: 20px; width: 20px;" />
+        <img
+          src="../assets/hamburger.png"
+          alt
+          style="height: 20px; width: 20px;"
+        />
       </button>
       <div class="dropdown-content mobile" style="right:0;">
         <a
@@ -29,16 +55,36 @@
           @scroll="handleScroll"
           id="aboutDrop"
           class="active browser"
-        >ABOUT</a>
-        <a v-scroll-to="'#example'" @scroll="handleScroll" id="recapDrop" class="browser">RECAP</a>
-        <a v-scroll-to="'#example'" @scroll="handleScroll" id="faqDrop" class="browser">FAQ</a>
-        <a v-scroll-to="'#example'" @scroll="handleScroll" id="contactDrop" class="browser">CONTACT</a>
+          >ABOUT</a
+        >
+        <a
+          v-scroll-to="'#example'"
+          @scroll="handleScroll"
+          id="recapDrop"
+          class="browser"
+          >RECAP</a
+        >
+        <a
+          v-scroll-to="'#example'"
+          @scroll="handleScroll"
+          id="faqDrop"
+          class="browser"
+          >FAQ</a
+        >
+        <a
+          v-scroll-to="'#example'"
+          @scroll="handleScroll"
+          id="contactDrop"
+          class="browser"
+          >CONTACT</a
+        >
         <a
           v-scroll-to="'#example'"
           @scroll="handleScroll"
           id="projDrop"
           class="browser"
-        >DH5 PROJECTS</a>
+          >DH5 PROJECTS</a
+        >
       </div>
     </div>
   </div>
