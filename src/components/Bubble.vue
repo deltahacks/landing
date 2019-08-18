@@ -21,24 +21,24 @@ export default Vue.extend({
     number: Number,
     content: String,
   },
-  data: function() {
+  data() {
     return {
       yVal: this.y,
       time: 0,
       phase: Math.random() * 2 * Math.PI,
       period: 40 / (2 + this.depth),
-      amplitude: this.depth / 4
-    }
+      amplitude: this.depth / 4,
+    };
   },
-  mounted: function() {
+  mounted() {
     setInterval(this.tick, 30);
   },
   methods: {
-    tick: function() {
+    tick() {
       this.time += 1;
-      this.yVal += this.amplitude * Math.sin(this.time*0.5/this.period + this.phase);
-    }
-  }
+      this.yVal += this.amplitude * Math.sin(this.time * 0.5 / this.period + this.phase);
+    },
+  },
 });
 </script>
 

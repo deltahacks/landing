@@ -2,7 +2,7 @@
   <div class="container">
     <div class="container-item bubbles">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> 
-      <svg v-if="!isMobile()" viewBox="0 0 1000 1000">
+      <svg id="desktop" viewBox="0 0 1000 1000">
         <Bubble :r=125 :x=500 :y=220 :number="700" :content="'Hackers'" :depth="1"></Bubble>
         <Bubble :r=75 :x=300 :y=130 :number="36" :content="'Hours'" :depth="2"></Bubble>
         <Bubble :r=60 :x=310 :y=280 :number="36" :content="'Hours'" :depth="1"></Bubble>
@@ -10,7 +10,7 @@
         <Bubble :r=75 :x=700 :y=130 :number="36" :content="'Hours'" :depth="2"></Bubble>
         <Bubble :r=75 :x=700 :y=300 :number="36" :content="'Hours'" :depth="2"></Bubble>
       </svg>
-      <svg v-else viewBox="0 0 500 700">
+      <svg id="mobile" viewBox="0 0 500 700">
         <Bubble :r=125 :x=350 :y=350 :number="700" :content="'Hackers'" :depth="1"></Bubble>
         <Bubble :r=55 :x=260 :y=170 :number="36" :content="'Hours'" :depth="2"></Bubble>
         <Bubble :r=30 :x=180 :y=370 :number="36" :content="'Hours'" :depth="1"></Bubble>
@@ -31,15 +31,6 @@ export default Vue.extend({
   components: {
     Bubble,
   },
-  methods: {
-    isMobile() {
-      if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        return true
-      } else {
-        return false
-      }
-    }
-  },
 });
 </script>
 
@@ -56,4 +47,13 @@ export default Vue.extend({
   position: relative;
 }
 
+@media screen and (min-width: 0px) and (max-width: 420px) {
+  #mobile { display: block; }
+  #desktop { display: none; }
+}
+
+@media screen and (min-width: 421px) and (max-width: 1024px) {
+  #mobile { display: none; }
+  #desktop { display: block; }
+}
 </style>
