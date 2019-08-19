@@ -1,21 +1,24 @@
 <template>
-    <div class='faq-container'> 
-        <div class='categories'>
-            <div v-for="name in Object.keys(faqData)" :key="name" @click="selected=name" :style="name===selected ? selectedCategoryStyle:{}" class='category-bubble'>
-                {{ name.charAt(0).toUpperCase()+name.substring(1) }}
+    <div class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <div class='faq-container'> 
+            <div class='categories'>
+                <div v-for="name in Object.keys(faqData)" :key="name" @click="selected=name" :class="{'category-bubble': true, selected: selected===name}">
+                    {{ name.charAt(0).toUpperCase()+name.substring(1) }}
+                </div>
             </div>
-        </div>
-        <div class='faq-area'>  
-            <div v-for="(elm,index) in faqData[selected]" :key="elm.q" @click="expanded = expanded!==index ? index:null" class="question-box">
-                <div class="question"> 
-                    {{ elm.q }} 
-                    <span :class="{arrow:true, rotate:index===expanded}"><i class="fa fa-caret-up fa-xs"></i></span>
+            <div class='faq-area'>  
+                <div v-for="(elm,index) in faqData[selected]" :key="elm.q" @click="expanded = expanded!==index ? index:null" class="question-box">
+                    <div class="question"> 
+                        {{ elm.q }} 
+                        <span :class="{arrow:true, rotate:index===expanded}"><i class="fa fa-caret-up fa-xs"></i></span>
+                    </div>
+                    <transition name="open">
+                    <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">
+                        {{ elm.a }}
+                    </div>
+                    </transition>
                 </div>
-                <transition name="open">
-                <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">
-                    {{ elm.a }}
-                </div>
-                </transition>
             </div>
         </div>
     </div>
@@ -28,8 +31,8 @@ export default Vue.extend({
     data() {
         return {
             faqData: {
-                general: [{q: 'Question 1?', a: 'Yes, this is question 1. Yes, this is question 1. Yes, this is question 1.'},
-                        {q: 'Question 2?', a: 'Yes, this is question 2. Yes, this is question 2. Yes, this is question 2.'},
+                general: [{q: 'What is DeltaHacks?', a: 'DeltaHacks is McMaster\'s annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it\'s environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.'},
+                        {q: 'I have never been to a hackathon before, what should I do?', a: 'We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs\' experience when she started here to see how easy and fun it really is to learn at the hackathon.'},
                         {q: 'Question 3?', a: 'Yes, this is question 3. Yes, this is question 3. Yes, this is question 3.'},
                         {q: 'Question 4?', a: 'Yes, this is question 4. Yes, this is question 4. Yes, this is question 4.'}],
                 travel: [{q: 'Question 5 travel?', a: 'Yes, this is question 5. Yes, this is question 5. Yes, this is question 5.'},
@@ -42,19 +45,27 @@ export default Vue.extend({
             },
             selected: 'general',
             expanded: null,
-            selectedCategoryStyle: {backgroundColor: 'lightgray', border: '1px solide lightgray', borderTopLeftRadius: '8px', borderBottomLeftRadius: '8px'},
         };
     },
 });
 </script>
 
 <style scoped>
+.faq {
+    display: flex;
+    flex-direction: column;
+}
+.faq h1 {
+    padding-left: 10%;
+    padding-bottom: 1%;
+    font-weight: 800;
+    font-size: 38px;
+}
 .faq-container {
     display: flex;
     flex-direction: row;
-    width: 60%;
-    max-height: 350px;
-    min-height: 0;
+    width: 60%; 
+    height: 350px;
     overflow:scroll;    
     margin: 0 auto;
 }
@@ -62,24 +73,27 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     min-width: 190px;
+    padding-top: 3%;
     cursor: pointer;
 }
 .category-bubble {
     text-align: left;
+    font-size: 22px;
+    padding: 6%;
+}
+.selected {
     font-size: 32px;
-    padding: 7%;
+    font-weight: 800;
 }
 .faq-area { 
     padding: 2% 5%;
-    background-color: lightgray;
-    border: 1px solid lightgray;
-    border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
+    border: 2px solid lightgray;
     width: 100%;
+    margin-left: 0.5%;
     overflow: scroll;
 }
 .question-box {
-    font-size: 21px;
+    font-size: 19px;
     padding: 2% 0;
     padding-bottom: 1%;
     text-align: left;
