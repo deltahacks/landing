@@ -113,9 +113,8 @@ export default Vue.extend({
         '#contactDrop',
         '#projDrop',
       ]; // tslint:disable-line
-      for (let i = 0; i < divs.length; i++) {
-        // tslint:disable-line
-        const header = document.querySelector(divs[i]); // tslint:disable-line
+      for (const d of divs) {
+        const header = document.querySelector(d); // tslint:disable-line
         if (header != null) {
           header.classList.remove('active');
         }
