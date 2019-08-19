@@ -223,7 +223,7 @@ export default Vue.extend({
 .dropbtn {
   background-color: transparent;
   color: black;
-  padding: 14px;
+  padding: 13px;
   font-size: 16px;
   border: none;
   font-family: 'Montserrat';
@@ -245,6 +245,7 @@ export default Vue.extend({
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-bottom-left-radius: 10px 10px;
 }
 
 /* Links inside the dropdown */
@@ -266,11 +267,5 @@ export default Vue.extend({
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #5fb9c9;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-  -moz-border-radius: 422px;
-  -webkit-border-radius: 42px;
-  border-radius: 42px;
-}
+
 </style>
