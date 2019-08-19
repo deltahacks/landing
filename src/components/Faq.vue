@@ -44,7 +44,7 @@
 import Vue from 'vue';
 export default Vue.extend({
     name: 'Faq',
-    data() {
+    data(): {faqData: any, selected: string, expanded: string | null} {
         return {
             faqData: {
                 general: [{q: 'What is DeltaHacks?', a: 'DeltaHacks is McMaster\'s annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it\'s environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.'},
@@ -64,7 +64,7 @@ export default Vue.extend({
         };
     },
     methods: {
-        isMobile: () => window.innerWidth <= 700,
+        isMobile: (): boolean => window.innerWidth <= 700,
     },
     created() {
         this.selected = !this.isMobile() ? 'general' : '';
