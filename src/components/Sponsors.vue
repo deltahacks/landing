@@ -5,14 +5,21 @@
     <hr />
     <p>
       Interested in sponsoring? Contact us at
-      <a
-        href="mailto:sponsorship@deltahacks.com"
-      >sponsorship@deltahacks.com</a>
+      <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
     </p>
-    <div :class='["square", getClass]'>
-      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
+    <div :class="['square', getClass]">
+      <div
+        v-for="sponsor in shuffle(sponsorList)"
+        v-bind:key="sponsor"
+        v-scroll-reveal
+      >
         <a :href="sponsor.href" target="_blank">
-          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
+          <img
+            :src="sponsor.logo"
+            :alt="sponsor.alt"
+            data-tilt
+            data-tilt-perspective="500"
+          />
         </a>
       </div>
     </div>
@@ -26,7 +33,6 @@
 import Vue from 'vue';
 import VueScrollReveal from 'vue-scroll-reveal';
 
-
 Vue.use(VueScrollReveal, {
   class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
   duration: 1000,
@@ -37,8 +43,7 @@ Vue.use(VueScrollReveal, {
 
 export default Vue.extend({
   name: 'Sponsors',
-  components: {
-  },
+  components: {},
   props: {
     sponsorList: Array,
     main: Boolean,
@@ -46,11 +51,11 @@ export default Vue.extend({
   },
   methods: {
     shuffle: function shuffle(a) {
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
     },
   },
   computed: {
@@ -66,7 +71,6 @@ export default Vue.extend({
   mounted() {
     const VanillaTilt = require('vanilla-tilt');
   },
-
 });
 </script>
 
@@ -105,14 +109,14 @@ Classes
 
 */
 
-.container {
+/* .container {
   padding-top: 30px;
   padding-bottom: 50px;
   width: 80%;
   margin: 0 auto;
   background-color: #9fc9fff1;
   color: white;
-}
+} */
 
 .square {
   display: -webkit-flex;
@@ -140,7 +144,7 @@ div > p > a {
 }
 
 @media screen and (max-width: 500px) {
- .level--1 > div > a > img {
+  .level--1 > div > a > img {
     max-width: 250px;
     max-height: 250px;
   }
@@ -148,7 +152,7 @@ div > p > a {
 
 .level--1 {
   width: 95%;
-  margin-left: 3%
+  margin-left: 3%;
 }
 .level--1 > div {
   margin: 0 auto;
