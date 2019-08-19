@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "particles.js": "^2.0.0",
+    "vanilla-tilt": "^1.7.0",
     "vue": "^2.6.10",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.3",
