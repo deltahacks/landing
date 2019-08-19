@@ -231,7 +231,7 @@ export default Vue.extend({
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
   padding-right: 30px;
   float: right;
 }
@@ -245,8 +245,10 @@ export default Vue.extend({
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 0;
+  width: 98vw;
 }
 
 /* Links inside the dropdown */
@@ -255,6 +257,10 @@ export default Vue.extend({
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  float: none;
+  margin-right: 0px;
+  width: 30%;
+  margin-left: 35%; 
 }
 
 /* Change color of dropdown links on hover */
