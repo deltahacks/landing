@@ -9,8 +9,14 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "particles.js": "^2.0.0",
+    "vanilla-tilt": "^1.7.0",
     "vue": "^2.6.10",
+    "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.3",
+    "vue-scroll-reveal": "^1.0.11",
+    "vue-scrollto": "^2.15.0",
+    "vue-typed-js": "^0.1.2",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

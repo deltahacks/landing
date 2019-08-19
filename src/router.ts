@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Faq from './components/Faq.vue';
+import Backdrop from './views/Backdrop.vue';
 
 Vue.use(Router);
 
@@ -10,7 +11,7 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home,
     },
@@ -20,7 +21,21 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: () =>
+        import(/* webpackChunkName: "about" */ './views/About.vue'),
+    },
+    {
+      path: '/play',
+      name: 'playground',
+      component: () => import('./views/Playground.vue'),
+    },
+    {
+      path: '/',
+      name: 'backdrop',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/Backdrop.vue'),
     },
     {
       path: '/faq',
