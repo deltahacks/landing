@@ -239,13 +239,15 @@ export default Vue.extend({
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
+  visibility: hidden;
   position: absolute;
   background-color: rgba(225, 225, 225, 0.5);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-bottom-left-radius: 10px 10px;
+  transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0;
 }
 
 /* Links inside the dropdown */
@@ -263,9 +265,12 @@ export default Vue.extend({
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-
+.heighter {
+  height: 200px;
+}
 </style>
