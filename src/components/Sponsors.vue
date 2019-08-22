@@ -108,14 +108,12 @@ Classes
 
 */
 
-/* .container {
+ .container {
   padding-top: 30px;
   padding-bottom: 50px;
   width: 80%;
   margin: 0 auto;
-  background-color: #9fc9fff1;
-  color: white;
-} */
+} 
 
 .square {
   display: -webkit-flex;
@@ -146,8 +144,8 @@ div > p > a {
   
 }
 .level--1 > div {
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   margin-top: 25px;
   line-height: 25px;
 }
