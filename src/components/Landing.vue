@@ -16,7 +16,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import 'particles.js';
-export default {
+
+declare global {
+    interface Window { particlesJS: any; }
+}
+
+
+export default Vue.extend({
   name: 'particles',
   mounted() {
     this.initParticles();
@@ -135,7 +141,7 @@ export default {
       });
     },
   },
-};
+});
 </script>
 
 <style>

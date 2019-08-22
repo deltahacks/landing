@@ -30,6 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+// @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
 
 Vue.use(VueScrollReveal, {
