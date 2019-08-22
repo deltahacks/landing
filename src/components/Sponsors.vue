@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <h1>PAST SPONSORS</h1>
@@ -50,7 +49,7 @@ export default Vue.extend({
     secondary: Boolean,
   },
   methods: {
-    shuffle: function shuffle(a) {
+    shuffle: function shuffle(a: any) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -131,14 +130,6 @@ Classes
   margin-bottom: 40px;
 }
 
-.level {
-  margin: 0 auto;
-}
-
-div > h1.level:nth-of-type(2) {
-  margin-top: 40px;
-}
-
 div > p > a {
   color: red;
 }
@@ -151,11 +142,12 @@ div > p > a {
 }
 
 .level--1 {
-  width: 95%;
-  margin-left: 3%;
+  width: 100%;
+  
 }
 .level--1 > div {
-  margin: 0 auto;
+  margin-left: 3%;
+  margin-right: 3%;
   margin-top: 25px;
   line-height: 25px;
 }
@@ -172,7 +164,8 @@ div > p > a {
 }
 
 .level--2 > div {
-  margin: 0 auto;
+  margin-left: 3%;
+  margin-right: 3%;
   margin-top: 25px;
   line-height: 30px;
 }
