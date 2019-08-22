@@ -30,7 +30,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import VueScrollReveal from 'vue-scroll-reveal';
+const VueScrollReveal = require('vue-scroll-reveal');
 
 Vue.use(VueScrollReveal, {
   class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
@@ -108,12 +108,12 @@ Classes
 
 */
 
- .container {
+.container {
   padding-top: 30px;
   padding-bottom: 50px;
   width: 80%;
   margin: 0 auto;
-} 
+}
 
 .square {
   display: -webkit-flex;
@@ -141,7 +141,6 @@ div > p > a {
 
 .level--1 {
   width: 100%;
-  
 }
 .level--1 > div {
   margin-left: 2.5%;
