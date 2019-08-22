@@ -1,6 +1,6 @@
 
 <template>
-  <div class="topnav navbar">
+  <div class="topnav navbar" :class="{ 'navbar-scrolled': scrolled }">
     <img
       src="../assets/logolarge.png"
       alt
@@ -96,8 +96,11 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'Navigation',
   components: {},
-  data: {
-    show: true,
+  data() {
+    return {
+      show: true,
+      scrolled: false
+    }
   },
   methods: {
     pickActive(element: string) {
@@ -128,7 +131,13 @@ export default Vue.extend({
         header.classList.add('active');
       }
     },
-    handleScroll(event: any) {
+    handleScroll() {
+      if (window.scrollY > 0) {
+        this.scrolled = true;
+      } else {
+        this.scrolled = false;
+      }
+
       if (window.scrollY >= 0) {
         this.pickActive('#about');
       }
@@ -146,7 +155,7 @@ export default Vue.extend({
       }
     },
   },
-  created() {
+  mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -163,9 +172,17 @@ export default Vue.extend({
   left: 0;
   width: 100%;
   height: 50px;
-  background: rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
   z-index: 1000;
+  font-weight: 600;
+  color: white;
+  transition-property: background-color, border-bottom;
+  transition-duration: 0.2s;
+}
+
+.navbar.navbar-scrolled {
+  background-color: rgba(255,255,255);
+  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+  color: black;
 }
 
 .browser {
@@ -180,22 +197,24 @@ export default Vue.extend({
 /* Style the links inside the navigation bar */
 .topnav a {
   float: right;
-  color: black;
+  /* color: black; */
   text-align: center;
   padding: 16px 5px;
   text-decoration: none;
   font-size: 15px;
   margin-right: 10px;
   font-family: 'Montserrat';
+  transition: opacity .2s;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   -moz-border-radius: 422px;
   -webkit-border-radius: 42px;
-  border-radius: 42px;
+  border-radius: 42px; */
+  opacity: 0.6; 
 }
 
 /* Add a color to the active/current link */
@@ -221,7 +240,7 @@ export default Vue.extend({
 
 .dropbtn {
   background-color: transparent;
-  color: black;
+  /* color: black; */
   padding: 13px;
   font-size: 16px;
   border: none;
@@ -253,7 +272,7 @@ export default Vue.extend({
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  /* color: black; */
   padding: 12px 16px;
   text-decoration: none;
   display: block;

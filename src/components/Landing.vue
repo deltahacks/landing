@@ -163,7 +163,7 @@ export default {
 .landing-title {
   font-size: 5em;
   color: white;
-  margin-top: 30%;
+  margin-top: 35%;
   font-weight: 700;
 }
 
