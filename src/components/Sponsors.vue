@@ -1,11 +1,15 @@
 <template>
   <div class="container">
-    <h1>PAST SPONSORS</h1>
-    <hr />
-    <p>
-      Interested in sponsoring? Contact us at
-      <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
-    </p>
+    
+    <div v-if="main">
+      <h1>PAST SPONSORS</h1>
+      <hr />
+      <p>
+        Interested in sponsoring? Contact us at
+        <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
+      </p>  
+    </div>
+
     <div :class="['square', getClass]">
       <div
         v-for="sponsor in shuffle(sponsorList)"
@@ -22,9 +26,11 @@
         </a>
       </div>
     </div>
-    <h1>PARTNERS</h1>
-    <hr />
-    <!-- PARTNERS LIST GOES HERE -->
+    <div v-if="secondary">
+      <h1>PARTNERS</h1>
+      <hr />
+      <!-- PARTNERS LIST GOES HERE -->
+      </div>
   </div>
 </template>
 
