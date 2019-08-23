@@ -4,13 +4,13 @@
     <img
       src="../assets/logolarge.png"
       alt
-      style="float: left; height: 20px; width: 20px; padding: 15px 45px;"
+      style="float: left; height: 20px; width: 20px; padding: 15px 55px;"
     />
     <vue-typed-js
       :strings="['DELTAHACKS VI']"
       :showCursor="false"
       :typeSpeed="100"
-      style="position: fixed; padding-left 20px; left: 70px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;"
+      class="branding"
     >
       <p class="typing"></p>
     </vue-typed-js>
@@ -99,8 +99,8 @@ export default Vue.extend({
   data() {
     return {
       show: true,
-      scrolled: false
-    }
+      scrolled: false,
+    };
   },
   methods: {
     pickActive(element: string) {
@@ -166,6 +166,21 @@ export default Vue.extend({
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: visible;
+  font-family: 'Montserrat';
+}
+
+.branding {
+  position: fixed;
+  padding-left: 20px;
+  left: 70px;
+  top: -0.5px;
+  color: #5fb9c9;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -180,18 +195,13 @@ export default Vue.extend({
 }
 
 .navbar.navbar-scrolled {
-  background-color: rgba(255,255,255);
+  background-color: rgba(255, 255, 255);
   border-bottom: 1px solid rgba(225, 225, 225, 0.5);
   color: black;
 }
 
 .browser {
   cursor: pointer;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  overflow: visible;
 }
 
 /* Style the links inside the navigation bar */
@@ -204,7 +214,7 @@ export default Vue.extend({
   font-size: 15px;
   margin-right: 10px;
   font-family: 'Montserrat';
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
 
 /* Change the color of links on hover */
@@ -214,7 +224,7 @@ export default Vue.extend({
   -moz-border-radius: 422px;
   -webkit-border-radius: 42px;
   border-radius: 42px; */
-  opacity: 0.6; 
+  opacity: 0.6;
 }
 
 /* Add a color to the active/current link */
@@ -279,7 +289,7 @@ export default Vue.extend({
   float: none;
   margin-right: 0px;
   width: 30%;
-  margin-left: 35%; 
+  margin-left: 35%;
 }
 
 /* Change color of dropdown links on hover */
