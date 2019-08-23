@@ -3,6 +3,7 @@
     <div class="scroll">
       <Landing />
       <div id="spacer" style="height: 5500px" />
+      <AboutUsStats></AboutUsStats>
       <Sponsors :sponsorList="sponsors" main />
       <Sponsors :sponsorList="sponsors" secondary />
     </div>
@@ -17,6 +18,7 @@ import Vue from 'vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 const VueScrollReveal = require('vue-scroll-reveal');
+import AboutUsStats from '@/components/AboutUsStats.vue';
 
 Vue.use(VueScrollReveal);
 
@@ -46,6 +48,7 @@ export default Vue.extend({
   components: {
     Landing,
     Sponsors,
+    AboutUsStats,
   },
   data() {
     return {

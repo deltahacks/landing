@@ -28,16 +28,20 @@ export default Vue.extend({
       phase: Math.random() * 2 * Math.PI,
       period: 40 / (2 + this.depth),
       amplitude: this.depth / 4,
+      interval: 0,
     };
   },
   mounted() {
-    setInterval(this.tick, 30);
+    this.interval = setInterval(this.tick, 30);
   },
   methods: {
     tick() {
       this.time += 1;
       this.yVal += this.amplitude * Math.sin(this.time * 0.5 / this.period + this.phase);
     },
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
   },
 });
 </script>

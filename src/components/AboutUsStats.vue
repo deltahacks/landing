@@ -36,23 +36,17 @@ export default Vue.extend({
 
 <style>
 
-.container {
-  background-color: #396575;
-  align-items: center;
-  justify-content: center;
-}
-
 .bubbles {
   height: 700px;
   position: relative;
 }
 
-@media screen and (min-width: 0px) and (max-width: 420px) {
+@media screen and (max-width: 420px) {
   #mobile { display: block; }
   #desktop { display: none; }
 }
 
-@media screen and (min-width: 421px) and (max-width: 1024px) {
+@media screen and (min-width: 421px) {
   #mobile { display: none; }
   #desktop { display: block; }
 }
