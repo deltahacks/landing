@@ -163,7 +163,7 @@ div > p > a {
 }
 
 .level--2 {
-  width: 95%;
+  width: 99%;
   margin-left: 2%;
 }
 
@@ -175,8 +175,8 @@ div > p > a {
 }
 
 .level--2 > div > a > img {
-  max-width: 220px;
-  max-height: 220px;
+  max-width: 225px;
+  max-height: 225px;
 }
 </style>
 
