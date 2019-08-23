@@ -16,7 +16,13 @@
 <script lang="ts">
 import Vue from 'vue';
 import 'particles.js';
-export default {
+
+declare global {
+    interface Window { particlesJS: any; }
+}
+
+
+export default Vue.extend({
   name: 'particles',
   mounted() {
     this.initParticles();
@@ -135,7 +141,7 @@ export default {
       });
     },
   },
-};
+});
 </script>
 
 <style>
@@ -163,7 +169,7 @@ export default {
 .landing-title {
   font-size: 5em;
   color: white;
-  margin-top: 30%;
+  margin-top: 35%;
   font-weight: 700;
 }
 
