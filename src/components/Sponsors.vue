@@ -163,7 +163,7 @@ div > p > a {
 }
 
 .level--2 {
-  width: 100%;
+  width: 95%;
   margin-left: 2%;
 }
 
