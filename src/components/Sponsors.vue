@@ -1,28 +1,25 @@
 <template>
   <div class="container">
-    
     <div v-if="main">
+      <div class="rocket">
+        <img class="rocket-img" src="../assets/blastoff.png" />
+      </div>
       <h1>PAST SPONSORS</h1>
       <p>
         Interested in sponsoring? Contact us at
-        <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
-      </p>  
+        <a
+          href="mailto:sponsorship@deltahacks.com"
+        >sponsorship@deltahacks.com</a>
+      </p>
     </div>
-    <h1 v-if="main"><br/>PRIMARY SPONSORS</h1>
+    <h1 v-if="main">
+      <br />PRIMARY SPONSORS
+    </h1>
     <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
-      <div
-        v-for="sponsor in shuffle(sponsorList)"
-        v-bind:key="sponsor"
-        v-scroll-reveal
-      >
+      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
         <a :href="sponsor.href" target="_blank">
-          <img
-            :src="sponsor.logo"
-            :alt="sponsor.alt"
-            data-tilt
-            data-tilt-perspective="500"
-          />
+          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
       </div>
     </div>
@@ -30,7 +27,7 @@
       <h1>PARTNERS</h1>
       <hr />
       <!-- PARTNERS LIST GOES HERE -->
-      </div>
+    </div>
   </div>
 </template>
 
@@ -177,6 +174,19 @@ div > p > a {
 .level--2 > div > a > img {
   max-width: 225px;
   max-height: 225px;
+}
+
+.rocket {
+  z-index: -1;
+  top: 10vh;
+  left: -21vh;
+  position: relative;
+  margin-top: -50vh;
+  width: 98.8vw;
+}
+.rocket-img {
+  width: 100%;
+  left: 0vw;
 }
 </style>
 
