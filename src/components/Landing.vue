@@ -18,9 +18,10 @@ import Vue from 'vue';
 import 'particles.js';
 
 declare global {
-    interface Window { particlesJS: any; }
+  interface Window {
+    particlesJS: any;
+  }
 }
-
 
 export default Vue.extend({
   name: 'particles',
@@ -180,6 +181,8 @@ export default Vue.extend({
 }
 
 .act-btn {
+  font-family: Montserrat;
+  font-weight: bold;
   /* font-family: Lato, 'Noto Sans', sans-serif !important; */
   -webkit-box-pack: center !important;
   -ms-flex-pack: center !important;
