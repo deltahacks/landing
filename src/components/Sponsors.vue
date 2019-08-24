@@ -177,7 +177,6 @@ div > p > a {
 }
 
 .rocket {
-  z-index: -1;
   top: 10vh;
   left: -10vw;
   position: relative;
