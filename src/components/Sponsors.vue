@@ -179,10 +179,10 @@ div > p > a {
 .rocket {
   z-index: -1;
   top: 10vh;
-  left: -21vh;
+  left: -10vw;
   position: relative;
   margin-top: -50vh;
-  width: 98.8vw;
+  width: 100vw;
 }
 .rocket-img {
   width: 100%;
