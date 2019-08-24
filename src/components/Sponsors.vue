@@ -92,7 +92,11 @@ Psuedo Elements
 Block level elements
 
 */
-
+h1,
+p {
+  position: relative;
+  z-index: 10;
+}
 hr {
   background-color: white;
   height: 3px;
@@ -109,11 +113,6 @@ img {
 Classes
 
 */
-
-h1,
-p {
-  z-index: 100;
-}
 .container {
   padding-top: 30px;
   padding-bottom: 50px;
@@ -180,13 +179,14 @@ div > p > a {
 }
 
 .rocket-img {
-  z-index: 0;
+  z-index: 1 !important;
   top: 10vh;
+  display: flex;
   position: relative;
   width: 100vw;
   margin-left: -10vw;
   margin-top: -50vh;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 </style>
 
