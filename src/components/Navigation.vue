@@ -4,7 +4,7 @@
     <img
       src="../assets/logolarge.png"
       alt
-      style="float: left; height: 20px; width: 25px; padding: 15px 55px;"
+      style="float: left; width: 1.5%; padding: 14px 55px;"
     />
     <vue-typed-js
       :strings="['DELTAHACKS VI']"
@@ -195,8 +195,8 @@ export default Vue.extend({
 }
 
 .navbar.navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(225, 225, 225, 0.8);
+  background-color: rgba(255, 255, 255);
+  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
   color: black;
 }
 
