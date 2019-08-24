@@ -221,13 +221,13 @@ export default Vue.extend({
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
-      if (y > 5741) {
-        document.getElementById('d1')!.style.opacity = '0.8';
-      }
-      if (y > 6200) {
+      if (y > 5735) {
         document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 13.2
+          (-1 / 500) * y + 12.23
         );
+      }
+      if (y > 6084) {
+        document.getElementById('d1')!.style.opacity = '0.062';
       }
     },
   },

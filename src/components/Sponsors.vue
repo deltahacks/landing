@@ -179,7 +179,7 @@ div > p > a {
 }
 
 .rocket-img {
-  z-index: -1 !important;
+  z-index: 0 !important;
   top: 10vh;
   display: flex;
   position: relative;
