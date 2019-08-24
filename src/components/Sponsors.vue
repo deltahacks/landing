@@ -186,7 +186,7 @@ div > p > a {
   width: 100vw;
   margin-left: -10vw;
   margin-top: -50vh;
-  opacity: 0.8;
+  opacity: 1;
 }
 </style>
 
