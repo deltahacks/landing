@@ -3,8 +3,8 @@
     <div class="scroll">
       <Landing />
       <div id="spacer" style="height: 5500px" />
-      <AboutUsStats></AboutUsStats>
-      <FAQ style="z-index: 1;" />
+      <!-- <AboutUsStats /> -->
+      <FAQ style="z-index: 1;" initialSelect="general 🙋" />
       <Sponsors :sponsorList="sponsors" main />
       <Sponsors :sponsorList="sponsors" secondary />
     </div>

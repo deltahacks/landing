@@ -77,58 +77,49 @@
 import Vue from 'vue';
 export default Vue.extend({
   name: 'Faq',
+  props: ['initialSelect'],
   data(): { faqData: any; selected: string; expanded: string | null } {
     return {
       faqData: {
-        general: [
+        'general 🙋': [
+          {
+            q: 'What is a hackathon?',
+            a:
+              'A hackathon is just a fancy word for a technical competition! We provide our attendees the opportunity to work with new people on cool ideas, and the resources necessary to make those ideas come to life. We do not condone nor do we allow any actual hacking or other illegal activities!',
+          },
           {
             q: 'What is DeltaHacks?',
             a:
               "DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.",
           },
           {
+            q: 'Who can participate?',
+            a:
+              'Anyone who is willing to learn and wants to take a shot at changing the world is strongly encouraged to apply. All university students and high school students over 18 are welcome at DeltaHacks!',
+          },
+          {
+            q: 'How much does it cost?',
+            a:
+              'Absolutely nothing! We will provide you with everything you need: venue, food, Wi-Fi, etc. All you need to do is show up, bring a laptop, and be ready to have fun!',
+          },
+        ],
+        'logistics 🚌': [
+          {
+            q: 'Is there travel reimbursement?',
+            a:
+              'DeltaHacks will be providing bussing to and from various universities across Ontario. In the past, we’ve sent busses to institutes, such as the University of Toronto and the University of Waterloo. Unfortunately, we will not be able to provide travel reimbursement for personal travel.',
+          },
+          {
             q: 'I have never been to a hackathon before, what should I do?',
             a:
               "We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.",
           },
-          {
-            q: 'Question 3?',
-            a:
-              'Yes, this is question 3. Yes, this is question 3. Yes, this is question 3.',
-          },
-          {
-            q: 'Question 4?',
-            a:
-              'Yes, this is question 4. Yes, this is question 4. Yes, this is question 4.',
-          },
         ],
-        travel: [
-          {
-            q: 'Question 5 travel?',
-            a:
-              'Yes, this is question 5. Yes, this is question 5. Yes, this is question 5.',
-          },
-          {
-            q: 'Question 6 travel??',
-            a:
-              'Yes, this is question 6. Yes, this is question 6. Yes, this is question 6.',
-          },
-          {
-            q: 'Question 7 travel?',
-            a:
-              'Yes, this is question 7. Yes, this is question 7. Yes, this is question 7.',
-          },
-          {
-            q: 'Question 8 travel?',
-            a:
-              'Yes, this is question 8. Yes, this is question 8. Yes, this is question 8.',
-          },
-        ],
-        application: [],
-        judging: [],
-        hardware: [],
+        'application 📨': [],
+        'judging 👨‍⚖️': [],
+        'hardware 🧰': [],
       },
-      selected: '',
+      selected: 'kk',
       expanded: null,
     };
   },
@@ -136,7 +127,7 @@ export default Vue.extend({
     isMobile: (): boolean => window.innerWidth <= 700,
   },
   created() {
-    this.selected = !this.isMobile() ? 'general' : '';
+    this.selected = !this.isMobile() ? this.initialSelect : '';
   },
 });
 </script>
