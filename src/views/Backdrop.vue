@@ -224,7 +224,7 @@ export default Vue.extend({
       if (y > 5680) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(125,152,249,1), rgba(32,82,235,1)' +
-          Math.floor((-1 / 5) * y + 1100) +
+          Math.floor((-1 / 5) * y + 1130) +
           '%, rgba(255,255,255,1) 100%)';
 
         document.getElementById('d1')!.style.opacity = String(
