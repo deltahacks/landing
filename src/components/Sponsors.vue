@@ -179,14 +179,14 @@ div > p > a {
 }
 
 .rocket-img {
-  z-index: 1 !important;
+  z-index: -1 !important;
   top: 10vh;
   display: flex;
   position: relative;
   width: 100vw;
   margin-left: -10vw;
   margin-top: -50vh;
-  opacity: 1;
+  opacity: 1 !important;
 }
 </style>
 

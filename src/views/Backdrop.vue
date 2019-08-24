@@ -221,8 +221,13 @@ export default Vue.extend({
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
-       if (y > 6080) {
-        document.getElementById('d1')!.style.opacity = '0.0684004';
+      if (y > 5741) {
+        document.getElementById('d1')!.style.opacity = '0.8';
+      }
+      if (y > 6200) {
+        document.getElementById('d1')!.style.opacity = String(
+          (-1 / 500) * y + 13.2
+        );
       }
     },
   },
