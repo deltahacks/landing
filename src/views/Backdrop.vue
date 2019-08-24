@@ -221,9 +221,14 @@ export default Vue.extend({
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
-      if (y > 5735) {
+      if (y > 5680) {
+        document.getElementById('d1')!.style.backgroundImage =
+          'linear-gradient(180deg, rgba(125,152,249,1), rgba(32,82,235,1)' +
+          Math.floor((-1 / 5) * y + 1100) +
+          '%, rgba(255,255,255,1) 100%)';
+
         document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12.23
+          (-1 / 500) * y + 12.12
         );
       }
       if (y > 6084) {
