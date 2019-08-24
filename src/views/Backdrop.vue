@@ -17,7 +17,7 @@
 import Vue from 'vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
-const VueScrollReveal = require('vue-scroll-reveal');
+const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 import AboutUsStats from '@/components/AboutUsStats.vue';
 
 Vue.use(VueScrollReveal);
