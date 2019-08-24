@@ -4,21 +4,23 @@
       <Landing />
       <div id="spacer" style="height: 5500px" />
       <AboutUsStats></AboutUsStats>
+      <FAQ style="z-index: 1;" />
       <Sponsors :sponsorList="sponsors" main />
       <Sponsors :sponsorList="sponsors" secondary />
     </div>
     <div class="gradient" id="d1">
-      <h1>{{ scr }}</h1>
+      <!-- <h1>{{ scr }}</h1> -->
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import FAQ from '@/components/Faq.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
-const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 import AboutUsStats from '@/components/AboutUsStats.vue';
+const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 
 Vue.use(VueScrollReveal);
 
@@ -46,6 +48,7 @@ import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 export default Vue.extend({
   name: 'app',
   components: {
+    FAQ,
     Landing,
     Sponsors,
     AboutUsStats,
