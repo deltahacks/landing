@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div v-if="main">
-      <div class="rocket">
-        <img class="rocket-img" src="../assets/blastoff.png" />
-      </div>
+      <img class="rocket-img" src="../assets/blastoff.png" />
       <h1>PAST SPONSORS</h1>
       <p>
         Interested in sponsoring? Contact us at
@@ -112,6 +110,10 @@ Classes
 
 */
 
+h1,
+p {
+  z-index: 100;
+}
 .container {
   padding-top: 30px;
   padding-bottom: 50px;
@@ -134,6 +136,7 @@ Classes
 
 div > p > a {
   color: red;
+  z-index: 100;
 }
 
 @media screen and (max-width: 500px) {
@@ -176,16 +179,14 @@ div > p > a {
   max-height: 225px;
 }
 
-.rocket {
-  top: 10vh;
-  left: -10vw;
-  position: relative;
-  margin-top: -50vh;
-  width: 100vw;
-}
 .rocket-img {
-  width: 100%;
-  left: 0vw;
+  z-index: 0;
+  top: 10vh;
+  position: relative;
+  width: 100vw;
+  margin-left: -10vw;
+  margin-top: -50vh;
+  opacity: 0.7;
 }
 </style>
 
