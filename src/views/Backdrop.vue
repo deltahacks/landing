@@ -7,6 +7,7 @@
       <FAQ style="z-index: 1;" initialSelect="general 🙋" />
       <Sponsors :sponsorList="sponsors" main />
       <Sponsors :sponsorList="sponsors" secondary />
+      <Footer />
     </div>
     <div class="gradient" id="d1">
       <!-- <h1>{{ scr }}</h1> -->
@@ -17,6 +18,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import FAQ from '@/components/Faq.vue';
+import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
@@ -49,6 +51,7 @@ export default Vue.extend({
   name: 'app',
   components: {
     FAQ,
+    Footer,
     Landing,
     Sponsors,
     AboutUsStats,

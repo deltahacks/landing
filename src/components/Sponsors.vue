@@ -1,14 +1,15 @@
 <template>
   <div class="container">
-    
     <div v-if="main">
       <h1>PAST SPONSORS</h1>
       <p>
         Interested in sponsoring? Contact us at
-        <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
-      </p>  
+        <a href="mailto:sponsorship@deltahacks.com"
+          >sponsorship@deltahacks.com</a
+        >
+      </p>
     </div>
-    <h1 v-if="main"><br/>PRIMARY SPONSORS</h1>
+    <h1 v-if="main"><br />PRIMARY SPONSORS</h1>
     <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
       <div
@@ -30,7 +31,7 @@
       <h1>PARTNERS</h1>
       <hr />
       <!-- PARTNERS LIST GOES HERE -->
-      </div>
+    </div>
   </div>
 </template>
 

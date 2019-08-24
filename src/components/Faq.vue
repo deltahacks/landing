@@ -126,7 +126,7 @@ export default Vue.extend({
   methods: {
     isMobile: (): boolean => window.innerWidth <= 700,
   },
-  created() {
+  created(): void {
     this.selected = !this.isMobile() ? this.initialSelect : '';
   },
 });
@@ -137,18 +137,22 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
 }
+
 .faq h1 {
   padding-left: 10%;
   padding-bottom: 1%;
   font-weight: 800;
   font-size: 38px;
 }
+
 #mobile-faq {
   display: none;
 }
+
 #desktop-faq {
   display: block;
 }
+
 .faq-container {
   display: flex;
   flex-direction: row;
@@ -157,6 +161,7 @@ export default Vue.extend({
   overflow: scroll;
   margin: 0 auto;
 }
+
 .categories {
   display: flex;
   flex-direction: column;
@@ -164,15 +169,18 @@ export default Vue.extend({
   padding-top: 3%;
   cursor: pointer;
 }
+
 .category-bubble {
   text-align: left;
   font-size: 22px;
   padding: 6%;
 }
+
 .selected {
   font-size: 32px;
   font-weight: 800;
 }
+
 .faq-area {
   padding: 2% 5%;
   border: 2px solid lightgray;
@@ -180,14 +188,17 @@ export default Vue.extend({
   margin-left: 0.5%;
   overflow: scroll;
 }
+
 .mobile-faq-area {
   max-height: 300px;
   overflow: hidden;
   display: none;
 }
+
 .faq-area {
   display: block;
 }
+
 .question-box {
   font-size: 19px;
   padding: 2% 0;
@@ -196,24 +207,29 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
 }
+
 .question {
   cursor: pointer;
   font-weight: 550;
 }
+
 .answer-box {
   max-height: 500px;
   overflow: hidden;
   padding: 2% 0;
   font-size: 16px;
 }
+
 .open-enter-active,
 .open-leave-active {
   transition: max-height 0.2s;
 }
+
 .open-enter,
 .open-leave-to {
   max-height: 0;
 }
+
 .arrow {
   -moz-transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
@@ -221,6 +237,7 @@ export default Vue.extend({
   display: inline-block;
   float: right;
 }
+
 .rotate {
   -ms-transform: rotate(180deg);
   -moz-transform: rotate(180deg);

@@ -6,6 +6,7 @@
       <h1 class="landing-title">
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
+      <img class="vi-back" :src="VI" />
       <a class="act-btn" href="#">Sign Up</a>
       <a class="act-btn" href="#">Sponsors</a>
     </div>
@@ -16,6 +17,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import 'particles.js';
+import VI from '@/assets/vi.svg';
 
 declare global {
   interface Window {
@@ -27,6 +29,11 @@ export default Vue.extend({
   name: 'particles',
   mounted() {
     this.initParticles();
+  },
+  data() {
+    return {
+      VI,
+    };
   },
   methods: {
     initParticles() {
@@ -230,4 +237,11 @@ export default Vue.extend({
   line-height: 75px;
   font-size: 30px;
 } */
+
+.vi-back {
+  display: none;
+  width: 15%;
+  opacity: 0.5;
+  position: relative;
+}
 </style>
