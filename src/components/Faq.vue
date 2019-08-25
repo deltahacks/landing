@@ -121,7 +121,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: row;
   width: 60%;
-  height: 350px;
+  height: 400px;
   overflow: scroll;
   margin: 0 auto;
 }
@@ -129,7 +129,7 @@ export default Vue.extend({
 .categories {
   display: flex;
   flex-direction: column;
-  min-width: 190px;
+  min-width: 220px;
   padding-top: 3%;
   cursor: pointer;
 }
@@ -141,7 +141,7 @@ export default Vue.extend({
 }
 
 .selected {
-  font-size: 32px;
+  font-size: 29px;
   font-weight: 800;
 }
 
@@ -247,6 +247,7 @@ export default Vue.extend({
   }
   .mobile-faq-area {
     display: block;
+    padding: 3%;
   }
   .faq-area {
     display: none;
