@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container back">
     <div v-if="main">
       <img class="rocket-img" src="../assets/blastoff.png" />
       <h1>PAST SPONSORS</h1>
@@ -180,13 +180,19 @@ div > p > a {
 
 .rocket-img {
   z-index: 0 !important;
-  top: 10vh;
+  /* top: 10vh; */
   display: flex;
   position: relative;
   width: 100vw;
-  margin-left: -10vw;
-  margin-top: -50vh;
+  /* margin-left: -10vw; */
+  margin-top: -60vh;
+  /* margin-bottom: 20vh; */
+  padding-bottom: 10vh;
   opacity: 1 !important;
+}
+.back {
+  background: rgba(239, 247, 255, 1);
+  width: 100vw;
 }
 </style>
 
