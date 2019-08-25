@@ -7,7 +7,7 @@
       style="float: left; width: 1.5%; padding: 14px 55px;"
     />
     <vue-typed-js
-      :strings="['DELTAHACKS VI']"
+      :strings="['DeltaHacks VI']"
       :showCursor="false"
       :typeSpeed="100"
       class="branding"
