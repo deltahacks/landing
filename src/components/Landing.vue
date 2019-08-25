@@ -242,9 +242,10 @@ export default Vue.extend({
   opacity: 0.99;
   padding: 10px 20px;
   color: rgba(255, 255, 255, 1);
-  border-radius: 10px;
+  border-radius: 30px;
   margin-right: 20px !important;
   background-color: rgba(81, 169, 185);
+  transition: 0.1s ease-in-out;
 }
 
 .act-btn:hover {
