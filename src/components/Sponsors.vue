@@ -92,6 +92,9 @@ Psuedo Elements
 Block level elements
 
 */
+html {
+  overflow-x: hidden;
+}
 h1,
 p {
   position: relative;
@@ -180,19 +183,16 @@ div > p > a {
 
 .rocket-img {
   z-index: 0 !important;
-  /* top: 10vh; */
   display: flex;
   position: relative;
-  width: 100vw;
-  /* margin-left: -10vw; */
   margin-top: -60vh;
-  /* margin-bottom: 20vh; */
-  padding-bottom: 10vh;
   opacity: 1 !important;
+  overflow: hidden;
+  max-width: 100%;
 }
 .back {
   background: rgba(239, 247, 255, 1);
-  width: 100vw;
+  width: 100%;
 }
 </style>
 
