@@ -6,6 +6,7 @@
       <AboutUsStats></AboutUsStats>
       <Sponsors :sponsorList="sponsors" main />
       <Sponsors :sponsorList="sponsors" secondary />
+
     </div>
     <div class="gradient" id="d1">
       <h1>{{ scr }}</h1>
