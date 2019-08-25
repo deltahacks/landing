@@ -307,4 +307,8 @@ export default Vue.extend({
 .heighter {
   height: 200px;
 }
+
+#proj {
+  margin-right: 50px;
+}
 </style>

@@ -1,12 +1,17 @@
 <template>
   <div class="container">
     <div class="container-item bubbles">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet"> 
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+        rel="stylesheet"
+      />
       <svg viewBox="0 0 1000 500" v-if="$mq === 'desktop'">
-        <Bubble v-for="bubble in bubbles" v-bind:key="bubble"
-          :r=bubble.desktop.r
-          :x=bubble.desktop.x
-          :y=bubble.desktop.y
+        <Bubble
+          v-for="bubble in bubbles"
+          v-bind:key="bubble"
+          :r="bubble.desktop.r"
+          :x="bubble.desktop.x"
+          :y="bubble.desktop.y"
           :number="bubble.number"
           :content="bubble.content"
           :depth="bubble.depth"
@@ -15,10 +20,12 @@
         ></Bubble>
       </svg>
       <svg viewBox="0 0 500 700" v-if="$mq === 'mobile'">
-        <Bubble v-for="bubble in bubbles" v-bind:key="bubble"
-          :r=bubble.mobile.r
-          :x=bubble.mobile.x
-          :y=bubble.mobile.y
+        <Bubble
+          v-for="bubble in bubbles"
+          v-bind:key="bubble"
+          :r="bubble.mobile.r"
+          :x="bubble.mobile.x"
+          :y="bubble.mobile.y"
           :number="bubble.number"
           :content="bubble.content"
           :depth="bubble.depth"
@@ -79,7 +86,7 @@ export default Vue.extend({
             x: 260,
             y: 170,
           },
-          number: 36,
+          number: 24,
           content: 'Hours',
           depth: 2,
           start_gradient: '#625254',
@@ -96,8 +103,8 @@ export default Vue.extend({
             x: 180,
             y: 370,
           },
-          number: 36,
-          content: 'Hours',
+          number: 111,
+          content: 'Commits',
           depth: 1,
           start_gradient: '#a97c50',
           end_gradient: '#2a3d90',
@@ -113,8 +120,8 @@ export default Vue.extend({
             x: 160,
             y: 260,
           },
-          number: 36,
-          content: 'Hours',
+          number: 200,
+          content: 'Projects',
           depth: 2,
           start_gradient: '#625254',
           end_gradient: '#e3388b',
@@ -130,8 +137,8 @@ export default Vue.extend({
             x: 210,
             y: 500,
           },
-          number: 36,
-          content: 'Hours',
+          number: 63,
+          content: 'Schools',
           depth: 2,
           start_gradient: '#a97c50',
           end_gradient: '#2a3d90',
@@ -147,8 +154,8 @@ export default Vue.extend({
             x: 360,
             y: 560,
           },
-          number: 36,
-          content: 'Hours',
+          number: 100,
+          content: 'Mentors',
           depth: 2,
           start_gradient: '#624481',
           end_gradient: '#2a3d90',
@@ -160,9 +167,7 @@ export default Vue.extend({
 </script>
 
 <style>
-
 .bubbles {
   position: relative;
 }
-
 </style>

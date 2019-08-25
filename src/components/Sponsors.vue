@@ -1,16 +1,14 @@
 <template>
   <div class="container">
     <div v-if="main">
-      <h1>PAST SPONSORS</h1>
-      <p>
+      <h1 id="sponsors-title">Past Sponsors</h1>
+      <p id="sponsors-subtitle">
         Interested in sponsoring? Contact us at
-        <a href="mailto:sponsorship@deltahacks.com"
-          >sponsorship@deltahacks.com</a
-        >
+        <a href="mailto:sponsorship@deltahacks.com">
+          sponsorship@deltahacks.com
+        </a>
       </p>
     </div>
-    <h1 v-if="main"><br />PRIMARY SPONSORS</h1>
-    <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
       <div
         v-for="sponsor in shuffle(sponsorList)"
@@ -28,8 +26,8 @@
       </div>
     </div>
     <div v-if="secondary">
-      <h1>PARTNERS</h1>
-      <hr />
+      <!-- <h1>PARTNERS</h1>
+      <hr /> -->
       <!-- PARTNERS LIST GOES HERE -->
     </div>
   </div>
@@ -178,6 +176,16 @@ div > p > a {
 .level--2 > div > a > img {
   max-width: 225px;
   max-height: 225px;
+}
+
+#sponsors-title {
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+#sponsors-subtitle {
+  font-weight: bold;
+  font-family: Montserrat;
 }
 </style>
 
