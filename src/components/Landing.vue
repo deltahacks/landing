@@ -10,7 +10,9 @@
       <a class="act-btn" href="#">Apply</a>
       <a class="act-btn" href="#">Sponsor</a>
     </div>
-    <div id="right"></div>
+    <div id="right">
+      <img class="main-planet" :src="Planet" />
+    </div>
   </div>
 </template>
 
@@ -18,6 +20,7 @@
 import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
+import Planet from '@/assets/main_planet.svg';
 
 declare global {
   interface Window {
@@ -33,6 +36,7 @@ export default Vue.extend({
   data() {
     return {
       VI,
+      Planet,
     };
   },
   methods: {
@@ -258,6 +262,15 @@ export default Vue.extend({
   display: none;
   width: 15%;
   opacity: 0.5;
+  position: relative;
+}
+
+.main-planet {
+  width: 40%;
+  margin: 20px 20px;
+  padding-top: 10%;
+  padding-right: 7%;
+  z-index: 1;
   position: relative;
 }
 </style>
