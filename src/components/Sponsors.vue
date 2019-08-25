@@ -184,13 +184,14 @@ div > p > a {
 .rocket-img {
   z-index: 0 !important;
   display: flex;
-  position: relative;
-  margin-top: -60vh;
+  position: absolute;
+  margin-top: -65vh;
   opacity: 1 !important;
   overflow: hidden;
   max-width: 100%;
 }
 .back {
+  margin-top: 30vh;
   background: rgba(239, 247, 255, 1);
   width: 100%;
 }
