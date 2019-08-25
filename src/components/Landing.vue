@@ -6,8 +6,9 @@
       <h1 class="landing-title">
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
-      <a class="act-btn" href="#">Sign Up</a>
-      <a class="act-btn" href="#">Sponsors</a>
+      <img class="vi-back" :src="VI" />
+      <a class="act-btn" href="#">Apply</a>
+      <a class="act-btn" href="#">Sponsor</a>
     </div>
     <div id="right"></div>
   </div>
@@ -16,23 +17,30 @@
 <script lang="ts">
 import Vue from 'vue';
 import 'particles.js';
+import VI from '@/assets/vi.svg';
 
 declare global {
-    interface Window { particlesJS: any; }
+  interface Window {
+    particlesJS: any;
+  }
 }
-
 
 export default Vue.extend({
   name: 'particles',
   mounted() {
     this.initParticles();
   },
+  data() {
+    return {
+      VI,
+    };
+  },
   methods: {
     initParticles() {
       window.particlesJS('particles-js', {
         particles: {
           number: {
-            value: 150,
+            value: 200,
             density: {
               enable: true,
               value_area: 800,
@@ -67,12 +75,12 @@ export default Vue.extend({
             },
           },
           size: {
-            value: 5,
+            value: 4,
             random: true,
             anim: {
               enable: true,
               speed: 2,
-              size_min: 0,
+              size_min: 1,
               sync: false,
             },
           },
@@ -106,7 +114,7 @@ export default Vue.extend({
               mode: 'bubble',
             },
             onclick: {
-              enable: true,
+              enable: false,
               mode: 'push',
             },
             resize: true,
@@ -173,14 +181,15 @@ export default Vue.extend({
   font-weight: 700;
 }
 
-.act-btn:hover {
+/* .act-btn:hover {
   box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1b50b3 !important;
   background: #1b50b3 !important;
   color: #b5cefb !important;
 }
 
 .act-btn {
-  /* font-family: Lato, 'Noto Sans', sans-serif !important; */
+  font-family: Montserrat;
+  font-weight: bold;
   -webkit-box-pack: center !important;
   -ms-flex-pack: center !important;
   -webkit-box-align: center !important;
@@ -217,14 +226,38 @@ export default Vue.extend({
   background: #1865f2 !important;
   color: #ffffff !important;
   margin-right: 10px !important;
+} 
+*/
+
+.act-btn {
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Montserrat;
+  opacity: 0.99;
+  padding: 10px 20px;
+  color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  margin-right: 20px !important;
+  background-color: rgba(81, 169, 185);
 }
 
-/* .flex-container > div {
-    background: transparent;
-  width: 100%;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-} */
+.act-btn:hover {
+  color: white;
+  background-color: rgb(178, 215, 221, 0.5);
+  transition: 0.2s;
+}
+.act-btn:active {
+  color: white;
+  background-color: rgb(178, 215, 221, 1);
+  transition: 0.2s;
+}
+
+.vi-back {
+  display: none;
+  width: 15%;
+  opacity: 0.5;
+  position: relative;
+}
 </style>

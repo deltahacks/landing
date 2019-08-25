@@ -1,11 +1,16 @@
 <template>
   <div class="container">
-    <h1>PAST SPONSORS</h1>
-    <hr />
-    <p>
-      Interested in sponsoring? Contact us at
-      <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
-    </p>
+    <div v-if="main">
+      <h1>PAST SPONSORS</h1>
+      <p>
+        Interested in sponsoring? Contact us at
+        <a href="mailto:sponsorship@deltahacks.com"
+          >sponsorship@deltahacks.com</a
+        >
+      </p>
+    </div>
+    <h1 v-if="main"><br />PRIMARY SPONSORS</h1>
+    <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
       <div
         v-for="sponsor in shuffle(sponsorList)"
@@ -22,9 +27,11 @@
         </a>
       </div>
     </div>
-    <h1>PARTNERS</h1>
-    <hr />
-    <!-- PARTNERS LIST GOES HERE -->
+    <div v-if="secondary">
+      <h1>PARTNERS</h1>
+      <hr />
+      <!-- PARTNERS LIST GOES HERE -->
+    </div>
   </div>
 </template>
 
@@ -157,20 +164,20 @@ div > p > a {
 }
 
 .level--2 {
-  width: 80%;
-  margin-left: 10%;
+  width: 99%;
+  margin-left: 2%;
 }
 
 .level--2 > div {
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 25px;
   line-height: 30px;
 }
 
 .level--2 > div > a > img {
-  max-width: 230px;
-  max-height: 230px;
+  max-width: 225px;
+  max-height: 225px;
 }
 </style>
 
