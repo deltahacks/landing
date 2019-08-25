@@ -208,16 +208,9 @@ export default Vue.extend({
           'linear-gradient(180deg, rgba(32,82,185,1), rgba(32,82,215,1)' +
           Math.floor((-1 / 4) * y + 1250) +
           '%, rgba(32,82,235,1) 100%)';
-      }
-      //  else if (y < 5500) {
-      //   document.getElementById('d1')!.style.backgroundImage =
-      //     'linear-gradient(180deg, rgba(32,82,215,1), rgba(32,82,235,1)' +
-      //     Math.floor((-1 / 5) * y + 1100) +
-      //     '%, rgba(125,152,249,1) 100%)';
-      // }
-      else {
+      } else {
         document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12.23
+          (-1 / 500) * y + 12.23,
         );
       }
       // if (y < 5500) {
