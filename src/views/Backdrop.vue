@@ -1,5 +1,5 @@
 <template>
-  <div class="app blend">
+  <div :class="{app:true, blend:true, change: change}">
     <div class="scroll">
       <Landing />
       <div id="spacer" style="height: 5500px" />
@@ -58,6 +58,7 @@ export default Vue.extend({
   },
   data() {
     return {
+      change: false,
       scr: 0,
       sponsors: [
         {
@@ -176,27 +177,27 @@ export default Vue.extend({
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,65,95,1), rgba(32,82,95,1)' +
           Math.floor((-1 / 4) * y + 210) +
-          '%, rgba(32,82,115,1) 100%)';
+          '%, rgba(42,82,115,1) 100%)';
       } else if (y < 1504) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,95,1), rgba(32,82,115,1)' +
+          'linear-gradient(180deg, rgba(32,82,95,1), rgba(42,82,115,1)' +
           Math.floor((-25 / 166) * y + 226) +
-          '%, rgba(32,82,135,1) 100%)';
+          '%, rgba(52,92,135,1) 100%)';
       } else if (y < 2300) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,115,1), rgba(32,82,135,1)' +
+          'linear-gradient(180deg, rgba(42,82,115,1), rgba(52,92,135,1)' +
           Math.floor((-25 / 199) * y + 288) +
-          '%, rgba(32,82,155,1) 100%)';
+          '%, rgba(62,102,155,1) 100%)';
       } else if (y < 3100) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,135,1), rgba(32,82,155,1)' +
+          'linear-gradient(180deg, rgba(52,92,135,1), rgba(62,102,155,1)' +
           Math.floor((-1 / 8) * y + 388) +
-          '%, rgba(32,82,175,1) 100%)';
+          '%, rgba(72,112,175,1) 100%)';
       } else if (y < 4600) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,185,1)' +
+          'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
           Math.floor((-1 / 9) * y + 444) +
-          '%, rgba(32,82,215,1) 100%)';
+          '%, rgba(92,122,215,1) 100%)';
         /*
       } else if (y < 3800) {
         document.getElementById('d1')!.style.backgroundImage =
@@ -211,22 +212,23 @@ export default Vue.extend({
 */
       } else if (y < 5000) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,185,1), rgba(32,82,215,1)' +
+          'linear-gradient(180deg, rgba(72,112,195,1), rgba(92,122,215,1)' +
           Math.floor((-1 / 4) * y + 1250) +
-          '%, rgba(32,82,235,1) 100%)';
+          '%, rgba(102,132,235,1) 100%)';
       } else if (y < 5500) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,215,1), rgba(32,82,235,1)' +
+          'linear-gradient(180deg, rgba(92,122,215,1), rgba(102,132,249,1)' +
           Math.floor((-1 / 5) * y + 1100) +
-          '%, rgba(125,152,249,1) 100%)';
+          '%, rgba(115,145,255,1) 100%)';
       } else {
         document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12
+          (-1 / 500) * y + 12,
         );
       }
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
+      this.change = y >= 5600;
     },
   },
   created() {
@@ -239,6 +241,14 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.app {
+  color: white;
+  transition: color 1s;
+}
+.change {
+  color: black;
+}
+
 .blend {
   background-blend-mode: overlay;
 }
