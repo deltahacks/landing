@@ -107,7 +107,7 @@ export default Vue.extend({
       if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
       }
-      if (y > 7888) {
+      if (y > 7685) {
         document.getElementById('d1')!.style.background =
           'rgba(239, 247, 255, 1)';
         document.getElementById('d1')!.style.opacity = '1';

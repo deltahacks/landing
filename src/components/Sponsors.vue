@@ -176,10 +176,8 @@ div > p > a {
   z-index: 0 !important;
   display: flex;
   position: absolute;
-  /* padding-top: 60vh; */
-  margin-top: -60vh;
+  margin-top: -80vh;
   margin-left: -10vw;
-  /* opacity: 1 !important; */
   overflow: hidden;
   max-width: 100%;
 }
