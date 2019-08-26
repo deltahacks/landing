@@ -2,15 +2,15 @@
   <div :class="{app:true, blend:true, change: change}">
     <div class="scroll">
       <Landing />
-      <div id="spacer" style="height: 5500px" />
       <AboutUsStats />
       <FAQ id="faq" initialSelect="general 🙋" />
+      <div id="spacer" style="height: 2850px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
     <div class="gradient" id="d1">
-      <!-- <h1>{{ scr }}</h1> -->
+    <!-- <h1>{{ scr }}</h1> -->
     </div>
   </div>
 </template>
@@ -48,70 +48,44 @@ export default Vue.extend({
     handleScroll() {
       this.scr = window.scrollY;
       const y = window.scrollY || window.pageYOffset;
-      if (y < 440) {
+      if (y < 560) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(37,36,64,1), rgba(32,65,95,1)' +
-          Math.floor((-100 / 440) * y + 100) +
+          Math.floor(-0.18 * y + 100) +
           '%, rgba(32,82,95,1) 100%)';
-      } else if (y < 840) {
+      } else if (y < 1120) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,65,95,1), rgba(32,82,95,1)' +
-          Math.floor((-1 / 4) * y + 210) +
+          Math.floor(-0.18 * y + 200) +
           '%, rgba(42,82,115,1) 100%)';
-      } else if (y < 1504) {
+      } else if (y < 1680) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,82,95,1), rgba(42,82,115,1)' +
-          Math.floor((-25 / 166) * y + 226) +
+          Math.floor(-0.18 * y + 300) +
           '%, rgba(52,92,135,1) 100%)';
-      } else if (y < 2300) {
+      } else if (y < 2240) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(42,82,115,1), rgba(52,92,135,1)' +
-          Math.floor((-25 / 199) * y + 288) +
+          Math.floor(-0.18 * y + 400)  +
           '%, rgba(62,102,155,1) 100%)';
-      } else if (y < 3100) {
+      } else if (y < 2800) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(52,92,135,1), rgba(62,102,155,1)' +
-          Math.floor((-1 / 8) * y + 388) +
+          Math.floor(-0.18 * y + 500)  +
           '%, rgba(72,112,175,1) 100%)';
-      } else if (y < 4600) {
+      } else if (y < 3300) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
-          Math.floor((-1 / 9) * y + 444) +
+          Math.floor(-1 / 5 * y + 660)  +
           '%, rgba(92,122,215,1) 100%)';
-        /*
-      } else if (y < 3800) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,175,1)' +
-          Math.floor((-1 / 7) * y + 542) +
-          '%, rgba(32,82,195,1) 100%)';
-      } else if (y < 4600) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,175,1), rgba(32,82,195,1)' +
-          Math.floor((-1 / 8) * y + 575) +
-          '%, rgba(32,82,205,1) 100%)';
-*/
-      } else if (y < 5000) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(72,112,195,1), rgba(92,122,215,1)' +
-          Math.floor((-1 / 4) * y + 1250) +
-          '%, rgba(102,132,235,1) 100%)';
-      } else if (y < 5500) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(92,122,215,1), rgba(102,132,249,1)' +
-          Math.floor((-1 / 5) * y + 1100) +
-          '%, rgba(115,145,255,1) 100%)';
+      } else if (y >= 3300) {
+        document.getElementById('d1')!.style.opacity = String(-1 / 420 * y + 62 / 7);
       } else {
-        document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12,
-        );
-      }
-      if (y < 5500) {
         document.getElementById('d1')!.style.opacity = '1';
+        document.getElementById('d1')!.style.backgroundImage = 'white';
       }
-      this.change = y >= 5600;
-      if (y > 7685) {
-        document.getElementById('d1')!.style.background =
-          'rgba(239, 247, 255, 1)';
+      this.change = y >= 3300;
+      if ( y < 3300) {
         document.getElementById('d1')!.style.opacity = '1';
       }
     },
@@ -129,6 +103,8 @@ export default Vue.extend({
 .app {
   color: white;
   transition: color 1s;
+  height: 7000px;
+  overflow: hidden;
 }
 .change {
   color: black;
@@ -140,7 +116,7 @@ export default Vue.extend({
 
 .scroll {
   top: 20px;
-  height: 7000px;
+  height: 100%;
 }
 
 .gradient {
@@ -158,6 +134,7 @@ export default Vue.extend({
   left: 0;
   position: fixed;
   z-index: -1;
+  color: black;
 }
 
 h1 {
