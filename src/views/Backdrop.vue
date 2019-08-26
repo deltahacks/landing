@@ -3,10 +3,10 @@
     <div class="scroll">
       <Landing />
       <div id="spacer" style="height: 5500px" />
-      <!-- <AboutUsStats /> -->
-      <FAQ style="z-index: 1;" initialSelect="general 🙋" />
-      <Sponsors :sponsorList="sponsors" main />
-      <Sponsors :sponsorList="sponsors" secondary />
+      <AboutUsStats />
+      <FAQ id="faq" initialSelect="general 🙋" />
+      <Sponsors :sponsorList="sponsors_data.primary" main />
+      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
     <div class="gradient" id="d1">
@@ -22,30 +22,11 @@ import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
-const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
+const VueScrollReveal = require('vue-scroll-reveal');
+
+import sponsors_data from '@/data/sponsors_data.ts';
 
 Vue.use(VueScrollReveal);
-
-import FDM from '@/assets/sponsors/FDM.svg';
-import CSE from '@/assets/sponsors/CSE.svg';
-import RBC from '@/assets/sponsors/RBC.svg';
-import TWN from '@/assets/sponsors/TWN.svg';
-import Obie from '@/assets/sponsors/Obie.png';
-import TD from '@/assets/sponsors/TD_Bank.png';
-import TripIt from '@/assets/sponsors/TripIt.svg';
-import Sketch from '@/assets/sponsors/Sketch.svg';
-import Wolfram from '@/assets/sponsors/Wolfram.svg';
-import Synopsys from '@/assets/sponsors/Synopsys.svg';
-import Bitalino from '@/assets/sponsors/Bitalino.png';
-import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
-import Rogers from '@/assets/sponsors/Rogers_logo.svg';
-import MapleSoft from '@/assets/sponsors/MapleSoft.png';
-import Microsoft from '@/assets/sponsors/Microsoft.svg';
-import Hypercare from '@/assets/sponsors/Hypercare.png';
-import Coinberry from '@/assets/sponsors/Coinberry.png';
-import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 
 export default Vue.extend({
   name: 'app',
@@ -60,108 +41,7 @@ export default Vue.extend({
     return {
       change: false,
       scr: 0,
-      sponsors: [
-        {
-          logo: TD,
-          href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
-          alt: 'TD Canada Trust',
-        },
-        {
-          logo: ArcelorMittal,
-          href: 'http://dofasco.arcelormittal.com/',
-          alt: 'Dofasco Arcelor Mittal',
-        },
-        {
-          logo: Rogers,
-          href: 'https://jobs.rogers.com/',
-          alt: 'Rogers',
-        },
-        {
-          logo: Microsoft,
-          href: 'https://www.microsoft.com/',
-          alt: 'Microsoft Corporation',
-        },
-        {
-          logo: InnovationFactory,
-          href: 'https://www.innovationfactory.com/',
-          alt: 'Innovation Factory',
-        },
-        {
-          logo: LoyaltyOne,
-          href: 'https://www.loyalty.com/',
-          alt: 'Loyalty One',
-        },
-        {
-          logo: RBC,
-          href: 'http://www.rbc.com/techjobs',
-          alt: 'Royal Bank of Canada',
-        },
-        {
-          logo: Synopsys,
-          href: 'https://www.synopsys.com/',
-          alt: 'Synopsys',
-        },
-        {
-          logo: FDM,
-          href: 'https://www.fdmgroup.com/en-ca/ca-home/',
-          alt: 'FDM',
-        },
-        {
-          logo: Bitalino,
-          href: 'https://www.bitalino.com/',
-          alt: 'Bitalino',
-        },
-        {
-          logo: Coinberry,
-          href: 'http://www.coinberry.com/',
-          alt: 'Coinberry',
-        },
-        {
-          logo: Wolfram,
-          href: 'http://www.wolfram.com/',
-          alt: 'Wolfram',
-        },
-        {
-          logo: Hypercare,
-          href: 'http://www.hypercare.com/',
-          alt: 'Hypercare',
-        },
-        {
-          logo: Obie,
-          href: 'http://www.obie.ai/',
-          alt: 'Obie AI',
-        },
-        {
-          logo: Balsamiq,
-          href: 'http://www.balsamiq.com/',
-          alt: 'Balsamiq',
-        },
-        {
-          logo: CSE,
-          href: 'https://www.cse-cst.gc.ca/',
-          alt: 'CSE',
-        },
-        {
-          logo: TripIt,
-          href: 'https://www.tripit.com/',
-          alt: 'TripIt',
-        },
-        {
-          logo: MapleSoft,
-          href: 'https://www.maplesoft.com/',
-          alt: 'MapleSoft',
-        },
-        {
-          logo: Sketch,
-          href: 'https://www.sketchapp.com/',
-          alt: 'Sketch',
-        },
-        {
-          logo: TWN,
-          href: 'https://www.theweathernetwork.com/',
-          alt: 'The Weather Network',
-        },
-      ],
+      sponsors_data,
     };
   },
   methods: {
@@ -229,6 +109,11 @@ export default Vue.extend({
         document.getElementById('d1')!.style.opacity = '1';
       }
       this.change = y >= 5600;
+      if (y > 7685) {
+        document.getElementById('d1')!.style.background =
+          'rgba(239, 247, 255, 1)';
+        document.getElementById('d1')!.style.opacity = '1';
+      }
     },
   },
   created() {
@@ -284,5 +169,10 @@ h1 {
   text-align: center;
   display: block;
   font-family: Josefin Sans;
+}
+
+#faq {
+  z-index: 1;
+  margin-bottom: 10%;
 }
 </style>

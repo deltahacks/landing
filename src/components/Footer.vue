@@ -71,6 +71,7 @@ export default Vue.extend({
 
 <style scoped>
 .footer-distributed {
+  /* background-image: url('~@/assets/footer.svg'); */
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
