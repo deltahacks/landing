@@ -98,7 +98,6 @@ hr {
 
 img {
   user-select: none;
-  width: 80%;
 }
 
 /*
@@ -112,7 +111,7 @@ html {
 .container {
   padding-top: 30px;
   padding-bottom: 50px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -178,8 +177,9 @@ div > p > a {
   display: flex;
   position: absolute;
   margin-top: -80vh;
+  margin-left: -10vw;
   overflow: hidden;
-  width: 100%;
+  max-width: 100%;
 }
 
 #sponsors-title {
