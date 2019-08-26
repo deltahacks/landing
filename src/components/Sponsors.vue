@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container back">
     <div v-if="main">
       <img class="rocket-img" src="../assets/blastoff.png" />
       <h1 id="sponsors-title">Past Sponsors</h1>
@@ -195,6 +195,9 @@ div > p > a {
   font-family: Montserrat;
   position: relative;
   z-index: 10;
+}
+.back{
+  background-color: rgba(239, 247, 255, 1);
 }
 </style>
 
