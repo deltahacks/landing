@@ -1,35 +1,25 @@
 <template>
-  <div class="container">
+  <div class="container back">
     <div v-if="main">
-      <h1>PAST SPONSORS</h1>
-      <p>
+      <img class="rocket-img" src="../assets/blastoff.png" />
+      <h1 id="sponsors-title">Past Sponsors</h1>
+      <p id="sponsors-subtitle">
         Interested in sponsoring? Contact us at
-        <a href="mailto:sponsorship@deltahacks.com"
-          >sponsorship@deltahacks.com</a
-        >
+        <a
+          href="mailto:sponsorship@deltahacks.com"
+        >sponsorship@deltahacks.com</a>
       </p>
     </div>
-    <h1 v-if="main"><br />PRIMARY SPONSORS</h1>
-    <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
-      <div
-        v-for="sponsor in shuffle(sponsorList)"
-        v-bind:key="sponsor"
-        v-scroll-reveal
-      >
+      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
         <a :href="sponsor.href" target="_blank">
-          <img
-            :src="sponsor.logo"
-            :alt="sponsor.alt"
-            data-tilt
-            data-tilt-perspective="500"
-          />
+          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
       </div>
     </div>
     <div v-if="secondary">
-      <h1>PARTNERS</h1>
-      <hr />
+      <!-- <h1>PARTNERS</h1>
+      <hr />-->
       <!-- PARTNERS LIST GOES HERE -->
     </div>
   </div>
@@ -115,7 +105,9 @@ img {
 Classes
 
 */
-
+html {
+  overflow-x: hidden;
+}
 .container {
   padding-top: 30px;
   padding-bottom: 50px;
@@ -178,6 +170,34 @@ div > p > a {
 .level--2 > div > a > img {
   max-width: 225px;
   max-height: 225px;
+}
+
+.rocket-img {
+  z-index: 0 !important;
+  display: flex;
+  position: absolute;
+  margin-top: -80vh;
+  margin-left: -10vw;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+#sponsors-title {
+  font-weight: bold;
+  font-family: Montserrat;
+  position: relative;
+  z-index: 10;
+  margin-top: 50vh;
+}
+
+#sponsors-subtitle {
+  font-weight: bold;
+  font-family: Montserrat;
+  position: relative;
+  z-index: 10;
+}
+.back{
+  background-color: rgba(239, 247, 255, 1);
 }
 </style>
 
