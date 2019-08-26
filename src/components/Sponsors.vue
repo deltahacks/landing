@@ -185,6 +185,7 @@ div > p > a {
   margin-top: 30vh;
   background: rgba(239, 247, 255, 1);
   width: 100%;
+  }
 
 #sponsors-title {
   font-weight: bold;
