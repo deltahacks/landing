@@ -77,12 +77,12 @@ export default Vue.extend({
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
           Math.floor(-1 / 5 * y + 660)  +
-          '%, rgba(92,122,215,1) 100%)';
+          '%, 87CEFA 100%)';
       } else if (y >= 3300) {
         document.getElementById('d1')!.style.opacity = String(-1 / 420 * y + 62 / 7);
       } else {
         document.getElementById('d1')!.style.opacity = '1';
-        document.getElementById('d1')!.style.backgroundImage = 'white';
+        document.getElementById('d1')!.style.background = 'white';
       }
       this.change = y >= 3300;
       if ( y < 3300) {
