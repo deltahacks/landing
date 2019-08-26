@@ -12,7 +12,7 @@ import Vue from 'vue';
 import Landing from '@/components/Landing.vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 import Sponsors from '@/components/Sponsors.vue';
-const VueScrollReveal = require('vue-scroll-reveal');
+const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 
 // Using ScrollReveal's default configuration
 Vue.use(VueScrollReveal);

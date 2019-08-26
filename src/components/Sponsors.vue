@@ -1,19 +1,15 @@
 <template>
   <div class="container back">
     <div v-if="main">
-      <img class="rocket-img" src="../assets/blastoff.png" />
-      <h1>PAST SPONSORS</h1>
-      <p>
+          <img class="rocket-img" src="../assets/blastoff.png" />
+      <h1 id="sponsors-title">Past Sponsors</h1>
+      <p id="sponsors-subtitle">
         Interested in sponsoring? Contact us at
-        <a
-          href="mailto:sponsorship@deltahacks.com"
-        >sponsorship@deltahacks.com</a>
+        <a href="mailto:sponsorship@deltahacks.com">
+          sponsorship@deltahacks.com
+        </a>
       </p>
     </div>
-    <h1 v-if="main">
-      <br />PRIMARY SPONSORS
-    </h1>
-    <h1 v-else>SECONDARY SPONSORS</h1>
     <div :class="['square', getClass]">
       <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
         <a :href="sponsor.href" target="_blank">
@@ -22,8 +18,8 @@
       </div>
     </div>
     <div v-if="secondary">
-      <h1>PARTNERS</h1>
-      <hr />
+      <!-- <h1>PARTNERS</h1>
+      <hr /> -->
       <!-- PARTNERS LIST GOES HERE -->
     </div>
   </div>
@@ -94,11 +90,6 @@ Block level elements
 */
 html {
   overflow-x: hidden;
-}
-h1,
-p {
-  position: relative;
-  z-index: 10;
 }
 hr {
   background-color: white;
@@ -194,6 +185,20 @@ div > p > a {
   margin-top: 30vh;
   background: rgba(239, 247, 255, 1);
   width: 100%;
+
+#sponsors-title {
+  font-weight: bold;
+  font-family: Montserrat;
+    position: relative;
+  z-index: 10;
 }
+
+#sponsors-subtitle {
+  font-weight: bold;
+  font-family: Montserrat;
+    position: relative;
+  z-index: 10;
+  }
+
 </style>
 
