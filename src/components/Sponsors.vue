@@ -2,7 +2,7 @@
   <div class="back">
     <div class="container">
       <div v-if="main">
-        <img class="rocket-img" src="../assets/blastoff.png" />
+        <img class="rocket-img" :src="rocket" />
         <h1 id="sponsors-title">Past Sponsors</h1>
         <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
@@ -31,7 +31,7 @@
 import Vue from 'vue';
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
-
+import rocket from '@/assets/blastoff.png';
 Vue.use(VueScrollReveal, {
   class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
   duration: 1000,
@@ -43,6 +43,11 @@ Vue.use(VueScrollReveal, {
 export default Vue.extend({
   name: 'Sponsors',
   components: {},
+   data() {
+    return {
+      rocket
+    };
+  },
   props: {
     sponsorList: Array,
     main: Boolean,
