@@ -44,8 +44,8 @@ import VueMq from 'vue-mq';
 
 Vue.use(VueMq, {
   breakpoints: {
-    mobile: 420,
-    tablet: 430,
+    mobile: 700,
+    tablet: 710,
     desktop: Infinity,
   },
 });
@@ -169,5 +169,6 @@ export default Vue.extend({
 <style>
 .bubbles {
   position: relative;
+  padding-top: 100px;
 }
 </style>
