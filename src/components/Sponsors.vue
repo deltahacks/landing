@@ -125,7 +125,6 @@ html {
 .square {
   display: -webkit-flex;
   -webkit-flex-direction: row;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -184,9 +183,14 @@ div > p > a {
   display: flex;
   position: absolute;
   margin-top: -55vh;
-  margin-left: -10vw;
-  overflow: hidden;
-  max-width: 100%;
+  margin-left: -20vw;
+  /* overflow: hidden; */
+  min-width: 100vw;
+  max-width: 110vw;
+  min-height: 110vh;
+  max-height: 130vh;
+  padding: 0;
+  object-fit: cover;
 }
 
 #sponsors-title {
@@ -194,7 +198,7 @@ div > p > a {
   font-family: Montserrat;
   position: relative;
   z-index: 10;
-  margin-top: 50vh;
+  margin-top: 0vh;
 }
 
 #sponsors-subtitle {
