@@ -5,34 +5,38 @@
         href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
         rel="stylesheet"
       />
-      <svg viewBox="0 0 1000 500" v-if="$mq === 'desktop'">
-        <Bubble
-          v-for="bubble in bubbles"
-          v-bind:key="bubble"
-          :r="bubble.desktop.r"
-          :x="bubble.desktop.x"
-          :y="bubble.desktop.y"
-          :number="bubble.number"
-          :content="bubble.content"
-          :depth="bubble.depth"
-          :start_gradient="bubble.start_gradient"
-          :end_gradient="bubble.end_gradient"
-        ></Bubble>
-      </svg>
-      <svg viewBox="0 0 500 700" v-if="$mq === 'mobile'">
-        <Bubble
-          v-for="bubble in bubbles"
-          v-bind:key="bubble"
-          :r="bubble.mobile.r"
-          :x="bubble.mobile.x"
-          :y="bubble.mobile.y"
-          :number="bubble.number"
-          :content="bubble.content"
-          :depth="bubble.depth"
-          :start_gradient="bubble.start_gradient"
-          :end_gradient="bubble.end_gradient"
-        ></Bubble>
-      </svg>
+      <div id="desktop">
+        <svg viewBox="0 0 1000 500">
+          <Bubble
+            v-for="bubble in bubbles"
+            v-bind:key="bubble"
+            :r="bubble.desktop.r"
+            :x="bubble.desktop.x"
+            :y="bubble.desktop.y"
+            :number="bubble.number"
+            :content="bubble.content"
+            :depth="bubble.depth"
+            :start_gradient="bubble.start_gradient"
+            :end_gradient="bubble.end_gradient"
+          ></Bubble>
+        </svg>
+      </div>
+      <div id="mobile">
+        <svg viewBox="0 0 500 700">
+          <Bubble
+            v-for="bubble in bubbles"
+            v-bind:key="bubble"
+            :r="bubble.mobile.r"
+            :x="bubble.mobile.x"
+            :y="bubble.mobile.y"
+            :number="bubble.number"
+            :content="bubble.content"
+            :depth="bubble.depth"
+            :start_gradient="bubble.start_gradient"
+            :end_gradient="bubble.end_gradient"
+          ></Bubble>
+        </svg>
+      </div>
     </div>
   </div>
 </template>
@@ -40,15 +44,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import Bubble from '@/components/Bubble.vue';
-import VueMq from 'vue-mq';
-
-Vue.use(VueMq, {
-  breakpoints: {
-    mobile: 700,
-    tablet: 710,
-    desktop: Infinity,
-  },
-});
 
 export default Vue.extend({
   name: 'About Us',
@@ -171,4 +166,24 @@ export default Vue.extend({
   position: relative;
   padding-top: 100px;
 }
+
+@media only screen and (max-width : 700px) {
+  #mobile {
+    display: block;
+  }
+  #desktop {
+    visibility: hidden;
+    width: 0px;
+  }
+}
+
+@media only screen and (min-width : 701px) {
+  #mobile {
+    display: none;
+  }
+  #desktop {
+    display: block;
+  }
+}
+
 </style>
