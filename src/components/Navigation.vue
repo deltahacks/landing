@@ -4,7 +4,7 @@
     <img
       src="../assets/logolarge.png"
       alt
-      style="float: left; width: 1.5%; padding: 14px 55px;"
+      style="float: left; width: 22px; padding: 16px 55px;"
     />
     <vue-typed-js
       :strings="['DeltaHacks VI']"
@@ -47,6 +47,7 @@
           src="../assets/hamburger.png"
           alt
           style="height: 20px; width: 20px;"
+          :class="{ 'invert': !scrolled }"
         />
       </button>
       <div class="dropdown-content mobile" style="right:0;">
@@ -189,7 +190,7 @@ export default Vue.extend({
   height: 50px;
   z-index: 1000;
   font-weight: 600;
-  color: white;
+  color: black;
   transition-property: background-color, border-bottom;
   transition-duration: 0.2s;
 }
@@ -269,15 +270,15 @@ export default Vue.extend({
 .dropdown-content {
   visibility: hidden;
   position: absolute;
-  background-color: rgba(225, 225, 225, 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-bottom-left-radius: 10px 10px;
-  border-bottom-right-radius: 10px 10px;
+  /* border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px; */
   transition: visibility 0s, opacity 0.5s linear;
   opacity: 0;
-  width: 98vw;
+  width: 100vw;
 }
 
 /* Links inside the dropdown */
@@ -294,7 +295,10 @@ export default Vue.extend({
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #dddd;
+  -moz-border-radius: 422px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
 }
 
 /* Show the dropdown menu on hover */
@@ -311,4 +315,5 @@ export default Vue.extend({
 #proj {
   margin-right: 50px;
 }
+.invert { filter: invert(100%); }
 </style>
