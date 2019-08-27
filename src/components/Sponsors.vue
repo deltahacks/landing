@@ -114,12 +114,15 @@ html {
   background-color: rgba(239, 247, 255, 1);
   width: 100vw;
   /* height: 100vh; */
-  padding-top: 20px;
-  /* padding-bottom: 100px; */
+  margin: 0;
+  margin-bottom: -30px;
+  padding-bottom: 10px;
 }
 .container {
   width: 80%;
   margin: 0 auto;
+  /* padding-top: 20px; */
+  /* padding-bottom: 1000px; */
 }
 
 .square {
