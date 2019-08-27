@@ -8,7 +8,7 @@ export default {
     {
       q: 'What is DeltaHacks?',
       a:
-        "DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.",
+        'DeltaHacks is McMaster\'s annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it\'s environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.',
     },
     {
       q: 'Who can participate?',
@@ -30,7 +30,7 @@ export default {
     {
       q: 'I have never been to a hackathon before, what should I do?',
       a:
-        "We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.",
+        'We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs\' experience when she started here to see how easy and fun it really is to learn at the hackathon.',
     },
   ],
   'application 📨': [
