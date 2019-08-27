@@ -2,7 +2,7 @@
   <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
       <Landing />
-      <img class="spshp" src="../assets/ss-abt.png" />
+      <img class="spshp" :src="SAT" />
       <NewAbout heading="Explore the unexplored" :left="true" />
       <NewAbout heading="To Infinity and Beyond" :left="false" />
       <AboutUsStats />
@@ -26,6 +26,7 @@ import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
 import NewAbout from '@/components/NewAbout.vue';
+import SAT from '@/assets/sat.png';
 const VueScrollReveal = require('vue-scroll-reveal');
 
 import sponsors_data from '@/data/sponsors_data.ts';
@@ -47,6 +48,7 @@ export default Vue.extend({
       change: false,
       scr: 0,
       sponsors_data,
+      SAT,
     };
   },
   methods: {
