@@ -1,73 +1,85 @@
 <template>
-    <div class="about-container">
-        <h2>{{heading}}</h2>
-        <div class="about-description">
-            <p>{{description}}
-            </p>
-            <p>{{more_text}}</p>
-        </div>
-        <button id='about-button'>More Info</button>
+  <div :class="['about-container', left ? 'left' : 'right']">
+    <h2>{{ heading }}</h2>
+    <div class="about-description">
+      <p>{{ description }} </p>
+      <p>{{ more_text }}</p>
     </div>
+    <button id="about-button">More Info</button>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-    data() {
-        return {
-            x: 1,
-        };
+  data() {
+    return {
+      x: 1,
+    };
+  },
+  props: {
+    left: Boolean,
+    right: Boolean,
+    heading: {
+      default: 'This is a sample header',
+      type: String,
     },
-    props: {
-        heading: {
-            default: 'This is a sample header',
-            type: String,
-        },
-        description: {
-            default: 'This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
+    description: {
+      default:
+        'This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
                 This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
                 This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
                 This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
                 This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.',
-            type: String,
-        },
-        more_text: {
-            default: 'More text here. More text here. More text here',
-            type: String,
-        },
+      type: String,
     },
+
+    more_text: {
+      default: 'More text here. More text here. More text here',
+      type: String,
+    },
+  },
 });
 </script>
 
 <style scoped>
-.about-container {
-    color: white;
-    text-align: left;
-    padding: 10%;
-    width: 70%;
-    text-overflow: ellipsis;
+.right {
+  color: white;
+  text-align: right;
+  padding: 10%;
+  width: 70%;
+  text-overflow: ellipsis;
 }
+
+.left {
+  color: white;
+  text-align: left;
+  padding: 10%;
+  width: 70%;
+  text-overflow: ellipsis;
+}
+
 .about-container > h2 {
-    font-size: 35px;
-    font-weight: 600;
+  font-size: 35px;
+  font-weight: 600;
 }
 .about-description > p {
-    line-height: 22px;
+  line-height: 22px;
 }
 #about-button {
-    width: 180px;
-    margin-top: 17px;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    background-color: rgb(11, 11, 143);
-    border: 1px solid rgb(11, 11, 143);
-    border-radius: 20px;
-    height: 40px;
+  width: 180px;
+  margin-top: 17px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgb(11, 11, 143);
+  border: 1px solid rgb(11, 11, 143);
+  border-radius: 20px;
+  height: 40px;
 }
 #about-button:hover {
-    background-color: rgb(35, 35, 150);
-    border: 1px solid rgb(0, 0, 94);
+  background-color: rgb(35, 35, 150);
+  border: 1px solid rgb(0, 0, 94);
 }
 
 @media screen and (max-width: 720px) {

@@ -1,17 +1,18 @@
 <template>
-  <div :class="{app:true, blend:true, change: change}">
+  <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
       <Landing />
+      <NewAbout heading="Explore the unexplored" :left="true" />
+      <NewAbout heading="To Infinity and Beyond" :left="false" />
       <AboutUsStats />
       <FAQ id="faq" initialSelect="general 🙋" />
-      <NewAbout />
       <div id="spacer" style="height: 2850px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
     <div class="gradient" id="d1">
-    <!-- <h1>{{ scr }}</h1> -->
+      <!-- <h1>{{ scr }}</h1> -->
     </div>
   </div>
 </template>
@@ -69,26 +70,28 @@ export default Vue.extend({
       } else if (y < 2240) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(42,82,115,1), rgba(52,92,135,1)' +
-          Math.floor(-0.18 * y + 400)  +
+          Math.floor(-0.18 * y + 400) +
           '%, rgba(62,102,155,1) 100%)';
       } else if (y < 2800) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(52,92,135,1), rgba(62,102,155,1)' +
-          Math.floor(-0.18 * y + 500)  +
+          Math.floor(-0.18 * y + 500) +
           '%, rgba(72,112,175,1) 100%)';
       } else if (y < 3300) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
-          Math.floor(-1 / 5 * y + 660)  +
+          Math.floor((-1 / 5) * y + 660) +
           '%, 87CEFA 100%)';
       } else if (y >= 3300) {
-        document.getElementById('d1')!.style.opacity = String(-1 / 420 * y + 62 / 7);
+        document.getElementById('d1')!.style.opacity = String(
+          (-1 / 420) * y + 62 / 7
+        );
       } else {
         document.getElementById('d1')!.style.opacity = '1';
         document.getElementById('d1')!.style.background = 'white';
       }
       this.change = y >= 3300;
-      if ( y < 3300) {
+      if (y < 3300) {
         document.getElementById('d1')!.style.opacity = '1';
       }
     },
