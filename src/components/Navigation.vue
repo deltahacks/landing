@@ -1,16 +1,16 @@
 
 <template>
-  <div class="topnav navbar">
+  <div class="topnav navbar" :class="{ 'navbar-scrolled': scrolled }">
     <img
       src="../assets/logolarge.png"
       alt
-      style="float: left; height: 20px; width: 20px; padding: 15px 45px;"
+      style="float: left; width: 1.5%; padding: 14px 55px;"
     />
     <vue-typed-js
-      :strings="['DELTAHACKS VI']"
+      :strings="['DeltaHacks VI']"
       :showCursor="false"
       :typeSpeed="100"
-      style="position: fixed; padding-left 20px; left: 70px; top: -0.5px; color: #5fb9c9; font-family: 'Montserrat SemiBold', sans-serif;"
+      class="branding"
     >
       <p class="typing"></p>
     </vue-typed-js>
@@ -96,8 +96,11 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'Navigation',
   components: {},
-  data: {
-    show: true,
+  data() {
+    return {
+      show: true,
+      scrolled: false,
+    };
   },
   methods: {
     pickActive(element: string) {
@@ -128,7 +131,13 @@ export default Vue.extend({
         header.classList.add('active');
       }
     },
-    handleScroll(event: any) {
+    handleScroll() {
+      if (window.scrollY > 0) {
+        this.scrolled = true;
+      } else {
+        this.scrolled = false;
+      }
+
       if (window.scrollY >= 0) {
         this.pickActive('#about');
       }
@@ -146,7 +155,7 @@ export default Vue.extend({
       }
     },
   },
-  created() {
+  mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
   destroyed() {
@@ -157,45 +166,65 @@ export default Vue.extend({
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: visible;
+  font-family: 'Montserrat';
+}
+
+.branding {
+  position: fixed;
+  padding-left: 20px;
+  left: 70px;
+  top: -0.5px;
+  color: #5fb9c9;
+}
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 50px;
-  background: rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
   z-index: 1000;
+  font-weight: 600;
+  color: white;
+  transition-property: background-color, border-bottom;
+  transition-duration: 0.2s;
+}
+
+.navbar.navbar-scrolled {
+  background-color: rgba(255, 255, 255);
+  border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+  color: black;
 }
 
 .browser {
   cursor: pointer;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  overflow: visible;
-}
-
 /* Style the links inside the navigation bar */
 .topnav a {
   float: right;
-  color: black;
+  /* color: black; */
   text-align: center;
   padding: 16px 5px;
   text-decoration: none;
   font-size: 15px;
   margin-right: 10px;
   font-family: 'Montserrat';
+  transition: opacity 0.2s;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2);
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   -moz-border-radius: 422px;
   -webkit-border-radius: 42px;
-  border-radius: 42px;
+  border-radius: 42px; */
+  opacity: 0.6;
 }
 
 /* Add a color to the active/current link */
@@ -221,7 +250,7 @@ export default Vue.extend({
 
 .dropbtn {
   background-color: transparent;
-  color: black;
+  /* color: black; */
   padding: 13px;
   font-size: 16px;
   border: none;
@@ -253,14 +282,14 @@ export default Vue.extend({
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  /* color: black; */
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   float: none;
   margin-right: 0px;
   width: 30%;
-  margin-left: 35%; 
+  margin-left: 35%;
 }
 
 /* Change color of dropdown links on hover */
@@ -277,5 +306,9 @@ export default Vue.extend({
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .heighter {
   height: 200px;
+}
+
+#proj {
+  margin-right: 50px;
 }
 </style>

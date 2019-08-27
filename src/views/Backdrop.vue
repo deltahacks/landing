@@ -1,221 +1,91 @@
 <template>
-  <div class="app blend">
+  <div :class="{app:true, blend:true, change: change}">
     <div class="scroll">
       <Landing />
-      <div id="spacer" style="height: 5500px" />
-      <Sponsors :sponsorList="sponsors" main />
-      <Sponsors :sponsorList="sponsors" secondary />
+      <AboutUsStats />
+      <FAQ id="faq" initialSelect="general 🙋" />
+      <div id="spacer" style="height: 2850px" />
+      <Sponsors :sponsorList="sponsors_data.primary" main />
+      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+      <Footer />
     </div>
     <div class="gradient" id="d1">
-      <h1>{{ scr }}</h1>
+    <!-- <h1>{{ scr }}</h1> -->
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import FAQ from '@/components/Faq.vue';
+import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
+import AboutUsStats from '@/components/AboutUsStats.vue';
 const VueScrollReveal = require('vue-scroll-reveal');
 
-Vue.use(VueScrollReveal);
+import sponsors_data from '@/data/sponsors_data.ts';
 
-import FDM from '@/assets/sponsors/FDM.svg';
-import CSE from '@/assets/sponsors/CSE.svg';
-import RBC from '@/assets/sponsors/RBC.svg';
-import TWN from '@/assets/sponsors/TWN.svg';
-import Obie from '@/assets/sponsors/Obie.png';
-import TD from '@/assets/sponsors/TD_Bank.png';
-import TripIt from '@/assets/sponsors/TripIt.svg';
-import Sketch from '@/assets/sponsors/Sketch.svg';
-import Wolfram from '@/assets/sponsors/Wolfram.svg';
-import Synopsys from '@/assets/sponsors/Synopsys.svg';
-import Bitalino from '@/assets/sponsors/Bitalino.png';
-import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
-import Rogers from '@/assets/sponsors/Rogers_logo.svg';
-import MapleSoft from '@/assets/sponsors/MapleSoft.png';
-import Microsoft from '@/assets/sponsors/Microsoft.svg';
-import Hypercare from '@/assets/sponsors/Hypercare.png';
-import Coinberry from '@/assets/sponsors/Coinberry.png';
-import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
+Vue.use(VueScrollReveal);
 
 export default Vue.extend({
   name: 'app',
   components: {
+    FAQ,
+    Footer,
     Landing,
     Sponsors,
+    AboutUsStats,
   },
   data() {
     return {
+      change: false,
       scr: 0,
-      sponsors: [
-        {
-          logo: TD,
-          href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
-          alt: 'TD Canada Trust',
-        },
-        {
-          logo: ArcelorMittal,
-          href: 'http://dofasco.arcelormittal.com/',
-          alt: 'Dofasco Arcelor Mittal',
-        },
-        {
-          logo: Rogers,
-          href: 'https://jobs.rogers.com/',
-          alt: 'Rogers',
-        },
-        {
-          logo: Microsoft,
-          href: 'https://www.microsoft.com/',
-          alt: 'Microsoft Corporation',
-        },
-        {
-          logo: InnovationFactory,
-          href: 'https://www.innovationfactory.com/',
-          alt: 'Innovation Factory',
-        },
-        {
-          logo: LoyaltyOne,
-          href: 'https://www.loyalty.com/',
-          alt: 'Loyalty One',
-        },
-        {
-          logo: RBC,
-          href: 'http://www.rbc.com/techjobs',
-          alt: 'Royal Bank of Canada',
-        },
-        {
-          logo: Synopsys,
-          href: 'https://www.synopsys.com/',
-          alt: 'Synopsys',
-        },
-        {
-          logo: FDM,
-          href: 'https://www.fdmgroup.com/en-ca/ca-home/',
-          alt: 'FDM',
-        },
-        {
-          logo: Bitalino,
-          href: 'https://www.bitalino.com/',
-          alt: 'Bitalino',
-        },
-        {
-          logo: Coinberry,
-          href: 'http://www.coinberry.com/',
-          alt: 'Coinberry',
-        },
-        {
-          logo: Wolfram,
-          href: 'http://www.wolfram.com/',
-          alt: 'Wolfram',
-        },
-        {
-          logo: Hypercare,
-          href: 'http://www.hypercare.com/',
-          alt: 'Hypercare',
-        },
-        {
-          logo: Obie,
-          href: 'http://www.obie.ai/',
-          alt: 'Obie AI',
-        },
-        {
-          logo: Balsamiq,
-          href: 'http://www.balsamiq.com/',
-          alt: 'Balsamiq',
-        },
-        {
-          logo: CSE,
-          href: 'https://www.cse-cst.gc.ca/',
-          alt: 'CSE',
-        },
-        {
-          logo: TripIt,
-          href: 'https://www.tripit.com/',
-          alt: 'TripIt',
-        },
-        {
-          logo: MapleSoft,
-          href: 'https://www.maplesoft.com/',
-          alt: 'MapleSoft',
-        },
-        {
-          logo: Sketch,
-          href: 'https://www.sketchapp.com/',
-          alt: 'Sketch',
-        },
-        {
-          logo: TWN,
-          href: 'https://www.theweathernetwork.com/',
-          alt: 'The Weather Network',
-        },
-      ],
+      sponsors_data,
     };
   },
   methods: {
     handleScroll() {
       this.scr = window.scrollY;
       const y = window.scrollY || window.pageYOffset;
-      if (y < 440) {
+      if (y < 560) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(37,36,64,1), rgba(32,65,95,1)' +
-          Math.floor((-100 / 440) * y + 100) +
+          Math.floor(-0.18 * y + 100) +
           '%, rgba(32,82,95,1) 100%)';
-      } else if (y < 840) {
+      } else if (y < 1120) {
         document.getElementById('d1')!.style.backgroundImage =
           'linear-gradient(180deg, rgba(32,65,95,1), rgba(32,82,95,1)' +
-          Math.floor((-1 / 4) * y + 210) +
-          '%, rgba(32,82,115,1) 100%)';
-      } else if (y < 1504) {
+          Math.floor(-0.18 * y + 200) +
+          '%, rgba(42,82,115,1) 100%)';
+      } else if (y < 1680) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,95,1), rgba(32,82,115,1)' +
-          Math.floor((-25 / 166) * y + 226) +
-          '%, rgba(32,82,135,1) 100%)';
-      } else if (y < 2300) {
+          'linear-gradient(180deg, rgba(32,82,95,1), rgba(42,82,115,1)' +
+          Math.floor(-0.18 * y + 300) +
+          '%, rgba(52,92,135,1) 100%)';
+      } else if (y < 2240) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,115,1), rgba(32,82,135,1)' +
-          Math.floor((-25 / 199) * y + 288) +
-          '%, rgba(32,82,155,1) 100%)';
-      } else if (y < 3100) {
+          'linear-gradient(180deg, rgba(42,82,115,1), rgba(52,92,135,1)' +
+          Math.floor(-0.18 * y + 400)  +
+          '%, rgba(62,102,155,1) 100%)';
+      } else if (y < 2800) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,135,1), rgba(32,82,155,1)' +
-          Math.floor((-1 / 8) * y + 388) +
-          '%, rgba(32,82,175,1) 100%)';
-      } else if (y < 4600) {
+          'linear-gradient(180deg, rgba(52,92,135,1), rgba(62,102,155,1)' +
+          Math.floor(-0.18 * y + 500)  +
+          '%, rgba(72,112,175,1) 100%)';
+      } else if (y < 3300) {
         document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,185,1)' +
-          Math.floor((-1 / 9) * y + 444) +
-          '%, rgba(32,82,215,1) 100%)';
-        /*
-      } else if (y < 3800) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,155,1), rgba(32,82,175,1)' +
-          Math.floor((-1 / 7) * y + 542) +
-          '%, rgba(32,82,195,1) 100%)';
-      } else if (y < 4600) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,175,1), rgba(32,82,195,1)' +
-          Math.floor((-1 / 8) * y + 575) +
-          '%, rgba(32,82,205,1) 100%)';
-*/
-      } else if (y < 5000) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,185,1), rgba(32,82,215,1)' +
-          Math.floor((-1 / 4) * y + 1250) +
-          '%, rgba(32,82,235,1) 100%)';
-      } else if (y < 5500) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,215,1), rgba(32,82,235,1)' +
-          Math.floor((-1 / 5) * y + 1100) +
-          '%, rgba(125,152,249,1) 100%)';
+          'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
+          Math.floor(-1 / 5 * y + 660)  +
+          '%, 87CEFA 100%)';
+      } else if (y >= 3300) {
+        document.getElementById('d1')!.style.opacity = String(-1 / 420 * y + 62 / 7);
       } else {
-        document.getElementById('d1')!.style.opacity = String(
-          (-1 / 500) * y + 12
-        );
+        document.getElementById('d1')!.style.opacity = '1';
+        document.getElementById('d1')!.style.background = 'white';
       }
-      if (y < 5500) {
+      this.change = y >= 3300;
+      if ( y < 3300) {
         document.getElementById('d1')!.style.opacity = '1';
       }
     },
@@ -230,13 +100,23 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.app {
+  color: white;
+  transition: color 1s;
+  height: 7000px;
+  overflow: hidden;
+}
+.change {
+  color: black;
+}
+
 .blend {
   background-blend-mode: overlay;
 }
 
 .scroll {
   top: 20px;
-  height: 7000px;
+  height: 100%;
 }
 
 .gradient {
@@ -254,6 +134,7 @@ export default Vue.extend({
   left: 0;
   position: fixed;
   z-index: -1;
+  color: black;
 }
 
 h1 {
@@ -265,5 +146,10 @@ h1 {
   text-align: center;
   display: block;
   font-family: Josefin Sans;
+}
+
+#faq {
+  z-index: 1;
+  margin-bottom: 10%;
 }
 </style>

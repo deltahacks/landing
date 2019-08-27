@@ -1,36 +1,33 @@
-
 <template>
-  <div class="container">
-    <h1>PAST SPONSORS</h1>
-    <hr />
-    <p>
-      Interested in sponsoring? Contact us at
-      <a href="mailto:sponsorship@deltahacks.com">sponsorship@deltahacks.com</a>
-    </p>
+  <div class="container back">
+    <div v-if="main">
+      <img class="rocket-img" src="../assets/blastoff.png" />
+      <h1 id="sponsors-title">Past Sponsors</h1>
+      <p id="sponsors-subtitle">
+        Interested in sponsoring? Contact us at
+        <a
+          href="mailto:sponsorship@deltahacks.com"
+        >sponsorship@deltahacks.com</a>
+      </p>
+    </div>
     <div :class="['square', getClass]">
-      <div
-        v-for="sponsor in shuffle(sponsorList)"
-        v-bind:key="sponsor"
-        v-scroll-reveal
-      >
+      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
         <a :href="sponsor.href" target="_blank">
-          <img
-            :src="sponsor.logo"
-            :alt="sponsor.alt"
-            data-tilt
-            data-tilt-perspective="500"
-          />
+          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
         </a>
       </div>
     </div>
-    <h1>PARTNERS</h1>
-    <hr />
-    <!-- PARTNERS LIST GOES HERE -->
+    <div v-if="secondary">
+      <!-- <h1>PARTNERS</h1>
+      <hr />-->
+      <!-- PARTNERS LIST GOES HERE -->
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+// @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
 
 Vue.use(VueScrollReveal, {
@@ -50,7 +47,7 @@ export default Vue.extend({
     secondary: Boolean,
   },
   methods: {
-    shuffle: function shuffle(a) {
+    shuffle: function shuffle(a: any) {
       for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
@@ -108,15 +105,15 @@ img {
 Classes
 
 */
-
-/* .container {
+html {
+  overflow-x: hidden;
+}
+.container {
   padding-top: 30px;
   padding-bottom: 50px;
   width: 80%;
   margin: 0 auto;
-  background-color: #9fc9fff1;
-  color: white;
-} */
+}
 
 .square {
   display: -webkit-flex;
@@ -131,14 +128,6 @@ Classes
   margin-bottom: 40px;
 }
 
-.level {
-  margin: 0 auto;
-}
-
-div > h1.level:nth-of-type(2) {
-  margin-top: 40px;
-}
-
 div > p > a {
   color: red;
 }
@@ -151,11 +140,11 @@ div > p > a {
 }
 
 .level--1 {
-  width: 95%;
-  margin-left: 3%;
+  width: 100%;
 }
 .level--1 > div {
-  margin: 0 auto;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   margin-top: 25px;
   line-height: 25px;
 }
@@ -167,19 +156,48 @@ div > p > a {
 }
 
 .level--2 {
-  width: 80%;
-  margin-left: 10%;
+  width: 99%;
+  margin-left: 2%;
 }
 
 .level--2 > div {
-  margin: 0 auto;
+  margin-left: 2%;
+  margin-right: 2%;
   margin-top: 25px;
   line-height: 30px;
 }
 
 .level--2 > div > a > img {
-  max-width: 230px;
-  max-height: 230px;
+  max-width: 225px;
+  max-height: 225px;
+}
+
+.rocket-img {
+  z-index: 0 !important;
+  display: flex;
+  position: absolute;
+  margin-top: -80vh;
+  margin-left: -10vw;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+#sponsors-title {
+  font-weight: bold;
+  font-family: Montserrat;
+  position: relative;
+  z-index: 10;
+  margin-top: 50vh;
+}
+
+#sponsors-subtitle {
+  font-weight: bold;
+  font-family: Montserrat;
+  position: relative;
+  z-index: 10;
+}
+.back{
+  background-color: rgba(239, 247, 255, 1);
 }
 </style>
 
