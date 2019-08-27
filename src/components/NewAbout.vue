@@ -1,14 +1,10 @@
 <template>
     <div class="about-container">
-        <h2>This is a sample header</h2>
+        <h2>{{heading}}</h2>
         <div class="about-description">
-            <p>This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.
+            <p>{{description}}
             </p>
-            <p>More text here. More text here. More text here</p>
+            <p>{{more_text}}</p>
         </div>
         <button id='about-button'>More Info</button>
     </div>
@@ -21,6 +17,24 @@ export default Vue.extend({
         return {
             x: 1,
         };
+    },
+    props: {
+        heading: {
+            default: 'This is a sample header',
+            type: String,
+        },
+        description: {
+            default: 'This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
+                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
+                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
+                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
+                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.',
+            type: String,
+        },
+        more_text: {
+            default: 'More text here. More text here. More text here',
+            type: String,
+        },
     },
 });
 </script>
