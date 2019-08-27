@@ -30,10 +30,15 @@ export default Vue.extend({
     color: white;
     text-align: left;
     padding: 10%;
+    width: 70%;
+    text-overflow: ellipsis;
 }
 .about-container > h2 {
     font-size: 35px;
     font-weight: 600;
+}
+.about-description > p {
+    line-height: 22px;
 }
 #about-button {
     width: 180px;
@@ -49,5 +54,21 @@ export default Vue.extend({
 #about-button:hover {
     background-color: rgb(35, 35, 150);
     border: 1px solid rgb(0, 0, 94);
+}
+
+@media screen and (max-width: 720px) {
+  .about-container {
+    width: 100%;
+    padding: 0;
+  }
+  .about-container > h2 {
+    padding: 0 5%;
+  }
+  .about-description > p {
+    padding: 0 5%;
+  }
+  .about-container > button {
+    margin: 0 5%;
+  }
 }
 </style>
