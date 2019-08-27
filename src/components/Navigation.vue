@@ -24,7 +24,7 @@
       class="browser"
       >CONTACT</a
     >
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="faq" class="browser"
+    <a v-scroll-to="'#faqScroll'" @scroll="handleScroll" id="faq" class="browser"
       >FAQ</a
     >
     <a
@@ -35,7 +35,7 @@
       >RECAP</a
     >
     <a
-      v-scroll-to="'#example'"
+      v-scroll-to="'#aboutScroll'"
       @scroll="handleScroll"
       id="about"
       class="active browser"
@@ -51,7 +51,7 @@
       </button>
       <div class="dropdown-content mobile" style="right:0;">
         <a
-          v-scroll-to="'#example'"
+          v-scroll-to="'#aboutScroll'"
           @scroll="handleScroll"
           id="aboutDrop"
           class="active browser"
@@ -65,7 +65,7 @@
           >RECAP</a
         >
         <a
-          v-scroll-to="'#example'"
+          v-scroll-to="'#faqScroll'"
           @scroll="handleScroll"
           id="faqDrop"
           class="browser"

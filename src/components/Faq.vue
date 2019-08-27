@@ -1,5 +1,5 @@
 <template>
-  <div class="faq">
+  <div class="faq" id="faqScroll">
     <h1 id="desktop-faq">Frequently Asked Questions</h1>
     <h1 id="mobile-faq">FAQ</h1>
     <div class="faq-container">

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="aboutScroll">
     <div class="container-item bubbles">
       <link
         href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
