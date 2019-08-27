@@ -4,6 +4,7 @@
       <Landing />
       <AboutUsStats />
       <FAQ id="faq" initialSelect="general 🙋" />
+      <NewAbout />
       <div id="spacer" style="height: 2850px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
@@ -22,6 +23,7 @@ import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
+import NewAbout from '@/components/NewAbout.vue';
 const VueScrollReveal = require('vue-scroll-reveal');
 
 import sponsors_data from '@/data/sponsors_data.ts';
@@ -36,6 +38,7 @@ export default Vue.extend({
     Landing,
     Sponsors,
     AboutUsStats,
+    NewAbout,
   },
   data() {
     return {
