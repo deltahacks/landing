@@ -1,26 +1,28 @@
 <template>
-  <div class="container back">
-    <div v-if="main">
-      <img class="rocket-img" src="../assets/blastoff.png" />
-      <h1 id="sponsors-title">Past Sponsors</h1>
-      <p id="sponsors-subtitle">
-        Interested in sponsoring? Contact us at
-        <a
-          href="mailto:sponsorship@deltahacks.com"
-        >sponsorship@deltahacks.com</a>
-      </p>
-    </div>
-    <div :class="['square', getClass]">
-      <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
-        <a :href="sponsor.href" target="_blank">
-          <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
-        </a>
+  <div class="back">
+    <div class="container">
+      <div v-if="main">
+        <img class="rocket-img" src="../assets/blastoff.png" />
+        <h1 id="sponsors-title">Past Sponsors</h1>
+        <p id="sponsors-subtitle">
+          Interested in sponsoring? Contact us at
+          <a
+            href="mailto:sponsorship@deltahacks.com"
+          >sponsorship@deltahacks.com</a>
+        </p>
       </div>
-    </div>
-    <div v-if="secondary">
-      <!-- <h1>PARTNERS</h1>
-      <hr />-->
-      <!-- PARTNERS LIST GOES HERE -->
+      <div :class="['square', getClass]">
+        <div v-for="sponsor in shuffle(sponsorList)" v-bind:key="sponsor" v-scroll-reveal>
+          <a :href="sponsor.href" target="_blank">
+            <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
+          </a>
+        </div>
+      </div>
+      <div v-if="secondary">
+        <!-- <h1>PARTNERS</h1>
+        <hr />-->
+        <!-- PARTNERS LIST GOES HERE -->
+      </div>
     </div>
   </div>
 </template>
@@ -108,9 +110,14 @@ Classes
 html {
   overflow-x: hidden;
 }
-.container {
-  padding-top: 30px;
+.back {
+  background-color: rgba(239, 247, 255, 1);
+  width: 100vw;
+  /* height: 100vh; */
+  padding-top: 20px;
   padding-bottom: 50px;
+}
+.container {
   width: 80%;
   margin: 0 auto;
 }
@@ -157,7 +164,7 @@ div > p > a {
 
 .level--2 {
   width: 99%;
-  margin-left: 2%;
+  margin-left: 0;
 }
 
 .level--2 > div {
@@ -176,7 +183,7 @@ div > p > a {
   z-index: 0 !important;
   display: flex;
   position: absolute;
-  margin-top: -80vh;
+  margin-top: -55vh;
   margin-left: -10vw;
   overflow: hidden;
   max-width: 100%;
@@ -195,9 +202,6 @@ div > p > a {
   font-family: Montserrat;
   position: relative;
   z-index: 10;
-}
-.back{
-  background-color: rgba(239, 247, 255, 1);
 }
 </style>
 
