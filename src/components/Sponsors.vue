@@ -115,7 +115,7 @@ html {
   width: 100vw;
   /* height: 100vh; */
   padding-top: 20px;
-  padding-bottom: 50px;
+  /* padding-bottom: 100px; */
 }
 .container {
   width: 80%;
