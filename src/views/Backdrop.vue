@@ -2,6 +2,7 @@
   <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
       <Landing />
+      <img class="spshp" src="../assets/ss-abt.png" />
       <NewAbout heading="Explore the unexplored" :left="true" />
       <NewAbout heading="To Infinity and Beyond" :left="false" />
       <AboutUsStats />
@@ -157,5 +158,13 @@ h1 {
 #faq {
   z-index: 1;
   margin-bottom: 10%;
+}
+.spshp {
+  float: right;
+  margin-top: 10vh;
+  margin-right: 5vw;
+  padding-left: 3vw;
+  /* z-index: 0; */
+  width: 35%;
 }
 </style>
