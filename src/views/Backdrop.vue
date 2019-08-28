@@ -103,7 +103,7 @@ export default Vue.extend({
 .app {
   color: white;
   transition: color 1s;
-  height: 7000px;
+  /* height: 7000px; */
   overflow: hidden;
 }
 .change {
