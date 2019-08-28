@@ -1,6 +1,42 @@
 <template>
   <footer class="footer-distributed">
-    <div class="footer-left">
+    <div class="left-footer">
+      <img
+        src="../assets/logolarge.png"
+        alt
+        style="float: left; width: 15%; padding: 30px 30px;"
+      />
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Faq</a>
+        ·
+        <a href="#">Contact</a>
+      </p>
+       <p class="footer-company-name">Deltahacks &copy; 2019</p>
+    </div>
+    <div class="right-footer">
+      <h3>
+        Made with <span style="color: #e25555;">&#9829;</span> in Toronto
+      </h3>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/thedeltahacks/"
+          ><i class="fa fa-facebook"></i
+        ></a>
+        <a href="https://twitter.com/DeltaHacks"
+          ><i class="fa fa-twitter"></i
+        ></a>
+        <a href="https://www.instagram.com/deltahacks"
+          ><i class="fa fa-instagram"></i
+        ></a>
+        <a href="https://www.snapchat.com/add/deltahacks"
+          ><i class="fa fa-snapchat"></i
+        ></a>
+      </div>
+    </div>
+    <!-- <div class="footer-left">
       <img
         src="../assets/logolarge.png"
         alt
@@ -54,7 +90,7 @@
           ><i class="fa fa-snapchat"></i
         ></a>
       </div>
-    </div>
+    </div> -->
   </footer>
 </template>
 
@@ -72,9 +108,36 @@ export default Vue.extend({
 .footer-distributed {
   background: url('~@/assets/footer2.svg') center center;
   background-size: cover;
-  height: 350px;
+  height: 400px;
   margin-top: 80px;
+  position: relative;
 }
+
+.right-footer, .left-footer {
+  bottom: 0;
+  height: 180px;
+  width: 37%;
+  display: inline-block;
+  position: absolute;
+}
+
+.right-footer {
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.left-footer {
+  left: 0%;
+  flex-direction: row;
+}
+.right-footer h3 {
+  padding-top: 30px;
+}
+
+
+
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {
