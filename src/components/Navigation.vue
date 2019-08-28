@@ -190,7 +190,7 @@ export default Vue.extend({
   height: 50px;
   z-index: 1000;
   font-weight: 600;
-  color: black;
+  color: white;
   transition-property: background-color, border-bottom;
   transition-duration: 0.2s;
 }
@@ -198,6 +198,7 @@ export default Vue.extend({
 .navbar.navbar-scrolled {
   background-color: rgba(255, 255, 255);
   border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+  transition: color 0.1s;
   color: black;
 }
 
