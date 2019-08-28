@@ -6,7 +6,7 @@
       <AboutUsStats />
       <NewAbout heading="To Infinity and Beyond" :left="false" />
       <FAQ id="faq" initialSelect="general 🙋" />
-      <div id="spacer" style="height: 2150px" />
+      <div id="spacer" style="height: 1050px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
@@ -114,7 +114,7 @@ export default Vue.extend({
 .app {
   color: white;
   transition: color 1s;
-  height: 6500px;
+  height: 5400px;
 }
 .change {
   color: black !important;
@@ -168,10 +168,5 @@ h1 {
   text-align: center;
   display: block;
   font-family: Josefin Sans;
-}
-
-#faq {
-  z-index: 1;
-  margin-bottom: 10%;
 }
 </style>
