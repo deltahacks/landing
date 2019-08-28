@@ -1,11 +1,11 @@
 <template>
   <footer class="footer-distributed">
     <div class="left-footer">
-      <img
+      <!-- <img
         src="../assets/logolarge.png"
         alt
         style="float: left; width: 15%; padding: 30px 30px;"
-      />
+      /> -->
       <p class="footer-links">
         <a href="#">Home</a>
         ·
@@ -15,9 +15,6 @@
         ·
         <a href="#">Contact</a>
       </p>
-       <p class="footer-company-name">Deltahacks &copy; 2019</p>
-    </div>
-    <!-- <div class="center-footer">
       <div>
         <i class="fa fa-map-marker"></i>
         <p><span>1280 Main St W</span> Hamilton, ON</p>
@@ -32,10 +29,13 @@
         <i class="fa fa-envelope"></i>
         <p><a href="mailto:hello@deltahacks.com">hello@deltahacks.com</a></p>
       </div>
+    </div>
+    <!-- <div class="center-footer">
+
     </div> -->
     <div class="right-footer">
       <h3>
-        Made with <span style="color: #e25555;">&#9829;&#128171;</span> in Hamilton
+        Made with <span style="color: #e25555;">&#9829;</span> in Hamilton
       </h3>
       <div class="footer-icons">
         <a href="https://www.facebook.com/thedeltahacks/"
@@ -51,6 +51,7 @@
           ><i class="fa fa-snapchat"></i
         ></a>
       </div>
+      <p class="footer-company-name">Deltahacks &copy; 2019</p>
     </div>
   </footer>
 </template>
@@ -116,7 +117,7 @@ export default Vue.extend({
   text-align: center;
   line-height: 40px;
   margin: 10px 15px;
-  /* vertical-align: middle; */
+  vertical-align: middle;
 }
 .footer-distributed .footer-distributed .center-footer i.fa-envelope {
   font-size: 17px;
@@ -161,8 +162,14 @@ export default Vue.extend({
 /* Footer links */
 .footer-distributed .footer-links {
   color: #ffffff;
-  margin: 20px 0 12px;
+  margin: 75px 40px 12px;
   padding: 0;
+  /* margin: 0 2px;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px; */
+
 }
 .footer-distributed .footer-links a {
   display: inline-block;
@@ -175,6 +182,7 @@ export default Vue.extend({
   font-size: 14px;
   font-weight: normal;
   margin: 0;
+  padding-top: 10px;
 }
 /* Footer Center */
 .footer-distributed .footer-center {
