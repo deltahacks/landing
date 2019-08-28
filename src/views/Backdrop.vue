@@ -3,8 +3,8 @@
     <div class="scroll">
       <Landing />
       <NewAbout heading="Explore the unexplored" :left="true" />
-      <NewAbout heading="To Infinity and Beyond" :left="false" />
       <AboutUsStats />
+      <NewAbout heading="To Infinity and Beyond" :left="false" />
       <FAQ id="faq" initialSelect="general 🙋" />
       <div id="spacer" style="height: 2850px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />

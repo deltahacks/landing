@@ -63,23 +63,36 @@ export default Vue.extend({
   font-size: 35px;
   font-weight: 600;
 }
+
 .about-description > p {
   line-height: 22px;
 }
+
 #about-button {
+  outline: none;
   width: 180px;
   margin-top: 17px;
   color: white;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgb(11, 11, 143);
-  border: 1px solid rgb(11, 11, 143);
+  background-color: rgba(81, 169, 185);
+  border: 1px solid rgb(65, 137, 150);
   border-radius: 20px;
   height: 40px;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
 }
+
 #about-button:hover {
-  background-color: rgb(35, 35, 150);
-  border: 1px solid rgb(0, 0, 94);
+  color: white;
+  background-color: rgb(178, 215, 221, 0.5);
+  transition: 0.2s;
+}
+
+#about-button:active {
+  color: white;
+  background-color: rgb(178, 215, 221, 1);
+  transition: 0.2s;
 }
 
 @media screen and (max-width: 720px) {
