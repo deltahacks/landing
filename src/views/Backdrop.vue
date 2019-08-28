@@ -56,31 +56,40 @@ export default Vue.extend({
   },
   methods: {
     handleScroll() {
-      this.scr = window.scrollY;
       const y = window.scrollY || window.pageYOffset;
       if (y < 1400) {
         this.d1Opacity = String(
           (-1 / 1400) * y + 1,
         );
+        this.d2Opacity = '1';
+        this.d3Opacity = '1';
+        this.d4Opacity = '1';
+        this.d5Opacity = '1';
       } else if (y < 2800) {
         this.d1Opacity = '0';
         this.d2Opacity = String(
           (-1 / 1400) * y + 2,
         );
-      } else if (y < 3400) {
+        this.d3Opacity = '1';
+        this.d4Opacity = '1';
+        this.d5Opacity = '1';
+      } else if (y < 3600) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
         this.d3Opacity = String(
-          (-1 / 600) * y + 17 / 3,
+          (-1 / 800) * y + 9 / 2,
         );
-      } else if (y < 4000) {
+        this.d4Opacity = '1';
+        this.d5Opacity = '1';
+      } else if (y < 4400) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
         this.d3Opacity = '0';
         this.d4Opacity = String(
-          (-1 / 600) * y + 20 / 3,
+          (-1 / 800) * y + 11 / 2,
         );
-      } else if (y >= 4000) {
+        this.d5Opacity = '1';
+      } else if (y >= 4400) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
         this.d3Opacity = '0';
@@ -128,24 +137,22 @@ export default Vue.extend({
   top: 0;
   left: 0;
   position: fixed;
-  z-index: -1;
-  will-change: transform;
   color: black;
 }
 #d1 {
-  background: rgb(32,58,67);
+  background: rgb(32,58,67) none repeat scroll 0% 0%;
   z-index: -1;
 }
 #d2 {
-  background: rgb(40,60,134);
+  background: rgb(40,60,134) none repeat scroll 0% 0%;
   z-index: -2;
 }
 #d3 {
-  background: rgb(91, 107, 167);
+  background: rgb(91, 107, 167) none repeat scroll 0% 0%;
   z-index: -3;
 }
 #d4 {
-  background: rgb(201,214,255);
+  background: rgb(201,214,255) none repeat scroll 0% 0%;
   z-index: -4;
 }
 #d5 {
