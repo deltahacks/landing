@@ -17,45 +17,7 @@
       </p>
        <p class="footer-company-name">Deltahacks &copy; 2019</p>
     </div>
-    <div class="right-footer">
-      <h3>
-        Made with <span style="color: #e25555;">&#9829;</span> in Toronto
-      </h3>
-      <div class="footer-icons">
-        <a href="https://www.facebook.com/thedeltahacks/"
-          ><i class="fa fa-facebook"></i
-        ></a>
-        <a href="https://twitter.com/DeltaHacks"
-          ><i class="fa fa-twitter"></i
-        ></a>
-        <a href="https://www.instagram.com/deltahacks"
-          ><i class="fa fa-instagram"></i
-        ></a>
-        <a href="https://www.snapchat.com/add/deltahacks"
-          ><i class="fa fa-snapchat"></i
-        ></a>
-      </div>
-    </div>
-    <!-- <div class="footer-left">
-      <img
-        src="../assets/logolarge.png"
-        alt
-        style="float: left; width: 15%; padding: 30px 55px;"
-      />
-      <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">About</a>
-        ·
-        <a href="#">Faq</a>
-        ·
-        <a href="#">Contact</a>
-      </p>
-
-      <p class="footer-company-name">Deltahacks &copy; 2019</p>
-    </div>
-
-    <div class="footer-center">
+    <!-- <div class="center-footer">
       <div>
         <i class="fa fa-map-marker"></i>
         <p><span>1280 Main St W</span> Hamilton, ON</p>
@@ -70,11 +32,10 @@
         <i class="fa fa-envelope"></i>
         <p><a href="mailto:hello@deltahacks.com">hello@deltahacks.com</a></p>
       </div>
-    </div>
-
-    <div class="footer-right">
+    </div> -->
+    <div class="right-footer">
       <h3>
-        Made with <span style="color: #e25555;">&#9829;</span> in Toronto
+        Made with <span style="color: #e25555;">&#9829;&#128171;</span> in Hamilton
       </h3>
       <div class="footer-icons">
         <a href="https://www.facebook.com/thedeltahacks/"
@@ -90,7 +51,7 @@
           ><i class="fa fa-snapchat"></i
         ></a>
       </div>
-    </div> -->
+    </div>
   </footer>
 </template>
 
@@ -111,31 +72,72 @@ export default Vue.extend({
   height: 400px;
   margin-top: 80px;
   position: relative;
+  font: bold 16px sans-serif;
 }
 
-.right-footer, .left-footer {
+.footer-distributed .right-footer, 
+.footer-distributed .left-footer, 
+.footer-distributed .center-footer {
   bottom: 0;
   height: 180px;
   width: 37%;
   display: inline-block;
   position: absolute;
-}
-
-.right-footer {
-  right: 0%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-}
-
-.left-footer {
-  left: 0%;
-  flex-direction: row;
-}
-.right-footer h3 {
   padding-top: 30px;
 }
 
+.footer-distributed .right-footer {
+  right: 0%;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.footer-distributed .left-footer {
+  left: 0%;
+  text-align: left;
+}
+
+.footer-distributed .center-footer {
+  left: 10%;
+  bottom: 0;
+  text-align: bottom;
+}
+.footer-distributed .right-footer h3 {
+  padding-top: 30px;
+}
+
+.footer-distributed .center-footer i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  margin: 10px 15px;
+  /* vertical-align: middle; */
+}
+.footer-distributed .footer-distributed .center-footer i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+.footer-distributed .center-footer p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+.footer-distributed .center-footer p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+.footer-distributed .center-footer p a {
+  color: #5383d3;
+  text-decoration: none;
+}
 
 
 .footer-distributed .footer-left,
@@ -233,17 +235,18 @@ export default Vue.extend({
 }
 .footer-distributed .footer-icons a {
   display: inline-block;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background-color: #33383b;
-  border-radius: 2px;
-  font-size: 30px;
+  border-radius: 25px;
+  font-size: 25px;
   color: #ffffff;
   text-align: center;
-  line-height: 45px;
+  line-height: 50px;
   margin-right: 3px;
   margin-bottom: 5px;
+  margin-left: 3px;
 }
 /* If you don't want the footer to be responsive, remove these media queries */
 @media (max-width: 880px) {
