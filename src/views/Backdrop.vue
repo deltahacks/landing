@@ -11,9 +11,10 @@
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
-    <div class="gradient" id="d1">
-      <!-- <h1>{{ scr }}</h1> -->
-    </div>
+    <div class="gradient" id="d1" :style='{opacity: d1Opacity}'/>
+    <div class="gradient" id="d2" :style='{opacity: d2Opacity}'/>
+    <div class="gradient" id="d3" :style='{opacity: d3Opacity}'/>
+    <div class="gradient" id="d4" :style='{opacity: d4Opacity}'/>
   </div>
 </template>
 
@@ -46,54 +47,49 @@ export default Vue.extend({
       change: false,
       scr: 0,
       sponsors_data,
+      d1Opacity: '1',
+      d2Opacity: '1',
+      d3Opacity: '1',
+      d4Opacity: '1',
+      d5Opacity: '1',
     };
   },
   methods: {
     handleScroll() {
       this.scr = window.scrollY;
       const y = window.scrollY || window.pageYOffset;
-      if (y < 560) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(37,36,64,1), rgba(32,65,95,1)' +
-          Math.floor(-0.18 * y + 100) +
-          '%, rgba(32,82,95,1) 100%)';
-      } else if (y < 1120) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,65,95,1), rgba(32,82,95,1)' +
-          Math.floor(-0.18 * y + 200) +
-          '%, rgba(42,82,115,1) 100%)';
-      } else if (y < 1680) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(32,82,95,1), rgba(42,82,115,1)' +
-          Math.floor(-0.18 * y + 300) +
-          '%, rgba(52,92,135,1) 100%)';
-      } else if (y < 2240) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(42,82,115,1), rgba(52,92,135,1)' +
-          Math.floor(-0.18 * y + 400) +
-          '%, rgba(62,102,155,1) 100%)';
-      } else if (y < 2800) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(52,92,135,1), rgba(62,102,155,1)' +
-          Math.floor(-0.18 * y + 500) +
-          '%, rgba(72,112,175,1) 100%)';
-      } else if (y < 3300) {
-        document.getElementById('d1')!.style.backgroundImage =
-          'linear-gradient(180deg, rgba(62,102,155,1), rgba(72,112,195,1)' +
-          Math.floor((-1 / 5) * y + 660) +
-          '%, 87CEFA 100%)';
-      } else if (y >= 3300) {
-        document.getElementById('d1')!.style.opacity = String(
-          (-1 / 420) * y + 62 / 7
+      if (y < 1400) {
+        this.d1Opacity = String(
+          (-1 / 1400) * y + 1,
         );
-      } else {
-        document.getElementById('d1')!.style.opacity = '1';
-        document.getElementById('d1')!.style.background = 'white';
+      } else if (y < 2800) {
+        this.d1Opacity = '0';
+        this.d2Opacity = String(
+          (-1 / 1400) * y + 2,
+        );
+      } else if (y < 3400) {
+        this.d1Opacity = '0';
+        this.d2Opacity = '0';
+        this.d3Opacity = String(
+          (-1 / 600) * y + 17 / 3,
+        );
+      } else if (y < 4000) {
+        this.d1Opacity = '0';
+        this.d2Opacity = '0';
+        this.d3Opacity = '0';
+        this.d4Opacity = String(
+          (-1 / 600) * y + 20 / 3,
+        );
+      } else if (y >= 4000) {
+        this.d1Opacity = '0';
+        this.d2Opacity = '0';
+        this.d3Opacity = '0';
+        this.d4Opacity = '0';
+        this.d5Opacity = String(
+          1,
+        );
       }
-      this.change = y >= 3300;
-      if (y < 3300) {
-        document.getElementById('d1')!.style.opacity = '1';
-      }
+      this.change = y >= 2400;
     },
   },
   created() {
@@ -113,7 +109,7 @@ export default Vue.extend({
   overflow: hidden;
 }
 .change {
-  color: black;
+  color: black !important;
 }
 
 .blend {
@@ -127,20 +123,34 @@ export default Vue.extend({
 
 .gradient {
   /* background-color: rgb(69, 111, 225); */
-  background-image: linear-gradient(
-    180deg,
-    rgba(37, 36, 64, 1) 0%,
-    rgba(32, 82, 95, 1) 100%
-  );
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   width: 100vw;
   top: 0;
   left: 0;
   position: fixed;
   z-index: -1;
+  will-change: transform;
   color: black;
+}
+#d1 {
+  background: rgb(32,58,67);
+  z-index: -1;
+}
+#d2 {
+  background: rgb(40,60,134);
+  z-index: -2;
+}
+#d3 {
+  background: rgb(91, 107, 167);
+  z-index: -3;
+}
+#d4 {
+  background: rgb(201,214,255);
+  z-index: -4;
+}
+#d5 {
+  color: white;
+  z-index: -5;
 }
 
 h1 {
