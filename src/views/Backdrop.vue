@@ -1,7 +1,7 @@
 <template>
   <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
-      <Landing />
+      <Landing id="landing" />
       <div class="astr2">
         <img :src="ASTR2" />
       </div>
@@ -241,5 +241,9 @@ h1 {
   /* z-index: 0; */
   width: 20%;
   transform: rotate(10deg);
+}
+
+#landing {
+  height: 100vh;
 }
 </style>
