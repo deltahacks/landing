@@ -35,9 +35,6 @@
 
     </div> -->
     <div class="right-footer">
-      <h3>
-        Made with <span style="color: #e25555;">&#9829;</span> in Hamilton
-      </h3>
       <div class="footer-icons">
         <a href="https://www.facebook.com/thedeltahacks/"
           ><i class="fa fa-facebook"></i
@@ -52,6 +49,9 @@
           ><i class="fa fa-snapchat"></i
         ></a>
       </div>
+      <h3>
+        Made with <span style="color: #e25555;">&#9829;</span> in Hamilton
+      </h3>
     </div>
   </footer>
 </template>
@@ -106,7 +106,7 @@ export default Vue.extend({
   text-align: bottom;
 }
 .footer-distributed .right-footer h3 {
-  padding-top: 50px;
+  font-size: 16px;
 }
 
 .footer-distributed .center-footer i {
@@ -244,7 +244,7 @@ export default Vue.extend({
   margin-bottom: 20px;
 }
 .footer-distributed .footer-icons {
-  margin-top: 25px;
+  margin-top: 50px;
 }
 .footer-distributed .footer-icons a {
   display: inline-block;
@@ -306,7 +306,7 @@ export default Vue.extend({
   .footer-distributed .right-footer h3 {
     color: black;
     padding-top: 0px;
-    margin-top: 50px;
+    /* margin-top: 50px; */
   }
 }
 </style>
