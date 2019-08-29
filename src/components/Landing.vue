@@ -2,6 +2,7 @@
 <template>
   <div class="flex-container">
     <div id="particles-js"> </div>
+    <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
         Delta<span style="font-weight: 300">Hacks</span> VI
@@ -9,9 +10,6 @@
       <img class="vi-back" :src="VI" />
       <a class="act-btn" href="#">Apply</a>
       <a class="act-btn" href="#">Sponsor</a>
-    </div>
-    <div id="right">
-      <img class="main-planet" :src="Planet" />
     </div>
   </div>
 </template>
@@ -161,6 +159,11 @@ export default Vue.extend({
 
 .flex-container {
   font-family: 'Montserrat';
+  display: flex;
+  flex-direction: row;
+  flex-direction: row-reverse;
+  width: 90%;
+  padding-top: 2%;
 }
 
 #particles-js {
@@ -172,8 +175,7 @@ export default Vue.extend({
 }
 
 #left {
-  width: 50%;
-  float: left;
+  flex: 1;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
 
@@ -267,25 +269,33 @@ export default Vue.extend({
 
 .main-planet {
   width: 40%;
-  padding-top: 12%;
-  padding-right: 7%;
+  height: 60%;
+  padding-top: 7%;
   z-index: 1;
   position: relative;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
   .flex-container {
     display: flex;
     flex-direction: column;
-    padding: 10% 6%;
+    padding: 0;
+  }
+  #left {
+    width: 100%;
+    position: absolute;
+    margin-top: 275px;
+    padding: 0;
   }
   .landing-title {
-    font-size: 3.75em;
+    font-size: 3.5em;
   }
   .main-planet {
-    width: 80%;
-    padding-top: 30%;
-    padding-left: 7%;
+    width: 60%;
+    align-self: center;
+    padding: 0;
+    padding-left: 10%;
+    height: 60%;
   }
 }
 </style>
