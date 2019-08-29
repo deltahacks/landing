@@ -80,11 +80,11 @@ import faqData from '@/data/faq_data.ts';
 export default Vue.extend({
   name: 'Faq',
   props: ['initialSelect'],
-  data(): { faqData: any; selected: string; expanded: string | null } {
+  data(): { faqData: any; selected: string; expanded: number | null } {
     return {
       faqData,
-      selected: 'kk',
-      expanded: null,
+      selected: '',
+      expanded: 0,
     };
   },
   methods: {
