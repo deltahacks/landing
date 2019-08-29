@@ -8,8 +8,8 @@
       <div id="desktop">
         <svg viewBox="0 0 1000 500">
           <Bubble
-            v-for="bubble in bubbles"
-            v-bind:key="bubble"
+            v-for="(bubble, index) in bubbles"
+            v-bind:key="index"
             :r="bubble.desktop.r"
             :x="bubble.desktop.x"
             :y="bubble.desktop.y"
@@ -24,8 +24,8 @@
       <div id="mobile">
         <svg viewBox="0 0 500 700">
           <Bubble
-            v-for="bubble in bubbles"
-            v-bind:key="bubble"
+            v-for="(bubble, index) in bubbles"
+            v-bind:key="index"
             :r="bubble.mobile.r"
             :x="bubble.mobile.x"
             :y="bubble.mobile.y"
@@ -167,7 +167,7 @@ export default Vue.extend({
   padding-top: 100px;
 }
 
-@media only screen and (max-width : 700px) {
+@media only screen and (max-width: 700px) {
   #mobile {
     display: block;
   }
@@ -177,7 +177,7 @@ export default Vue.extend({
   }
 }
 
-@media only screen and (min-width : 701px) {
+@media only screen and (min-width: 701px) {
   #mobile {
     display: none;
   }
@@ -185,5 +185,4 @@ export default Vue.extend({
     display: block;
   }
 }
-
 </style>
