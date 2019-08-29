@@ -11,7 +11,9 @@
         >
           <div
             :style="{ width: '100%' }"
-            @click="selected = selected !== name ? name:isMobile() ? '':selected"
+            @click="
+              selected = selected !== name ? name : isMobile() ? '' : selected
+            "
           >
             {{ name.charAt(0).toUpperCase() + name.substring(1) }}
           </div>
@@ -148,6 +150,7 @@ export default Vue.extend({
 .faq-area {
   padding: 2% 5%;
   border: 2px solid lightgray;
+  border-radius: 25px;
   width: 100%;
   margin-left: 0.5%;
   overflow: scroll;
