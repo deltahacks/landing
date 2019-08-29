@@ -42,7 +42,7 @@
       >ABOUT</a
     >
     <div class="dropdown mobile">
-      <button class="dropbtn mobile">
+      <button class="dropbtn mobile" @click="show = !show">
         <img
           src="../assets/hamburger.png"
           alt
@@ -50,7 +50,7 @@
           :class="{ 'invert': !scrolled }"
         />
       </button>
-      <div class="dropdown-content mobile" style="right:0;">
+      <div class="dropdown-content mobile" style="right:0;" v-show="show" >
         <a
           v-scroll-to="'#aboutScroll'"
           @scroll="handleScroll"
@@ -99,7 +99,7 @@ export default Vue.extend({
   components: {},
   data() {
     return {
-      show: true,
+      show: false,
       scrolled: false,
     };
   },
@@ -269,7 +269,7 @@ export default Vue.extend({
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  visibility: hidden;
+  /* visibility: hidden; */
   position: absolute;
   background-color: rgba(255, 255, 255, 0.9);
   min-width: 160px;
@@ -277,8 +277,8 @@ export default Vue.extend({
   z-index: 1;
   /* border-bottom-left-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px; */
-  transition: visibility 0s, opacity 0.5s linear;
-  opacity: 0;
+  /* transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0; */
   width: 100vw;
 }
 
@@ -300,19 +300,17 @@ export default Vue.extend({
   -moz-border-radius: 422px;
   -webkit-border-radius: 42px;
   border-radius: 42px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.heighter {
-  height: 200px;
-}
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content{
+  visibility: visible;
+  opacity: 1;
+} */
 
+/* Change the background color of the dropdown button when the dropdown content is shown */
 #proj {
   margin-right: 50px;
 }
