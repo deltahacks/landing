@@ -50,6 +50,7 @@
           :class="{ 'invert': !scrolled }"
         />
       </button>
+      <transition name="fade" mode="out-in">
       <div class="dropdown-content mobile" style="right:0;" v-show="show" >
         <a
           v-scroll-to="'#aboutScroll'"
@@ -87,6 +88,7 @@
           >DH5 PROJECTS</a
         >
       </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -315,4 +317,14 @@ export default Vue.extend({
   margin-right: 50px;
 }
 .invert { filter: invert(100%); }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s
+}
+
+.fade-enter,
+.fade-leave-to { opacity: 0; }
+
+
 </style>
