@@ -51,7 +51,8 @@ import ASTR1 from '@/assets/Astronaut1.svg';
 import ASTR2 from '@/assets/Astronaut2.svg';
 import ASTR3 from '@/assets/astro.svg';
 
-const VueScrollReveal = require('vue-scroll-reveal');
+// @ts-ignore
+import VueScrollReveal from 'vue-scroll-reveal';
 
 import sponsors_data from '@/data/sponsors_data.ts';
 
@@ -77,13 +78,11 @@ export default Vue.extend({
       ASTR2,
       ASTR3,
       opacities: { d1: '1', d2: '1', d3: '1', d4: '1', d5: '1' },
-      text1:
-        "At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from over 50 different schools, working hard over 24 hours, to bring their big ideas to life. Our team works hard diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
+      text1: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from over 50 different schools, working hard over 24 hours, to bring their big ideas to life. Our team works hard diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we\'ll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
-      text2:
-        "DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!",
+      text2: `DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!`,
       text2_sub: 'Interested in joining our team? Apply below!',
       button2: 'Apply to volunteer',
     };
