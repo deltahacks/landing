@@ -15,7 +15,8 @@
         ·
         <a href="#">Contact</a>
       </p>
-      <div>
+      <p class="footer-company-name">Deltahacks &copy; 2019</p>
+      <!-- <div>
         <i class="fa fa-map-marker"></i>
         <p><span>1280 Main St W</span> Hamilton, ON</p>
       </div>
@@ -28,7 +29,7 @@
       <div>
         <i class="fa fa-envelope"></i>
         <p><a href="mailto:hello@deltahacks.com">hello@deltahacks.com</a></p>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="center-footer">
 
@@ -51,7 +52,6 @@
           ><i class="fa fa-snapchat"></i
         ></a>
       </div>
-      <p class="footer-company-name">Deltahacks &copy; 2019</p>
     </div>
   </footer>
 </template>
@@ -74,6 +74,7 @@ export default Vue.extend({
   margin-top: 80px;
   position: relative;
   font: bold 16px sans-serif;
+  font-family: Montserrat;
 }
 
 .footer-distributed .right-footer, 
@@ -90,12 +91,13 @@ export default Vue.extend({
 .footer-distributed .right-footer {
   right: 0%;
   text-align: right;
-  padding-right: 30px;
+  padding-right: 40px;
 }
 
 .footer-distributed .left-footer {
   left: 0%;
   text-align: left;
+  margin-left: 40px;
 }
 
 .footer-distributed .center-footer {
@@ -104,7 +106,7 @@ export default Vue.extend({
   text-align: bottom;
 }
 .footer-distributed .right-footer h3 {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .footer-distributed .center-footer i {
@@ -162,7 +164,7 @@ export default Vue.extend({
 /* Footer links */
 .footer-distributed .footer-links {
   color: #ffffff;
-  margin: 75px 40px 12px;
+  margin: 60px 0px 12px;
   padding: 0;
   /* margin: 0 2px;
   padding: 0;
@@ -177,12 +179,15 @@ export default Vue.extend({
   text-decoration: none;
   color: inherit;
 }
+
+.footer-distributed .footer-links a:hover {
+  opacity: 0.6;
+}
 .footer-distributed .footer-company-name {
   color: #8f9296;
   font-size: 14px;
   font-weight: normal;
   margin: 0;
-  padding-top: 10px;
 }
 /* Footer Center */
 .footer-distributed .footer-center {
@@ -246,15 +251,16 @@ export default Vue.extend({
   width: 50px;
   height: 50px;
   cursor: pointer;
-  background-color: #33383b;
-  border-radius: 25px;
   font-size: 25px;
   color: #ffffff;
   text-align: center;
-  line-height: 50px;
   margin-right: 3px;
   margin-bottom: 5px;
   margin-left: 3px;
+}
+
+.footer-distributed .footer-icons a:hover {
+  opacity: 0.6;
 }
 /* If you don't want the footer to be responsive, remove these media queries */
 @media (max-width: 880px) {
@@ -266,11 +272,41 @@ export default Vue.extend({
   .footer-distributed .footer-right {
     display: block;
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: center;
   }
   .footer-distributed .footer-center i {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-distributed .left-footer {
+    display: none;
+  }
+  .footer-distributed .right-footer {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+    color: black;
+    padding: 0px;
+  }
+
+  .footer-distributed .footer-icons a {
+    color: black;
+    margin: 0;
+  }
+
+  .footer-distributed .footer-links {
+    color: black;
+    padding-top: 10px;
+    margin: 0px 0px 12px;
+  }
+  .footer-distributed .right-footer h3 {
+    color: black;
+    padding-top: 0px;
+    margin-top: 50px;
   }
 }
 </style>
