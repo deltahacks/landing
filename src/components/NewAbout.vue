@@ -2,10 +2,10 @@
   <div :class="['about-container', left ? 'left' : 'right']">
     <h2>{{ heading }}</h2>
     <div class="about-description">
-      <p>{{ description }} </p>
-      <p>{{ more_text }}</p>
+      <p>{{ text }} </p>
+      <p>{{ sub }}</p>
     </div>
-    <button id="about-button">More Info</button>
+    <button id="about-button">{{ button }}</button>
   </div>
 </template>
 
@@ -18,6 +18,9 @@ export default Vue.extend({
     };
   },
   props: {
+    button: String,
+    sub: String,
+    text: String,
     left: Boolean,
     right: Boolean,
     heading: {
@@ -109,5 +112,9 @@ export default Vue.extend({
   .about-container > button {
     margin: 0 5%;
   }
+}
+
+p {
+  font-size: 20px;
 }
 </style>

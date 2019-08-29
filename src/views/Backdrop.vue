@@ -2,19 +2,31 @@
   <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
       <Landing />
-      <NewAbout heading="Explore the unexplored" :left="true" />
+      <NewAbout
+        heading="To Infinity and Beyond"
+        :text="text1"
+        :sub="text1_sub"
+        :button="text1_button"
+        :left="true"
+      />
       <AboutUsStats />
-      <NewAbout heading="To Infinity and Beyond" :left="false" />
+      <NewAbout
+        heading="The hackathon for change"
+        :text="text2"
+        :sub="text2_sub"
+        :button="button2"
+        :left="false"
+      />
       <FAQ id="faq" initialSelect="general 🙋" />
       <div id="spacer" style="height: 1050px" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
-    <div class="gradient" id="d1" :style='{opacity: d1Opacity}'/>
-    <div class="gradient" id="d2" :style='{opacity: d2Opacity}'/>
-    <div class="gradient" id="d3" :style='{opacity: d3Opacity}'/>
-    <div class="gradient" id="d4" :style='{opacity: d4Opacity}'/>
+    <div class="gradient" id="d1" :style="{ opacity: d1Opacity }" />
+    <div class="gradient" id="d2" :style="{ opacity: d2Opacity }" />
+    <div class="gradient" id="d3" :style="{ opacity: d3Opacity }" />
+    <div class="gradient" id="d4" :style="{ opacity: d4Opacity }" />
   </div>
 </template>
 
@@ -52,51 +64,50 @@ export default Vue.extend({
       d3Opacity: '1',
       d4Opacity: '1',
       d5Opacity: '1',
+      text1:
+        "At DeltaHacks, we believe change comes from dreaming big. Our team works hard all year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
+      text1_sub:
+        'Check out some ideas people have brought to DeltaHacks in the past below!',
+      text1_button: 'DeltaHacks V Projects',
+      text2:
+        "DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!",
+      text2_sub: 'Interested in joining our team? Apply below!',
+      button2: 'Apply to volunteer',
     };
   },
   methods: {
     handleScroll() {
       const y = window.scrollY || window.pageYOffset;
       if (y < 1400) {
-        this.d1Opacity = String(
-          (-1 / 1400) * y + 1,
-        );
+        this.d1Opacity = String((-1 / 1400) * y + 1);
         this.d2Opacity = '1';
         this.d3Opacity = '1';
         this.d4Opacity = '1';
         this.d5Opacity = '1';
       } else if (y < 2800) {
         this.d1Opacity = '0';
-        this.d2Opacity = String(
-          (-1 / 1400) * y + 2,
-        );
+        this.d2Opacity = String((-1 / 1400) * y + 2);
         this.d3Opacity = '1';
         this.d4Opacity = '1';
         this.d5Opacity = '1';
       } else if (y < 3600) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
-        this.d3Opacity = String(
-          (-1 / 800) * y + 9 / 2,
-        );
+        this.d3Opacity = String((-1 / 800) * y + 9 / 2);
         this.d4Opacity = '1';
         this.d5Opacity = '1';
       } else if (y < 4400) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
         this.d3Opacity = '0';
-        this.d4Opacity = String(
-          (-1 / 800) * y + 11 / 2,
-        );
+        this.d4Opacity = String((-1 / 800) * y + 11 / 2);
         this.d5Opacity = '1';
       } else if (y >= 4400) {
         this.d1Opacity = '0';
         this.d2Opacity = '0';
         this.d3Opacity = '0';
         this.d4Opacity = '0';
-        this.d5Opacity = String(
-          1,
-        );
+        this.d5Opacity = String(1);
       }
       this.change = y >= 2400;
     },
@@ -139,11 +150,11 @@ export default Vue.extend({
   color: black;
 }
 #d1 {
-  background: rgb(32,58,67) none repeat scroll 0% 0%;
+  background: rgb(32, 58, 67) none repeat scroll 0% 0%;
   z-index: -1;
 }
 #d2 {
-  background: rgb(40,60,134) none repeat scroll 0% 0%;
+  background: rgb(40, 60, 134) none repeat scroll 0% 0%;
   z-index: -2;
 }
 #d3 {
@@ -151,7 +162,7 @@ export default Vue.extend({
   z-index: -3;
 }
 #d4 {
-  background: rgb(201,214,255) none repeat scroll 0% 0%;
+  background: rgb(201, 214, 255) none repeat scroll 0% 0%;
   z-index: -4;
 }
 #d5 {
