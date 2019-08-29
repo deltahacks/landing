@@ -50,7 +50,7 @@ export default {
       a: '4 people',
     },
   ],
-  'hardware 🧰': [
+  'hardware 🔨': [
     {q: 'Will there be hardware during the event?', a: 'yessir'},
     {q: 'Is it possible to request hardware beforehand?', a: 'ye'},
   ],

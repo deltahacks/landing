@@ -14,80 +14,75 @@
     >
       <p class="typing"></p>
     </vue-typed-js>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="proj" class="browser"
-      >DH5 PROJECTS</a
-    >
     <a
       v-scroll-to="'#example'"
       @scroll="handleScroll"
       id="contact"
       class="browser"
-      >CONTACT</a
     >
-    <a v-scroll-to="'#faqScroll'" @scroll="handleScroll" id="faq" class="browser"
-      >FAQ</a
-    >
+      CONTACT
+    </a>
+    <a v-scroll-to="'#faq'" @scroll="handleScroll" class="browser">FAQ</a>
     <a
       v-scroll-to="'#example'"
       @scroll="handleScroll"
       id="recap"
       class="browser"
-      >RECAP</a
     >
+      RECAP
+    </a>
     <a
-      v-scroll-to="'#aboutScroll'"
+      v-scroll-to="'#blurb-2'"
       @scroll="handleScroll"
-      id="about"
+      id="aboutScroll"
       class="active browser"
-      >ABOUT</a
     >
+      ABOUT
+    </a>
     <div class="dropdown mobile">
       <button class="dropbtn mobile" @click="show = !show">
         <img
           src="../assets/hamburger.png"
           alt
           style="height: 20px; width: 20px;"
-          :class="{ 'invert': !scrolled }"
+          :class="{ invert: !scrolled }"
         />
       </button>
       <transition name="fade" mode="out-in">
-      <div class="dropdown-content mobile" style="right:0;" v-show="show" >
-        <a
-          v-scroll-to="'#aboutScroll'"
-          @scroll="handleScroll"
-          id="aboutDrop"
-          class="active browser"
-          >ABOUT</a
-        >
-        <a
-          v-scroll-to="'#example'"
-          @scroll="handleScroll"
-          id="recapDrop"
-          class="browser"
-          >RECAP</a
-        >
-        <a
-          v-scroll-to="'#faqScroll'"
-          @scroll="handleScroll"
-          id="faqDrop"
-          class="browser"
-          >FAQ</a
-        >
-        <a
-          v-scroll-to="'#example'"
-          @scroll="handleScroll"
-          id="contactDrop"
-          class="browser"
-          >CONTACT</a
-        >
-        <a
-          v-scroll-to="'#example'"
-          @scroll="handleScroll"
-          id="projDrop"
-          class="browser"
-          >DH5 PROJECTS</a
-        >
-      </div>
+        <div class="dropdown-content mobile" style="right:0;" v-show="show">
+          <a
+            v-scroll-to="'#aboutScroll'"
+            @scroll="handleScroll"
+            id="aboutDrop"
+            class="active browser"
+          >
+            ABOUT
+          </a>
+          <a
+            v-scroll-to="'#example'"
+            @scroll="handleScroll"
+            id="recapDrop"
+            class="browser"
+          >
+            RECAP
+          </a>
+          <a
+            v-scroll-to="'#faqScroll'"
+            @scroll="handleScroll"
+            id="faqDrop"
+            class="browser"
+          >
+            FAQ
+          </a>
+          <a
+            v-scroll-to="'#example'"
+            @scroll="handleScroll"
+            id="contactDrop"
+            class="browser"
+          >
+            CONTACT
+          </a>
+        </div>
       </transition>
     </div>
   </div>
@@ -313,18 +308,20 @@ export default Vue.extend({
 } */
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-#proj {
+#contact {
   margin-right: 50px;
 }
-.invert { filter: invert(100%); }
+.invert {
+  filter: invert(100%);
+}
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s
+  transition: opacity 0.3s;
 }
 
 .fade-enter,
-.fade-leave-to { opacity: 0; }
-
-
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

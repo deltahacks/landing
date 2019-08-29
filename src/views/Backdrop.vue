@@ -9,21 +9,23 @@
       <div class="astr1">
         <img :src="ASTR1" />
       </div>
-      <NewAbout
+      <Blurb
         heading="To Infinity and Beyond"
         :text="text1"
         :sub="text1_sub"
         :button="text1_button"
         :left="true"
+        id="blurb-1"
       />
       <AboutUsStats />
       <img class="astr3" :src="ASTR3" />
-      <NewAbout
+      <Blurb
         heading="The hackathon for change"
         :text="text2"
         :sub="text2_sub"
         :button="button2"
         :left="false"
+        id="blurb-2"
       />
       <FAQ id="faq" initialSelect="general 🙋" />
       <div id="spacer" style="height: 50vh" />
@@ -45,7 +47,7 @@ import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
-import NewAbout from '@/components/NewAbout.vue';
+import Blurb from '@/components/Blurb.vue';
 import SAT from '@/assets/sat.png';
 import ASTR1 from '@/assets/Astronaut1.svg';
 import ASTR2 from '@/assets/Astronaut2.svg';
@@ -66,7 +68,7 @@ export default Vue.extend({
     Landing,
     Sponsors,
     AboutUsStats,
-    NewAbout,
+    Blurb,
   },
   data() {
     return {
@@ -216,14 +218,16 @@ h1 {
   margin-left: 70vw;
   width: 2.5%;
   transform: rotate(-4deg);
+  z-index: 1;
 }
 
 .astr2 {
   position: absolute;
   margin-top: 18vh;
-  margin-left: 83vw;
+  margin-left: 90vw;
   width: 3%;
   transform: rotate(3deg);
+  z-index: 1;
 }
 
 .astr3 {
