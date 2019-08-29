@@ -173,7 +173,6 @@ export default Vue.extend({
 
 #left {
   width: 50%;
-  height: 100%;
   float: left;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
@@ -181,7 +180,7 @@ export default Vue.extend({
 .landing-title {
   font-size: 5em;
   color: white;
-  margin-top: 35%;
+  padding-top: 25%;
   font-weight: 700;
 }
 
@@ -268,10 +267,25 @@ export default Vue.extend({
 
 .main-planet {
   width: 40%;
-  margin: 20px 20px;
-  padding-top: 10%;
+  padding-top: 12%;
   padding-right: 7%;
   z-index: 1;
   position: relative;
+}
+
+@media only screen and (max-width: 1000px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10% 6%;
+  }
+  .landing-title {
+    font-size: 3.75em;
+  }
+  .main-planet {
+    width: 80%;
+    padding-top: 30%;
+    padding-left: 7%;
+  }
 }
 </style>
