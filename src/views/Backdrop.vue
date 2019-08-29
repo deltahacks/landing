@@ -17,6 +17,7 @@
         :left="true"
       />
       <AboutUsStats />
+      <img class="astr3" :src="ASTR3" />
       <NewAbout
         heading="The hackathon for change"
         :text="text2"
@@ -48,6 +49,8 @@ import NewAbout from '@/components/NewAbout.vue';
 import SAT from '@/assets/sat.png';
 import ASTR1 from '@/assets/Astronaut1.svg';
 import ASTR2 from '@/assets/Astronaut2.svg';
+import ASTR3 from '@/assets/astro.svg';
+
 const VueScrollReveal = require('vue-scroll-reveal');
 
 import sponsors_data from '@/data/sponsors_data.ts';
@@ -72,6 +75,7 @@ export default Vue.extend({
       SAT,
       ASTR1,
       ASTR2,
+      ASTR3,
       d1Opacity: '1',
       d2Opacity: '1',
       d3Opacity: '1',
@@ -198,6 +202,7 @@ h1 {
   z-index: 1;
   margin-bottom: 10%;
 }
+
 .spshp {
   float: right;
   margin-top: 10vh;
@@ -224,5 +229,17 @@ h1 {
   margin-left: 83vw;
   width: 3%;
   transform: rotate(3deg);
+}
+
+.astr3 {
+  float: left;
+  margin-top: 10vh;
+  margin-right: 3vw;
+  padding-left: 0vw;
+  /* display:flex; */
+  position: relative;
+  /* z-index: 0; */
+  width: 20%;
+  transform: rotate(10deg);
 }
 </style>
