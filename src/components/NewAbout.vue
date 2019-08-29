@@ -49,7 +49,7 @@ export default Vue.extend({
 .right {
   color: white;
   text-align: right;
-  padding: 10%;
+  padding: 5%;
   width: 70%;
   text-overflow: ellipsis;
 }
@@ -57,7 +57,7 @@ export default Vue.extend({
 .left {
   color: white;
   text-align: left;
-  padding: 10%;
+  padding: 5%;
   width: 70%;
   text-overflow: ellipsis;
 }
@@ -65,6 +65,7 @@ export default Vue.extend({
 .about-container > h2 {
   font-size: 35px;
   font-weight: 600;
+  margin: 0;
 }
 
 .about-description > p {

@@ -26,7 +26,7 @@
         :left="false"
       />
       <FAQ id="faq" initialSelect="general 🙋" />
-      <div id="spacer" style="height: 1050px" />
+      <div id="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
@@ -144,6 +144,7 @@ export default Vue.extend({
 
 .blend {
   background-blend-mode: overlay;
+  height: 500vh;
 }
 
 .scroll {
