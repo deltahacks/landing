@@ -32,6 +32,15 @@ export default {
       a:
         "We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.",
     },
+    {
+      q: "What's the event schedule like?",
+      a:
+        "We'll be putting up one  closer to the event, you can  excpect a lot of talks and presentations, fun events, and a lot of great food!",
+    },
+    {
+      q: 'I have a dietry restriction, will there be options for me?',
+      a: 'ye',
+    },
   ],
   'application 📨': [
     {
@@ -39,7 +48,12 @@ export default {
       a: 'beats me',
     },
   ],
-  'judging 👨‍⚖️': [],
+  'hacking 👨‍⚖️': [
+    {
+      q: 'How big can a team be?',
+      a: '4 people',
+    },
+  ],
   'hardware 🧰': [
     {q: 'Will there be hardware during the event?', a: 'yessir'},
     {q: 'Is it possible to request hardware beforehand?', a: 'ye'},
