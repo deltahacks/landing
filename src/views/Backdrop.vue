@@ -2,6 +2,13 @@
   <div :class="{ app: true, blend: true, change: change }">
     <div class="scroll">
       <Landing />
+      <div class="astr2">
+        <img :src="ASTR2" />
+      </div>
+      <img class="spshp" :src="SAT" />
+      <div class="astr1">
+        <img :src="ASTR1" />
+      </div>
       <NewAbout
         heading="To Infinity and Beyond"
         :text="text1"
@@ -38,6 +45,9 @@ import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
 import NewAbout from '@/components/NewAbout.vue';
+import SAT from '@/assets/sat.png';
+import ASTR1 from '@/assets/Astronaut1.svg';
+import ASTR2 from '@/assets/Astronaut2.svg';
 const VueScrollReveal = require('vue-scroll-reveal');
 
 import sponsors_data from '@/data/sponsors_data.ts';
@@ -59,6 +69,9 @@ export default Vue.extend({
       change: false,
       scr: 0,
       sponsors_data,
+      SAT,
+      ASTR1,
+      ASTR2,
       d1Opacity: '1',
       d2Opacity: '1',
       d3Opacity: '1',
@@ -179,5 +192,37 @@ h1 {
   text-align: center;
   display: block;
   font-family: Josefin Sans;
+}
+
+#faq {
+  z-index: 1;
+  margin-bottom: 10%;
+}
+.spshp {
+  float: right;
+  margin-top: 10vh;
+  margin-right: 3vw;
+  padding-left: 1vw;
+  /* display:flex; */
+  position: relative;
+  /* z-index: 0; */
+  width: 37%;
+  transform: rotate(25deg);
+}
+
+.astr1 {
+  position: absolute;
+  margin-top: 38vh;
+  margin-left: 70vw;
+  width: 2.5%;
+  transform: rotate(-4deg);
+}
+
+.astr2 {
+  position: absolute;
+  margin-top: 18vh;
+  margin-left: 83vw;
+  width: 3%;
+  transform: rotate(3deg);
 }
 </style>
