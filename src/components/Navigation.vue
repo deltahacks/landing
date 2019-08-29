@@ -244,6 +244,9 @@ export default Vue.extend({
   .browser {
     display: none;
   }
+  .mobile {
+    color: black;
+  }
 }
 
 @media only screen and (min-width: 701px) {
