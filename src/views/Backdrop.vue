@@ -206,7 +206,7 @@ h1 {
   /* display:flex; */
   position: relative;
   /* z-index: 0; */
-  width: 37%;
+  width: 30%;
   transform: rotate(25deg);
 }
 
