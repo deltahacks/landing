@@ -11,7 +11,7 @@
         >
           <div
             :style="{ width: '100%' }"
-            @click="selected = selected === name ? '' : name"
+            @click="selected = selected !== name ? name:isMobile() ? '':selected"
           >
             {{ name.charAt(0).toUpperCase() + name.substring(1) }}
           </div>

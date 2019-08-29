@@ -42,7 +42,7 @@
       >ABOUT</a
     >
     <div class="dropdown mobile">
-      <button class="dropbtn mobile">
+      <button class="dropbtn mobile" @click="show = !show">
         <img
           src="../assets/hamburger.png"
           alt
@@ -50,7 +50,8 @@
           :class="{ 'invert': !scrolled }"
         />
       </button>
-      <div class="dropdown-content mobile" style="right:0;">
+      <transition name="fade" mode="out-in">
+      <div class="dropdown-content mobile" style="right:0;" v-show="show" >
         <a
           v-scroll-to="'#aboutScroll'"
           @scroll="handleScroll"
@@ -87,6 +88,7 @@
           >DH5 PROJECTS</a
         >
       </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -99,7 +101,7 @@ export default Vue.extend({
   components: {},
   data() {
     return {
-      show: true,
+      show: false,
       scrolled: false,
     };
   },
@@ -190,7 +192,7 @@ export default Vue.extend({
   height: 50px;
   z-index: 1000;
   font-weight: 600;
-  color: black;
+  color: white;
   transition-property: background-color, border-bottom;
   transition-duration: 0.2s;
 }
@@ -198,6 +200,7 @@ export default Vue.extend({
 .navbar.navbar-scrolled {
   background-color: rgba(255, 255, 255);
   border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+  transition: color 0.1s;
   color: black;
 }
 
@@ -268,7 +271,7 @@ export default Vue.extend({
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  visibility: hidden;
+  /* visibility: hidden; */
   position: absolute;
   background-color: rgba(255, 255, 255, 0.9);
   min-width: 160px;
@@ -276,8 +279,8 @@ export default Vue.extend({
   z-index: 1;
   /* border-bottom-left-radius: 10px 10px;
   border-bottom-right-radius: 10px 10px; */
-  transition: visibility 0s, opacity 0.5s linear;
-  opacity: 0;
+  /* transition: visibility 0s, opacity 0.5s linear;
+  opacity: 0; */
   width: 100vw;
 }
 
@@ -299,21 +302,29 @@ export default Vue.extend({
   -moz-border-radius: 422px;
   -webkit-border-radius: 42px;
   border-radius: 42px;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.heighter {
-  height: 200px;
-}
+/* Show the dropdown menu on hover */
+/* .dropdown:hover .dropdown-content{
+  visibility: visible;
+  opacity: 1;
+} */
 
+/* Change the background color of the dropdown button when the dropdown content is shown */
 #proj {
   margin-right: 50px;
 }
 .invert { filter: invert(100%); }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s
+}
+
+.fade-enter,
+.fade-leave-to { opacity: 0; }
+
+
 </style>
