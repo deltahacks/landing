@@ -82,7 +82,7 @@ export default Vue.extend({
       d4Opacity: '1',
       d5Opacity: '1',
       text1:
-        "At DeltaHacks, we believe change comes from dreaming big. Our team works hard all year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
+        "At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from over 50 different schools, working hard over 24 hours, to bring their big ideas to life. Our team works hard diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
