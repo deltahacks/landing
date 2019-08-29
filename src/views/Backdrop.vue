@@ -31,10 +31,10 @@
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
     </div>
-    <div class="gradient" id="d1" :style="{ opacity: d1Opacity }" />
-    <div class="gradient" id="d2" :style="{ opacity: d2Opacity }" />
-    <div class="gradient" id="d3" :style="{ opacity: d3Opacity }" />
-    <div class="gradient" id="d4" :style="{ opacity: d4Opacity }" />
+    <div class="gradient" id="d1" :style="{ opacity: opacities.d1 }" />
+    <div class="gradient" id="d2" :style="{ opacity: opacities.d2 }" />
+    <div class="gradient" id="d3" :style="{ opacity: opacities.d3 }" />
+    <div class="gradient" id="d4" :style="{ opacity: opacities.d4 }" />
   </div>
 </template>
 
@@ -76,18 +76,14 @@ export default Vue.extend({
       ASTR1,
       ASTR2,
       ASTR3,
-      d1Opacity: '1',
-      d2Opacity: '1',
-      d3Opacity: '1',
-      d4Opacity: '1',
-      d5Opacity: '1',
+      opacities: {d1: '1', d2: '1', d3: '1', d4: '1', d5: '1'},
       text1:
-        "At DeltaHacks, we believe change comes from dreaming big. Our team works hard all year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
+        'At DeltaHacks, we believe change comes from dreaming big. Our team works hard all year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we\'ll handle the rest! Make big ideas a reality at DeltaHacks VI!',
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
       text2:
-        "DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!",
+        'DeltaHacks is the annual hackathon for change, it\'s even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!',
       text2_sub: 'Interested in joining our team? Apply below!',
       button2: 'Apply to volunteer',
     };
@@ -96,37 +92,37 @@ export default Vue.extend({
     handleScroll() {
       const y = window.scrollY || window.pageYOffset;
       if (y < 1400) {
-        this.d1Opacity = String((-1 / 1400) * y + 1);
-        this.d2Opacity = '1';
-        this.d3Opacity = '1';
-        this.d4Opacity = '1';
-        this.d5Opacity = '1';
+        this.opacities.d1 = String((-1 / 1400) * y + 1);
+        this.opacities.d2 = '1';
+        this.opacities.d3 = '1';
+        this.opacities.d4 = '1';
+        this.opacities.d5 = '1';
       } else if (y < 2800) {
-        this.d1Opacity = '0';
-        this.d2Opacity = String((-1 / 1400) * y + 2);
-        this.d3Opacity = '1';
-        this.d4Opacity = '1';
-        this.d5Opacity = '1';
+        this.opacities.d1 = '0';
+        this.opacities.d2 = String((-1 / 1400) * y + 2);
+        this.opacities.d3 = '1';
+        this.opacities.d4 = '1';
+        this.opacities.d5 = '1';
       } else if (y < 3600) {
-        this.d1Opacity = '0';
-        this.d2Opacity = '0';
-        this.d3Opacity = String((-1 / 800) * y + 9 / 2);
-        this.d4Opacity = '1';
-        this.d5Opacity = '1';
+        this.opacities.d1 = '0';
+        this.opacities.d2 = '0';
+        this.opacities.d3 = String((-1 / 800) * y + 9 / 2);
+        this.opacities.d4 = '1';
+        this.opacities.d5 = '1';
       } else if (y < 4400) {
-        this.d1Opacity = '0';
-        this.d2Opacity = '0';
-        this.d3Opacity = '0';
-        this.d4Opacity = String((-1 / 800) * y + 11 / 2);
-        this.d5Opacity = '1';
+        this.opacities.d1 = '0';
+        this.opacities.d2 = '0';
+        this.opacities.d3 = '0';
+        this.opacities.d4 = String((-1 / 800) * y + 11 / 2);
+        this.opacities.d5 = '1';
       } else if (y >= 4400) {
-        this.d1Opacity = '0';
-        this.d2Opacity = '0';
-        this.d3Opacity = '0';
-        this.d4Opacity = '0';
-        this.d5Opacity = String(1);
+        this.opacities.d1 = '0';
+        this.opacities.d2 = '0';
+        this.opacities.d3 = '0';
+        this.opacities.d4 = '0';
+        this.opacities.d5 = '1';
       }
-      this.change = y >= 2400;
+      this.change = y >= 3500;
     },
   },
   created() {
@@ -141,7 +137,6 @@ export default Vue.extend({
 <style scoped>
 .app {
   color: white;
-  transition: color 1s;
   height: 5400px;
 }
 .change {
@@ -159,8 +154,8 @@ export default Vue.extend({
 
 .gradient {
   /* background-color: rgb(69, 111, 225); */
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
   position: fixed;
