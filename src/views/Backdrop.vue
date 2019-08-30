@@ -5,28 +5,33 @@
       <div class="astr2">
         <img :src="ASTR2" />
       </div>
-      <img class="spshp" :src="SAT" />
       <div class="astr1">
         <img :src="ASTR1" />
       </div>
-      <Blurb
-        heading="To Infinity and Beyond"
-        :text="text1"
-        :sub="text1_sub"
-        :button="text1_button"
-        :left="true"
-        id="blurb-1"
-      />
+      <div class="blurb-group">
+        <img class="spshp" :src="SAT" />
+        <Blurb
+          heading="To Infinity and Beyond"
+          :text="text1"
+          :sub="text1_sub"
+          :button="text1_button"
+          :left="true"
+          id="blurb-1"
+        />
+      </div>
       <AboutUsStats />
-      <img class="astr3" :src="ASTR3" />
-      <Blurb
-        heading="The hackathon for change"
-        :text="text2"
-        :sub="text2_sub"
-        :button="button2"
-        :left="false"
-        id="blurb-2"
-      />
+      <div class="blurb-group">
+        <img class="astr3" :src="ASTR3" />
+        <Blurb
+          heading="The hackathon for change"
+          :text="text2"
+          :sub="text2_sub"
+          :button="button2"
+          :left="false"
+          id="blurb-2"
+        />
+      </div>
+      <div id="spacer" style="height: 20vh" />
       <FAQ id="faq" initialSelect="general 🙋" />
       <div id="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
@@ -244,5 +249,46 @@ h1 {
 
 #landing {
   height: 100vh;
+}
+
+@media screen and (max-width: 720px) {
+  .blurb-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .astr1 {
+    position: absolute;
+    margin-top: 18vh;
+    margin-left: 25vw;
+    width: 6%;
+    transform: rotate(-4deg);
+    z-index: 1;
+  }
+  .astr2 {
+    position: absolute;
+    margin-top: 13vh;
+    margin-left: 65vw;
+    width: 7%;
+    transform: rotate(3deg);
+    z-index: 1;
+  }
+  .astr3 {
+    margin-bottom: 10%;
+    padding: 0;
+    position: static;
+    width: 30%;
+    transform: rotate(10deg);
+    align-self: center;
+  }
+  .spshp {
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    position: static;
+    width: 45%;
+    transform: rotate(25deg);
+    align-self: center;
+  }
 }
 </style>

@@ -12,11 +12,6 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-  data() {
-    return {
-      x: 1,
-    };
-  },
   props: {
     button: String,
     sub: String,
@@ -103,6 +98,7 @@ export default Vue.extend({
   .about-container {
     width: 100%;
     padding: 0;
+    text-align: center;
   }
   .about-container > h2 {
     padding: 0 5%;
