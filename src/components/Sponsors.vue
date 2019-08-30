@@ -135,6 +135,7 @@ html {
 .container {
   width: 80%;
   margin: 0 auto;
+  color: black;
   /* padding-top: 20px; */
   /* padding-bottom: 1000px; */
 }
