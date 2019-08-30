@@ -15,7 +15,7 @@
       <p class="typing"></p>
     </vue-typed-js>
     <a
-      v-scroll-to="'#example'"
+      v-scroll-to="'#footerScroll'"
       @scroll="handleScroll"
       id="contact"
       class="browser"
@@ -51,7 +51,7 @@
       <transition name="fade" mode="out-in">
         <div class="dropdown-content mobile" style="right:0;" v-show="show">
           <a
-            v-scroll-to="'#aboutScroll'"
+            v-scroll-to="'#blurb-2'"
             @scroll="handleScroll"
             id="aboutDrop"
             class="active browser"
@@ -67,7 +67,7 @@
             RECAP
           </a>
           <a
-            v-scroll-to="'#faqScroll'"
+            v-scroll-to="'#faq'"
             @scroll="handleScroll"
             id="faqDrop"
             class="browser"
@@ -75,7 +75,7 @@
             FAQ
           </a>
           <a
-            v-scroll-to="'#example'"
+            v-scroll-to="'#footerScroll'"
             @scroll="handleScroll"
             id="contactDrop"
             class="browser"
@@ -276,7 +276,8 @@ export default Vue.extend({
   border-bottom-right-radius: 10px 10px; */
   /* transition: visibility 0s, opacity 0.5s linear;
   opacity: 0; */
-  width: 100vw;
+  width: 108vw;
+  min-width: 405px;
 }
 
 /* Links inside the dropdown */
