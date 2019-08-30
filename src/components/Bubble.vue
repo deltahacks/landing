@@ -2,10 +2,10 @@
   <svg>
     <defs>
       <linearGradient
-        id="linear-gradient"
-        :y1="y - r"
-        :x2="x"
-        :y2="y - r"
+        :id="number"
+        y1='0'
+        :x2="x*3"
+        :y2="y"
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" :stop-color="start_gradient" />
@@ -20,7 +20,7 @@
             :cx="x"
             :cy="yVal"
             :r="r"
-            fill="url(#linear-gradient)"
+            :fill="gradient()"
           />
         </g>
       </g>
@@ -86,6 +86,9 @@ export default Vue.extend({
         this.amplitude *
         Math.sin((this.time * 0.5) / this.period + this.phase);
       requestAnimationFrame(this.tick);
+    },
+    gradient() {
+      return 'url(#' + this.number + ')';
     },
   },
 });
