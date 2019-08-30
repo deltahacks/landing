@@ -9,24 +9,26 @@
       <div class="astr1">
         <img :src="ASTR1" />
       </div>
-      <NewAbout
+      <Blurb
         heading="To Infinity and Beyond"
         :text="text1"
         :sub="text1_sub"
         :button="text1_button"
         :left="true"
+        id="blurb-1"
       />
       <AboutUsStats />
       <img class="astr3" :src="ASTR3" />
-      <NewAbout
+      <Blurb
         heading="The hackathon for change"
         :text="text2"
         :sub="text2_sub"
         :button="button2"
         :left="false"
+        id="blurb-2"
       />
       <FAQ id="faq" initialSelect="general 🙋" />
-      <div id="spacer" style="height: 1050px" />
+      <div id="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer />
@@ -45,13 +47,14 @@ import Footer from '@/components/Footer.vue';
 import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
-import NewAbout from '@/components/NewAbout.vue';
+import Blurb from '@/components/Blurb.vue';
 import SAT from '@/assets/sat.png';
 import ASTR1 from '@/assets/Astronaut1.svg';
 import ASTR2 from '@/assets/Astronaut2.svg';
 import ASTR3 from '@/assets/astro.svg';
 
-const VueScrollReveal = require('vue-scroll-reveal');
+// @ts-ignore
+import VueScrollReveal from 'vue-scroll-reveal';
 
 import sponsors_data from '@/data/sponsors_data.ts';
 
@@ -65,7 +68,7 @@ export default Vue.extend({
     Landing,
     Sponsors,
     AboutUsStats,
-    NewAbout,
+    Blurb,
   },
   data() {
     return {
@@ -77,15 +80,13 @@ export default Vue.extend({
       ASTR2,
       ASTR3,
       opacities: { d1: '1', d2: '1', d3: '1', d4: '1', d5: '1' },
-      text1:
-        "At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from over 50 different schools, working hard over 24 hours, to bring their big ideas to life. Our team works hard diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!",
+      text1: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from across Canda, working hard over 24 hours, to bring their big ideas to life. Our team works hard diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
-      text2:
-        "DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the seasoned pro! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us in January and take part in an experience you won’t forget!",
+      text2: `DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
       text2_sub: 'Interested in joining our team? Apply below!',
-      button2: 'Apply to volunteer',
+      button2: 'Apply to be an Exec',
     };
   },
   methods: {
@@ -145,6 +146,7 @@ export default Vue.extend({
 
 .blend {
   background-blend-mode: overlay;
+  height: 500vh;
 }
 
 .scroll {
@@ -206,7 +208,7 @@ h1 {
   /* display:flex; */
   position: relative;
   /* z-index: 0; */
-  width: 37%;
+  width: 30%;
   transform: rotate(25deg);
 }
 
@@ -216,14 +218,16 @@ h1 {
   margin-left: 70vw;
   width: 2.5%;
   transform: rotate(-4deg);
+  z-index: 1;
 }
 
 .astr2 {
   position: absolute;
   margin-top: 18vh;
-  margin-left: 83vw;
+  margin-left: 90vw;
   width: 3%;
   transform: rotate(3deg);
+  z-index: 1;
 }
 
 .astr3 {

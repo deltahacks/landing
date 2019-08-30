@@ -164,7 +164,7 @@ export default Vue.extend({
 <style>
 .bubbles {
   position: relative;
-  padding-top: 100px;
+  padding-top: 0;
 }
 
 @media only screen and (max-width: 700px) {

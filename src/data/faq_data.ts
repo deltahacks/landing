@@ -7,13 +7,11 @@ export default {
     },
     {
       q: 'What is DeltaHacks?',
-      a:
-        "DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.",
+      a: `DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.`,
     },
     {
       q: 'Who can participate?',
-      a:
-        'Anyone who is willing to learn and wants to take a shot at changing the world is strongly encouraged to apply. All university students and high school students over 18 are welcome at DeltaHacks!',
+      a: `Anyone who is willing to learn and wants to take a shot at changing the world is strongly encouraged to apply. All university students and high school students over 18 are welcome at DeltaHacks!`,
     },
     {
       q: 'How much does it cost?',
@@ -29,13 +27,11 @@ export default {
     },
     {
       q: 'I have never been to a hackathon before, what should I do?',
-      a:
-        "We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.",
+      a: `We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.`,
     },
     {
-      q: "What's the event schedule like?",
-      a:
-        "We'll be putting up one  closer to the event, you can  excpect a lot of talks and presentations, fun events, and a lot of great food!",
+      q: `What's the event schedule like?`,
+      a: `We'll be putting up one  closer to the event, you can  excpect a lot of talks and presentations, fun events, and a lot of great food!`,
     },
     {
       q: 'I have a dietry restriction, will there be options for me?',
@@ -54,7 +50,7 @@ export default {
       a: '4 people',
     },
   ],
-  'hardware 🧰': [
+  'hardware 🔨': [
     {q: 'Will there be hardware during the event?', a: 'yessir'},
     {q: 'Is it possible to request hardware beforehand?', a: 'ye'},
   ],

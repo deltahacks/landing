@@ -39,14 +39,34 @@ export default {
   ],
   secondary: [
     {
-      logo: ArcelorMittal,
-      href: 'http://dofasco.arcelormittal.com/',
-      alt: 'Dofasco Arcelor Mittal',
+      logo: Coinberry,
+      href: 'http://www.coinberry.com/',
+      alt: 'Coinberry',
+    },
+    {
+      logo: Sketch,
+      href: 'https://www.sketchapp.com/',
+      alt: 'Sketch',
     },
     {
       logo: Rogers,
       href: 'https://jobs.rogers.com/',
       alt: 'Rogers',
+    },
+    {
+      logo: Balsamiq,
+      href: 'http://www.balsamiq.com/',
+      alt: 'Balsamiq',
+    },
+    {
+      logo: Hypercare,
+      href: 'http://www.hypercare.com/',
+      alt: 'Hypercare',
+    },
+    {
+      logo: Wolfram,
+      href: 'http://www.wolfram.com/',
+      alt: 'Wolfram',
     },
     {
       logo: InnovationFactory,
@@ -69,29 +89,9 @@ export default {
       alt: 'Bitalino',
     },
     {
-      logo: Coinberry,
-      href: 'http://www.coinberry.com/',
-      alt: 'Coinberry',
-    },
-    {
-      logo: Wolfram,
-      href: 'http://www.wolfram.com/',
-      alt: 'Wolfram',
-    },
-    {
-      logo: Hypercare,
-      href: 'http://www.hypercare.com/',
-      alt: 'Hypercare',
-    },
-    {
       logo: Obie,
       href: 'http://www.obie.ai/',
       alt: 'Obie AI',
-    },
-    {
-      logo: Balsamiq,
-      href: 'http://www.balsamiq.com/',
-      alt: 'Balsamiq',
     },
     {
       logo: CSE,
@@ -109,9 +109,9 @@ export default {
       alt: 'MapleSoft',
     },
     {
-      logo: Sketch,
-      href: 'https://www.sketchapp.com/',
-      alt: 'Sketch',
+      logo: ArcelorMittal,
+      href: 'http://dofasco.arcelormittal.com/',
+      alt: 'Dofasco Arcelor Mittal',
     },
     {
       logo: TWN,
