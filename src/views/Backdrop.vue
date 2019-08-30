@@ -42,6 +42,7 @@
     <div class="gradient" id="d2" :style="{ opacity: opacities.d2 }" />
     <div class="gradient" id="d3" :style="{ opacity: opacities.d3 }" />
     <div class="gradient" id="d4" :style="{ opacity: opacities.d4 }" />
+    <div class="gradient" id="d5" />
   </div>
 </template>
 
@@ -95,6 +96,7 @@ export default Vue.extend({
     };
   },
   methods: {
+    isMobile: (): boolean => window.innerWidth <= 720,
     handleScroll() {
       const y = window.scrollY || window.pageYOffset;
       if (y < 1400) {
@@ -102,31 +104,26 @@ export default Vue.extend({
         this.opacities.d2 = '1';
         this.opacities.d3 = '1';
         this.opacities.d4 = '1';
-        this.opacities.d5 = '1';
       } else if (y < 2800) {
         this.opacities.d1 = '0';
         this.opacities.d2 = String((-1 / 1400) * y + 2);
         this.opacities.d3 = '1';
         this.opacities.d4 = '1';
-        this.opacities.d5 = '1';
       } else if (y < 3600) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
         this.opacities.d3 = String((-1 / 800) * y + 9 / 2);
         this.opacities.d4 = '1';
-        this.opacities.d5 = '1';
-      } else if (y < 4400) {
+      } else if ((this.isMobile() && y < 4400) || (!this.isMobile() && y < 3700)) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
         this.opacities.d3 = '0';
         this.opacities.d4 = String((-1 / 800) * y + 11 / 2);
-        this.opacities.d5 = '1';
-      } else if (y >= 4400) {
+      } else if ((this.isMobile() && y >= 4400) || (!this.isMobile() && y >= 3700)) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
         this.opacities.d3 = '0';
         this.opacities.d4 = '0';
-        this.opacities.d5 = '1';
       }
       this.change = y >= 3500;
     },
@@ -185,7 +182,7 @@ export default Vue.extend({
   z-index: -4;
 }
 #d5 {
-  color: white;
+  background-color: rgb(237,247,255);
   z-index: -5;
 }
 
