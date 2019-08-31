@@ -1,11 +1,12 @@
 <template>
-  <svg>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       <linearGradient
         :id="number"
-        y1='0'
-        :x2="x*3"
-        :y2="y"
+        :y1="y-r"
+        :x1="x-r"
+        :x2="x+r"
+        :y2="y+r"
         gradientUnits="userSpaceOnUse"
       >
         <stop offset="0" :stop-color="start_gradient" />

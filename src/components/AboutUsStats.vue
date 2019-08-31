@@ -6,7 +6,7 @@
         rel="stylesheet"
       />
       <div id="desktop">
-        <svg viewBox="0 0 1000 500">
+        <svg viewBox="0 0 900 500">
           <Bubble
             v-for="(bubble, index) in bubbles"
             v-bind:key="index"
@@ -46,7 +46,7 @@ import Vue from 'vue';
 import Bubble from '@/components/Bubble.vue';
 
 export default Vue.extend({
-  name: 'About Us',
+  name: 'About',
   components: {
     Bubble,
   },
@@ -56,13 +56,13 @@ export default Vue.extend({
         {
           desktop: {
             r: 125,
-            x: 500,
+            x: 450,
             y: 220,
           },
           mobile: {
-            r: 125,
-            x: 350,
-            y: 350,
+            r: 150,
+            x: 310,
+            y: 340,
           },
           number: 700,
           content: 'Hackers',
@@ -73,13 +73,13 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 300,
+            x: 250,
             y: 130,
           },
           mobile: {
-            r: 55,
-            x: 260,
-            y: 170,
+            r: 75,
+            x: 230,
+            y: 100,
           },
           number: 24,
           content: 'Hours',
@@ -90,13 +90,13 @@ export default Vue.extend({
         {
           desktop: {
             r: 60,
-            x: 310,
+            x: 260,
             y: 280,
           },
           mobile: {
-            r: 30,
-            x: 180,
-            y: 370,
+            r: 60,
+            x: 70,
+            y: 380,
           },
           number: 111,
           content: 'Commits',
@@ -107,13 +107,13 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 165,
+            x: 115,
             y: 250,
           },
           mobile: {
-            r: 55,
-            x: 160,
-            y: 260,
+            r: 75,
+            x: 90,
+            y: 230,
           },
           number: 200,
           content: 'Projects',
@@ -124,13 +124,13 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 700,
+            x: 650,
             y: 130,
           },
           mobile: {
-            r: 55,
-            x: 210,
-            y: 500,
+            r: 90,
+            x: 130,
+            y: 550,
           },
           number: 63,
           content: 'Schools',
@@ -141,19 +141,19 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 700,
+            x: 650,
             y: 300,
           },
           mobile: {
-            r: 55,
-            x: 360,
-            y: 560,
+            r: 80,
+            x: 340,
+            y: 600,
           },
           number: 100,
           content: 'Mentors',
-          depth: 2,
-          start_gradient: '#624481',
-          end_gradient: '#2a3d90',
+          depth: 3,
+          start_gradient: '#000',
+          end_gradient: '#fff',
         },
       ],
     };
