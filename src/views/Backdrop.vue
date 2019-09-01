@@ -21,7 +21,7 @@
         />
       </div>
       <AboutUsStats />
-      <div class="blurb-group">
+      <div class="blurb-group blurb-align-right">
         <img class="astr3" :src="ASTR3" />
         <Blurb
           heading="The hackathon for change"
@@ -115,12 +115,18 @@ export default Vue.extend({
         this.opacities.d2 = '0';
         this.opacities.d3 = String((-1 / 800) * y + 9 / 2);
         this.opacities.d4 = '1';
-      } else if ((this.isMobile() && y < 4400) || (!this.isMobile() && y < 3700)) {
+      } else if (
+        (this.isMobile() && y < 4400) ||
+        (!this.isMobile() && y < 3700)
+      ) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
         this.opacities.d3 = '0';
         this.opacities.d4 = String((-1 / 800) * y + 11 / 2);
-      } else if ((this.isMobile() && y >= 4400) || (!this.isMobile() && y >= 3700)) {
+      } else if (
+        (this.isMobile() && y >= 4400) ||
+        (!this.isMobile() && y >= 3700)
+      ) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
         this.opacities.d3 = '0';
@@ -139,6 +145,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.blurb-align-right {
+  margin-right: -200px !important;
+}
 .app {
   color: white;
   height: 5400px;
@@ -183,7 +192,7 @@ export default Vue.extend({
   z-index: -4;
 }
 #d5 {
-  background-color: rgb(237,247,255);
+  background-color: rgb(237, 247, 255);
   z-index: -5;
 }
 
@@ -287,6 +296,9 @@ h1 {
     width: 45%;
     transform: rotate(25deg);
     align-self: center;
+  }
+  .blurb-align-right {
+    margin-right: 0 !important;
   }
 }
 </style>

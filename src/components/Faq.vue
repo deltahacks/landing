@@ -14,15 +14,9 @@
             @click="
               selected = selected !== name ? name : isMobile() ? '' : selected
             "
-          >
-            {{ name.charAt(0).toUpperCase() + name.substring(1) }}
-          </div>
+          >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
           <transition name="open">
-            <div
-              :key="name + 's'"
-              v-if="selected === name"
-              class="mobile-faq-area"
-            >
+            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
@@ -31,17 +25,12 @@
               >
                 <div class="question">
                   {{ elm.q }}
-                  <span :class="{ arrow: true, rotate: index === expanded }"
-                    ><i class="fa fa-caret-up fa-xs"></i
-                  ></span>
+                  <span :class="{ arrow: true, rotate: index === expanded }">
+                    <i class="fa fa-caret-up fa-xs"></i>
+                  </span>
                 </div>
                 <transition name="open">
-                  <div
-                    v-if="!isNaN(expanded) && index === expanded"
-                    class="answer-box"
-                  >
-                    {{ elm.a }}
-                  </div>
+                  <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">{{ elm.a }}</div>
                 </transition>
               </div>
             </div>
@@ -57,17 +46,12 @@
         >
           <div class="question">
             {{ elm.q }}
-            <span :class="{ arrow: true, rotate: index === expanded }"
-              ><i class="fa fa-caret-up fa-xs"></i
-            ></span>
+            <span :class="{ arrow: true, rotate: index === expanded }">
+              <i class="fa fa-caret-up fa-xs"></i>
+            </span>
           </div>
           <transition name="open">
-            <div
-              v-if="!isNaN(expanded) && index === expanded"
-              class="answer-box"
-            >
-              {{ elm.a }}
-            </div>
+            <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">{{ elm.a }}</div>
           </transition>
         </div>
       </div>
@@ -124,7 +108,8 @@ export default Vue.extend({
   flex-direction: row;
   width: 60%;
   height: 400px;
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow: hidden;
   margin: 0 auto;
 }
 
@@ -153,7 +138,8 @@ export default Vue.extend({
   border-radius: 25px;
   width: 100%;
   margin-left: 0.5%;
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow: hidden;
 }
 
 .mobile-faq-area {
