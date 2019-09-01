@@ -33,7 +33,7 @@ import Hypercare from '@/assets/sponsors/Hypercare.png';
 import Obie from '@/assets/sponsors/Obie.png';
 import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
 import CSE from '@/assets/sponsors/CSE.svg';
-import Google from '@/assets/sponsors/Google.png';
+import Google from '@/assets/sponsors/Google.svg';
 import MapleSoft from '@/assets/sponsors/MapleSoft.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
 import CIBC from '@/assets/sponsors/CIBC.png';

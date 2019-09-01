@@ -4,7 +4,7 @@ import RBC from '@/assets/sponsors/RBC.svg';
 import CIBC from '@/assets/sponsors/CIBC.png';
 import Obie from '@/assets/sponsors/Obie.png';
 import TD from '@/assets/sponsors/TD_Bank.png';
-import Google from '@/assets/sponsors/Google.png';
+import Google from '@/assets/sponsors/Google.svg';
 import Sketch from '@/assets/sponsors/Sketch.svg';
 import Wolfram from '@/assets/sponsors/Wolfram.svg';
 import Synopsys from '@/assets/sponsors/Synopsys.svg';
