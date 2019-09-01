@@ -3,7 +3,7 @@
     <h2>{{ heading }}</h2>
     <div class="about-description">
       <p>{{ text }} </p>
-      <p>{{ sub }}</p>
+      <p class="blurb_sub">{{ sub }}</p>
     </div>
     <form :action="link">
       <input id="about-button" type="submit" :value="button" />
@@ -117,5 +117,9 @@ export default Vue.extend({
 p {
   font-size: 20px;
   font-family: 'Lato', sans-serif;
+}
+
+p:not(.blurb_sub) {
+  text-align: justify;
 }
 </style>

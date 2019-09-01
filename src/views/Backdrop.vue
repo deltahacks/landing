@@ -30,6 +30,7 @@
           :button="button2"
           :left="false"
           id="blurb-2"
+          link="https://forms.gle/5VtwcURmsMMazSSL7"
         />
       </div>
       <div id="spacer" style="height: 20vh" />
@@ -91,7 +92,7 @@ export default Vue.extend({
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
-      text2: `DeltaHacks is the annual hackathon for change, it's even in the name! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We provide the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
+      text2: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, wether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
       text2_sub: 'Interested in joining our team? Apply below!',
       button2: 'Apply to be an Exec',
     };
