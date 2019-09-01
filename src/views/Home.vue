@@ -36,7 +36,7 @@ import CSE from '@/assets/sponsors/CSE.svg';
 import Google from '@/assets/sponsors/Google.svg';
 import MapleSoft from '@/assets/sponsors/MapleSoft.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
-import CIBC from '@/assets/sponsors/CIBC.png';
+import CIBC from '@/assets/sponsors/CIBC.svg';
 interface Sponsor {
   logo: any;
   href: string;
