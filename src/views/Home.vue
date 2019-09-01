@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
     <Sponsors :sponsorList="sponsors" main />
-    <Sponsors :sponsorList="sponsors" secondary />    
+    <Sponsors :sponsorList="sponsors" secondary />
   </div>
 </template>
 
@@ -33,10 +33,10 @@ import Hypercare from '@/assets/sponsors/Hypercare.png';
 import Obie from '@/assets/sponsors/Obie.png';
 import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
 import CSE from '@/assets/sponsors/CSE.svg';
-import TripIt from '@/assets/sponsors/TripIt.svg';
+import Google from '@/assets/sponsors/Google.png';
 import MapleSoft from '@/assets/sponsors/MapleSoft.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
-import TWN from '@/assets/sponsors/TWN.svg';
+import CIBC from '@/assets/sponsors/CIBC.png';
 interface Sponsor {
   logo: any;
   href: string;
@@ -58,124 +58,104 @@ export default Vue.extend({
     return {
       sponsors: [
         {
-          logo:
-            TD,
+          logo: TD,
           href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
           alt: 'TD Canada Trust',
         },
         {
-          logo:
-            ArcelorMittal,
+          logo: ArcelorMittal,
           href: 'http://dofasco.arcelormittal.com/',
           alt: 'Dofasco Arcelor Mittal',
         },
         {
-          logo:
-            Rogers,
+          logo: Rogers,
           href: 'https://jobs.rogers.com/',
           alt: 'Rogers',
         },
         {
-          logo:
-            Microsoft,
+          logo: Microsoft,
           href: 'https://www.microsoft.com/',
           alt: 'Microsoft Corporation',
         },
         {
-          logo:
-            InnovationFactory,
+          logo: InnovationFactory,
           href: 'https://www.innovationfactory.com/',
           alt: 'Innovation Factory',
         },
         {
-          logo:
-            LoyaltyOne,
+          logo: LoyaltyOne,
           href: 'https://www.loyalty.com/',
           alt: 'Loyalty One',
         },
         {
-          logo:
-            RBC,
+          logo: RBC,
           href: 'http://www.rbc.com/techjobs',
           alt: 'Royal Bank of Canada',
         },
         {
-          logo:
-            Synopsys,
+          logo: Synopsys,
           href: 'https://www.synopsys.com/',
           alt: 'Synopsys',
         },
         {
-          logo:
-            FDM,
+          logo: FDM,
           href: 'https://www.fdmgroup.com/en-ca/ca-home/',
           alt: 'FDM',
         },
         {
-          logo:
-            Bitalino,
+          logo: Bitalino,
           href: 'https://www.bitalino.com/',
           alt: 'Bitalino',
         },
         {
-          logo:
-            Coinberry,
+          logo: Coinberry,
           href: 'http://www.coinberry.com/',
           alt: 'Coinberry',
         },
         {
-          logo:
-            Wolfram,
+          logo: Wolfram,
           href: 'http://www.wolfram.com/',
           alt: 'Wolfram',
         },
         {
-          logo:
-            Hypercare,
+          logo: Hypercare,
           href: 'http://www.hypercare.com/',
           alt: 'Hypercare',
         },
         {
-          logo:
-            Obie,
+          logo: Obie,
           href: 'http://www.obie.ai/',
           alt: 'Obie AI',
         },
         {
-          logo:
-            Balsamiq,
+          logo: Balsamiq,
           href: 'http://www.balsamiq.com/',
           alt: 'Balsamiq',
         },
         {
-          logo:
-            CSE,
+          logo: CSE,
           href: 'https://www.cse-cst.gc.ca/',
           alt: 'CSE',
         },
         {
-          logo:
-            TripIt,
-          href: 'https://www.tripit.com/',
-          alt: 'TripIt',
+          logo: Google,
+          href: 'https://www.google.com/',
+          alt: 'Google',
         },
         {
-          logo:
-            MapleSoft,
+          logo: MapleSoft,
           href: 'https://www.maplesoft.com/',
           alt: 'MapleSoft',
         },
         {
-          logo:
-            Sketch,
+          logo: Sketch,
           href: 'https://www.sketchapp.com/',
           alt: 'Sketch',
         },
         {
-          logo:
-            TWN,
-          href: 'https://www.theweathernetwork.com/',
-          alt: 'The Weather Network',
+          logo: CIBC,
+          href: 'https://www.cibc.com/',
+          alt: 'Canadian Imperial Bank of Commerce',
         },
       ],
     };

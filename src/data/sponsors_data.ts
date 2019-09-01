@@ -1,10 +1,10 @@
 import FDM from '@/assets/sponsors/FDM.svg';
 import CSE from '@/assets/sponsors/CSE.svg';
 import RBC from '@/assets/sponsors/RBC.svg';
-import TWN from '@/assets/sponsors/TWN.svg';
+import CIBC from '@/assets/sponsors/CIBC.png';
 import Obie from '@/assets/sponsors/Obie.png';
 import TD from '@/assets/sponsors/TD_Bank.png';
-import TripIt from '@/assets/sponsors/TripIt.svg';
+import Google from '@/assets/sponsors/Google.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
 import Wolfram from '@/assets/sponsors/Wolfram.svg';
 import Synopsys from '@/assets/sponsors/Synopsys.svg';
@@ -99,9 +99,9 @@ export default {
       alt: 'CSE',
     },
     {
-      logo: TripIt,
-      href: 'https://www.tripit.com/',
-      alt: 'TripIt',
+      logo: Google,
+      href: 'https://www.google.com/',
+      alt: 'Google',
     },
     {
       logo: MapleSoft,
@@ -114,9 +114,9 @@ export default {
       alt: 'Dofasco Arcelor Mittal',
     },
     {
-      logo: TWN,
-      href: 'https://www.theweathernetwork.com/',
-      alt: 'The Weather Network',
+      logo: CIBC,
+      href: 'https://www.cibc.com/',
+      alt: 'Canadian Imperial Bank of Commerce',
     },
   ],
 };
