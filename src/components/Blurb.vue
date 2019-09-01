@@ -5,7 +5,9 @@
       <p>{{ text }} </p>
       <p>{{ sub }}</p>
     </div>
-    <button id="about-button">{{ button }}</button>
+    <form :action="link">
+      <input id="about-button" type="submit" :value="button" />
+    </form>
   </div>
 </template>
 
@@ -13,6 +15,7 @@
 import Vue from 'vue';
 export default Vue.extend({
   props: {
+    link: String,
     button: String,
     sub: String,
     text: String,
