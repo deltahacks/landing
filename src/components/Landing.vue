@@ -8,8 +8,14 @@
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <a class="act-btn" href="#">Apply</a>
-      <a class="act-btn" href="#">Sponsor</a>
+      <a v-if="!applying" class="act-btn" @click="applying = true">Apply</a>
+      <a v-if="!applying" class="act-btn" >Sponsor</a>
+      <transition name="fade">
+      <div v-if="applying" class="email-group">
+        <input type="email" placeholder="Enter your email" id="email-input" v-model="email"/>
+        <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
+      </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -35,6 +41,8 @@ export default Vue.extend({
     return {
       VI,
       Planet,
+      applying: false,
+      email: '',
     };
   },
   methods: {
@@ -157,6 +165,46 @@ export default Vue.extend({
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
 
+#email-input {
+  padding: 1% 4%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: Montserrat;
+  opacity: 0.9;
+  border: 1px solid rgb(58, 140, 155);
+  font-weight: bold;
+  color: white;
+  border-radius: 30px;
+  margin-right: 20px !important;
+  background-color: rgba(81, 169, 185);
+}
+
+#email-input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+#email-input:focus {
+  outline: none;
+  border: 2px solid rgb(128, 241, 203);
+}
+.email-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#email-submit {
+  cursor: pointer;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .8s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
 .flex-container {
   font-family: 'Montserrat';
   display: flex;
@@ -186,54 +234,6 @@ export default Vue.extend({
   font-weight: 700;
 }
 
-/* .act-btn:hover {
-  box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #1b50b3 !important;
-  background: #1b50b3 !important;
-  color: #b5cefb !important;
-}
-
-.act-btn {
-  font-family: Montserrat;
-  font-weight: bold;
-  -webkit-box-pack: center !important;
-  -ms-flex-pack: center !important;
-  -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  margin: 0px !important;
-  position: relative !important;
-  display: -webkit-inline-box !important;
-  display: -moz-inline-box !important;
-  display: -ms-inline-flexbox !important;
-  display: -webkit-inline-flex !important;
-  display: inline-flex !important;
-  -webkit-align-items: center !important;
-  align-items: center !important;
-  -webkit-justify-content: center !important;
-  justify-content: center !important;
-  height: 40px !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-  border: none !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
-  outline: none !important;
-  text-decoration: none !important;
-  -moz-box-sizing: border-box !important;
-  box-sizing: border-box !important;
-  -ms-touch-action: manipulation !important;
-  touch-action: manipulation !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-  background: #1865f2 !important;
-  color: #ffffff !important;
-  margin-right: 10px !important;
-} 
-*/
-
 .act-btn {
   font-weight: bold;
   text-align: center;
@@ -247,6 +247,7 @@ export default Vue.extend({
   margin-right: 20px !important;
   background-color: rgba(81, 169, 185);
   transition: 0.1s ease-in-out;
+  cursor: pointer;
 }
 
 .act-btn:hover {
