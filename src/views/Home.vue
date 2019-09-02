@@ -36,7 +36,7 @@ import CSE from '@/assets/sponsors/CSE.svg';
 import Google from '@/assets/sponsors/google.png';
 import MapleSoft from '@/assets/sponsors/MapleSoft.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
-import CIBC from '@/assets/sponsors/CIBC.svg';
+import McMaster from '@/assets/sponsors/Mcmaster.svg';
 interface Sponsor {
   logo: any;
   href: string;
@@ -153,9 +153,9 @@ export default Vue.extend({
           alt: 'Sketch',
         },
         {
-          logo: CIBC,
-          href: 'https://www.cibc.com/',
-          alt: 'Canadian Imperial Bank of Commerce',
+          logo: McMaster,
+          href: 'https://www.mcmaster.ca/',
+          alt: 'McMaster University',
         },
       ],
     };

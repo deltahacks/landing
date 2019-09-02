@@ -1,7 +1,7 @@
 import FDM from '@/assets/sponsors/FDM.svg';
 import CSE from '@/assets/sponsors/CSE.svg';
 import RBC from '@/assets/sponsors/RBC.svg';
-import CIBC from '@/assets/sponsors/CIBC.svg';
+import McMaster from '@/assets/sponsors/Mcmaster.svg';
 import Obie from '@/assets/sponsors/Obie.png';
 import TD from '@/assets/sponsors/TD_Bank.png';
 import Google from '@/assets/sponsors/google.png';
@@ -114,9 +114,9 @@ export default {
       alt: 'Dofasco Arcelor Mittal',
     },
     {
-      logo: CIBC,
-      href: 'https://www.cibc.com/',
-      alt: 'Canadian Imperial Bank of Commerce',
+      logo: McMaster,
+      href: 'https://www.mcmaster.ca/',
+      alt: 'McMaster University',
     },
   ],
 };
