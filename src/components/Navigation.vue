@@ -5,7 +5,7 @@
     <vue-typed-js
       :strings="['DeltaHacks VI']"
       :showCursor="false"
-      :typeSpeed="100"
+      :typeSpeed="10"
       class="branding"
     >
       <p class="typing"></p>

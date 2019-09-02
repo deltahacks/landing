@@ -37,21 +37,37 @@ export default {
       q: 'I have a dietry restriction, will there be options for me?',
       a: 'ye',
     },
+    {
+      q: 'What do I need to bring?',
+      a:
+        "Your laptop and a charger! Those are absloutely essential to have. Other nice to haves are a sleeping bag, spare change of clothes, and toiletries. You don't need to bring any food or snacks, they'll all be provided!",
+    },
   ],
   'application 📨': [
     {
       q: 'How are applications judged?',
       a: 'beats me',
     },
+    {
+      q: 'When do applications open?',
+      a:
+        'Soon! Sign up for our mailing list to keep updated when we release them!',
+    },
   ],
   'hacking 👨‍⚖️': [
     {
       q: 'How big can a team be?',
-      a: '4 people',
+      a:
+        'Your team can be anywhere up to four people including you, that means you can hack totally alone or in a group of three others, the choice is yours.',
+    },
+    {
+      q: 'What am I allowed to hack?',
+      a:
+        'Your hack could be absloutely anything! Just keep in mind that our judges will be awarding extra points to any hacks that can create a positive change in education, finance, health or any other field of your choice.',
     },
   ],
   'hardware 🔨': [
-    {q: 'Will there be hardware during the event?', a: 'yessir'},
+    {q: 'Will there be hardware during the event?', a: ''},
     {q: 'Is it possible to request hardware beforehand?', a: 'ye'},
   ],
 };
