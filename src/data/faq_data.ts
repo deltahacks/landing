@@ -7,7 +7,7 @@ export default {
     },
     {
       q: 'What is DeltaHacks?',
-      a: `DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 500-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.`,
+      a: `DeltaHacks is McMaster's annual student hackathon. This year, DeltaHacks will be a 700-participant event taking place late January. We hope to inspire students to hack for positive changes that align with their passions - whether it's environment, health, inequality, education, etc. And hence the name “delta” - as “Δ” stands for change.`,
     },
     {
       q: 'Who can participate?',
@@ -40,7 +40,7 @@ export default {
     },
     {
       q: 'What do I need to bring?',
-      a: `Your laptop and a charger! Those are absloutely essential to have. Other nice to haves are a sleeping bag, spare change of clothes, and toiletries. You don't need to bring any food or snacks, they'll all be provided!`,
+      a: `All you need to bring is your laptop, and don't forget your charger! We also recommend wearing comfortable clothing. In the past, attendees have also brought along toiletries, sleeping bags, and a spare change of clothes!`,
     },
   ],
   'application 📨': [

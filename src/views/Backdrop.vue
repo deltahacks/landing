@@ -88,7 +88,7 @@ export default Vue.extend({
       ASTR2,
       ASTR3,
       opacities: { d1: '1', d2: '1', d3: '1', d4: '1', d5: '1' },
-      text1: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 500 students from across Canda, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
+      text1: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 700 students from across Canda, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, wether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
       text1_button: 'DeltaHacks V Projects',
