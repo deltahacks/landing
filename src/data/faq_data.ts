@@ -39,8 +39,7 @@ export default {
     },
     {
       q: 'What do I need to bring?',
-      a:
-        "Your laptop and a charger! Those are absloutely essential to have. Other nice to haves are a sleeping bag, spare change of clothes, and toiletries. You don't need to bring any food or snacks, they'll all be provided!",
+      a: `Your laptop and a charger! Those are absloutely essential to have. Other nice to haves are a sleeping bag, spare change of clothes, and toiletries. You don't need to bring any food or snacks, they'll all be provided!`,
     },
   ],
   'application 📨': [

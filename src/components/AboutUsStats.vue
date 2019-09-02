@@ -50,8 +50,41 @@ export default Vue.extend({
   components: {
     Bubble,
   },
+  mounted() {
+    this.getlasthash();
+  },
+  methods: {
+    getlasthash: function() {
+      let url =
+        'https://api.github.com/repos/deltahacks/landing_v2/git/refs/heads/master';
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onload = e => {
+        let response = JSON.parse(xhr.responseText);
+        this.lasthash = response.object.sha;
+        this.getcommit(this.lasthash);
+      };
+      xhr.send(null);
+    },
+    getcommit: function(last: string) {
+      let url =
+        'https://api.github.com/repos/deltahacks/landing_v2/compare/' +
+        this.firsthash +
+        '...' +
+        last;
+      let xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onload = e => {
+        let response = JSON.parse(xhr.responseText);
+        this.bubbles[2].number = response.total_commits + 1;
+      };
+      xhr.send(null);
+    },
+  },
   data() {
     return {
+      firsthash: 'e917936d8a82b49cb4cef3fff1d8be732008ab18',
+      lasthash: '',
       bubbles: [
         {
           desktop: {
