@@ -11,7 +11,7 @@ export default {
     },
     {
       q: 'Who can participate?',
-      a: `Anyone who is willing to learn and wants to take a shot at changing the world is strongly encouraged to apply. All university students and high school students over 18 are welcome at DeltaHacks!`,
+      a: `Anyone who is willing to learn and have fun! If you have an idea - or even if you don't, you're invited! All university and high school students over 18 during the date of the event are welcome at DeltaHacks!`,
     },
     {
       q: 'How much does it cost?',
@@ -35,7 +35,8 @@ export default {
     },
     {
       q: 'I have a dietry restriction, will there be options for me?',
-      a: 'ye',
+      a:
+        'Yes! We take into consideration all types of diets, if you have a special dietry restriction you can request it within your application.',
     },
     {
       q: 'What do I need to bring?',
@@ -45,7 +46,8 @@ export default {
   'application 📨': [
     {
       q: 'How are applications judged?',
-      a: 'beats me',
+      a:
+        'This will be finalized closer to the event, you can check back here a month or two before the event.',
     },
     {
       q: 'When do applications open?',
@@ -66,7 +68,13 @@ export default {
     },
   ],
   'hardware 🔨': [
-    {q: 'Will there be hardware during the event?', a: ''},
-    {q: 'Is it possible to request hardware beforehand?', a: 'ye'},
+    {
+      q: 'Will there be hardware during the event?',
+      a: `Yes! We'll be working closely with MLH to provide you with a range of different hardware to supplement your hacks. Wether its an arduino or Alexa we'll have it!`,
+    },
+    {
+      q: 'Is it possible to request hardware beforehand?',
+      a: 'Yes, you will be able to request hardware in your application',
+    },
   ],
 };
