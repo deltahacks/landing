@@ -206,7 +206,7 @@ export default Vue.extend({
       const email_address = this.$data.email;
       const name_input = this.$data.name;
 
-      var params = {
+      let params = {
         email: email_address,
         name: name_input,
       };
@@ -216,8 +216,9 @@ export default Vue.extend({
       this.enteringEmail = false;
       console.log('N word');
 
-      var esc = encodeURIComponent;
-      var query = Object.keys(params)
+      let esc = encodeURIComponent;
+      let query = Object.keys(params)
+        // @ts-ignore
         .map(k => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
