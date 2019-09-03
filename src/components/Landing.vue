@@ -50,12 +50,12 @@
             v-model="email"
             required
           />
-          <div id="email-submit" @click="handleSubmit">
+            <button type="submit" id="email-submit">
             <i
-              class="fa fa-arrow-circle-o-right fa-3x"
+              class="fa fa-arrow-circle-o-right fa-4x"
               :style="{ alignSelf: 'center' }"
             ></i>
-          </div>
+            </button>
         </div>
       </form>
     </div>
@@ -273,8 +273,14 @@ export default Vue.extend({
   justify-content: center;
 }
 #email-submit {
-  cursor: pointer;
+  border:0;
+  padding: 0;
+  background:none;
   z-index: 1000;
+  cursor: pointer;
+}
+#email-submit > i {
+  color: white;
 }
 
 .flex-container {
