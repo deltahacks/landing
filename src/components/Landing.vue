@@ -12,8 +12,10 @@
       <a v-if="!applying" class="act-btn" >Sponsor</a>
       <transition name="fade">
       <div v-if="applying" class="email-group">
-        <input type="email" placeholder="Enter your email" id="email-input" v-model="email"/>
-        <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
+        <form v-on:submit.prevent="handleSubmit()">
+          <input type="email" placeholder="Enter your email" id="email-input" v-model="email" name="emailInput"/>
+          <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
+        </form>
       </div>
       </transition>
     </div>
@@ -158,8 +160,22 @@ export default Vue.extend({
         retina_detect: true,
       });
     },
-  },
-});
+   handleSubmit: function() {
+     const email = document.getElementById("email-input").value;
+     console.log(email);
+     if (email) {
+       fetch("https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp", {
+       mode: "no-cors",
+       method: "POST", 
+       body: JSON.stringify({"email":email})
+      }).then(function(response) {
+        console.log(response);
+      }).catch(function(error) {
+        console.log(error)
+      })
+    }}
+  }
+})
 </script>
 
 <style>
