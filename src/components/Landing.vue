@@ -14,10 +14,12 @@
         <input type="text" placeholder="Your Name" id="email-input" v-model="name"/>
         <div id="email-submit" @click="enteringName=false, enteringEmail = true"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
       </div>
+      <form v-on:submit.prevent="handleSubmit">
       <div v-if="enteringEmail" class="email-group">
         <input type="email" placeholder="Enter your email" id="email-input" v-model="email"/>
         <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
       </div>
+      </form>
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/main_planet.svg';
-
+const axios = require('axios');
 declare global {
   interface Window {
     particlesJS: any;
@@ -162,8 +164,28 @@ export default Vue.extend({
         retina_detect: true,
       });
     },
-  },
-});
+   handleSubmit: function() {
+     //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+    const email_address = this.$data.email;
+    const name_input = this.$data.name;
+
+    var params = {
+        email: email_address,
+        name: name_input
+    };
+
+    var esc = encodeURIComponent;
+    var query = Object.keys(params)
+        .map(k => esc(k) + '=' + esc(params[k]))
+        .join('&');
+    const url = 'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' + "?" + query;
+    fetch(url, {mode: 'cors'})
+      .then(function(response) {
+        ;
+      })
+    }
+  }
+})
 </script>
 
 <style>
