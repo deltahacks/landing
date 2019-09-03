@@ -27,7 +27,7 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/main_planet.svg';
-
+const axios = require('axios');
 declare global {
   interface Window {
     particlesJS: any;
@@ -161,19 +161,23 @@ export default Vue.extend({
       });
     },
    handleSubmit: function() {
-     const email = document.getElementById("email-input").value;
-     console.log(email);
-     if (email) {
-       fetch("https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp", {
-       mode: "no-cors",
-       method: "POST", 
-       body: JSON.stringify({"email":email})
-      }).then(function(response) {
-        console.log(response);
-      }).catch(function(error) {
-        console.log(error)
+     //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+    const email_address = document.getElementById("email-input").value;
+
+    var params = {
+        email: email_address, 
+    };
+
+    var esc = encodeURIComponent;
+    var query = Object.keys(params)
+        .map(k => esc(k) + '=' + esc(params[k]))
+        .join('&');
+    const url = 'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' + "?" + query;
+    fetch(url, {mode: 'cors'})
+      .then(function(response) {
+        ;
       })
-    }}
+    }
   }
 })
 </script>
