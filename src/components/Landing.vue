@@ -1,7 +1,7 @@
 
 <template>
   <div class="flex-container">
-    <div id="particles-js"> </div>
+    <div id="particles-js"></div>
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
@@ -28,11 +28,12 @@
         <div
           id="email-submit"
           @click="(enteringName = false), (enteringEmail = true)"
-          ><i
+        >
+          <i
             class="fa fa-arrow-circle-o-right fa-3x"
             :style="{ alignSelf: 'center' }"
-          ></i
-        ></div>
+          ></i>
+        </div>
       </div>
       <transition name="fade">
         <div v-if="gotit" style="font-family: Montserrat; font-size: 30px;">
@@ -47,12 +48,12 @@
             id="email-input"
             v-model="email"
           />
-          <div id="email-submit" @click="handleSubmit"
-            ><i
+          <div id="email-submit" @click="handleSubmit">
+            <i
               class="fa fa-arrow-circle-o-right fa-3x"
               :style="{ alignSelf: 'center' }"
-            ></i
-          ></div>
+            ></i>
+          </div>
         </div>
       </form>
     </div>
@@ -351,7 +352,7 @@ export default Vue.extend({
   #left {
     width: 100%;
     position: absolute;
-    margin-top: 275px;
+    margin-top: 70%;
     padding: 0;
   }
   .landing-title {
