@@ -24,6 +24,7 @@
           placeholder="Your Name"
           id="email-input"
           v-model="name"
+          @keyup.enter="(enteringName = false), (enteringEmail = true)"
         />
         <div
           id="email-submit"
@@ -326,6 +327,7 @@ export default Vue.extend({
   background-color: rgba(81, 169, 185);
   transition: 0.1s ease-in-out;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .act-btn:hover {
