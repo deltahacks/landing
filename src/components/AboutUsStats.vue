@@ -182,7 +182,7 @@ export default Vue.extend({
             x: 340,
             y: 600,
           },
-          number: 100,
+          number: 55,
           content: 'Mentors',
           depth: 3,
           start_gradient: '#000',

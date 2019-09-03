@@ -8,16 +8,18 @@
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <a v-if="!applying" class="act-btn" @click="applying = true">Apply</a>
-      <a v-if="!applying" class="act-btn" >Sponsor</a>
-      <transition name="fade">
-      <div v-if="applying" class="email-group">
-        <form v-on:submit.prevent="handleSubmit()">
-          <input type="email" placeholder="Enter your email" id="email-input" v-model="email" name="emailInput"/>
-          <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
-        </form>
+      <a v-if="!enteringName && !enteringEmail" class="act-btn" @click="enteringName = true">Apply</a>
+      <a v-if="!enteringName && !enteringEmail" class="act-btn" >Sponsor</a>
+      <div v-if="enteringName" class="email-group">
+        <input type="text" placeholder="Your Name" id="email-input" v-model="name"/>
+        <div id="email-submit" @click="enteringName=false, enteringEmail = true"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
       </div>
-      </transition>
+      <form v-on:submit.prevent="handleSubmit">
+      <div v-if="enteringEmail" class="email-group">
+        <input type="email" placeholder="Enter your email" id="email-input" v-model="email"/>
+        <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
+      </div>
+      </form>
     </div>
   </div>
 </template>
@@ -43,8 +45,10 @@ export default Vue.extend({
     return {
       VI,
       Planet,
-      applying: false,
+      enteringName: false,
+      enteringEmail: false,
       email: '',
+      name: '',
     };
   },
   methods: {
@@ -162,10 +166,12 @@ export default Vue.extend({
     },
    handleSubmit: function() {
      //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
-    const email_address = document.getElementById("email-input").value;
+    const email_address = this.$data.email;
+    const name_input = this.$data.name;
 
     var params = {
-        email: email_address, 
+        email: email_address,
+        name: name_input
     };
 
     var esc = encodeURIComponent;
@@ -198,6 +204,7 @@ export default Vue.extend({
   border-radius: 30px;
   margin-right: 20px !important;
   background-color: rgba(81, 169, 185);
+  outline: none;
 }
 
 #email-input::placeholder {
@@ -216,14 +223,9 @@ export default Vue.extend({
 }
 #email-submit {
   cursor: pointer;
+  z-index: 1000;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .8s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 .flex-container {
   font-family: 'Montserrat';
