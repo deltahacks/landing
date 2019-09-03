@@ -30,6 +30,7 @@
           @click="(enteringName = false), (enteringEmail = true)"
         >
           <i
+            v-if="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x"
             :style="{ alignSelf: 'center' }"
           ></i>
@@ -44,9 +45,10 @@
         <div v-if="enteringEmail && !gotit" class="email-group">
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Your email"
             id="email-input"
             v-model="email"
+            required
           />
           <div id="email-submit" @click="handleSubmit">
             <i
@@ -201,12 +203,14 @@ export default Vue.extend({
         retina_detect: true,
       });
     },
-    handleSubmit: function() {
-      //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+    handleSubmit() {
+      // Changed it to use query params bc post request wasn't working, most likely due to cors errors.
       const email_address = this.$data.email;
       const name_input = this.$data.name;
+      this.name = '';
+      this.email = '';
 
-      let params = {
+      const params = {
         email: email_address,
         name: name_input,
       };
@@ -216,10 +220,10 @@ export default Vue.extend({
       this.enteringEmail = false;
       console.log('N word');
 
-      let esc = encodeURIComponent;
-      let query = Object.keys(params)
+      const esc = encodeURIComponent;
+      const query = Object.keys(params)
         // @ts-ignore
-        .map(k => esc(k) + '=' + esc(params[k]))
+        .map((k) => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
@@ -229,7 +233,7 @@ export default Vue.extend({
 
       setTimeout(() => {
         this.gotit = false;
-      }, 3000);
+      }, 4000);
     },
   },
 });
@@ -372,7 +376,7 @@ export default Vue.extend({
   transition: opacity 0.5s;
 }
 
-.fade-enter /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter  /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
