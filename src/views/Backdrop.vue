@@ -34,7 +34,7 @@
         />
       </div>
       <div id="spacer" style="height: 20vh" />
-      <FAQ id="faq" initialSelect="general 🙋" />
+      <FAQ id="faq1" initialSelect="general 🙋" />
       <div id="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
@@ -208,7 +208,7 @@ h1 {
   font-family: Josefin Sans;
 }
 
-#faq {
+#faq1 {
   z-index: 1;
   margin-bottom: 10%;
 }

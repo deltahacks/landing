@@ -11,9 +11,9 @@
       <p class="typing"></p>
     </vue-typed-js>
     <a v-scroll-to="'#example'" @scroll="handleScroll" id="contact" class="browser">CONTACT</a>
-    <a v-scroll-to="'#faq'" @scroll="handleScroll" class="browser">FAQ</a>
+    <a v-scroll-to="'#faq1'" @scroll="handleScroll" id="faq" class="browser">FAQ</a>
     <a v-scroll-to="'#example'" @scroll="handleScroll" id="recap" class="browser">RECAP</a>
-    <a v-scroll-to="'#blurb-2'" @scroll="handleScroll" id="aboutScroll" class="active browser">ABOUT</a>
+    <a v-scroll-to="'#blurb-2'" @scroll="handleScroll" id="about" class="active browser">ABOUT</a>
     <div class="dropdown mobile">
       <button class="dropbtn mobile" @click="show = !show">
         <img
@@ -64,12 +64,10 @@ export default Vue.extend({
         '#recap',
         '#faq',
         '#contact',
-        '#proj',
         '#aboutDrop',
         '#recapDrop',
         '#faqDrop',
         '#contactDrop',
-        '#projDrop',
       ]; // tslint:disable-line
       for (const d of divs) {
         const header = document.querySelector(d); // tslint:disable-line
@@ -96,17 +94,14 @@ export default Vue.extend({
       if (window.scrollY >= 0) {
         this.pickActive('#about');
       }
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1900) {
         this.pickActive('#recap');
       }
-      if (window.scrollY > 100) {
+      if (window.scrollY > 2300) {
         this.pickActive('#faq');
       }
-      if (window.scrollY > 150) {
+      if (window.scrollY > 4100) {
         this.pickActive('#contact');
-      }
-      if (window.scrollY > 200) {
-        this.pickActive('#proj');
       }
     },
   },
