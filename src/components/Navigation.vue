@@ -1,7 +1,11 @@
 
 <template>
   <div class="topnav navbar" :class="{ 'navbar-scrolled': scrolled }">
-    <img src="../assets/logolarge.png" alt style="float: left; width: 22px; padding: 16px 30px;" />
+    <img
+      src="../assets/logolarge.png"
+      alt
+      style="float: left; width: 22px; padding: 16px 30px;"
+    />
     <vue-typed-js
       :strings="['DeltaHacks VI']"
       :showCursor="false"
@@ -10,10 +14,30 @@
     >
       <p class="typing"></p>
     </vue-typed-js>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="contact" class="browser">CONTACT</a>
-    <a v-scroll-to="'#faq1'" @scroll="handleScroll" id="faq" class="browser">FAQ</a>
-    <a v-scroll-to="'#example'" @scroll="handleScroll" id="recap" class="browser">RECAP</a>
-    <a v-scroll-to="'#blurb-2'" @scroll="handleScroll" id="about" class="active browser">ABOUT</a>
+    <a
+      v-scroll-to="'#footer'"
+      @scroll="handleScroll"
+      id="contact"
+      class="browser"
+      >CONTACT</a
+    >
+    <a
+      v-scroll-to="'#sponsor'"
+      @scroll="handleScroll"
+      id="sponsors"
+      class="browser"
+      >SPONSORS</a
+    >
+    <a v-scroll-to="'#faq1'" @scroll="handleScroll" id="faq" class="browser"
+      >FAQ</a
+    >
+    <a
+      v-scroll-to="'#blurb-2'"
+      @scroll="handleScroll"
+      id="about"
+      class="browser"
+      >ABOUT</a
+    >
     <div class="dropdown mobile">
       <button class="dropbtn mobile" @click="show = !show">
         <img
@@ -30,15 +54,29 @@
             @scroll="handleScroll"
             id="aboutDrop"
             class="active browser"
-          >ABOUT</a>
-          <a v-scroll-to="'#example'" @scroll="handleScroll" id="recapDrop" class="browser">RECAP</a>
-          <a v-scroll-to="'#faqScroll'" @scroll="handleScroll" id="faqDrop" class="browser">FAQ</a>
+            >ABOUT</a
+          >
           <a
-            v-scroll-to="'#example'"
+            v-scroll-to="'#sponsor'"
+            @scroll="handleScroll"
+            id="recapDrop"
+            class="browser"
+            >SPONSORS</a
+          >
+          <a
+            v-scroll-to="'#faqScroll'"
+            @scroll="handleScroll"
+            id="faqDrop"
+            class="browser"
+            >FAQ</a
+          >
+          <a
+            v-scroll-to="'#footer'"
             @scroll="handleScroll"
             id="contactDrop"
             class="browser"
-          >CONTACT</a>
+            >CONTACT</a
+          >
         </div>
       </transition>
     </div>
@@ -90,19 +128,18 @@ export default Vue.extend({
       } else {
         this.scrolled = false;
       }
-
-      if (window.scrollY >= 0) {
-        this.pickActive('#about');
-      }
-      if (window.scrollY > 1900) {
-        this.pickActive('#recap');
-      }
-      if (window.scrollY > 2300) {
-        this.pickActive('#faq');
-      }
-      if (window.scrollY > 4100) {
-        this.pickActive('#contact');
-      }
+      // if (window.scrollY >= 0) {
+      //   this.pickActive('#about');
+      // }
+      // if (window.scrollY > 3000) {
+      //   this.pickActive('#sponsors');
+      // }
+      // if (window.scrollY > 2300) {
+      //   this.pickActive('#faq');
+      // }
+      // if (window.scrollY > 4100) {
+      //   this.pickActive('#contact');
+      // }
     },
   },
   mounted() {

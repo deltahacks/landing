@@ -8,17 +8,52 @@
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <a v-if="!enteringName && !enteringEmail" class="act-btn" @click="enteringName = true">Apply</a>
-      <a v-if="!enteringName && !enteringEmail" class="act-btn" >Sponsor</a>
+      <a
+        v-if="!enteringName && !enteringEmail && !gotit"
+        class="act-btn"
+        @click="enteringName = true"
+      >
+        Mailing list
+      </a>
+      <a v-if="!enteringName && !enteringEmail && !gotit" class="act-btn">
+        Sponsor
+      </a>
       <div v-if="enteringName" class="email-group">
-        <input type="text" placeholder="Your Name" id="email-input" v-model="name"/>
-        <div id="email-submit" @click="enteringName=false, enteringEmail = true"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
+        <input
+          type="text"
+          placeholder="Your Name"
+          id="email-input"
+          v-model="name"
+        />
+        <div
+          id="email-submit"
+          @click="(enteringName = false), (enteringEmail = true)"
+          ><i
+            class="fa fa-arrow-circle-o-right fa-3x"
+            :style="{ alignSelf: 'center' }"
+          ></i
+        ></div>
       </div>
+      <transition name="fade">
+        <div v-if="gotit" style="font-family: Montserrat; font-size: 30px;">
+          Got it, thanks!
+        </div>
+      </transition>
       <form v-on:submit.prevent="handleSubmit">
-      <div v-if="enteringEmail" class="email-group">
-        <input type="email" placeholder="Enter your email" id="email-input" v-model="email"/>
-        <div id="email-submit"><i class="fa fa-arrow-circle-o-right fa-3x" :style="{alignSelf: 'center'}"></i></div>
-      </div>
+        <div v-if="enteringEmail && !gotit" class="email-group">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            id="email-input"
+            v-model="email"
+          />
+          <div id="email-submit" @click="handleSubmit"
+            ><i
+              class="fa fa-arrow-circle-o-right fa-3x"
+              :style="{ alignSelf: 'center' }"
+            ></i
+          ></div>
+        </div>
       </form>
     </div>
   </div>
@@ -49,6 +84,7 @@ export default Vue.extend({
       enteringEmail: false,
       email: '',
       name: '',
+      gotit: false,
     };
   },
   methods: {
@@ -164,28 +200,37 @@ export default Vue.extend({
         retina_detect: true,
       });
     },
-   handleSubmit: function() {
-     //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
-    const email_address = this.$data.email;
-    const name_input = this.$data.name;
+    handleSubmit: function() {
+      //Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+      const email_address = this.$data.email;
+      const name_input = this.$data.name;
 
-    var params = {
+      var params = {
         email: email_address,
-        name: name_input
-    };
+        name: name_input,
+      };
 
-    var esc = encodeURIComponent;
-    var query = Object.keys(params)
+      this.gotit = true;
+      this.enteringName = false;
+      this.enteringEmail = false;
+      console.log('N word');
+
+      var esc = encodeURIComponent;
+      var query = Object.keys(params)
         .map(k => esc(k) + '=' + esc(params[k]))
         .join('&');
-    const url = 'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' + "?" + query;
-    fetch(url, {mode: 'cors'})
-      .then(function(response) {
-        ;
-      })
-    }
-  }
-})
+      const url =
+        'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
+        '?' +
+        query;
+      fetch(url, { mode: 'cors' }).then(function(response) {});
+
+      setTimeout(() => {
+        this.gotit = false;
+      }, 3000);
+    },
+  },
+});
 </script>
 
 <style>
@@ -225,7 +270,6 @@ export default Vue.extend({
   cursor: pointer;
   z-index: 1000;
 }
-
 
 .flex-container {
   font-family: 'Montserrat';
@@ -320,5 +364,21 @@ export default Vue.extend({
     padding-left: 10%;
     height: 60%;
   }
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.fade2-enter-active,
+.fade2-leave-active {
+  transition: opacity 0.2s;
+}
+.fade2-enter, .fade2-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>

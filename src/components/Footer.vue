@@ -9,11 +9,7 @@
       <p class="footer-links">
         <a href="#">Home</a>
         ·
-        <a href="#">About</a>
-        ·
-        <a href="#">Faq</a>
-        ·
-        <a href="#">Contact</a>
+        <a href="mailto:hello@deltahacks.com">Contact</a>
       </p>
       <p class="footer-company-name">Deltahacks &copy; 2019</p>
       <!-- <div>
@@ -77,8 +73,8 @@ export default Vue.extend({
   font-family: Montserrat;
 }
 
-.footer-distributed .right-footer, 
-.footer-distributed .left-footer, 
+.footer-distributed .right-footer,
+.footer-distributed .left-footer,
 .footer-distributed .center-footer {
   bottom: 0;
   height: 180px;
@@ -142,7 +138,6 @@ export default Vue.extend({
   text-decoration: none;
 }
 
-
 .footer-distributed .footer-left,
 .footer-distributed .footer-center,
 .footer-distributed .footer-right {
@@ -171,7 +166,6 @@ export default Vue.extend({
   display: flex;
   justify-content: space-around;
   padding-top: 15px; */
-
 }
 .footer-distributed .footer-links a {
   display: inline-block;

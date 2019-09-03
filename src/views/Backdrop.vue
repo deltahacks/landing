@@ -36,9 +36,9 @@
       <div id="spacer" style="height: 20vh" />
       <FAQ id="faq1" initialSelect="general 🙋" />
       <div id="spacer" style="height: 50vh" />
-      <Sponsors :sponsorList="sponsors_data.primary" main />
+      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <Footer />
+      <Footer id="footer" />
     </div>
     <div class="gradient" id="d1" :style="{ opacity: opacities.d1 }" />
     <div class="gradient" id="d2" :style="{ opacity: opacities.d2 }" />

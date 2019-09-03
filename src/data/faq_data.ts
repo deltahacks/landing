@@ -50,12 +50,20 @@ export default {
         'This will be finalized closer to the event, you can check back here a month or two before the event.',
     },
     {
+      q: `What's the application deadline?`,
+      a: `The deadline will be announced once applications open.`,
+    },
+    {
       q: 'When do applications open?',
       a:
         'Soon! Sign up for our mailing list to keep updated when we release them!',
     },
+    {
+      q: 'How long will it be until I hear back about my application?',
+      a: `We'll roll out decisions a month to a few weeks before the date of the event, so keep an eye out!`,
+    },
   ],
-  'hacking 👨‍⚖️': [
+  'Misc 🧳': [
     {
       q: 'How big can a team be?',
       a:
@@ -66,8 +74,6 @@ export default {
       a:
         'Your hack could be absloutely anything! Just keep in mind that our judges will be awarding extra points to any hacks that can create a positive change in education, finance, health or any other field of your choice.',
     },
-  ],
-  'hardware 🔨': [
     {
       q: 'Will there be hardware during the event?',
       a: `Yes! We'll be working closely with MLH to provide you with a range of different hardware to supplement your hacks. Wether its an arduino or Alexa we'll have it!`,
