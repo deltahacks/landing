@@ -353,7 +353,7 @@ export default Vue.extend({
   #left {
     width: 100%;
     position: absolute;
-    margin-top: 70%;
+    margin-top: 50%;
     padding: 0;
   }
   .landing-title {
