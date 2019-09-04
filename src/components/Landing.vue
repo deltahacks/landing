@@ -244,7 +244,8 @@ export default Vue.extend({
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
 
 #email-input {
-  padding: 1% 4%;
+  height: 45px;
+  width: 350px;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
@@ -377,6 +378,10 @@ export default Vue.extend({
     padding: 0;
     padding-left: 10%;
     height: 60%;
+  }
+  #email-input {
+    font-size: 18px;
+    width: 70vw;
   }
 }
 
