@@ -31,7 +31,7 @@
           @click="(enteringName = false), (enteringEmail = true)"
         >
           <i
-            v-if="name.length >= 2"
+            v-show="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x"
             :style="{ alignSelf: 'center' }"
           ></i>
