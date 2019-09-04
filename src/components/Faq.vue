@@ -41,13 +41,12 @@
         <div
           v-for="(elm, index) in faqData[selected]"
           :key="elm.q"
-          @click="expanded = expanded !== index ? index : null"
           class="question-box"
         >
-          <div class="question">
+          <div class="question" @click="expanded = expanded !== index ? index : null">
             {{ elm.q }}
             <span :class="{ arrow: true, rotate: index === expanded }">
-              <i class="fa fa-caret-up fa-xs"></i>
+              <i class="fa fa-caret-down fa-xs"></i>
             </span>
           </div>
           <transition name="open">
