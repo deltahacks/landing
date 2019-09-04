@@ -30,11 +30,13 @@
           id="email-submit"
           @click="(enteringName = false), (enteringEmail = true)"
         >
+        <transition name="fade">
           <i
             v-show="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x"
             :style="{ alignSelf: 'center' }"
           ></i>
+        </transition>
         </div>
       </div>
       <transition name="fade">
@@ -328,7 +330,7 @@ export default Vue.extend({
   background-color: rgba(81, 169, 185);
   transition: 0.1s ease-in-out;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .act-btn:hover {
@@ -378,10 +380,14 @@ export default Vue.extend({
     padding: 0;
     padding-left: 10%;
     height: 60%;
+    z-index: 0;
   }
   #email-input {
     font-size: 18px;
     width: 70vw;
+  }
+  .act-btn {
+    z-index: 1000;
   }
 }
 
