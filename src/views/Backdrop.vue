@@ -169,7 +169,7 @@ export default Vue.extend({
 
 .gradient {
   /* background-color: rgb(69, 111, 225); */
-  height: 100%;
+  height: 200vh;
   width: 100%;
   top: 0;
   left: 0;
