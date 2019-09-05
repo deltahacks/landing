@@ -57,18 +57,18 @@
             >ABOUT</a
           >
           <a
-            v-scroll-to="'#sponsor'"
-            @scroll="handleScroll"
-            id="sponsorsDrop"
-            class="browser"
-            >SPONSORS</a
-          >
-          <a
             v-scroll-to="'#faqScroll'"
             @scroll="handleScroll"
             id="faqDrop"
             class="browser"
             >FAQ</a
+          >
+          <a
+            v-scroll-to="'#sponsor'"
+            @scroll="handleScroll"
+            id="sponsorsDrop"
+            class="browser"
+            >SPONSORS</a
           >
           <a
             v-scroll-to="'#footer'"
@@ -136,7 +136,7 @@ export default Vue.extend({
       var aboutPos = document.querySelector("#blurb-2").offsetTop - 250
       var faqPos = document.querySelector("#faq1").offsetTop - 250
       var sponsorPos = document.querySelector("#sponsor").offsetTop - 250
-      var footerPos = document.querySelector("#footer").offsetTop - (vh * 0.8)
+      var footerPos = document.querySelector("#footer").offsetTop - (vh * 0.5)
       if (window.scrollY >= aboutPos) {
         this.pickActive('#about');
       }
@@ -277,13 +277,13 @@ export default Vue.extend({
   border-bottom-right-radius: 10px 10px; */
   /* transition: visibility 0s, opacity 0.5s linear;
   opacity: 0; */
-  width: 100vw;
+  width: 110vw;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
   /* color: black; */
-  padding: 12px 16px;
+  padding: 12px 25px;
   text-decoration: none;
   display: block;
   float: none;
