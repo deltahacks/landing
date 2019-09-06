@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ app: true, blend: true, change: change }">
+  <div :class="{ app: true, blend: true}">
     <div class="scroll">
       <Landing id="landing" />
       <div class="astr2">
@@ -81,7 +81,6 @@ export default Vue.extend({
   },
   data() {
     return {
-      change: false,
       scr: 0,
       sponsors_data,
       SAT,
@@ -134,7 +133,6 @@ export default Vue.extend({
         this.opacities.d3 = '0';
         this.opacities.d4 = '0';
       }
-      this.change = y >= 3500;
     },
   },
   created() {
@@ -154,10 +152,6 @@ export default Vue.extend({
   color: white;
   height: 5400px;
 }
-.change {
-  color: black !important;
-}
-
 .blend {
   background-blend-mode: overlay;
   height: 500vh;
