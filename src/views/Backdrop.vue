@@ -20,6 +20,7 @@
           id="blurb-1"
         />
       </div>
+      <div id="spacer" style="height: 10vh" />
       <AboutUsStats />
       <div class="blurb-group blurb-align-right">
         <img class="astr3" :src="ASTR3" />

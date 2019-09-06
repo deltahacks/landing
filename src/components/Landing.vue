@@ -69,7 +69,7 @@
 import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
-import Planet from '@/assets/main_planet.svg';
+import Planet from '@/assets/planetpng.png';
 const axios = require('axios');
 declare global {
   interface Window {
@@ -292,6 +292,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: row;
   flex-direction: row-reverse;
+  align-content: center;
   width: 90%;
   padding-top: 2%;
 }
@@ -353,13 +354,13 @@ export default Vue.extend({
 
 .main-planet {
   width: 40%;
-  height: 60%;
-  padding-top: 7%;
+  height: 45%;
+  padding-top: 10%;
   z-index: 1;
-  position: relative;
+  object-fit: contain;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
   .flex-container {
     display: flex;
     flex-direction: column;
@@ -375,11 +376,12 @@ export default Vue.extend({
     font-size: 3.5em;
   }
   .main-planet {
-    width: 60%;
+    width: 80%;
+    height: 50%;
     align-self: center;
     padding: 0;
     padding-left: 10%;
-    height: 60%;
+    padding-top: 0%;
     z-index: 0;
   }
   #email-input {
