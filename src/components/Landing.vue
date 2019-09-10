@@ -15,7 +15,7 @@
       >
         Mailing list
       </a>
-      <a v-if="!enteringName && !enteringEmail && !gotit" class="act-btn">
+      <a v-if="!enteringName && !enteringEmail && !gotit" class="act-btn" v-scroll-to="'#sponsor'">
         Sponsor
       </a>
       <div v-if="enteringName" class="email-group">
