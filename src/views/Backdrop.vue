@@ -118,7 +118,7 @@ export default Vue.extend({
         this.opacities.d4 = '1';
       } else if (
         (this.isMobile() && y < 4400) ||
-        (!this.isMobile() && y < 3700)
+        (!this.isMobile() && y < 3900)
       ) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';
@@ -126,7 +126,7 @@ export default Vue.extend({
         this.opacities.d4 = String((-1 / 800) * y + 11 / 2);
       } else if (
         (this.isMobile() && y >= 4400) ||
-        (!this.isMobile() && y >= 3700)
+        (!this.isMobile() && y >= 3900)
       ) {
         this.opacities.d1 = '0';
         this.opacities.d2 = '0';

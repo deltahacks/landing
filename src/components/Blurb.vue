@@ -48,7 +48,7 @@ export default Vue.extend({
   color: white;
   text-align: right;
   padding: 5%;
-  width: 70%;
+  width: 78%;
   text-overflow: ellipsis;
 }
 
@@ -66,8 +66,9 @@ export default Vue.extend({
   margin: 0;
 }
 
-.about-description > p {
+.right p {
   line-height: 22px;
+  margin-left: 25%;
 }
 
 #about-button {
@@ -98,6 +99,12 @@ export default Vue.extend({
 }
 
 @media screen and (max-width: 720px) {
+  .right {
+    width: 70%;
+  }
+  .right p {
+    margin-left: 0;
+  }
   .about-container {
     width: 100%;
     padding: 0;
