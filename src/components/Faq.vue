@@ -12,7 +12,7 @@
           <div
             :style="{ width: '100%' }"
             @click="
-              (selected = selected !== name ? name : isMobile() ? '' : selected), expanded = [0]
+              selectCategory(name)
             "
           >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
           <transition name="open">
@@ -20,7 +20,7 @@
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
-                @click="!expanded.includes(index) ? expanded.push(index) : expanded = expanded.filter(each => each!==index)"
+                @click="toggleQuestion(index)"
                 class="question-box"
               >
                 <div class="question">
@@ -43,7 +43,7 @@
           :key="elm.q"
           class="question-box"
         >
-          <div class="question" @click="!expanded.includes(index) ? expanded.push(index) : expanded = expanded.filter(each => each!==index)">
+          <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
             <span :class="{ arrow: true, rotate: index === expanded }">
               <i class="fa fa-caret-down fa-xs"></i>
@@ -74,6 +74,17 @@ export default Vue.extend({
   },
   methods: {
     isMobile: (): boolean => window.innerWidth <= 700,
+    toggleQuestion(index: number) {
+      if (!this.expanded.includes(index)) {
+        this.expanded.push(index);
+      } else {
+        this.expanded = this.expanded.filter((each) => each !== index);
+      }
+    },
+    selectCategory(name: string) {
+      this.selected = this.selected !== name ? name : this.isMobile() ? '' : this.selected;
+      this.expanded = [0];
+    },
   },
   created(): void {
     this.selected = !this.isMobile() ? this.initialSelect : '';
