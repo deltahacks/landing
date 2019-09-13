@@ -89,7 +89,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 125,
-            x: 450,
+            x: 480,
             y: 220,
           },
           mobile: {
@@ -106,7 +106,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 250,
+            x: 280,
             y: 130,
           },
           mobile: {
@@ -123,7 +123,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 60,
-            x: 260,
+            x: 290,
             y: 280,
           },
           mobile: {
@@ -140,7 +140,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 115,
+            x: 145,
             y: 250,
           },
           mobile: {
@@ -157,7 +157,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 650,
+            x: 680,
             y: 130,
           },
           mobile: {
@@ -174,7 +174,7 @@ export default Vue.extend({
         {
           desktop: {
             r: 75,
-            x: 650,
+            x: 680,
             y: 300,
           },
           mobile: {
