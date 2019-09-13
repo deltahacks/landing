@@ -2,14 +2,14 @@
   <div :class="{ app: true, blend: true}">
     <div class="scroll">
       <Landing id="landing" />
+      <div class="blurb-group">
+        <img class="spshp" :src="SAT" />
         <div v-rellax="{speed: -0.5}" class="astr2">
             <img :src="ASTR2" />
         </div>
-        <div v-rellax="{speed: -0.5}" class="astr1">
+        <div v-rellax="{speed: 0.5}" class="astr1">
             <img :src="ASTR1" />
         </div>
-      <div class="blurb-group">
-        <img class="spshp" :src="SAT" />
         <Blurb
           heading="To Infinity and Beyond"
           :text="text1"
@@ -224,7 +224,7 @@ h1 {
 
 .astr1 {
   position: absolute;
-  margin-top: 38vh;
+  margin-top: 28vh;
   margin-left: 70vw;
   width: 2.5%;
   transform: rotate(-4deg);
