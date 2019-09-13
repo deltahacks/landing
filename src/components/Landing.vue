@@ -15,7 +15,11 @@
       >
         Mailing list
       </a>
-      <a v-if="!enteringName && !enteringEmail && !gotit" class="act-btn" v-scroll-to="'#sponsor'">
+      <a
+        v-if="!enteringName && !enteringEmail && !gotit"
+        class="act-btn"
+        v-scroll-to="'#sponsor'"
+      >
         Sponsor
       </a>
       <div v-if="enteringName" class="email-group">
@@ -30,13 +34,13 @@
           id="email-submit"
           @click="(enteringName = false), (enteringEmail = true)"
         >
-        <transition name="fade">
-          <i
-            v-show="name.length >= 2"
-            class="fa fa-arrow-circle-o-right fa-3x"
-            :style="{ alignSelf: 'center' }"
-          ></i>
-        </transition>
+          <transition name="fade">
+            <i
+              v-show="name.length >= 2"
+              class="fa fa-arrow-circle-o-right fa-3x"
+              :style="{ alignSelf: 'center' }"
+            ></i>
+          </transition>
         </div>
       </div>
       <transition name="fade">
@@ -53,12 +57,12 @@
             v-model="email"
             required
           />
-            <button type="submit" id="email-submit">
+          <button type="submit" id="email-submit">
             <i
               class="fa fa-arrow-circle-o-right fa-4x"
               :style="{ alignSelf: 'center' }"
             ></i>
-            </button>
+          </button>
         </div>
       </form>
     </div>
@@ -172,7 +176,7 @@ export default Vue.extend({
               mode: 'bubble',
             },
             onclick: {
-              enable: false,
+              enable: true,
               mode: 'push',
             },
             resize: true,
@@ -226,7 +230,7 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + '=' + esc(params[k]))
+        .map(k => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
@@ -277,9 +281,9 @@ export default Vue.extend({
   justify-content: center;
 }
 #email-submit {
-  border:0;
+  border: 0;
   padding: 0;
-  background:none;
+  background: none;
   z-index: 1000;
   cursor: pointer;
 }
