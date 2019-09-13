@@ -2,12 +2,12 @@
   <div :class="{ app: true, blend: true}">
     <div class="scroll">
       <Landing id="landing" />
-      <div class="astr2">
-        <img :src="ASTR2" />
-      </div>
-      <div class="astr1">
-        <img :src="ASTR1" />
-      </div>
+        <div v-rellax="{speed: -0.5}" class="astr2">
+            <img :src="ASTR2" />
+        </div>
+        <div v-rellax="{speed: -0.5}" class="astr1">
+            <img :src="ASTR1" />
+        </div>
       <div class="blurb-group">
         <img class="spshp" :src="SAT" />
         <Blurb
@@ -66,8 +66,10 @@ import ASTR3 from '@/assets/astro.svg';
 import VueScrollReveal from 'vue-scroll-reveal';
 
 import sponsors_data from '@/data/sponsors_data.ts';
+import VueRellax from 'vue-rellax';
 
 Vue.use(VueScrollReveal);
+Vue.use(VueRellax);
 
 export default Vue.extend({
   name: 'app',
