@@ -84,6 +84,7 @@ export default Vue.extend({
   height: 40px;
   transition: 0.1s ease-in-out;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 #about-button:hover {
