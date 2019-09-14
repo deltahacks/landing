@@ -138,6 +138,7 @@ export default Vue.extend({
       } else {
         this.scrolled = false;
       }
+<<<<<<< HEAD
       var vh = screen.height
       var aboutPos = document.querySelector("#blurb-2").offsetTop - 300
       var faqPos = document.querySelector("#faq1").offsetTop - 300
@@ -146,6 +147,17 @@ export default Vue.extend({
       if (window.scrollY < aboutPos) {
         this.removeActive()
       } 
+=======
+      var div3 = document.querySelector("#footer").offsetTop;
+      console.log(window.scrollY)
+      console.log(div3)
+      var vh = screen.height
+      console.log(vh)
+      var aboutPos = document.querySelector("#blurb-2").offsetTop - 250
+      var faqPos = document.querySelector("#faq1").offsetTop - 250
+      var sponsorPos = document.querySelector("#sponsor").offsetTop - 250
+      var footerPos = document.querySelector("#footer").offsetTop - (vh * 0.5)
+>>>>>>> a7cf9ce30333efbb8d8104e88da3f2d58de50341
       if (window.scrollY >= aboutPos) {
         this.pickActive('#about');
       }
