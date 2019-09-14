@@ -74,7 +74,7 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/planetpng.png';
-const axios = require('axios');
+const axios = require('axios'); // tslint:disable-line
 declare global {
   interface Window {
     particlesJS: any;
@@ -212,31 +212,30 @@ export default Vue.extend({
     },
     handleSubmit() {
       // Changed it to use query params bc post request wasn't working, most likely due to cors errors.
-      const email_address = this.$data.email;
-      const name_input = this.$data.name;
+      const emailAddress = this.$data.email;
+      const nameInput = this.$data.name;
       this.name = '';
       this.email = '';
 
       const params = {
-        email: email_address,
-        name: name_input,
+        email: emailAddress,
+        name: nameInput,
       };
 
       this.gotit = true;
       this.enteringName = false;
       this.enteringEmail = false;
-      console.log('N word');
 
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map(k => esc(k) + '=' + esc(params[k]))
+        .map(k => esc(k) + '=' + esc(params[k])) // tslint:disable-line
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
         query;
-      fetch(url, { mode: 'cors' }).then(function(response) {});
+      fetch(url, { mode: 'cors' }).then(function(response) {}); // tslint:disable-line
 
       setTimeout(() => {
         this.gotit = false;
