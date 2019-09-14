@@ -47,7 +47,7 @@
             v-show="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x fade-in"
             :style="{ alignSelf: 'center' }"
-          ></i>
+          />
         </div>
       </div>
       <form v-on:submit.prevent="handleSubmit">
@@ -72,7 +72,7 @@
             <i
               class="fa fa-arrow-circle-o-right fa-4x"
               :style="{ alignSelf: 'center', fontSize: '4.35em' }"
-            ></i>
+            />
         </button>
       </div>
       </form>
@@ -275,12 +275,12 @@ export default Vue.extend({
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #email-input {
