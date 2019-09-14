@@ -232,6 +232,7 @@ export default Vue.extend({
       const email_address = this.$data.email;
       // tslint:disable-next-line
       const name_input = this.$data.name;
+
       this.name = '';
       this.email = '';
 
