@@ -10,19 +10,28 @@
       <img class="vi-back" :src="VI" />
       <a
         v-if="!enteringName && !enteringEmail && !gotit"
-        class="act-btn"
+        class="act-btn fade-in"
         @click="enteringName = true"
       >
         Mailing list
       </a>
       <a
         v-if="!enteringName && !enteringEmail && !gotit"
-        class="act-btn"
+        class="act-btn fade-in"
         v-scroll-to="'#sponsor'"
       >
         Sponsor
       </a>
-      <div v-if="enteringName" class="email-group">
+      <div v-if="enteringName" class="email-group fade-in">
+        <div
+          class="email-button"
+          @click="(enteringName = false), (enteringEmail = false)"
+        >
+          <i
+              class="fa fa-arrow-circle-o-left fa-3x"
+              :style="{ alignSelf: 'center', marginRight: '19px' }"
+          />
+        </div>
         <input
           type="text"
           placeholder="Your Name"
@@ -31,40 +40,45 @@
           @keyup.enter="(enteringName = false), (enteringEmail = true)"
         />
         <div
-          id="email-submit"
+          class="email-button"
           @click="(enteringName = false), (enteringEmail = true)"
         >
-          <transition name="fade">
-            <i
-              v-show="name.length >= 2"
-              class="fa fa-arrow-circle-o-right fa-3x"
-              :style="{ alignSelf: 'center' }"
-            ></i>
-          </transition>
+          <i
+            v-show="name.length >= 2"
+            class="fa fa-arrow-circle-o-right fa-3x fade-in"
+            :style="{ alignSelf: 'center' }"
+          ></i>
         </div>
       </div>
-      <transition name="fade">
-        <div v-if="gotit" style="font-family: Montserrat; font-size: 30px;">
-          Got it, thanks!
-        </div>
-      </transition>
       <form v-on:submit.prevent="handleSubmit">
-        <div v-if="enteringEmail && !gotit" class="email-group">
-          <input
-            type="email"
-            placeholder="Your email"
-            id="email-input"
-            v-model="email"
-            required
+      <div v-if="enteringEmail && !gotit" class="email-group">
+        <div
+        class="email-button"
+        @click="(enteringName = true), (enteringEmail = false)"
+        >
+          <i
+              class="fa fa-arrow-circle-o-left fa-3x"
+              :style="{ alignSelf: 'center', marginRight: '19px'}"
           />
-          <button type="submit" id="email-submit">
+        </div>
+        <input
+          type="email"
+          placeholder="Your email"
+          id="email-input"
+          v-model="email"
+          required
+        />
+        <button type="submit" class="email-button">
             <i
               class="fa fa-arrow-circle-o-right fa-4x"
-              :style="{ alignSelf: 'center' }"
+              :style="{ alignSelf: 'center', fontSize: '4.35em' }"
             ></i>
-          </button>
-        </div>
+        </button>
+      </div>
       </form>
+      <div v-if="gotit" class="fade-in" style="font-family: Montserrat; font-size: 30px;">
+        Got it, thanks!
+      </div>
     </div>
   </div>
 </template>
@@ -74,7 +88,8 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/planetpng.png';
-const axios = require('axios');
+import axios from 'axios';
+
 declare global {
   interface Window {
     particlesJS: any;
@@ -212,7 +227,10 @@ export default Vue.extend({
     },
     handleSubmit() {
       // Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+
+      // tslint:disable-next-line
       const email_address = this.$data.email;
+      // tslint:disable-next-line
       const name_input = this.$data.name;
       this.name = '';
       this.email = '';
@@ -225,18 +243,17 @@ export default Vue.extend({
       this.gotit = true;
       this.enteringName = false;
       this.enteringEmail = false;
-      console.log('N word');
 
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map(k => esc(k) + '=' + esc(params[k]))
+        .map((k) => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
         query;
-      fetch(url, { mode: 'cors' }).then(function(response) {});
+      fetch(url, { mode: 'cors' }).then((response) => { /* :) */ });
 
       setTimeout(() => {
         this.gotit = false;
@@ -248,6 +265,23 @@ export default Vue.extend({
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.4s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
 
 #email-input {
   height: 45px;
@@ -280,14 +314,14 @@ export default Vue.extend({
   flex-direction: row;
   justify-content: center;
 }
-#email-submit {
+.email-button {
   border: 0;
   padding: 0;
   background: none;
   z-index: 1000;
   cursor: pointer;
 }
-#email-submit > i {
+.email-button > i {
   color: white;
 }
 
@@ -395,21 +429,9 @@ export default Vue.extend({
   .act-btn {
     z-index: 1000;
   }
-}
-
-.fade-enter-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter  /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-.fade2-enter-active,
-.fade2-leave-active {
-  transition: opacity 0.2s;
-}
-.fade2-enter, .fade2-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+  .email-group {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 </style>
