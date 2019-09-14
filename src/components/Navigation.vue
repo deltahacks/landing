@@ -57,18 +57,18 @@
             >ABOUT</a
           >
           <a
-            v-scroll-to="'#sponsor'"
-            @scroll="handleScroll"
-            id="recapDrop"
-            class="browser"
-            >SPONSORS</a
-          >
-          <a
             v-scroll-to="'#faqScroll'"
             @scroll="handleScroll"
             id="faqDrop"
             class="browser"
             >FAQ</a
+          >
+          <a
+            v-scroll-to="'#sponsor'"
+            @scroll="handleScroll"
+            id="sponsorsDrop"
+            class="browser"
+            >SPONSORS</a
           >
           <a
             v-scroll-to="'#footer'"
@@ -99,11 +99,11 @@ export default Vue.extend({
     pickActive(element: string) {
       const divs = [
         '#about',
-        '#recap',
+        '#sponsors',
         '#faq',
         '#contact',
         '#aboutDrop',
-        '#recapDrop',
+        '#sponsorsDrop',
         '#faqDrop',
         '#contactDrop',
       ]; // tslint:disable-line
@@ -122,24 +122,42 @@ export default Vue.extend({
         header.classList.add('active');
       }
     },
+    removeActive() {
+      var aboutHeader = document.querySelector('#about');
+      if (aboutHeader != null) {
+        aboutHeader.classList.remove('active');
+      }
+      aboutHeader = document.querySelector('#aboutDrop');
+      if (aboutHeader != null) {
+        aboutHeader.classList.remove('active');
+      }
+    },
     handleScroll() {
       if (window.scrollY > 0) {
         this.scrolled = true;
       } else {
         this.scrolled = false;
       }
-      // if (window.scrollY >= 0) {
-      //   this.pickActive('#about');
-      // }
-      // if (window.scrollY > 3000) {
-      //   this.pickActive('#sponsors');
-      // }
-      // if (window.scrollY > 2300) {
-      //   this.pickActive('#faq');
-      // }
-      // if (window.scrollY > 4100) {
-      //   this.pickActive('#contact');
-      // }
+      var vh = screen.height
+      var aboutPos = document.querySelector("#blurb-2").offsetTop - 300
+      var faqPos = document.querySelector("#faq1").offsetTop - 300
+      var sponsorPos = document.querySelector("#sponsor").offsetTop - 250
+      var footerPos = document.querySelector("#footer").offsetTop - (vh * 0.8)
+      if (window.scrollY < aboutPos) {
+        this.removeActive()
+      } 
+      if (window.scrollY >= aboutPos) {
+        this.pickActive('#about');
+      }
+      if (window.scrollY > faqPos) {
+        this.pickActive('#faq');
+      }
+      if (window.scrollY > sponsorPos) {
+        this.pickActive('#sponsors');
+      }
+      if (window.scrollY > footerPos) {
+        this.pickActive('#contact');
+      }
     },
   },
   mounted() {
@@ -268,13 +286,13 @@ export default Vue.extend({
   border-bottom-right-radius: 10px 10px; */
   /* transition: visibility 0s, opacity 0.5s linear;
   opacity: 0; */
-  width: 100vw;
+  width: 110vw;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
   /* color: black; */
-  padding: 12px 16px;
+  padding: 12px 25px;
   text-decoration: none;
   display: block;
   float: none;
@@ -316,4 +334,5 @@ export default Vue.extend({
 .fade-leave-to {
   opacity: 0;
 }
+
 </style>
