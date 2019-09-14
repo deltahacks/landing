@@ -12,6 +12,7 @@
         v-if="!enteringName && !enteringEmail && !gotit"
         class="act-btn"
         @click="enteringName = true"
+        style="margin-left: 30px;"
       >
         Mailing list
       </a>
@@ -38,6 +39,19 @@
             <i
               v-show="name.length >= 2"
               class="fa fa-arrow-circle-o-right fa-3x"
+              :style="{ alignSelf: 'center' }"
+              style="padding-right: 5px;"
+            ></i>
+          </transition>
+        </div>
+        <div
+          id="email-submit"
+          @click="(enteringName = false), (enteringEmail = false)"
+        >
+          <transition name="fade">
+            <i
+              v-show="name.length >= 0"
+              class="fa fa-times fa-3x"
               :style="{ alignSelf: 'center' }"
             ></i>
           </transition>
@@ -389,10 +403,17 @@ export default Vue.extend({
   }
   #email-input {
     font-size: 18px;
-    width: 70vw;
+    width: 65vw;
   }
   .act-btn {
     z-index: 1000;
+  }
+}
+
+@media only screen and (max-width: 401px) {
+  .act-btn {
+    z-index: 1000;
+    font-size: 15px;
   }
 }
 
