@@ -44,18 +44,6 @@
             ></i>
           </transition>
         </div>
-        <div
-          id="email-submit"
-          @click="(enteringName = false), (enteringEmail = false)"
-        >
-          <transition name="fade">
-            <i
-              v-show="name.length >= 0"
-              class="fa fa-times fa-3x"
-              :style="{ alignSelf: 'center' }"
-            ></i>
-          </transition>
-        </div>
       </div>
       <transition name="fade">
         <div v-if="gotit" style="font-family: Montserrat; font-size: 30px;">
