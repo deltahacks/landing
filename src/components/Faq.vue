@@ -12,7 +12,7 @@
           <div
             :style="{ width: '100%' }"
             @click="
-              selected = selected !== name ? name : isMobile() ? '' : selected
+              selectCategory(name)
             "
           >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
           <transition name="open">
@@ -20,7 +20,7 @@
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
-                @click="expanded = expanded !== index ? index : null"
+                @click="toggleQuestion(index)"
                 class="question-box"
               >
                 <div class="question">
@@ -30,7 +30,7 @@
                   </span>
                 </div>
                 <transition name="open">
-                  <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">{{ elm.a }}</div>
+                  <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
                 </transition>
               </div>
             </div>
@@ -43,14 +43,14 @@
           :key="elm.q"
           class="question-box"
         >
-          <div class="question" @click="expanded = expanded !== index ? index : null">
+          <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
             <span :class="{ arrow: true, rotate: index === expanded }">
               <i class="fa fa-caret-down fa-xs"></i>
             </span>
           </div>
           <transition name="open">
-            <div v-if="!isNaN(expanded) && index === expanded" class="answer-box">{{ elm.a }}</div>
+            <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
           </transition>
         </div>
       </div>
@@ -65,15 +65,26 @@ import faqData from '@/data/faq_data.ts';
 export default Vue.extend({
   name: 'Faq',
   props: ['initialSelect'],
-  data(): { faqData: any; selected: string; expanded: number | null } {
+  data(): { faqData: any; selected: string; expanded: number[] } {
     return {
       faqData,
       selected: '',
-      expanded: 0,
+      expanded: [0],
     };
   },
   methods: {
     isMobile: (): boolean => window.innerWidth <= 700,
+    toggleQuestion(index: number) {
+      if (!this.expanded.includes(index)) {
+        this.expanded.push(index);
+      } else {
+        this.expanded = this.expanded.filter((each) => each !== index);
+      }
+    },
+    selectCategory(name: string) {
+      this.selected = this.selected !== name ? name : this.isMobile() ? '' : this.selected;
+      this.expanded = [0];
+    },
   },
   created(): void {
     this.selected = !this.isMobile() ? this.initialSelect : '';
@@ -138,12 +149,12 @@ export default Vue.extend({
   width: 100%;
   margin-left: 0.5%;
   /* overflow: scroll; */
-  overflow: hidden;
+  overflow: auto;
 }
 
 .mobile-faq-area {
   max-height: 300px;
-  overflow: hidden;
+  overflow: auto;
   display: none;
 }
 
