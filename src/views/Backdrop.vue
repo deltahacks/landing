@@ -4,10 +4,10 @@
       <Landing id="landing" />
       <div class="blurb-group">
         <img class="spshp" :src="SAT" />
-        <div v-rellax="{speed: -0.5}" class="astr2">
+        <div v-rellax="{speed: -1.5}" class="astr2">
             <img :src="ASTR2" />
         </div>
-        <div v-rellax="{speed: 0.5}" class="astr1">
+        <div v-rellax="{speed: 1.5}" class="astr1">
             <img :src="ASTR1" />
         </div>
         <Blurb
@@ -271,7 +271,7 @@ h1 {
   }
   .astr2 {
     position: absolute;
-    margin-top: 13vh;
+    margin-top: 8vh;
     margin-left: 65vw;
     width: 7%;
     transform: rotate(3deg);
