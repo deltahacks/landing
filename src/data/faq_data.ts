@@ -76,7 +76,7 @@ export default {
     },
     {
       q: 'Will there be hardware during the event?',
-      a: `Yes! We'll be working closely with MLH to provide you with a range of different hardware to supplement your hacks. Wether its an arduino or Alexa we'll have it!`,
+      a: `Yes! We'll be working closely with MLH to provide you with a range of different hardware to supplement your hacks. whether its an arduino or Alexa we'll have it!`,
     },
     {
       q: 'Is it possible to request hardware beforehand?',
