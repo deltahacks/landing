@@ -262,7 +262,7 @@ export default Vue.extend({
 }
 ::-webkit-scrollbar-button {
   width: 100px;
-  height: 3.5vh;
+  height: 10%;
 }
 ::-webkit-scrollbar-thumb {
   background: #e1e1e1;
