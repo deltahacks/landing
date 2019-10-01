@@ -257,37 +257,11 @@ export default Vue.extend({
   }
 }
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
 }
-::-webkit-scrollbar-button {
-  width: 100px;
-  height: 10%;
-}
+/* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-  background: #e1e1e1;
-  border: 0px none #ffffff;
-  border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:hover {
-  cursor: pointer;
-  background: lightgray;
-}
-/* ::-webkit-scrollbar-thumb:active {
-  background: #000000;
-} */
-::-webkit-scrollbar-track {
-  background: gray;
-  border: 0px none #ffffff;
-  border-radius: 100px;
-}
-::-webkit-scrollbar-track:hover {
-  background: #505050;
-}
-/* ::-webkit-scrollbar-track:active {
-  background: #333333;
-} */
-::-webkit-scrollbar-corner {
-  background: transparent;
+    background: #FF0000;
 }
 </style>
