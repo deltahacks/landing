@@ -256,4 +256,40 @@ export default Vue.extend({
     transition: max-height 0.3s;
   }
 }
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 100px;
+  height: 10.5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: lightgray;
+}
+/* ::-webkit-scrollbar-thumb:active {
+  background: #000000;
+} */
+::-webkit-scrollbar-track {
+  background: gray;
+  border: 0px none #ffffff;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #505050;
+}
+/* ::-webkit-scrollbar-track:active {
+  background: #333333;
+} */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 </style>
