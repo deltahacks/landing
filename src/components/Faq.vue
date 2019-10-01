@@ -262,13 +262,12 @@ export default Vue.extend({
 }
 ::-webkit-scrollbar-button {
   width: 100px;
-  height: 10.5px;
+  height: 20px;
 }
 ::-webkit-scrollbar-thumb {
   background: #e1e1e1;
   border: 0px none #ffffff;
-  border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+  border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
@@ -280,8 +279,7 @@ export default Vue.extend({
 ::-webkit-scrollbar-track {
   background: gray;
   border: 0px none #ffffff;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+  border-radius: 100px;
 }
 ::-webkit-scrollbar-track:hover {
   background: #505050;
