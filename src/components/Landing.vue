@@ -353,7 +353,7 @@ export default Vue.extend({
   color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   margin-right: 20px !important;
-  background-color: rgba(236, 240, 241, 0.3);
+  background-color: rgba(236, 240, 241, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
   cursor: pointer;
@@ -362,12 +362,12 @@ export default Vue.extend({
 
 .act-btn:hover {
   color: white;
-  background-color: rgb(236, 240, 241, 0.5);
+  background-color: rgb(236, 240, 241, 0.3);
   transition: 0.2s;
 }
 .act-btn:active {
   color: white;
-  background-color: rgb(236, 240, 241, 1);
+  background-color: rgb(236, 240, 241, 0.6);
   transition: 0.2s;
 }
 

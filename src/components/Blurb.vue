@@ -78,7 +78,7 @@ export default Vue.extend({
   color: white;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgba(236, 240, 241, 0.3);
+  background-color: rgba(236, 240, 241, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: 20px;
@@ -90,13 +90,13 @@ export default Vue.extend({
 
 #about-button:hover {
   color: white;
-  background-color: rgb(236, 240, 241, 0.5);
+  background-color: rgb(236, 240, 241, 0.3);
   transition: 0.2s;
 }
 
 #about-button:active {
   color: white;
-  background-color: rgb(236, 240, 241, 1);
+  background-color: rgb(236, 240, 241, 0.6);
   transition: 0.2s;
 }
 
