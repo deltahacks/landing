@@ -2,7 +2,7 @@
   <div :class="['about-container', left ? 'left' : 'right']">
     <h2>{{ heading }}</h2>
     <div class="about-description">
-      <p>{{ text }} </p>
+      <p>{{ text }}</p>
       <p class="blurb_sub">{{ sub }}</p>
     </div>
     <form :action="link">
@@ -78,8 +78,9 @@ export default Vue.extend({
   color: white;
   font-size: 14px;
   font-weight: 600;
-  background-color: rgba(81, 169, 185);
-  border: 1px solid rgb(65, 137, 150);
+  background-color: rgba(236, 240, 241, 0.3);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border: none;
   border-radius: 20px;
   height: 40px;
   transition: 0.1s ease-in-out;
@@ -89,13 +90,13 @@ export default Vue.extend({
 
 #about-button:hover {
   color: white;
-  background-color: rgb(178, 215, 221, 0.5);
+  background-color: rgb(236, 240, 241, 0.5);
   transition: 0.2s;
 }
 
 #about-button:active {
   color: white;
-  background-color: rgb(178, 215, 221, 1);
+  background-color: rgb(236, 240, 241, 1);
   transition: 0.2s;
 }
 

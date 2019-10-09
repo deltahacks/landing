@@ -5,31 +5,25 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: 300">Hacks</span> VI
+        Delta
+        <span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
       <a
         v-if="!enteringName && !enteringEmail && !gotit"
         class="act-btn fade-in"
         @click="enteringName = true"
-      >
-        Mailing list
-      </a>
+      >Mailing list</a>
       <a
         v-if="!enteringName && !enteringEmail && !gotit"
         class="act-btn fade-in"
         v-scroll-to="'#sponsor'"
-      >
-        Sponsor
-      </a>
+      >Sponsor</a>
       <div v-if="enteringName" class="email-group fade-in">
-        <div
-          class="email-button"
-          @click="(enteringName = false), (enteringEmail = false)"
-        >
+        <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
           <i
-              class="fa fa-arrow-circle-o-left fa-3x"
-              :style="{ alignSelf: 'center', marginRight: '19px' }"
+            class="fa fa-arrow-circle-o-left fa-3x"
+            :style="{ alignSelf: 'center', marginRight: '19px' }"
           />
         </div>
         <input
@@ -39,10 +33,7 @@
           v-model="name"
           @keyup.enter="(enteringName = false), (enteringEmail = true)"
         />
-        <div
-          class="email-button"
-          @click="(enteringName = false), (enteringEmail = true)"
-        >
+        <div class="email-button" @click="(enteringName = false), (enteringEmail = true)">
           <i
             v-show="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x fade-in"
@@ -51,34 +42,27 @@
         </div>
       </div>
       <form v-on:submit.prevent="handleSubmit">
-      <div v-if="enteringEmail && !gotit" class="email-group">
-        <div
-        class="email-button"
-        @click="(enteringName = true), (enteringEmail = false)"
-        >
-          <i
+        <div v-if="enteringEmail && !gotit" class="email-group">
+          <div class="email-button" @click="(enteringName = true), (enteringEmail = false)">
+            <i
               class="fa fa-arrow-circle-o-left fa-3x"
               :style="{ alignSelf: 'center', marginRight: '19px'}"
-          />
-        </div>
-        <input
-          type="email"
-          placeholder="Your email"
-          id="email-input"
-          v-model="email"
-          required
-        />
-        <button type="submit" class="email-button">
+            />
+          </div>
+          <input type="email" placeholder="Your email" id="email-input" v-model="email" required />
+          <button type="submit" class="email-button">
             <i
               class="fa fa-arrow-circle-o-right fa-4x"
               :style="{ alignSelf: 'center', fontSize: '4.35em' }"
             />
-        </button>
-      </div>
+          </button>
+        </div>
       </form>
-      <div v-if="gotit" class="fade-in" style="font-family: Montserrat; font-size: 30px;">
-        Got it, thanks!
-      </div>
+      <div
+        v-if="gotit"
+        class="fade-in"
+        style="font-family: Montserrat; font-size: 30px;"
+      >Got it, thanks!</div>
     </div>
   </div>
 </template>
@@ -248,13 +232,15 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + '=' + esc(params[k]))
+        .map(k => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
         query;
-      fetch(url, { mode: 'cors' }).then((response) => { /* :) */ });
+      fetch(url, { mode: 'cors' }).then(response => {
+        /* :) */
+      });
 
       setTimeout(() => {
         this.gotit = false;
@@ -268,11 +254,11 @@ export default Vue.extend({
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
 
 .fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 0.4s;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
 }
 
 @keyframes fadeInOpacity {
@@ -367,7 +353,8 @@ export default Vue.extend({
   color: rgba(255, 255, 255, 1);
   border-radius: 30px;
   margin-right: 20px !important;
-  background-color: rgba(81, 169, 185);
+  background-color: rgba(236, 240, 241, 0.3);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
   cursor: pointer;
   z-index: 10000;
@@ -375,12 +362,12 @@ export default Vue.extend({
 
 .act-btn:hover {
   color: white;
-  background-color: rgb(178, 215, 221, 0.5);
+  background-color: rgb(236, 240, 241, 0.5);
   transition: 0.2s;
 }
 .act-btn:active {
   color: white;
-  background-color: rgb(178, 215, 221, 1);
+  background-color: rgb(236, 240, 241, 1);
   transition: 0.2s;
 }
 
