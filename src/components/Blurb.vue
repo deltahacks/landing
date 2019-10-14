@@ -1,6 +1,6 @@
 <template>
   <div :class="['about-container', left ? 'left' : 'right']">
-    <h2>{{ heading }}</h2>
+    <h2 class="info-title">{{ heading }}</h2>
     <div class="about-description">
       <p>{{ text }}</p>
       <p class="blurb_sub">{{ sub }}</p>
@@ -60,15 +60,15 @@ export default Vue.extend({
   text-overflow: ellipsis;
 }
 
-.about-container > h2 {
-  font-size: 35px;
-  font-weight: 600;
-  margin: 0;
-}
-
 .right p {
   line-height: 22px;
   margin-left: 25%;
+}
+
+.info-title {
+  font-size: 35px;
+  font-weight: 800;
+  margin: 0;
 }
 
 #about-button {
@@ -77,7 +77,7 @@ export default Vue.extend({
   margin-top: 17px;
   color: white;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 800;
   background-color: rgba(236, 240, 241, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border: none;

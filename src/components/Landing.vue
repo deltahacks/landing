@@ -9,18 +9,24 @@
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="act-btn-container">
-        <a
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="act-btn fade-in"
-          @click="enteringName = true"
-          >Mailing list</a
-        >
-        <a
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="act-btn fade-in"
-          v-scroll-to="'#sponsor'"
-          >Sponsor</a
-        >
+        <v-row class="mb-6">
+          <col>
+          <a
+            v-if="!enteringName && !enteringEmail && !gotit"
+            class="act-btn fade-in"
+            @click="enteringName = true"
+            >Mailing list</a
+          >
+          </col>
+          <col>
+          <a
+            v-if="!enteringName && !enteringEmail && !gotit"
+            class="act-btn fade-in"
+            v-scroll-to="'#sponsor'"
+            >Sponsor</a
+          >
+          </col>
+        </v-row>
       </div>
       <div v-if="enteringName" class="email-group fade-in">
         <div
@@ -374,6 +380,7 @@ export default Vue.extend({
   text-decoration: none;
   font-size: 20px;
   font-family: Montserrat;
+  font-weight: 800;
   opacity: 0.99;
   padding: 10px 20px;
   color: rgba(255, 255, 255, 1);
