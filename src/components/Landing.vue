@@ -5,8 +5,7 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta
-        <span style="font-weight: 300">Hacks</span> VI
+        Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="act-btn-container">
@@ -14,15 +13,20 @@
           v-if="!enteringName && !enteringEmail && !gotit"
           class="act-btn fade-in"
           @click="enteringName = true"
-        >Mailing list</a>
+          >Mailing list</a
+        >
         <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="act-btn fade-in"
           v-scroll-to="'#sponsor'"
-        >Sponsor</a>
+          >Sponsor</a
+        >
       </div>
       <div v-if="enteringName" class="email-group fade-in">
-        <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
+        <div
+          class="email-button"
+          @click="(enteringName = false), (enteringEmail = false)"
+        >
           <i
             class="fa fa-arrow-circle-o-left fa-3x"
             :style="{ alignSelf: 'center', marginRight: '19px' }"
@@ -35,7 +39,10 @@
           v-model="name"
           @keyup.enter="(enteringName = false), (enteringEmail = true)"
         />
-        <div class="email-button" @click="(enteringName = false), (enteringEmail = true)">
+        <div
+          class="email-button"
+          @click="(enteringName = false), (enteringEmail = true)"
+        >
           <i
             v-show="name.length >= 2"
             class="fa fa-arrow-circle-o-right fa-3x fade-in"
@@ -45,13 +52,22 @@
       </div>
       <form v-on:submit.prevent="handleSubmit">
         <div v-if="enteringEmail && !gotit" class="email-group">
-          <div class="email-button" @click="(enteringName = true), (enteringEmail = false)">
+          <div
+            class="email-button"
+            @click="(enteringName = true), (enteringEmail = false)"
+          >
             <i
               class="fa fa-arrow-circle-o-left fa-3x"
-              :style="{ alignSelf: 'center', marginRight: '19px'}"
+              :style="{ alignSelf: 'center', marginRight: '19px' }"
             />
           </div>
-          <input type="email" placeholder="Your email" id="email-input" v-model="email" required />
+          <input
+            type="email"
+            placeholder="Your email"
+            id="email-input"
+            v-model="email"
+            required
+          />
           <button type="submit" class="email-button">
             <i
               class="fa fa-arrow-circle-o-right fa-4x"
@@ -64,7 +80,8 @@
         v-if="gotit"
         class="fade-in"
         style="font-family: Montserrat; font-size: 30px;"
-      >Got it, thanks!</div>
+        >Got it, thanks!</div
+      >
     </div>
   </div>
 </template>

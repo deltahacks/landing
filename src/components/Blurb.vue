@@ -125,7 +125,6 @@ export default Vue.extend({
 
 p {
   font-size: 20px;
-  font-family: 'Lato', sans-serif;
 }
 
 p:not(.blurb_sub) {

@@ -48,8 +48,9 @@
         >
           <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
-            <span :class="{ arrow: true, rotate: index === expanded }">
-              <i class="fa fa-caret-down fa-xs"></i>
+            <span :class="{ arrow: true }">
+              <i v-if="index == expanded" class="fa fa-caret-up fa-xs"></i>
+              <i v-else class="fa fa-caret-down fa-xs"></i>
             </span>
           </div>
           <transition name="open">
@@ -74,7 +75,7 @@ export default Vue.extend({
     return {
       faqData,
       selected: '',
-      expanded: [0],
+      expanded: [],
     };
   },
   methods: {
@@ -89,7 +90,7 @@ export default Vue.extend({
     selectCategory(name: string) {
       this.selected =
         this.selected !== name ? name : this.isMobile() ? '' : this.selected;
-      this.expanded = [0];
+      this.expanded = [];
     },
   },
   created(): void {
@@ -102,6 +103,7 @@ export default Vue.extend({
 .faq {
   display: flex;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .faq h1 {

@@ -6,15 +6,25 @@
         <h1 id="sponsors-title">Past Sponsors</h1>
         <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
-          <a
-            href="mailto:sponsorship@deltahacks.com"
-          >sponsorship@deltahacks.com</a>
+          <a href="mailto:sponsorship@deltahacks.com"
+            >sponsorship@deltahacks.com</a
+          >
         </p>
       </div>
       <div :class="['square', getClass]">
-        <div v-for="(sponsor, index) in sponsorList" v-bind:key="index" v-scroll-reveal>
+        <div
+          v-for="(sponsor, index) in sponsorList"
+          v-bind:key="index"
+          v-scroll-reveal
+        >
           <a :href="sponsor.href" target="_blank">
-            <img :src="sponsor.logo" :alt="sponsor.alt" data-tilt data-tilt-perspective="500" />
+            <img
+              :src="sponsor.logo"
+              :alt="sponsor.alt"
+              data-tilt
+              data-tilt-perspective="500"
+              data-tilt-reverse="true"
+            />
           </a>
         </div>
       </div>
