@@ -52,11 +52,22 @@ export default Vue.extend({
   text-overflow: ellipsis;
 }
 
+.about-description {
+  padding: 1% 3%;
+  border-radius: 25px;
+  margin: 2.5vh 0;
+  z-index: 40;
+  border-radius: 50px;
+  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  padding-bottom: 2vh;
+}
+
 .left {
   color: white;
   text-align: left;
   padding: 5%;
-  width: 70%;
+  width: 90%;
   text-overflow: ellipsis;
 }
 
@@ -66,6 +77,7 @@ export default Vue.extend({
 }
 
 .info-title {
+  padding: 1% 3%;
   font-size: 35px;
   font-weight: 800;
   margin: 0;
