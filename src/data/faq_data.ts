@@ -1,5 +1,5 @@
 export default {
-  'general 🙋': [
+  'general': [
     {
       q: 'What is a hackathon?',
       a:
@@ -19,7 +19,7 @@ export default {
         'Absolutely nothing! We will provide you with everything you need: venue, food, Wi-Fi, etc. All you need to do is show up, bring a laptop, and be ready to have fun!',
     },
   ],
-  'logistics 🚌': [
+  'logistics': [
     {
       q: 'Is there travel reimbursement?',
       a:
@@ -43,7 +43,7 @@ export default {
       a: `All you need to bring is your laptop, and don't forget your charger! We also recommend wearing comfortable clothing. In the past, attendees have also brought along toiletries, sleeping bags, and a spare change of clothes!`,
     },
   ],
-  'application 📨': [
+  'application': [
     {
       q: 'How are applications judged?',
       a:
@@ -63,7 +63,7 @@ export default {
       a: `We'll roll out decisions a month to a few weeks before the date of the event, so keep an eye out!`,
     },
   ],
-  'Misc 🧳': [
+  'Misc': [
     {
       q: 'How big can a team be?',
       a:

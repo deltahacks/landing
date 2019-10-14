@@ -1,43 +1,14 @@
 
 <template>
   <div class="topnav navbar" :class="{ 'navbar-scrolled': scrolled }">
-    <img
-      src="../assets/logolarge.png"
-      alt
-      style="float: left; width: 22px; padding: 16px 30px;"
-    />
-    <vue-typed-js
-      :strings="['DeltaHacks VI']"
-      :showCursor="false"
-      :typeSpeed="10"
-      class="branding"
-    >
+    <img src="../assets/logolarge.png" alt style="float: left; width: 22px; padding: 16px 30px;" />
+    <vue-typed-js :strings="['DeltaHacks VI']" :showCursor="false" :typeSpeed="10" class="branding">
       <p class="typing"></p>
     </vue-typed-js>
-    <a
-      v-scroll-to="'#footer'"
-      @scroll="handleScroll"
-      id="contact"
-      class="browser"
-      >CONTACT</a
-    >
-    <a
-      v-scroll-to="'#sponsor'"
-      @scroll="handleScroll"
-      id="sponsors"
-      class="browser"
-      >SPONSORS</a
-    >
-    <a v-scroll-to="'#faq1'" @scroll="handleScroll" id="faq" class="browser"
-      >FAQ</a
-    >
-    <a
-      v-scroll-to="'#blurb-2'"
-      @scroll="handleScroll"
-      id="about"
-      class="browser"
-      >ABOUT</a
-    >
+    <a v-scroll-to="'#footer'" @scroll="handleScroll" id="contact" class="browser">CONTACT</a>
+    <a v-scroll-to="'#sponsor'" @scroll="handleScroll" id="sponsors" class="browser">SPONSORS</a>
+    <a v-scroll-to="'#faq1'" @scroll="handleScroll" id="faq" class="browser">FAQ</a>
+    <a v-scroll-to="'#blurb-2'" @scroll="handleScroll" id="about" class="browser">ABOUT</a>
     <div class="dropdown mobile">
       <button class="dropbtn mobile" @click="show = !show">
         <img
@@ -54,29 +25,10 @@
             @scroll="handleScroll"
             id="aboutDrop"
             class="active browser"
-            >ABOUT</a
-          >
-          <a
-            v-scroll-to="'#sponsor'"
-            @scroll="handleScroll"
-            id="recapDrop"
-            class="browser"
-            >SPONSORS</a
-          >
-          <a
-            v-scroll-to="'#faqScroll'"
-            @scroll="handleScroll"
-            id="faqDrop"
-            class="browser"
-            >FAQ</a
-          >
-          <a
-            v-scroll-to="'#footer'"
-            @scroll="handleScroll"
-            id="contactDrop"
-            class="browser"
-            >CONTACT</a
-          >
+          >ABOUT</a>
+          <a v-scroll-to="'#sponsor'" @scroll="handleScroll" id="recapDrop" class="browser">SPONSORS</a>
+          <a v-scroll-to="'#faqScroll'" @scroll="handleScroll" id="faqDrop" class="browser">FAQ</a>
+          <a v-scroll-to="'#footer'" @scroll="handleScroll" id="contactDrop" class="browser">CONTACT</a>
         </div>
       </transition>
     </div>

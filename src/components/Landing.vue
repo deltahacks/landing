@@ -9,16 +9,18 @@
         <span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <a
-        v-if="!enteringName && !enteringEmail && !gotit"
-        class="act-btn fade-in"
-        @click="enteringName = true"
-      >Mailing list</a>
-      <a
-        v-if="!enteringName && !enteringEmail && !gotit"
-        class="act-btn fade-in"
-        v-scroll-to="'#sponsor'"
-      >Sponsor</a>
+      <div class="act-btn-container">
+        <a
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="act-btn fade-in"
+          @click="enteringName = true"
+        >Mailing list</a>
+        <a
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="act-btn fade-in"
+          v-scroll-to="'#sponsor'"
+        >Sponsor</a>
+      </div>
       <div v-if="enteringName" class="email-group fade-in">
         <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
           <i
@@ -342,6 +344,13 @@ export default Vue.extend({
   font-weight: 700;
 }
 
+.act-btn-container {
+  margin: -40px 180px 0px;
+  padding: 40px 0px;
+  background: rgb(236, 240, 241, 0.2);
+  border-radius: 10px;
+}
+
 .act-btn {
   font-weight: bold;
   text-align: center;
@@ -352,7 +361,8 @@ export default Vue.extend({
   padding: 10px 20px;
   color: rgba(255, 255, 255, 1);
   border-radius: 30px;
-  margin-right: 20px !important;
+  margin-right: 10px !important;
+  margin-left: 10px !important;
   background-color: rgba(236, 240, 241, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
@@ -414,9 +424,19 @@ export default Vue.extend({
     font-size: 18px;
     width: 70vw;
   }
+
   .act-btn {
     z-index: 1000;
+    display: block;
+    text-align: center;
+    margin: 1.5vh auto;
   }
+
+  .act-btn-container {
+    margin-top: 5px;
+    padding: 15px 10px;
+  }
+
   .email-group {
     width: 90%;
     margin: 0 auto;

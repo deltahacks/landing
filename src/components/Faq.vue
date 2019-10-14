@@ -9,14 +9,15 @@
           :key="name"
           :class="{ 'category-bubble': true, selected: selected === name }"
         >
-          <div
-            :style="{ width: '100%' }"
-            @click="
-              selectCategory(name)
-            "
-          >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
+          <div :style="{ width: '100%' }" @click="selectCategory(name)">{{
+            name.charAt(0).toUpperCase() + name.substring(1)
+          }}</div>
           <transition name="open">
-            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
+            <div
+              :key="name + 's'"
+              v-if="selected === name"
+              class="mobile-faq-area"
+            >
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
@@ -30,7 +31,9 @@
                   </span>
                 </div>
                 <transition name="open">
-                  <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
+                  <div v-if="expanded.includes(index)" class="answer-box">{{
+                    elm.a
+                  }}</div>
                 </transition>
               </div>
             </div>
@@ -50,7 +53,9 @@
             </span>
           </div>
           <transition name="open">
-            <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
+            <div v-if="expanded.includes(index)" class="answer-box">{{
+              elm.a
+            }}</div>
           </transition>
         </div>
       </div>
@@ -78,11 +83,12 @@ export default Vue.extend({
       if (!this.expanded.includes(index)) {
         this.expanded.push(index);
       } else {
-        this.expanded = this.expanded.filter((each) => each !== index);
+        this.expanded = this.expanded.filter(each => each !== index);
       }
     },
     selectCategory(name: string) {
-      this.selected = this.selected !== name ? name : this.isMobile() ? '' : this.selected;
+      this.selected =
+        this.selected !== name ? name : this.isMobile() ? '' : this.selected;
       this.expanded = [0];
     },
   },
@@ -99,7 +105,6 @@ export default Vue.extend({
 }
 
 .faq h1 {
-  padding-left: 10%;
   padding-bottom: 1%;
   font-weight: 800;
   font-size: 38px;
@@ -111,6 +116,7 @@ export default Vue.extend({
 
 #desktop-faq {
   display: block;
+  text-align: center;
 }
 
 .faq-container {
@@ -121,6 +127,9 @@ export default Vue.extend({
   /* overflow: scroll; */
   overflow: hidden;
   margin: 0 auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  background: lighten;
 }
 
 .categories {
@@ -134,7 +143,7 @@ export default Vue.extend({
 .category-bubble {
   text-align: left;
   font-size: 22px;
-  padding: 6%;
+  padding: 8% 20%;
 }
 
 .selected {
@@ -143,13 +152,18 @@ export default Vue.extend({
 }
 
 .faq-area {
-  padding: 2% 5%;
-  border: 2px solid lightgray;
+  padding: 2% 7%;
   border-radius: 25px;
   width: 100%;
   margin-left: 0.5%;
-  /* overflow: scroll; */
   overflow: auto;
+  position: relative;
+  z-index: 40;
+  border-radius: 50px;
+  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  padding-bottom: 2vh;
 }
 
 .mobile-faq-area {
@@ -257,11 +271,11 @@ export default Vue.extend({
   }
 }
 ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 /* Optional: show position indicator in red */
 ::-webkit-scrollbar-thumb {
-    background: #FF0000;
+  background: #ff0000;
 }
 </style>
