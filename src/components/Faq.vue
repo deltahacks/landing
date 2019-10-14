@@ -75,7 +75,7 @@ export default Vue.extend({
     return {
       faqData,
       selected: '',
-      expanded: [],
+      expanded: [0],
     };
   },
   methods: {
@@ -90,7 +90,7 @@ export default Vue.extend({
     selectCategory(name: string) {
       this.selected =
         this.selected !== name ? name : this.isMobile() ? '' : this.selected;
-      this.expanded = [];
+      this.expanded = [0];
     },
   },
   created(): void {

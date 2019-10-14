@@ -55,7 +55,7 @@ export default Vue.extend({
 .about-description {
   padding: 1% 3%;
   border-radius: 25px;
-  margin: 2.5vh 0;
+  margin: 2.5vh inherit;
   z-index: 40;
   border-radius: 50px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
