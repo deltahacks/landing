@@ -8,52 +8,46 @@
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <div class="act-btn-container">
-        <v-row class="mb-6">
-          <col>
-          <a
-            v-if="!enteringName && !enteringEmail && !gotit"
-            class="act-btn fade-in"
-            @click="enteringName = true"
-            >Mailing list</a
-          >
-          </col>
-          <col>
-          <a
-            v-if="!enteringName && !enteringEmail && !gotit"
-            class="act-btn fade-in"
-            v-scroll-to="'#sponsor'"
-            >Sponsor</a
-          >
-          </col>
-        </v-row>
-      </div>
-      <div v-if="enteringName" class="email-group fade-in">
-        <div
-          class="email-button"
-          @click="(enteringName = false), (enteringEmail = false)"
+      <div class="landing-button-container">
+        <a
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="landing-button fade-in"
+          @click="enteringName = true"
+          >Mailing list</a
         >
-          <i
-            class="fa fa-arrow-circle-o-left fa-3x"
-            :style="{ alignSelf: 'center', marginRight: '19px' }"
-          />
-        </div>
-        <input
-          type="text"
-          placeholder="Your Name"
-          id="email-input"
-          v-model="name"
-          @keyup.enter="(enteringName = false), (enteringEmail = true)"
-        />
-        <div
-          class="email-button"
-          @click="(enteringName = false), (enteringEmail = true)"
+        <a
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="landing-button fade-in"
+          v-scroll-to="'#sponsor'"
+          >Sponsor</a
         >
-          <i
-            v-show="name.length >= 2"
-            class="fa fa-arrow-circle-o-right fa-3x fade-in"
-            :style="{ alignSelf: 'center' }"
+        <div v-if="enteringName" class="email-group fade-in">
+          <div
+            class="email-button"
+            @click="(enteringName = false), (enteringEmail = false)"
+          >
+            <i
+              class="fa fa-arrow-circle-o-left fa-3x"
+              :style="{ alignSelf: 'center', marginRight: '19px' }"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Your Name"
+            id="email-input"
+            v-model="name"
+            @keyup.enter="(enteringName = false), (enteringEmail = true)"
           />
+          <div
+            class="email-button"
+            @click="(enteringName = false), (enteringEmail = true)"
+          >
+            <i
+              v-show="name.length >= 2"
+              class="fa fa-arrow-circle-o-right fa-3x fade-in"
+              :style="{ alignSelf: 'center' }"
+            />
+          </div>
         </div>
       </div>
       <form v-on:submit.prevent="handleSubmit">
@@ -299,17 +293,21 @@ export default Vue.extend({
   height: 45px;
   width: 350px;
   text-align: center;
+  font-weight: 600;
   text-decoration: none;
   font-size: 18px;
-  font-family: Montserrat;
-  opacity: 0.9;
-  border: 1px solid rgb(58, 140, 155);
-  font-weight: bold;
+  opacity: 0.99;
   color: white;
   border-radius: 30px;
   margin-right: 20px !important;
-  background-color: rgba(81, 169, 185);
   outline: none;
+  /* margin-right: 10px !important;
+  margin-left: 10px !important; */
+  background-color: rgba(236, 240, 241, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.1s ease-in-out;
+  z-index: 10000;
+  border: none;
 }
 
 #email-input::placeholder {
@@ -319,7 +317,7 @@ export default Vue.extend({
 
 #email-input:focus {
   outline: none;
-  border: 2px solid rgb(128, 241, 203);
+  border: none;
 }
 .email-group {
   display: flex;
@@ -367,19 +365,18 @@ export default Vue.extend({
   font-weight: 700;
 }
 
-.act-btn-container {
-  margin: -40px 180px 0px;
-  padding: 40px 0px;
+.landing-button-container {
+  margin: 2vh 7vw 0;
+  padding: 3vw 0px;
   background: rgb(236, 240, 241, 0.2);
-  border-radius: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.act-btn {
-  font-weight: bold;
+.landing-button {
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
-  font-family: Montserrat;
+  font-size: 24px;
   font-weight: 800;
   opacity: 0.99;
   padding: 10px 20px;
@@ -394,12 +391,12 @@ export default Vue.extend({
   z-index: 10000;
 }
 
-.act-btn:hover {
+.landing-button:hover {
   color: white;
   background-color: rgb(236, 240, 241, 0.3);
   transition: 0.2s;
 }
-.act-btn:active {
+.landing-button:active {
   color: white;
   background-color: rgb(236, 240, 241, 0.6);
   transition: 0.2s;
@@ -449,14 +446,14 @@ export default Vue.extend({
     width: 70vw;
   }
 
-  .act-btn {
+  .landing-button {
     z-index: 1000;
     display: block;
     text-align: center;
     margin: 1.5vh auto;
   }
 
-  .act-btn-container {
+  .landing-button-container {
     margin-top: 5px;
     padding: 15px 10px;
   }

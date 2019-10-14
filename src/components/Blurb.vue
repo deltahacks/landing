@@ -6,7 +6,7 @@
       <p class="blurb_sub">{{ sub }}</p>
     </div>
     <form :action="link">
-      <input id="about-button" type="submit" :value="button" />
+      <input class="about-button" type="submit" :value="button" />
     </form>
   </div>
 </template>
@@ -58,7 +58,7 @@ export default Vue.extend({
   margin: 2.5vh 0;
   z-index: 40;
   border-radius: 50px;
-  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.15);
   padding-bottom: 2vh;
 }
@@ -83,30 +83,29 @@ export default Vue.extend({
   margin: 0;
 }
 
-#about-button {
+.about-button {
   outline: none;
-  width: 180px;
   margin-top: 17px;
+  padding: 10px 20px;
   color: white;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 800;
   background-color: rgba(236, 240, 241, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   border: none;
   border-radius: 20px;
-  height: 40px;
   transition: 0.1s ease-in-out;
   cursor: pointer;
   -webkit-appearance: none;
 }
 
-#about-button:hover {
+.about-button:hover {
   color: white;
   background-color: rgb(236, 240, 241, 0.3);
   transition: 0.2s;
 }
 
-#about-button:active {
+.about-button:active {
   color: white;
   background-color: rgb(236, 240, 241, 0.6);
   transition: 0.2s;
@@ -127,6 +126,10 @@ export default Vue.extend({
   .about-container > h2 {
     padding: 0 5%;
   }
+  .about-description {
+    margin-right: 4vw;
+    margin-left: 4vw;
+  }
   .about-description > p {
     padding: 0 5%;
   }
@@ -140,6 +143,6 @@ p {
 }
 
 p:not(.blurb_sub) {
-  text-align: justify;
+  text-align: center;
 }
 </style>

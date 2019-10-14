@@ -144,12 +144,13 @@ export default Vue.extend({
 
 .category-bubble {
   text-align: left;
-  font-size: 22px;
+  font-size: 20px;
   padding: 8% 20%;
+  transition: 0.1s ease-in-out;
 }
 
 .selected {
-  font-size: 29px;
+  font-size: 26px;
   font-weight: 800;
 }
 
@@ -236,6 +237,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     padding: 0;
+    margin-top: 4vh;
   }
   .category-bubble {
     text-align: center;
@@ -246,6 +248,19 @@ export default Vue.extend({
   .selected {
     font-size: 30px;
     font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+    opacity: 0.99;
+    padding: 10px 20px;
+    color: rgba(255, 255, 255, 1);
+    border-radius: 30px;
+    background-color: rgba(236, 240, 241, 0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+    z-index: 10000;
   }
   .faq-container {
     height: 700px;
