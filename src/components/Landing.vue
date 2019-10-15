@@ -21,6 +21,9 @@
           v-scroll-to="'#sponsor'"
           >Sponsor</a
         >
+        <span v-if="!enteringName" class="landing-date"
+          >January 25th and 26th, 2020 • McMaster University</span
+        >
         <div v-if="enteringName" class="email-group fade-in">
           <div
             class="email-button"
@@ -358,6 +361,12 @@ export default Vue.extend({
   /* background-image: url('../assets/landing-bg.svg'); */
 }
 
+.landing-date {
+  margin-top: 3vh;
+  font-size: 0.7em;
+  display: block;
+}
+
 .landing-title {
   font-size: 5em;
   color: white;
@@ -366,8 +375,8 @@ export default Vue.extend({
 }
 
 .landing-button-container {
-  margin: 2vh 7vw 0;
-  padding: 3vw 0px;
+  margin: -2vh 7vw 0;
+  padding: 4vh 0px 2vh;
   background: rgb(236, 240, 241, 0.2);
   border-radius: 20px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
