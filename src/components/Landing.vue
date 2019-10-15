@@ -8,7 +8,7 @@
         Delta<span style="font-weight: 300">Hacks</span> VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <div class="landing-button-container">
+      <div class="landing-left-container">
         <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -363,8 +363,9 @@ export default Vue.extend({
 
 .landing-date {
   margin-top: 3vh;
-  font-size: 0.7em;
+  font-size: 0.8em;
   display: block;
+  font-weight: 600;
 }
 
 .landing-title {
@@ -374,10 +375,15 @@ export default Vue.extend({
   font-weight: 700;
 }
 
-.landing-button-container {
+.landing-left-container {
   margin: -2vh 7vw 0;
-  padding: 4vh 0px 2vh;
+  padding: 4vh 0px 3vh;
   background: rgb(236, 240, 241, 0.2);
+  /* background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  ); */
   border-radius: 20px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -462,7 +468,7 @@ export default Vue.extend({
     margin: 1.5vh auto;
   }
 
-  .landing-button-container {
+  .landing-left-container {
     margin-top: 5px;
     padding: 15px 10px;
   }

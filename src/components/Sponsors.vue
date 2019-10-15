@@ -213,11 +213,11 @@ div > p > a {
 }
 
 #sponsors-title {
-  font-weight: bold;
-  font-family: Montserrat;
+  font-weight: 800;
   position: relative;
   z-index: 10;
   margin-top: 0vh;
+  font-size: 35px;
 }
 
 #sponsors-subtitle {
