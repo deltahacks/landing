@@ -1,14 +1,14 @@
 <template>
-  <div :class="{ app: true, blend: true}">
+  <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <Landing id="landing" />
       <div class="blurb-group">
         <img class="spshp" :src="SAT" />
-        <div v-rellax="{speed: -1.5}" class="astr2">
-            <img :src="ASTR2" />
+        <div v-rellax="{ speed: -1.5 }" class="astr2">
+          <img :src="ASTR2" />
         </div>
-        <div v-rellax="{speed: 1.5}" class="astr1">
-            <img :src="ASTR1" />
+        <div v-rellax="{ speed: 1.5 }" class="astr1">
+          <img :src="ASTR1" />
         </div>
         <Blurb
           heading="To Infinity and Beyond"
@@ -35,7 +35,7 @@
         />
       </div>
       <div id="spacer" style="height: 20vh" />
-      <FAQ id="faq1" initialSelect="general 🙋" />
+      <FAQ id="faq1" initialSelect="general" />
       <div id="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />

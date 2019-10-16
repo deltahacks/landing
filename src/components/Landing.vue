@@ -5,7 +5,9 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: 300">Hacks</span> VI
+        Delta
+        <span style="font-weight: 300">Hacks</span>
+        VI
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
@@ -13,17 +15,19 @@
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           @click="enteringName = true"
-          >Mailing list</a
         >
+          Mailing list
+        </a>
         <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           v-scroll-to="'#sponsor'"
-          >Sponsor</a
         >
-        <span v-if="!enteringName" class="landing-date"
-          >January 25th and 26th, 2020 • McMaster University</span
-        >
+          Sponsor
+        </a>
+        <span v-if="!enteringName" class="landing-date">
+          January 25th and 26th, 2020 • McMaster University
+        </span>
         <div v-if="enteringName" class="email-group fade-in">
           <div
             class="email-button"
@@ -83,8 +87,9 @@
         v-if="gotit"
         class="fade-in"
         style="font-family: Montserrat; font-size: 30px;"
-        >Got it, thanks!</div
       >
+        Got it, thanks!
+      </div>
     </div>
   </div>
 </template>
