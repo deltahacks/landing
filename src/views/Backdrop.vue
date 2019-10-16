@@ -20,7 +20,7 @@
           id="blurb-1"
         />
       </div>
-      <div id="spacer" style="height: 10vh" />
+      <div class="spacer" style="height: 10vh" />
       <AboutUsStats />
       <div class="blurb-group blurb-align-right">
         <img class="astr3" :src="ASTR3" />
@@ -34,9 +34,9 @@
           link="https://forms.gle/5VtwcURmsMMazSSL7"
         />
       </div>
-      <div id="spacer" style="height: 20vh" />
+      <div class="spacer" style="height: 10vh" />
       <FAQ id="faq1" initialSelect="general" />
-      <div id="spacer" style="height: 50vh" />
+      <div class="spacer" style="height: 50vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer id="footer" />

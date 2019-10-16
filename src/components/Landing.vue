@@ -474,7 +474,7 @@ export default Vue.extend({
   }
 
   .landing-left-container {
-    margin-top: 5px;
+    margin-top: 8vh;
     padding: 15px 10px;
   }
 
