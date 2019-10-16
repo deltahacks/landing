@@ -4,10 +4,10 @@
     <div class="about-description">
       <p>{{ text }}</p>
       <p class="blurb_sub">{{ sub }}</p>
+      <form :action="link">
+        <input class="about-button" type="submit" :value="button" />
+      </form>
     </div>
-    <form :action="link">
-      <input class="about-button" type="submit" :value="button" />
-    </form>
   </div>
 </template>
 
@@ -85,7 +85,6 @@ export default Vue.extend({
 
 .about-button {
   outline: none;
-  margin-top: 17px;
   padding: 10px 20px;
   color: white;
   font-size: 17px;
@@ -97,6 +96,7 @@ export default Vue.extend({
   transition: 0.1s ease-in-out;
   cursor: pointer;
   -webkit-appearance: none;
+  margin: 1.5vh 0;
 }
 
 .about-button:hover {
