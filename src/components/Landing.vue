@@ -25,9 +25,6 @@
         >
           Sponsor
         </a>
-        <span v-if="!enteringName" class="landing-date">
-          January 25th and 26th, 2020 • McMaster University
-        </span>
         <div v-if="enteringName" class="email-group fade-in">
           <div
             class="email-button"
@@ -56,39 +53,45 @@
             />
           </div>
         </div>
-      </div>
-      <form v-on:submit.prevent="handleSubmit">
-        <div v-if="enteringEmail && !gotit" class="email-group">
-          <div
-            class="email-button"
-            @click="(enteringName = true), (enteringEmail = false)"
-          >
-            <i
-              class="fa fa-arrow-circle-o-left fa-3x"
-              :style="{ alignSelf: 'center', marginRight: '19px' }"
+        <form v-on:submit.prevent="handleSubmit">
+          <div v-if="enteringEmail && !gotit" class="email-group">
+            <div
+              class="email-button"
+              @click="(enteringName = true), (enteringEmail = false)"
+            >
+              <i
+                class="fa fa-arrow-circle-o-left fa-3x"
+                :style="{ alignSelf: 'center', marginRight: '19px' }"
+              />
+            </div>
+            <input
+              type="email"
+              placeholder="Your email"
+              id="email-input"
+              v-model="email"
+              required
             />
+            <button type="submit" class="email-button">
+              <i
+                class="fa fa-arrow-circle-o-right fa-4x"
+                :style="{ alignSelf: 'center', fontSize: '4.35em' }"
+              />
+            </button>
           </div>
-          <input
-            type="email"
-            placeholder="Your email"
-            id="email-input"
-            v-model="email"
-            required
-          />
-          <button type="submit" class="email-button">
-            <i
-              class="fa fa-arrow-circle-o-right fa-4x"
-              :style="{ alignSelf: 'center', fontSize: '4.35em' }"
-            />
-          </button>
+        </form>
+        <div
+          v-if="gotit"
+          class="fade-in"
+          style="font-family: Montserrat; font-size: 30px; font-weight: 600"
+        >
+          Got it, thanks!
         </div>
-      </form>
-      <div
-        v-if="gotit"
-        class="fade-in"
-        style="font-family: Montserrat; font-size: 30px;"
-      >
-        Got it, thanks!
+        <span
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="landing-date"
+        >
+          January 25th and 26th, 2020 • McMaster University
+        </span>
       </div>
     </div>
   </div>
