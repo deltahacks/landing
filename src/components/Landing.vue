@@ -314,7 +314,7 @@ export default Vue.extend({
   outline: none;
   /* margin-right: 10px !important;
   margin-left: 10px !important; */
-  background-color: rgba(236, 240, 241, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
   z-index: 10000;
@@ -407,7 +407,7 @@ export default Vue.extend({
   border-radius: 30px;
   margin-right: 10px !important;
   margin-left: 10px !important;
-  background-color: rgba(236, 240, 241, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
   cursor: pointer;
