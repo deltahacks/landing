@@ -152,12 +152,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
-
 /* Add a black background color to the top navigation */
 .topnav {
   overflow: visible;
-  font-family: 'Montserrat';
 }
 
 .branding {
