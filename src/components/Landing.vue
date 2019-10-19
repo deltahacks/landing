@@ -370,7 +370,7 @@ export default Vue.extend({
 
 .landing-date {
   margin-top: 3vh;
-  font-size: 0.8em;
+  font-size: 1em;
   display: block;
   font-weight: 600;
 }
@@ -383,7 +383,7 @@ export default Vue.extend({
 }
 
 .landing-left-container {
-  margin: -2vh 7vw 0;
+  margin: -2vh 9vw 0;
   padding: 4vh 0px 3vh;
   background: rgb(236, 240, 241, 0.2);
   /* background-image: linear-gradient(
