@@ -13,17 +13,17 @@
         <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
-          @click="enteringName = true"
+          href="https://www.my.deltahacks.com"
         >
-          Mailing list
+          Apply Now!
         </a>
-        <a
+        <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           v-scroll-to="'#sponsor'"
         >
           Sponsor
-        </a>
+        </a> -->
         <div v-if="enteringName" class="email-group fade-in">
           <div
             class="email-button"
@@ -370,7 +370,7 @@ export default Vue.extend({
 
 .landing-date {
   margin-top: 3vh;
-  font-size: 1em;
+  font-size: 0.9em;
   display: block;
   font-weight: 600;
 }
@@ -383,7 +383,7 @@ export default Vue.extend({
 }
 
 .landing-left-container {
-  margin: -2vh 9vw 0;
+  margin: -2vh 10vw 0;
   padding: 4vh 0px 3vh;
   background: rgb(236, 240, 241, 0.2);
   /* background-image: linear-gradient(
