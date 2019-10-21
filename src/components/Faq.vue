@@ -113,6 +113,7 @@ export default Vue.extend({
 }
 
 #mobile-faq {
+  text-align: center;
   display: none;
 }
 

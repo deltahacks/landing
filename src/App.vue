@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Navigation from './components/Navigation.vue';
+import Navigation from './components/Navbar2.vue';
 
 export default {
   components: {
@@ -25,10 +25,9 @@ body {
   font-family: Montserrat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
-#nav {
+/* #nav {
   padding: 30px;
 }
 #nav a {
@@ -37,5 +36,5 @@ body {
 }
 #nav a.router-link-exact-active {
   color: #42b983;
-}
+} */
 </style>
