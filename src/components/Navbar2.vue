@@ -2,7 +2,7 @@
   <div class="nav-box">
     <a href="https://www.my.deltahacks.com" class="right-button">Login</a>
     <div class="rounded-box">
-      <a href="google.com" id="title" class="heading">
+      <a href="https://deltahacks.com" id="title" class="heading">
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </a>
