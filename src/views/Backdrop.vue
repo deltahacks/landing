@@ -298,5 +298,11 @@ h1 {
   .blurb-align-right {
     margin-right: 0 !important;
   }
+
+  @media only screen and (max-width: 900px) {
+    .blurb-group {
+      margin-top: -70px;
+    }
+  }
 }
 </style>

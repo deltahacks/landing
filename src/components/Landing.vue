@@ -361,10 +361,12 @@ export default Vue.extend({
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 
 #left {
   flex: 1;
+  text-align: center;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
 
@@ -378,7 +380,7 @@ export default Vue.extend({
 .landing-title {
   font-size: 5em;
   color: white;
-  padding-top: 25%;
+  padding-top: 15%;
   font-weight: 700;
 }
 
@@ -391,7 +393,7 @@ export default Vue.extend({
     rgba(255, 0, 0, 0),
     rgba(255, 0, 0, 1)
   ); */
-  border-radius: 20px;
+  border-radius: 40px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -410,7 +412,8 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s ease-in-out;
   cursor: pointer;
-  z-index: 10000;
+  z-index: 99999;
+  position: relative;
 }
 
 .landing-button:hover {
@@ -448,11 +451,11 @@ export default Vue.extend({
   #left {
     width: 100%;
     position: absolute;
-    margin-top: 50%;
+    margin-top: 70%;
     padding: 0;
   }
   .landing-title {
-    font-size: 3.5em;
+    font-size: 3.2em;
   }
   .main-planet {
     width: 80%;
