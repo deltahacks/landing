@@ -455,7 +455,7 @@ export default Vue.extend({
     padding: 0;
   }
   .landing-title {
-    font-size: 3.2em;
+    font-size: 2.8em;
   }
   .main-planet {
     width: 80%;

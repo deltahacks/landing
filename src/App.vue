@@ -27,6 +27,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+@media screen and (max-width: 720px) {
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+  }
+}
 /* #nav {
   padding: 30px;
 }
