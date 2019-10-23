@@ -1,14 +1,40 @@
 <template>
   <div class="nav-box">
-    <a href="https://www.my.deltahacks.com" class="right-button">Login</a>
+    <a href="https://www.my.deltahacks.com" class="right-link">Login</a>
+    <!-- <div class="dropdown mobile">
+      <button class="dropbtn mobile" @click="show = !show">
+        <img
+          src="../assets/hamburger.png"
+          alt
+          style="height: 20px; width: 20px;"
+          :class="{ invert: !scrolled }"
+        />
+      </button>
+      <transition name="fade" mode="out-in">
+        <div class="dropdown-content mobile" style="right:0;" v-show="show">
+          <a v-scroll-to="'#aboutScroll'" id="aboutDrop" class="active browser"
+            >ABOUT</a
+          >
+        </div>
+      </transition>
+    </div> -->
     <div class="rounded-box">
       <a href="https://deltahacks.com" id="title" class="heading">
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </a>
-      <h1 id="name" class="heading">
-        <!-- {{ first }}<span style="font-weight: 300">{{ last }}</span> -->
-      </h1>
+      <a class="heading link" v-scroll-to="'#footer'" @scroll="handleScroll">
+        Contact
+      </a>
+      <a class="heading link" v-scroll-to="'#sponsor'" @scroll="handleScroll">
+        Sponsors
+      </a>
+      <a class="heading link" v-scroll-to="'#faq1'" @scroll="handleScroll">
+        FAQ
+      </a>
+      <a class="heading link" v-scroll-to="'#blurb-2'" @scroll="handleScroll">
+        About
+      </a>
     </div>
   </div>
 </template>
@@ -21,6 +47,7 @@ export default Vue.extend({
   components: {},
   data() {
     return {
+      show: false,
       dhs: ['DH VI', 'DH V', 'DH IV', 'DH III', 'DH II'],
       current: 'DH VI',
       drawer: null,
