@@ -34,9 +34,9 @@ export default {
       a: `We'll be putting up one  closer to the event, you can  excpect a lot of talks and presentations, fun events, and a lot of great food!`,
     },
     {
-      q: 'I have a dietry restriction, will there be options for me?',
+      q: 'I have a dietary restriction, will there be options for me?',
       a:
-        'Yes! We take into consideration all types of diets, if you have a special dietry restriction you can request it within your application.',
+        'Yes! We take into consideration all types of diets, if you have a special dietary restriction you can request it within your application.',
     },
     {
       q: 'What do I need to bring?',
