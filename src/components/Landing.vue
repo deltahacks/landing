@@ -8,10 +8,16 @@
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </h1>
-      <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
-      <b>MLH</b> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
+          <span
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="landing-date"
+        >
+          January 25th and 26th, 2020 • McMaster University
+        </span>
+        <a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
+      <b>MLH</b> Official Member Event</a><br><br>
         <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -87,12 +93,6 @@
         >
           Got it, thanks!
         </div>
-        <span
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-date"
-        >
-          January 25th and 26th, 2020 • McMaster University
-        </span>
       </div>
     </div>
   </div>
@@ -373,10 +373,12 @@ export default Vue.extend({
 }
 
 .landing-date {
-  margin-top: 3vh;
-  font-size: 0.9em;
+  margin-top: 0vh;
+    margin-bottom: 1vh;
+  font-size: 1.4em;
   display: block;
-  font-weight: 600;
+  font-weight: 200;
+  
 }
 
 .landing-title {
@@ -389,16 +391,16 @@ export default Vue.extend({
     margin: -6vh 0 7vh;
 }
 .landing-left-container {
-  margin: -2vh 10vw 0;
-  padding: 4vh 0px 3vh;
-  background: rgb(236, 240, 241, 0.2);
+  margin: -8vh 0vw 0;
+  padding: 0vh 0px 3vh;
+  /* background: rgb(236, 240, 241, 0.2); */
   /* background-image: linear-gradient(
     to right,
     rgba(255, 0, 0, 0),
     rgba(255, 0, 0, 1)
   ); */
-  border-radius: 40px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* border-radius: 40px; */
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .mlh-button {
@@ -506,8 +508,8 @@ export default Vue.extend({
   }
 
   .landing-left-container {
-    margin-top: 5vh;
-    padding: 15px 10px;
+    margin-top: -2vh;
+    padding: 0px 10px;
   }
 
   .email-group {
