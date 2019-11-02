@@ -8,6 +8,8 @@
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </h1>
+      <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
+      <b>MLH</b> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
@@ -383,7 +385,9 @@ export default Vue.extend({
   padding-top: 15%;
   font-weight: 700;
 }
-
+.landing-left-mlh{
+    margin: -6vh 0 7vh;
+}
 .landing-left-container {
   margin: -2vh 10vw 0;
   padding: 4vh 0px 3vh;
@@ -397,6 +401,25 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.mlh-button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  /* font-weight: 800; */
+  opacity: 0.99;
+  padding: 10px 12px;
+  border-radius: 30px;
+  /* margin-right: 10px !important; */
+  /* margin-left: 10px !important; */
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  z-index: 99999;
+  position: relative;
+  color: silver;
+}
+.mlh-button:hover {
+  color: white;
+}
 .landing-button {
   text-align: center;
   text-decoration: none;
@@ -477,9 +500,13 @@ export default Vue.extend({
     text-align: center;
     margin: 1.5vh auto;
   }
+  .landing-left-mlh{
+    margin: -3vh 0 0;
+  padding: 0vh 0px 0vh;
+  }
 
   .landing-left-container {
-    margin-top: 8vh;
+    margin-top: 5vh;
     padding: 15px 10px;
   }
 
