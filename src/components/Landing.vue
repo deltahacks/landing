@@ -406,7 +406,7 @@ export default Vue.extend({
 
 .mlh-logo{
   height:20px;
-  opacity: 0.7;
+  opacity: 0.60;
 }
 .mlh-button {
   text-align: center;
@@ -429,6 +429,7 @@ export default Vue.extend({
 }
 .mlh-button:hover>img {
   opacity:1;
+  transition: 0.4s;
 }
 .landing-button {
   text-align: center;
