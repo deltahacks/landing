@@ -9,7 +9,8 @@
         VI
       </h1>
       <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
-      <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div>
+      <!-- <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div> -->
+      <img class="mlh-logo" :src="Mlh"/> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
@@ -103,6 +104,7 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/planetpng.png';
+import Mlh from '@/assets/mlh.png';
 import axios from 'axios';
 
 declare global {
@@ -120,6 +122,7 @@ export default Vue.extend({
     return {
       VI,
       Planet,
+      Mlh,
       enteringName: false,
       enteringEmail: false,
       email: '',
