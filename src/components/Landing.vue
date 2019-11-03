@@ -9,7 +9,7 @@
         VI
       </h1>
       <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
-      <b>MLH</b> Official Member Event</a></div>
+      <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
@@ -401,6 +401,10 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.mlh-logo{
+  height:20px;
+  opacity: 0.7;
+}
 .mlh-button {
   text-align: center;
   text-decoration: none;
@@ -419,6 +423,9 @@ export default Vue.extend({
 }
 .mlh-button:hover {
   color: white;
+}
+.mlh-button:hover>img {
+  opacity:1;
 }
 .landing-button {
   text-align: center;
