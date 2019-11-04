@@ -476,8 +476,8 @@ export default Vue.extend({
   object-fit: contain;
 }
 
-@media only screen and (max-width: 900px) {
-  .flex-container {
+@media only screen and (max-width: 700px) and (min-width: 1200px){
+.flex-container {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -486,6 +486,56 @@ export default Vue.extend({
     width: 100%;
     position: absolute;
     margin-top: 70%;
+    padding: 0;
+  }
+  .landing-title {
+    font-size: 2.8em;
+  }
+  .main-planet {
+    width: 80%;
+    height: 50%;
+    align-self: center;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 0%;
+    z-index: 0;
+  }
+  #email-input {
+    font-size: 18px;
+    width: 70vw;
+  }
+
+  .landing-button {
+    z-index: 1000;
+    display: block;
+    text-align: center;
+    margin: 1.5vh auto;
+  }
+  .landing-left-mlh{
+    margin: -3vh 0 0;
+  padding: 0vh 0px 0vh;
+  }
+
+  .landing-left-container {
+    margin-top: 5vh;
+    padding: 15px 10px;
+  }
+
+  .email-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  #left {
+    width: 100%;
+    position: absolute;
+    margin-top: 50%;
     padding: 0;
   }
   .landing-title {
