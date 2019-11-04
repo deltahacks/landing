@@ -377,7 +377,7 @@ export default Vue.extend({
 
 .landing-date {
   margin-top: 3vh;
-  font-size: 0.9em;
+  font-size: 1em;
   display: block;
   font-weight: 600;
 }
