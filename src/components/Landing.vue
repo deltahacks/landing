@@ -8,6 +8,9 @@
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </h1>
+      <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
+      <!-- <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div> -->
+      <img class="mlh-logo" :src="Mlh"/> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
@@ -101,6 +104,7 @@ import Vue from 'vue';
 import 'particles.js';
 import VI from '@/assets/vi.svg';
 import Planet from '@/assets/planetpng.png';
+import Mlh from '@/assets/mlh.png';
 import axios from 'axios';
 
 declare global {
@@ -118,6 +122,7 @@ export default Vue.extend({
     return {
       VI,
       Planet,
+      Mlh,
       enteringName: false,
       enteringEmail: false,
       email: '',
@@ -372,7 +377,7 @@ export default Vue.extend({
 
 .landing-date {
   margin-top: 3vh;
-  font-size: 0.9em;
+  font-size: 1em;
   display: block;
   font-weight: 600;
 }
@@ -383,7 +388,9 @@ export default Vue.extend({
   padding-top: 15%;
   font-weight: 700;
 }
-
+.landing-left-mlh{
+    margin: -6vh 0 7vh;
+}
 .landing-left-container {
   margin: -2vh 10vw 0;
   padding: 4vh 0px 3vh;
@@ -397,6 +404,33 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.mlh-logo{
+  height:20px;
+  opacity: 0.60;
+}
+.mlh-button {
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  /* font-weight: 800; */
+  opacity: 0.99;
+  padding: 10px 12px;
+  border-radius: 30px;
+  /* margin-right: 10px !important; */
+  /* margin-left: 10px !important; */
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  z-index: 99999;
+  position: relative;
+  color: silver;
+}
+.mlh-button:hover {
+  color: white;
+}
+.mlh-button:hover>img {
+  opacity:1;
+  transition: 0.4s;
+}
 .landing-button {
   text-align: center;
   text-decoration: none;
@@ -442,8 +476,8 @@ export default Vue.extend({
   object-fit: contain;
 }
 
-@media only screen and (max-width: 900px) {
-  .flex-container {
+@media only screen and (max-width: 700px) and (min-width: 1200px){
+.flex-container {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -477,9 +511,63 @@ export default Vue.extend({
     text-align: center;
     margin: 1.5vh auto;
   }
+  .landing-left-mlh{
+    margin: -3vh 0 0;
+  padding: 0vh 0px 0vh;
+  }
 
   .landing-left-container {
-    margin-top: 8vh;
+    margin-top: 5vh;
+    padding: 15px 10px;
+  }
+
+  .email-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  #left {
+    width: 100%;
+    position: absolute;
+    margin-top: 50%;
+    padding: 0;
+  }
+  .landing-title {
+    font-size: 2.8em;
+  }
+  .main-planet {
+    width: 80%;
+    height: 50%;
+    align-self: center;
+    padding: 0;
+    padding-left: 10%;
+    padding-top: 0%;
+    z-index: 0;
+  }
+  #email-input {
+    font-size: 18px;
+    width: 70vw;
+  }
+
+  .landing-button {
+    z-index: 1000;
+    display: block;
+    text-align: center;
+    margin: 1.5vh auto;
+  }
+  .landing-left-mlh{
+    margin: -3vh 0 0;
+  padding: 0vh 0px 0vh;
+  }
+
+  .landing-left-container {
+    margin-top: 5vh;
     padding: 15px 10px;
   }
 
