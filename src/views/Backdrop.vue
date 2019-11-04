@@ -166,6 +166,19 @@ export default Vue.extend({
 
 .gradient {
   /* background-color: rgb(69, 111, 225); */
+ background: linear-gradient(
+    269deg,
+    #865aa5,
+    #5062ad,
+    #cd8871,
+    #865aa5,
+    #1a7fc3,
+    #39bc82
+  );
+  background-size: 800% 800%;
+  -webkit-animation: animated 140s ease infinite;
+  -moz-animation: animated 140s ease infinite;
+  animation: animated 140s ease infinite;
   height: 200vh;
   width: 100%;
   top: 0;
@@ -174,23 +187,23 @@ export default Vue.extend({
   color: black;
 }
 #d1 {
-  background: rgb(32, 58, 67) none repeat scroll 0% 0%;
+  /* background: rgb(32, 58, 67) none repeat scroll 0% 0%; */
   z-index: -1;
 }
 #d2 {
-  background: rgb(40, 60, 134) none repeat scroll 0% 0%;
+  /* background: rgb(40, 60, 134) none repeat scroll 0% 0%; */
   z-index: -2;
 }
 #d3 {
-  background: rgb(91, 107, 167) none repeat scroll 0% 0%;
+  /* background: rgb(91, 107, 167) none repeat scroll 0% 0%; */
   z-index: -3;
 }
 #d4 {
-  background: rgb(201, 214, 255) none repeat scroll 0% 0%;
+  /* background: rgb(201, 214, 255) none repeat scroll 0% 0%; */
   z-index: -4;
 }
 #d5 {
-  background-color: rgb(237, 247, 255);
+  /* background-color: rgb(237, 247, 255); */
   z-index: -5;
 }
 
@@ -303,6 +316,41 @@ h1 {
     .blurb-group {
       margin-top: -70px;
     }
+  }
+}
+@-webkit-keyframes animated {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes animated {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animated {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 </style>
