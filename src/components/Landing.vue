@@ -8,9 +8,6 @@
         Delta<span style="font-weight: 300">Hacks</span>
         VI
       </h1>
-      <div class="landing-left-mlh"><a class="mlh-button" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank">
-      <!-- <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div> -->
-      <img class="mlh-logo" :src="Mlh"/> Official Member Event</a></div>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
@@ -94,6 +91,16 @@
         >
           January 25th and 26th, 2020 • McMaster University
         </span>
+        <div class="landing-left-mlh"
+          ><a
+            class="mlh-button"
+            href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
+            target="_blank"
+          >
+            <!-- <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div> -->
+            <img class="mlh-logo" :src="Mlh" /> Official Member Event</a
+          ></div
+        >
       </div>
     </div>
   </div>
@@ -376,7 +383,7 @@ export default Vue.extend({
 }
 
 .landing-date {
-  margin-top: 3vh;
+  margin-top: 5vh;
   font-size: 1em;
   display: block;
   font-weight: 600;
@@ -388,8 +395,8 @@ export default Vue.extend({
   padding-top: 15%;
   font-weight: 700;
 }
-.landing-left-mlh{
-    margin: -6vh 0 7vh;
+.landing-left-mlh {
+  margin: 2vh 0 0vh;
 }
 .landing-left-container {
   margin: -2vh 10vw 0;
@@ -404,9 +411,9 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.mlh-logo{
-  height:20px;
-  opacity: 0.60;
+.mlh-logo {
+  height: 20px;
+  opacity: 0.7;
 }
 .mlh-button {
   text-align: center;
@@ -427,8 +434,8 @@ export default Vue.extend({
 .mlh-button:hover {
   color: white;
 }
-.mlh-button:hover>img {
-  opacity:1;
+.mlh-button:hover > img {
+  opacity: 1;
   transition: 0.4s;
 }
 .landing-button {
@@ -476,8 +483,8 @@ export default Vue.extend({
   object-fit: contain;
 }
 
-@media only screen and (max-width: 700px) and (min-width: 1200px){
-.flex-container {
+@media only screen and (max-width: 700px) and (min-width: 1200px) {
+  .flex-container {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -511,9 +518,9 @@ export default Vue.extend({
     text-align: center;
     margin: 1.5vh auto;
   }
-  .landing-left-mlh{
-    margin: -3vh 0 0;
-  padding: 0vh 0px 0vh;
+  .landing-left-mlh {
+    margin: 3vh 0 0;
+    padding: 0vh 0px 0vh;
   }
 
   .landing-left-container {
@@ -561,9 +568,9 @@ export default Vue.extend({
     text-align: center;
     margin: 1.5vh auto;
   }
-  .landing-left-mlh{
-    margin: -3vh 0 0;
-  padding: 0vh 0px 0vh;
+  .landing-left-mlh {
+    margin: 3vh 0 0;
+    padding: 0vh 0px 0vh;
   }
 
   .landing-left-container {
