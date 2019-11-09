@@ -12,8 +12,14 @@
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
         <a
+          class="mobileonly landing-button fade-in"
+          href="https://www.my.deltahacks.com"
+        >
+          Login <hr> Apply Now!
+        </a>
+        <a
           v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-button fade-in"
+          class="notmobile landing-button fade-in"
           href="https://www.my.deltahacks.com"
         >
           Apply Now!
@@ -484,8 +490,17 @@ export default Vue.extend({
   width:10%;
   z-index:10000;
 }
+.mobileonly{
+  display: none;
+}
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {
+  .mobileonly{
+    display: block;
+  }
+  .notmobile{
+    display: none !important;
+  }
   .flex-container {
     display: flex;
     flex-direction: column;
@@ -536,6 +551,9 @@ export default Vue.extend({
   }
 }
 @media only screen and (max-width: 1200px) {
+    .notmobile{
+    display: none !important;
+  }
   .flex-container {
     display: flex;
     flex-direction: column;
