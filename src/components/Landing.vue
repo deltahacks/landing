@@ -1,6 +1,7 @@
 
 <template>
   <div class="flex-container">
+    <a id="mlh-trust-badge" class="mlh-badge" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg" alt="Major League Hacking 2020 Hackathon Season" style="width:100%"></a>
     <div id="particles-js"></div>
     <img class="main-planet" :src="Planet" />
     <div id="left">
@@ -91,16 +92,6 @@
         >
           January 25th and 26th, 2020 • McMaster University
         </span>
-        <div class="landing-left-mlh"
-          ><a
-            class="mlh-button"
-            href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
-            target="_blank"
-          >
-            <!-- <img class="mlh-logo" src="https://static.mlh.io/brand-assets/logo/official/mlh-logo-white.png"/> Official Member Event</a></div> -->
-            <img class="mlh-logo" :src="Mlh" /> Official Member Event</a
-          ></div
-        >
       </div>
     </div>
   </div>
@@ -481,6 +472,17 @@ export default Vue.extend({
   padding-top: 10%;
   z-index: 1;
   object-fit: contain;
+}
+
+.mlh-badge{
+  display:block;
+  max-width:100px;
+  min-width:60px;
+  position:fixed;
+  right:50px;
+  top:0;
+  width:10%;
+  z-index:10000;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {
