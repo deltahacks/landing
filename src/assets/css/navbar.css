@@ -62,11 +62,17 @@
   .hide-chip {
     display: none;
   }
+  .right-link {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 960px) {
   .button-hide {
     display: none;
+  }
+  .right-link {
+    display: none !important;
   }
 }
 
