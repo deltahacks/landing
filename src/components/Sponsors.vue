@@ -218,6 +218,9 @@ div > p > a {
   z-index: 10;
   margin-top: 0vh;
   font-size: 35px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 #sponsors-subtitle {
@@ -225,6 +228,9 @@ div > p > a {
   font-family: Montserrat;
   position: relative;
   z-index: 10;
+    align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 </style>
 
