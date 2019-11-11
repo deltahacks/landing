@@ -9,7 +9,9 @@
       <p class="footer-links">
         <a href="#">Home</a>
         ·
-        <a href="mailto:hello@deltahacks.com">Contact</a>
+        <a href="mailto:hello@deltahacks.com" target="_blank">Contact</a>
+        ·
+        <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>
       </p>
       <p class="footer-company-name">Deltahacks &copy; 2019</p>
       <!-- <div>
