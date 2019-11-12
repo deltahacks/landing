@@ -167,7 +167,7 @@ export default Vue.extend({
 .gradient {
   /* background-color: rgb(69, 111, 225); */
  background: linear-gradient(
-    269deg,
+    185deg,
     #865aa5,
     #5062ad,
     #cd8871,
@@ -176,9 +176,9 @@ export default Vue.extend({
     #39bc82
   );
   background-size: 800% 800%;
-  -webkit-animation: animated 140s ease infinite;
-  -moz-animation: animated 140s ease infinite;
-  animation: animated 140s ease infinite;
+  -webkit-animation: animated 80s ease infinite;
+  -moz-animation: animated 80s ease infinite;
+  animation: animated 80s ease infinite;
   height: 200vh;
   width: 100%;
   top: 0;
