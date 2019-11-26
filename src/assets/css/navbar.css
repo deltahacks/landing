@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700&display=swap');
-
 #title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -177,7 +175,6 @@ h1 {
   }
 }
 
-
 @media only screen and (max-width: 1169px) {
   .hide-chip {
     display: none;
@@ -185,7 +182,7 @@ h1 {
   .right-link {
     display: none;
   }
-  .rounded-box{
+  .rounded-box {
     width: auto !important;
   }
 }
@@ -197,7 +194,7 @@ h1 {
   .right-link {
     display: none;
   }
-  .rounded-box{
+  .rounded-box {
     width: auto !important;
   }
 }

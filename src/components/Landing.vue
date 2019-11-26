@@ -1,7 +1,18 @@
 
 <template>
   <div class="flex-container">
-    <a id="mlh-trust-badge" class="mlh-badge" href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg" alt="Major League Hacking 2020 Hackathon Season" style="width:100%"></a>
+    <a
+      id="mlh-trust-badge"
+      class="mlh-badge"
+      href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
+      target="_blank"
+    >
+      <img
+        src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg"
+        alt="Major League Hacking 2020 Hackathon Season"
+        style="width:100%"
+      />
+    </a>
     <div id="particles-js"></div>
     <img class="main-planet" :src="Planet" />
     <div id="left">
@@ -15,21 +26,16 @@
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           href="https://www.my.deltahacks.com"
-        >
-          Apply Now!
-        </a>
+        >Apply Now!</a>
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           v-scroll-to="'#sponsor'"
         >
           Sponsor
-        </a> -->
+        </a>-->
         <div v-if="enteringName" class="email-group fade-in">
-          <div
-            class="email-button"
-            @click="(enteringName = false), (enteringEmail = false)"
-          >
+          <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
             <i
               class="fa fa-arrow-circle-o-left fa-3x"
               :style="{ alignSelf: 'center', marginRight: '19px' }"
@@ -42,10 +48,7 @@
             v-model="name"
             @keyup.enter="(enteringName = false), (enteringEmail = true)"
           />
-          <div
-            class="email-button"
-            @click="(enteringName = false), (enteringEmail = true)"
-          >
+          <div class="email-button" @click="(enteringName = false), (enteringEmail = true)">
             <i
               v-show="name.length >= 2"
               class="fa fa-arrow-circle-o-right fa-3x fade-in"
@@ -55,22 +58,13 @@
         </div>
         <form v-on:submit.prevent="handleSubmit">
           <div v-if="enteringEmail && !gotit" class="email-group">
-            <div
-              class="email-button"
-              @click="(enteringName = true), (enteringEmail = false)"
-            >
+            <div class="email-button" @click="(enteringName = true), (enteringEmail = false)">
               <i
                 class="fa fa-arrow-circle-o-left fa-3x"
                 :style="{ alignSelf: 'center', marginRight: '19px' }"
               />
             </div>
-            <input
-              type="email"
-              placeholder="Your email"
-              id="email-input"
-              v-model="email"
-              required
-            />
+            <input type="email" placeholder="Your email" id="email-input" v-model="email" required />
             <button type="submit" class="email-button">
               <i
                 class="fa fa-arrow-circle-o-right fa-4x"
@@ -83,15 +77,11 @@
           v-if="gotit"
           class="fade-in"
           style="font-family: Montserrat; font-size: 30px; font-weight: 600"
-        >
-          Got it, thanks!
-        </div>
+        >Got it, thanks!</div>
         <span
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-date"
-        >
-          January 25th and 26th, 2020 • McMaster University
-        </span>
+        >January 25th and 26th, 2020 • McMaster University</span>
       </div>
     </div>
   </div>
@@ -283,8 +273,6 @@ export default Vue.extend({
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap');
-
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -384,7 +372,7 @@ export default Vue.extend({
   font-size: 5em;
   color: white;
   padding-top: 15%;
-  font-weight: 700;
+  font-weight: 600;
 }
 .landing-left-mlh {
   margin: 2vh 0 0vh;
@@ -474,15 +462,15 @@ export default Vue.extend({
   object-fit: contain;
 }
 
-.mlh-badge{
-  display:block;
-  max-width:100px;
-  min-width:60px;
-  position:fixed;
-  right:50px;
-  top:0;
-  width:10%;
-  z-index:10000;
+.mlh-badge {
+  display: block;
+  max-width: 100px;
+  min-width: 60px;
+  position: fixed;
+  right: 50px;
+  top: 0;
+  width: 10%;
+  z-index: 10000;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {

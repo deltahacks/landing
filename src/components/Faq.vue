@@ -9,15 +9,13 @@
           :key="name"
           :class="{ 'category-bubble': true, selected: selected === name }"
         >
-          <div :style="{ width: '100%' }" @click="selectCategory(name)">{{
+          <div :style="{ width: '100%' }" @click="selectCategory(name)">
+            {{
             name.charAt(0).toUpperCase() + name.substring(1)
-          }}</div>
+            }}
+          </div>
           <transition name="open">
-            <div
-              :key="name + 's'"
-              v-if="selected === name"
-              class="mobile-faq-area"
-            >
+            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
@@ -31,9 +29,11 @@
                   </span>
                 </div>
                 <transition name="open">
-                  <div v-if="expanded.includes(index)" class="answer-box">{{
+                  <div v-if="expanded.includes(index)" class="answer-box">
+                    {{
                     elm.a
-                  }}</div>
+                    }}
+                  </div>
                 </transition>
               </div>
             </div>
@@ -41,11 +41,7 @@
         </div>
       </div>
       <div class="faq-area">
-        <div
-          v-for="(elm, index) in faqData[selected]"
-          :key="elm.q"
-          class="question-box"
-        >
+        <div v-for="(elm, index) in faqData[selected]" :key="elm.q" class="question-box">
           <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
             <span :class="{ arrow: true }">
@@ -54,9 +50,11 @@
             </span>
           </div>
           <transition name="open">
-            <div v-if="expanded.includes(index)" class="answer-box">{{
+            <div v-if="expanded.includes(index)" class="answer-box">
+              {{
               elm.a
-            }}</div>
+              }}
+            </div>
           </transition>
         </div>
       </div>
@@ -191,7 +189,7 @@ export default Vue.extend({
 
 .question {
   cursor: pointer;
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .answer-box {

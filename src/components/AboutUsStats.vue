@@ -1,10 +1,6 @@
 <template>
   <div class="container" id="aboutScroll">
     <div class="container-item bubbles">
-      <link
-        href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
-        rel="stylesheet"
-      />
       <div id="desktop">
         <svg viewBox="0 0 900 500">
           <Bubble
@@ -18,7 +14,7 @@
             :depth="bubble.depth"
             :start_gradient="bubble.start_gradient"
             :end_gradient="bubble.end_gradient"
-          ></Bubble>
+          />
         </svg>
       </div>
       <div id="mobile">
@@ -34,7 +30,7 @@
             :depth="bubble.depth"
             :start_gradient="bubble.start_gradient"
             :end_gradient="bubble.end_gradient"
-          ></Bubble>
+          />
         </svg>
       </div>
     </div>

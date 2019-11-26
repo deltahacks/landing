@@ -16,7 +16,30 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800&display=swap');
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Light.ttf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-SemiBold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-Bold.ttf');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('assets/fonts/Montserrat-ExtraBold.ttf');
+  font-weight: 800;
+}
 
 body {
   margin: 0 !important;
