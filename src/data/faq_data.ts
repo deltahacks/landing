@@ -45,9 +45,9 @@ export default {
   ],
   application: [
     {
-      q: 'How are applications judged?',
+      q: 'How are projects judged?',
       a:
-        'This will be finalized closer to the event, you can check back here a month or two before the event.',
+        'Projects are judged by event sponsors and experts from the tech sector. Projects are presented to judges at the exposition and evaluated on multiple factors such as presentation, creativity, practical application, etc. ',
     },
     {
       q: `What's the application deadline?`,
