@@ -103,26 +103,6 @@ export default {
       alt: 'CSE',
     },
     {
-      logo: Google,
-      href: 'https://www.google.com/',
-      alt: 'Google',
-    },
-    {
-      logo: Stickeryou,
-      href: "https://www.stickeryou.com",
-      alt: 'Stickeryou'
-    },
-    {
-      logo: MapleSoft,
-      href: 'https://www.maplesoft.com/',
-      alt: 'MapleSoft',
-    },
-    {
-      logo: ArcelorMittal,
-      href: 'http://dofasco.arcelormittal.com/',
-      alt: 'Dofasco Arcelor Mittal',
-    },
-    {
       logo: Deloitte,
       href: "http://www.deloitte.com/",
       alt: 'Deloitte'
@@ -141,6 +121,26 @@ export default {
       logo: McMaster,
       href: 'https://www.mcmaster.ca/',
       alt: 'McMaster University',
+    },
+    {
+      logo: Google,
+      href: 'https://www.google.com/',
+      alt: 'Google',
+    },
+    {
+      logo: Stickeryou,
+      href: "https://www.stickeryou.com",
+      alt: 'Stickeryou'
+    },
+    {
+      logo: MapleSoft,
+      href: 'https://www.maplesoft.com/',
+      alt: 'MapleSoft',
+    },
+    {
+      logo: ArcelorMittal,
+      href: 'http://dofasco.arcelormittal.com/',
+      alt: 'Dofasco Arcelor Mittal',
     },
   ],
 };
