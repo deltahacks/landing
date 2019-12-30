@@ -31,7 +31,7 @@ export default {
     },
     {
       q: `What's the event schedule like?`,
-      a: `We'll be putting up one  closer to the event, you can  excpect a lot of talks and presentations, fun events, and a lot of great food!`,
+      a: `We'll be putting up one  closer to the event, you can  expect a lot of talks and presentations, fun events, and a lot of great food!`,
     },
     {
       q: 'I have a dietary restriction, will there be options for me?',
