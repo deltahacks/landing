@@ -51,16 +51,11 @@ export default {
     },
     {
       q: `What's the application deadline?`,
-      a: `The deadline will be announced once applications open.`,
-    },
-    {
-      q: 'When do applications open?',
-      a:
-        'Soon! Sign up for our mailing list to keep updated when we release them!',
+      a: `The applications are now closed.`,
     },
     {
       q: 'How long will it be until I hear back about my application?',
-      a: `We'll roll out decisions a month to a few weeks before the date of the event, so keep an eye out!`,
+      a: `All the application decisions have been sent out! If you didn't receive an email, reach out to us at hello@deltahacks.com`,
     },
   ],
   misc: [
