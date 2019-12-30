@@ -21,6 +21,7 @@ import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 import Stickermule from '@/assets/sponsors/Stickermule.png';
 import Stickeryou from '@/assets/sponsors/Stickeryou.png';
 import Deloitte from '@/assets/sponsors/Deloitte.png';
+import Digitalocean from '@/assets/sponsors/Digitalocean.png';
 
 export default {
   primary: [
@@ -135,6 +136,11 @@ export default {
       logo: Deloitte,
       href: "http://www.deloitte.com/",
       alt: 'Deloitte'
+    },
+    {
+      logo: Digitalocean,
+      href: "https://www.digitalocean.com/",
+      alt: 'Digital Ocean'
     },
   ],
 };
