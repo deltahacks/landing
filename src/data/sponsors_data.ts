@@ -108,6 +108,11 @@ export default {
       alt: 'Google',
     },
     {
+      logo: Stickeryou,
+      href: "https://www.stickeryou.com",
+      alt: 'Stickeryou'
+    },
+    {
       logo: MapleSoft,
       href: 'https://www.maplesoft.com/',
       alt: 'MapleSoft',
@@ -118,21 +123,6 @@ export default {
       alt: 'Dofasco Arcelor Mittal',
     },
     {
-      logo: McMaster,
-      href: 'https://www.mcmaster.ca/',
-      alt: 'McMaster University',
-    },
-    {
-      logo: Stickermule,
-      href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
-      alt: 'Sticker Mule',
-    },
-    {
-      logo: Stickeryou,
-      href: "https://www.stickeryou.com",
-      alt: 'Stickeryou'
-    },
-    {
       logo: Deloitte,
       href: "http://www.deloitte.com/",
       alt: 'Deloitte'
@@ -141,6 +131,16 @@ export default {
       logo: Digitalocean,
       href: "https://www.digitalocean.com/",
       alt: 'Digital Ocean'
+    },
+    {
+      logo: Stickermule,
+      href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
+      alt: 'Sticker Mule',
+    },
+    {
+      logo: McMaster,
+      href: 'https://www.mcmaster.ca/',
+      alt: 'McMaster University',
     },
   ],
 };
