@@ -39,6 +39,7 @@ import Sketch from '@/assets/sponsors/Sketch.svg';
 import McMaster from '@/assets/sponsors/Mcmaster.svg';
 import Stickermule from '@/assets/sponsors/Stickermule.png';
 import Stickeryou from '@/assets/sponsors/Stickeryou.png';
+import Deloitte from '@/assets/sponsors/Deloitte.png';
 
 interface Sponsor {
   logo: any;

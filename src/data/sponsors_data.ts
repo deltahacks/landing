@@ -20,6 +20,7 @@ import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
 import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 import Stickermule from '@/assets/sponsors/Stickermule.png';
 import Stickeryou from '@/assets/sponsors/Stickeryou.png';
+import Deloitte from '@/assets/sponsors/Deloitte.png';
 
 export default {
   primary: [
@@ -129,6 +130,11 @@ export default {
       logo: Stickeryou,
       href: "https://www.stickeryou.com",
       alt: 'Stickeryou'
+    },
+    {
+      logo: Deloitte,
+      href: "http://www.deloitte.com/",
+      alt: 'Deloitte'
     },
   ],
 };
