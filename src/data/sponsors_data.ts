@@ -18,6 +18,10 @@ import Coinberry from '@/assets/sponsors/Coinberry.png';
 import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
 import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
 import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
+import Stickermule from '@/assets/sponsors/Stickermule.png';
+import Stickeryou from '@/assets/sponsors/Stickeryou.png';
+import Deloitte from '@/assets/sponsors/Deloitte.png';
+import Digitalocean from '@/assets/sponsors/Digitalocean.png';
 
 export default {
   primary: [
@@ -99,9 +103,34 @@ export default {
       alt: 'CSE',
     },
     {
+      logo: Deloitte,
+      href: "http://www.deloitte.com/",
+      alt: 'Deloitte'
+    },
+    {
+      logo: Digitalocean,
+      href: "https://www.digitalocean.com/",
+      alt: 'Digital Ocean'
+    },
+    {
+      logo: Stickermule,
+      href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
+      alt: 'Sticker Mule',
+    },
+    {
+      logo: McMaster,
+      href: 'https://www.mcmaster.ca/',
+      alt: 'McMaster University',
+    },
+    {
       logo: Google,
       href: 'https://www.google.com/',
       alt: 'Google',
+    },
+    {
+      logo: Stickeryou,
+      href: "https://www.stickeryou.com",
+      alt: 'Stickeryou'
     },
     {
       logo: MapleSoft,
@@ -112,11 +141,6 @@ export default {
       logo: ArcelorMittal,
       href: 'http://dofasco.arcelormittal.com/',
       alt: 'Dofasco Arcelor Mittal',
-    },
-    {
-      logo: McMaster,
-      href: 'https://www.mcmaster.ca/',
-      alt: 'McMaster University',
     },
   ],
 };
