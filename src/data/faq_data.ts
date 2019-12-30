@@ -27,7 +27,7 @@ export default {
     },
     {
       q: 'I have never been to a hackathon before, what should I do?',
-      a: `We love first time hackers! We will be providing mentors during the hackathon and running workshops. You can even read on one of our execs' experience when she started here to see how easy and fun it really is to learn at the hackathon.`,
+      a: `We love first time hackers! We will be providing mentors during the hackathon and running workshops.`,
     },
     {
       q: `What's the event schedule like?`,
