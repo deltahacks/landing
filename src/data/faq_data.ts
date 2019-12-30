@@ -47,7 +47,7 @@ export default {
     {
       q: 'How are projects judged?',
       a:
-        'Projects are judged by event sponsors and experts from the tech sector. Projects are presented to judges at the exposition and evaluated on multiple factors such as presentation, creativity, practical application, etc. ',
+        'Projects are judged by event sponsors and experts from the tech sector. Projects are presented to judges at the exposition and evaluated on multiple factors such as presentation, creativity, practical application, and originality.',
     },
     {
       q: `What's the application deadline?`,
