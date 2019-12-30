@@ -37,6 +37,9 @@ import Google from '@/assets/sponsors/google.png';
 import MapleSoft from '@/assets/sponsors/MapleSoft.png';
 import Sketch from '@/assets/sponsors/Sketch.svg';
 import McMaster from '@/assets/sponsors/Mcmaster.svg';
+import Stickermule from '@/assets/sponsors/Stickermule.png';
+import Stickeryou from '@/assets/sponsors/Stickeryou.png';
+
 interface Sponsor {
   logo: any;
   href: string;
@@ -157,6 +160,16 @@ export default Vue.extend({
           href: 'https://www.mcmaster.ca/',
           alt: 'McMaster University',
         },
+        {
+          logo: Stickermule,
+          href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
+          alt: 'Sticker Mule',
+        },
+        {
+          logo: Stickeryou,
+          href: "https://www.stickeryou.com",
+          alt: 'Stickeryou'
+        },  
       ],
     };
   },

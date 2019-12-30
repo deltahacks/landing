@@ -18,6 +18,8 @@ import Coinberry from '@/assets/sponsors/Coinberry.png';
 import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
 import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
 import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
+import Stickermule from '@/assets/sponsors/Stickermule.png';
+import Stickeryou from '@/assets/sponsors/Stickeryou.png';
 
 export default {
   primary: [
@@ -117,6 +119,16 @@ export default {
       logo: McMaster,
       href: 'https://www.mcmaster.ca/',
       alt: 'McMaster University',
+    },
+    {
+      logo: Stickermule,
+      href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
+      alt: 'Sticker Mule',
+    },
+    {
+      logo: Stickeryou,
+      href: "https://www.stickeryou.com",
+      alt: 'Stickeryou'
     },
   ],
 };
