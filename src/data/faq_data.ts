@@ -45,11 +45,6 @@ export default {
   ],
   application: [
     {
-      q: 'How are projects judged?',
-      a:
-        'Projects are judged by event sponsors and experts from the tech sector. Projects are presented to judges at the exposition and evaluated on multiple factors such as presentation, creativity, practical application, and originality.',
-    },
-    {
       q: `What's the application deadline?`,
       a: `The applications are now closed.`,
     },
@@ -57,6 +52,10 @@ export default {
       q: 'How long will it be until I hear back about my application?',
       a: `All the application decisions have been sent out! If you didn't receive an email, reach out to us at hello@deltahacks.com`,
     },
+    {
+      q: 'I was rejected, is there any way I can still attend?',
+      a: `We cannot take walk-ins at DeltaHacks because we've met the event capacity. We hope to see you at DeltaHacks VII!`,
+    }
   ],
   misc: [
     {
@@ -76,6 +75,11 @@ export default {
     {
       q: 'Is it possible to request hardware beforehand?',
       a: 'Yes, you will be able to request hardware in your application',
+    },
+    {
+      q: 'How are projects judged?',
+      a:
+        'Projects are judged by event sponsors and experts from the tech sector. Projects are presented to judges at the exposition and evaluated on multiple factors such as presentation, creativity, practical application, and originality.',
     },
   ],
 };
