@@ -18,7 +18,7 @@ const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 Vue.use(VueScrollReveal);
 
 import TD from '@/assets/sponsors/TD_Bank.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
+import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.png';
 import Rogers from '@/assets/sponsors/Rogers_logo.svg';
 import Microsoft from '@/assets/sponsors/Microsoft.svg';
 import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';

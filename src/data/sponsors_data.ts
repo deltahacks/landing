@@ -16,7 +16,7 @@ import Microsoft from '@/assets/sponsors/Microsoft.svg';
 import Hypercare from '@/assets/sponsors/Hypercare.png';
 import Coinberry from '@/assets/sponsors/Coinberry.png';
 import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.svg';
+import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.png';
 import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 import Stickermule from '@/assets/sponsors/Stickermule.png';
 import Stickeryou from '@/assets/sponsors/Stickeryou.png';
