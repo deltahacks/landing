@@ -19,6 +19,20 @@
           link="https://deltahacks5.devpost.com/"
           id="blurb-1"
         />
+          <Blurb2
+          heading="Information Packages"
+          sub="Kindly find the respective packages below."
+          button1="Mentors"
+          button2="Sponsors"
+          button3="Challenges"
+          button4="Judges"
+          :left="true"
+          link1="https://deltahacks5.devpost.com/"
+          link2="https://deltahacks5.devpost.com/"
+          link3="https://deltahacks5.devpost.com/"
+          link4="https://deltahacks5.devpost.com/"
+          id="blurb-1"
+        />
       </div>
       <div class="spacer" style="height: 10vh" />
       <AboutUsStats />
@@ -57,6 +71,7 @@ import Landing from '@/components/Landing.vue';
 import Sponsors from '@/components/Sponsors.vue';
 import AboutUsStats from '@/components/AboutUsStats.vue';
 import Blurb from '@/components/Blurb.vue';
+import Blurb2 from '@/components/Blurb2.vue';
 import SAT from '@/assets/sat.png';
 import ASTR1 from '@/assets/Astronaut1.svg';
 import ASTR2 from '@/assets/Astronaut2.svg';
@@ -80,6 +95,7 @@ export default Vue.extend({
     Sponsors,
     AboutUsStats,
     Blurb,
+    Blurb2
   },
   data() {
     return {
