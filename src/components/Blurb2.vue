@@ -2,17 +2,20 @@
   <div :class="['about-container', left ? 'left' : 'right']">
     <h2 class="info-title">{{ heading }}</h2>
     <div class="about-description">
-      <form :action="link1" style="display:inline; margin-right: 2vw;">
+      <form :action="link1" class="form-inline" style="margin-right: 2vw;">
         <input class="about-button" type="submit" :value="button1" />
       </form>
-      <form :action="link2" style="display:inline; margin-right: 2vw;">
+      <form :action="link2" class="form-inline" style="margin-right: 2vw;">
         <input class="about-button" type="submit" :value="button2" />
       </form>
-      <form :action="link3" style="display:inline; margin-right: 2vw;">
+      <form :action="link3" class="form-inline" style="margin-right: 2vw;">
         <input class="about-button" type="submit" :value="button3" />
       </form>
-      <form :action="link4" style="display:inline;">
+      <form :action="link4" class="form-inline" style="margin-right: 2vw;">
         <input class="about-button" type="submit" :value="button4" />
+      </form>
+      <form :action="link5" class="form-inline">
+        <input class="about-button" type="submit" :value="button5" />
       </form>
     </div>
   </div>
@@ -26,10 +29,12 @@ export default Vue.extend({
     link2: String,
     link3: String,
     link4: String,
+    link5: String,
     button1: String,
     button2: String,
     button3: String,
     button4: String,
+    button5: String,
     sub: String,
     text: String,
     left: Boolean,
@@ -57,6 +62,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.form-inline{
+  display: inline;
+}
 .right {
   color: white;
   text-align: right;
@@ -113,7 +121,7 @@ export default Vue.extend({
   cursor: pointer;
   -webkit-appearance: none;
   margin: 1.5vh 0;
-  min-width: 23.2%;
+  min-width: 18%;
 }
 
 .about-button:hover {
@@ -129,6 +137,12 @@ export default Vue.extend({
 }
 
 @media screen and (max-width: 720px) {
+  .about-button{
+      width: 90%;
+  }
+  .form-inline{
+    display: block;
+  }
   .right {
     width: 70%;
   }
