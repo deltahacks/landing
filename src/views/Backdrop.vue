@@ -21,7 +21,6 @@
         />
           <Blurb2
           heading="Information Packages"
-          sub="Kindly find the respective packages below."
           button1="Mentors"
           button2="Sponsors"
           button3="Challenges"

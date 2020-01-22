@@ -2,9 +2,6 @@
   <div :class="['about-container', left ? 'left' : 'right']">
     <h2 class="info-title">{{ heading }}</h2>
     <div class="about-description">
-      <p>{{ text }}</p>
-      <p class="blurb_sub">{{ sub }}</p>
-      <div style="display: inline;">
       <form :action="link1" style="display:inline; margin-right:2vw;">
         <input class="about-button" type="submit" :value="button1" />
       </form>
@@ -17,7 +14,6 @@
       <form :action="link4" style="display:inline; ">
         <input class="about-button" type="submit" :value="button4" />
       </form>
-      </div>
     </div>
   </div>
 </template>
@@ -78,6 +74,9 @@ export default Vue.extend({
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.15);
   padding-bottom: 2vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .left {
