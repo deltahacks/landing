@@ -25,11 +25,13 @@
           button2="Sponsors"
           button3="Challenges"
           button4="Judges"
+          button5="Schedule"  
           :left="true"
           link1="/Mentor-Information-Package.pdf"
           link2="/Sponsor-Information-Package.pdf"
           link3="/Challenger-Information-Package.pdf"
           link4="/Judge-Information-Package.pdf"
+          link5="/DH-Schedule.pdf"
           id="blurb-1"
         />
       </div>
