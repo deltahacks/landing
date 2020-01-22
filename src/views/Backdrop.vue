@@ -26,10 +26,10 @@
           button3="Challenges"
           button4="Judges"
           :left="true"
-          link1="https://deltahacks5.devpost.com/"
-          link2="https://deltahacks5.devpost.com/"
-          link3="https://deltahacks5.devpost.com/"
-          link4="https://deltahacks5.devpost.com/"
+          link1="/Mentor-Information-Package.pdf"
+          link2="/Sponsor-Information-Package.pdf"
+          link3="/Challenger-Information-Package.pdf"
+          link4="/Judge-Information-Package.pdf"
           id="blurb-1"
         />
       </div>
