@@ -2,16 +2,16 @@
   <div :class="['about-container', left ? 'left' : 'right']">
     <h2 class="info-title">{{ heading }}</h2>
     <div class="about-description">
-      <form :action="link1" style="display:inline; margin-right:2vw;">
+      <form :action="link1" style="display:inline;">
         <input class="about-button" type="submit" :value="button1" />
       </form>
-      <form :action="link2" style="display:inline; margin-right:2vw;">
+      <form :action="link2" style="display:inline;">
         <input class="about-button" type="submit" :value="button2" />
       </form>
-      <form :action="link3" style="display:inline; margin-right:2vw;">
+      <form :action="link3" style="display:inline;">
         <input class="about-button" type="submit" :value="button3" />
       </form>
-      <form :action="link4" style="display:inline; ">
+      <form :action="link4" style="display:inline;">
         <input class="about-button" type="submit" :value="button4" />
       </form>
     </div>
@@ -113,6 +113,8 @@ export default Vue.extend({
   cursor: pointer;
   -webkit-appearance: none;
   margin: 1.5vh 0;
+  margin-right: 2vw;
+  min-width: 22.6%;
 }
 
 .about-button:hover {
