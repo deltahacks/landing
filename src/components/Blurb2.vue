@@ -136,6 +136,7 @@ export default Vue.extend({
     margin-left: 0;
   }
   .about-container {
+    margin-top:30px;
     width: 100%;
     padding: 0;
     text-align: center;
