@@ -51,7 +51,11 @@
       </div>
       <div class="spacer" style="height: 10vh" />
       <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" style="height: 50vh" />
+      <div style="display: flex; flex-direction: column;   display: block;
+  text-align: center;">
+      <iframe src="/DH-Schedule.pdf"  style="height:700px; width: 1000px;"/>
+      </div>
+      <div class="spacer" style="height: 60vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <Footer id="footer" />
