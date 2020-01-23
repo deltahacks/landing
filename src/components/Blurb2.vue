@@ -11,12 +11,12 @@
       <form :action="link3" class="form-inline" style="margin-right: 2vw;">
         <input class="about-button" type="submit" :value="button3" />
       </form>
-      <form :action="link4" class="form-inline" style="margin-right: 2vw;">
+      <form :action="link4" class="form-inline">
         <input class="about-button" type="submit" :value="button4" />
       </form>
-      <form :action="link5" class="form-inline">
+      <!-- <form :action="link5" class="form-inline">
         <input class="about-button" type="submit" :value="button5" />
-      </form>
+      </form> -->
     </div>
   </div>
 </template>
@@ -121,7 +121,7 @@ export default Vue.extend({
   cursor: pointer;
   -webkit-appearance: none;
   margin: 1.5vh 0;
-  min-width: 18%;
+  min-width: 23.2%;
 }
 
 .about-button:hover {
