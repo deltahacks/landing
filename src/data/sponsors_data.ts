@@ -19,7 +19,7 @@ export default {
   primary: [
     {
       logo: InnovationFactory,
-      href: 'https://www.innovationfactory.com/',
+      href: 'https://www.innovationfactory.ca/',
       alt: 'Innovation Factory',
     },
     {
