@@ -17,30 +17,22 @@ const VueScrollReveal = require('vue-scroll-reveal'); // tslint:disable-line
 // Using ScrollReveal's default configuration
 Vue.use(VueScrollReveal);
 
-import TD from '@/assets/sponsors/TD_Bank.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.png';
-import Rogers from '@/assets/sponsors/Rogers_logo.svg';
-import Microsoft from '@/assets/sponsors/Microsoft.svg';
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
-import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
-import RBC from '@/assets/sponsors/RBC.svg';
-import Synopsys from '@/assets/sponsors/Synopsys.svg';
+import InnovationFactory from '@/assets/sponsors/InnovationFactory.png'
+import Nokia from '@/assets/sponsors/Nokia.png'
+import ArcelorMittal from'@/assets/sponsors/ArcelorMittal.png'
+import MacEng from'@/assets/sponsors/MacEng.png'
+import TD from'@/assets/sponsors/TD.png'
+import MSE from '@/assets/sponsors/MSE.png'
+import RBC from '@/assets/sponsors/RBC.png'
+import CSE from '@/assets/sponsors/CSE.png'
+import MES from '@/assets/sponsors/MES.png'
+import Algorand from '@/assets/sponsors/Algorand.png'
+import Deloitte from '@/assets/sponsors/Deloitte.png'
 import FDM from '@/assets/sponsors/FDM.svg';
-import Bitalino from '@/assets/sponsors/Bitalino.png';
-import Coinberry from '@/assets/sponsors/Coinberry.png';
-import Wolfram from '@/assets/sponsors/Wolfram.svg';
-import Hypercare from '@/assets/sponsors/Hypercare.png';
-import Obie from '@/assets/sponsors/Obie.png';
-import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
-import CSE from '@/assets/sponsors/CSE.svg';
-import Google from '@/assets/sponsors/google.png';
-import MapleSoft from '@/assets/sponsors/MapleSoft.png';
-import Sketch from '@/assets/sponsors/Sketch.svg';
-import McMaster from '@/assets/sponsors/Mcmaster.svg';
-import Stickermule from '@/assets/sponsors/Stickermule.png';
-import Stickeryou from '@/assets/sponsors/Stickeryou.png';
-import Deloitte from '@/assets/sponsors/Deloitte.png';
-import Digitalocean from '@/assets/sponsors/Digitalocean.png';
+import L3Harris from '@/assets/sponsors/L3Harris.png'
+import Voiceflow from '@/assets/sponsors/Voiceflow.png'
+import DigitalOcean from '@/assets/sponsors/Digitalocean.png'
+import Hypercare from '@/assets/sponsors/Hypercare.png'
 
 interface Sponsor {
   logo: any;
@@ -66,121 +58,6 @@ export default Vue.extend({
           logo: TD,
           href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
           alt: 'TD Canada Trust',
-        },
-        {
-          logo: ArcelorMittal,
-          href: 'http://dofasco.arcelormittal.com/',
-          alt: 'Dofasco Arcelor Mittal',
-        },
-        {
-          logo: Rogers,
-          href: 'https://jobs.rogers.com/',
-          alt: 'Rogers',
-        },
-        {
-          logo: Microsoft,
-          href: 'https://www.microsoft.com/',
-          alt: 'Microsoft Corporation',
-        },
-        {
-          logo: InnovationFactory,
-          href: 'https://www.innovationfactory.com/',
-          alt: 'Innovation Factory',
-        },
-        {
-          logo: LoyaltyOne,
-          href: 'https://www.loyalty.com/',
-          alt: 'Loyalty One',
-        },
-        {
-          logo: RBC,
-          href: 'http://www.rbc.com/techjobs',
-          alt: 'Royal Bank of Canada',
-        },
-        {
-          logo: Synopsys,
-          href: 'https://www.synopsys.com/',
-          alt: 'Synopsys',
-        },
-        {
-          logo: FDM,
-          href: 'https://www.fdmgroup.com/en-ca/ca-home/',
-          alt: 'FDM',
-        },
-        {
-          logo: Bitalino,
-          href: 'https://www.bitalino.com/',
-          alt: 'Bitalino',
-        },
-        {
-          logo: Coinberry,
-          href: 'http://www.coinberry.com/',
-          alt: 'Coinberry',
-        },
-        {
-          logo: Wolfram,
-          href: 'http://www.wolfram.com/',
-          alt: 'Wolfram',
-        },
-        {
-          logo: Hypercare,
-          href: 'http://www.hypercare.com/',
-          alt: 'Hypercare',
-        },
-        {
-          logo: Obie,
-          href: 'http://www.obie.ai/',
-          alt: 'Obie AI',
-        },
-        {
-          logo: Balsamiq,
-          href: 'http://www.balsamiq.com/',
-          alt: 'Balsamiq',
-        },
-        {
-          logo: CSE,
-          href: 'https://www.cse-cst.gc.ca/',
-          alt: 'CSE',
-        },
-        {
-          logo: Google,
-          href: 'https://www.google.com/',
-          alt: 'Google',
-        },
-        {
-          logo: MapleSoft,
-          href: 'https://www.maplesoft.com/',
-          alt: 'MapleSoft',
-        },
-        {
-          logo: Sketch,
-          href: 'https://www.sketchapp.com/',
-          alt: 'Sketch',
-        },
-        {
-          logo: McMaster,
-          href: 'https://www.mcmaster.ca/',
-          alt: 'McMaster University',
-        },
-        {
-          logo: Stickermule,
-          href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
-          alt: 'Sticker Mule',
-        },
-        {
-          logo: Stickeryou,
-          href: "https://www.stickeryou.com",
-          alt: 'Stickeryou'
-        },  
-        {
-          logo: Deloitte,
-          href: "http://www.deloitte.com/",
-          alt: 'Deloitte'
-        },
-        {
-          logo: Digitalocean,
-          href: "https://www.digitalocean.com/",
-          alt: 'Digital Ocean'
         },
       ],
     };
