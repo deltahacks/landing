@@ -3,13 +3,13 @@
     <div class="container">
       <div v-if="main">
         <img class="rocket-img" :src="rocket" />
-        <h1 id="sponsors-title">Past Sponsors</h1>
-        <p id="sponsors-subtitle">
+        <h1 id="sponsors-title">Sponsors</h1>
+        <!-- <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
           <a href="mailto:sponsorship@deltahacks.com"
             >sponsorship@deltahacks.com</a
           >
-        </p>
+        </p> -->
       </div>
       <div :class="['square', getClass]">
         <div

@@ -1,146 +1,103 @@
+import InnovationFactory from '@/assets/sponsors/InnovationFactory.png'
+import Nokia from '@/assets/sponsors/Nokia.png'
+import ArcelorMittal from'@/assets/sponsors/ArcelorMittal.png'
+import MacEng from'@/assets/sponsors/MacEng.png'
+import TD from'@/assets/sponsors/TD.png'
+import MSE from '@/assets/sponsors/MSE.png'
+import RBC from '@/assets/sponsors/RBC.png'
+import CSE from '@/assets/sponsors/CSE.png'
+import MES from '@/assets/sponsors/MES.png'
+import Algorand from '@/assets/sponsors/Algorand.png'
+import Deloitte from '@/assets/sponsors/Deloitte.png'
 import FDM from '@/assets/sponsors/FDM.svg';
-import CSE from '@/assets/sponsors/CSE.svg';
-import RBC from '@/assets/sponsors/RBC.svg';
-import McMaster from '@/assets/sponsors/Mcmaster.svg';
-import Obie from '@/assets/sponsors/Obie.png';
-import TD from '@/assets/sponsors/TD_Bank.png';
-import Google from '@/assets/sponsors/google.png';
-import Sketch from '@/assets/sponsors/Sketch.svg';
-import Wolfram from '@/assets/sponsors/Wolfram.svg';
-import Synopsys from '@/assets/sponsors/Synopsys.svg';
-import Bitalino from '@/assets/sponsors/Bitalino.png';
-import Balsamiq from '@/assets/sponsors/Balsamiq.svg';
-import Rogers from '@/assets/sponsors/Rogers_logo.svg';
-import MapleSoft from '@/assets/sponsors/MapleSoft.png';
-import Microsoft from '@/assets/sponsors/Microsoft.svg';
-import Hypercare from '@/assets/sponsors/Hypercare.png';
-import Coinberry from '@/assets/sponsors/Coinberry.png';
-import LoyaltyOne from '@/assets/sponsors/LoyaltyOne.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.png';
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
-import Stickermule from '@/assets/sponsors/Stickermule.png';
-import Stickeryou from '@/assets/sponsors/Stickeryou.png';
-import Deloitte from '@/assets/sponsors/Deloitte.png';
-import Digitalocean from '@/assets/sponsors/Digitalocean.png';
+import L3Harris from '@/assets/sponsors/L3Harris.png'
+import Voiceflow from '@/assets/sponsors/Voiceflow.png'
+import DigitalOcean from '@/assets/sponsors/Digitalocean.png'
+import Hypercare from '@/assets/sponsors/Hypercare.png'
 
 export default {
   primary: [
-    {
-      logo: Microsoft,
-      href: 'https://www.microsoft.com/',
-      alt: 'Microsoft Corporation',
-    },
-    {
-      logo: RBC,
-      href: 'http://www.rbc.com/techjobs',
-      alt: 'Royal Bank of Canada',
-    },
-    {
-      logo: TD,
-      href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
-      alt: 'TD Canada Trust',
-    },
-  ],
-  secondary: [
-    {
-      logo: Coinberry,
-      href: 'http://www.coinberry.com/',
-      alt: 'Coinberry',
-    },
-    {
-      logo: Sketch,
-      href: 'https://www.sketchapp.com/',
-      alt: 'Sketch',
-    },
-    {
-      logo: Rogers,
-      href: 'https://jobs.rogers.com/',
-      alt: 'Rogers',
-    },
-    {
-      logo: Balsamiq,
-      href: 'http://www.balsamiq.com/',
-      alt: 'Balsamiq',
-    },
-    {
-      logo: Hypercare,
-      href: 'http://www.hypercare.com/',
-      alt: 'Hypercare',
-    },
-    {
-      logo: Wolfram,
-      href: 'http://www.wolfram.com/',
-      alt: 'Wolfram',
-    },
     {
       logo: InnovationFactory,
       href: 'https://www.innovationfactory.com/',
       alt: 'Innovation Factory',
     },
     {
-      logo: LoyaltyOne,
-      href: 'https://www.loyalty.com/',
-      alt: 'Loyalty One',
+      logo: Nokia,
+      href: 'https://www.nokia.com/about-us/careers/student-and-graduate-opportunities/',
+      alt: 'Nokia',
     },
-    {
-      logo: Synopsys,
-      href: 'https://www.synopsys.com/',
-      alt: 'Synopsys',
-    },
-    {
-      logo: Bitalino,
-      href: 'https://www.bitalino.com/',
-      alt: 'Bitalino',
-    },
-    {
-      logo: Obie,
-      href: 'http://www.obie.ai/',
-      alt: 'Obie AI',
-    },
-    {
-      logo: CSE,
-      href: 'https://www.cse-cst.gc.ca/',
-      alt: 'CSE',
-    },
-    {
-      logo: Deloitte,
-      href: "http://www.deloitte.com/",
-      alt: 'Deloitte'
-    },
-    {
-      logo: Digitalocean,
-      href: "https://www.digitalocean.com/",
-      alt: 'Digital Ocean'
-    },
-    {
-      logo: Stickermule,
-      href: 'https://www.stickermule.com/unlock?ref_id=0539570701&utm_source=sponsorship&utm_campaign=mlh-sponsorship-2019&utm_medium=referral',
-      alt: 'Sticker Mule',
-    },
-    {
-      logo: McMaster,
-      href: 'https://www.mcmaster.ca/',
-      alt: 'McMaster University',
-    },
-    {
-      logo: Google,
-      href: 'https://www.google.com/',
-      alt: 'Google',
-    },
-    {
-      logo: Stickeryou,
-      href: "https://www.stickeryou.com",
-      alt: 'Stickeryou'
-    },
-    {
-      logo: MapleSoft,
-      href: 'https://www.maplesoft.com/',
-      alt: 'MapleSoft',
-    },
+  ],
+  secondary: [
     {
       logo: ArcelorMittal,
       href: 'http://dofasco.arcelormittal.com/',
       alt: 'Dofasco Arcelor Mittal',
+    },
+    {
+      logo: MacEng,
+      href: 'https://www.eng.mcmaster.ca/',
+      alt: 'McMaster Engineering'
+    },
+    {
+      logo: TD,
+      href: 'https://jobs.td.com/en-CA/campus-recruitment/technology/',
+      alt: 'TD'
+    },
+    {
+      logo: MSE,
+      href: 'https://www.eng.mcmaster.ca/materials',
+      alt: 'MSE'
+    },
+    {
+      logo: RBC,
+      href: 'https://jobs.rbc.com/ca/en/students-graduates',
+      alt: 'RBC'
+    },
+    {
+      logo: CSE,
+      href: 'https://www.cse-cst.gc.ca/en/careers-carrieres/students-etudiants/opportunities',
+      alt: 'CSE'
+    },
+    {
+      logo: MES,
+      href: 'https://www.macengsociety.ca/',
+      alt: 'MES'
+    },
+    {
+      logo: Algorand,
+      href: 'https://www.algorand.com/',
+      alt: 'Algorand'
+    },
+    {
+      logo: Deloitte,
+      href: 'https://www2.deloitte.com/ca/en/pages/careers/topics/students.html',
+      alt: 'Deloitte'
+    },
+    {
+      logo: FDM,
+      href: 'https://www.fdmgroup.com/en-ca/ca-home/',
+      alt: 'FDM'
+    },
+    {
+      logo: L3Harris,
+      href: 'https://www.l3harris.com/careers',
+      alt: 'L3Harris'
+    },
+    {
+      logo: Voiceflow,
+      href: 'https://www.voiceflow.com/',
+      alt: 'Voiceflow'
+    },
+    {
+      logo: DigitalOcean,
+      href: 'https://www.digitalocean.com/careers/',
+      alt: 'DigitalOcean'
+    },
+    {
+      logo: Hypercare,
+      href: 'https://www.hypercare.com/',
+      alt: 'Hypercare'
     },
   ],
 };
