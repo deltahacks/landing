@@ -23,7 +23,7 @@
           heading="Information Packages"
           button1="Mentors"
           button2="Sponsors"
-          button3="Challenges"
+          button3="Challenger"
           button4="Judges"
           :left="true"
           link1="/Mentor-Information-Package.pdf"
