@@ -17,8 +17,7 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta
-        <span style="font-weight: 300">Hacks</span>
+        Delta<span style="font-weight: 300">Hacks</span>
         VI
       </h1>
       <img class="vi-back" :src="VI" />

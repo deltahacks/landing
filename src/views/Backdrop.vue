@@ -16,7 +16,7 @@
           :sub="text1_sub"
           :button="text1_button"
           :left="true"
-          link="https://deltahacks5.devpost.com/"
+          link="https://deltahacks6.devpost.com/"
           id="blurb-1"
         />
           <Blurb2
@@ -44,7 +44,7 @@
           :button="button2"
           :left="false"
           id="blurb-2"
-          link="https://forms.gle/5VtwcURmsMMazSSL7"
+          link="https://deltahacks6.devpost.com/"
         />
       </div>
       <div class="spacer" style="height: 10vh" />
@@ -108,10 +108,10 @@ export default Vue.extend({
       text1: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 700 students from across Canada, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
       text1_sub:
         'Check out some ideas people have brought to DeltaHacks in the past below!',
-      text1_button: 'DeltaHacks V Projects',
+      text1_button: 'DeltaHacks VI Devpost',
       text2: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
       text2_sub: 'Interested in joining our team? Apply below!',
-      button2: 'Apply to be an Exec',
+      button2: 'DeltaHacks V Projects',
     };
   },
   methods: {
