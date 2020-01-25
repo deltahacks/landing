@@ -40,7 +40,6 @@
         <Blurb
           heading="The hackathon for change"
           :text="text2"
-          :sub="text2_sub"
           :button="button2"
           :left="false"
           id="blurb-2"
