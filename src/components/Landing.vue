@@ -29,6 +29,7 @@
         >Login</a>-->
         <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
         <a class="landing-button fade-in" href="/DH-Challenges.pdf">Challenges</a>
+        <a class="landing-button fade-in" href="/DH-Workshops.pdf">Workshops</a>
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -380,7 +381,7 @@ export default Vue.extend({
   margin: 2vh 0 0vh;
 }
 .landing-left-container {
-  margin: -2vh 10vw 0;
+  margin: -2vh 5vw 0;
   padding: 4vh 2vw 3vh;
   background: rgb(236, 240, 241, 0.2);
   /* background-image: linear-gradient(
