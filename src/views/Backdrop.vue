@@ -43,7 +43,7 @@
           :button="button2"
           :left="false"
           id="blurb-2"
-          link="https://deltahacks6.devpost.com/"
+          link="https://deltahacks5.devpost.com/"
         />
       </div>
       <div class="spacer" style="height: 10vh" />
