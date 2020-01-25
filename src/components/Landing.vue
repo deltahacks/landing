@@ -17,7 +17,8 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: 300">Hacks</span>
+        Delta
+        <span style="font-weight: 300">Hacks</span>
         VI
       </h1>
       <img class="vi-back" :src="VI" />
@@ -27,10 +28,8 @@
           class="landing-button fade-in"
           href="https://www.my.deltahacks.com"
         >Login</a>
-        <a
-          class="landing-button fade-in"
-          href="/DH-Schedule.pdf"
-        >Schedule</a>
+        <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
+        <a class="landing-button fade-in" href="/DH-Workshop.pdf">Workshops</a>
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -258,13 +257,13 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + '=' + esc(params[k]))
+        .map(k => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
         query;
-      fetch(url, { mode: 'cors' }).then((response) => {
+      fetch(url, { mode: 'cors' }).then(response => {
         /* :) */
       });
 
