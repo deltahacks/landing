@@ -382,7 +382,7 @@ export default Vue.extend({
 }
 .landing-left-container {
   margin: -2vh 10vw 0;
-  padding: 4vh 0px 3vh;
+  padding: 4vh 2vw 3vh;
   background: rgb(236, 240, 241, 0.2);
   /* background-image: linear-gradient(
     to right,
