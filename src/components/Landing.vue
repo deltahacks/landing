@@ -28,7 +28,7 @@
           href="https://www.my.deltahacks.com"
         >Login</a>-->
         <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
-        <a class="landing-button fade-in" href="/DH-Workshop.pdf">Workshops</a>
+        <a class="landing-button fade-in" href="/DH-Challenges.pdf">Challenges</a>
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
