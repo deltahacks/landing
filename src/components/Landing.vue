@@ -23,11 +23,11 @@
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
-        <a
+        <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           href="https://www.my.deltahacks.com"
-        >Login</a>
+        >Login</a>-->
         <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
         <a class="landing-button fade-in" href="/DH-Workshop.pdf">Workshops</a>
         <!-- <a
