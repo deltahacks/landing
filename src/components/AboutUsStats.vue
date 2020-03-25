@@ -93,7 +93,7 @@ export default Vue.extend({
             x: 310,
             y: 340,
           },
-          number: 700,
+          number: 800,
           content: 'Hackers',
           depth: 1,
           start_gradient: '#9bcd6d',
