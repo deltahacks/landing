@@ -93,7 +93,7 @@ export default Vue.extend({
     Sponsors,
     AboutUsStats,
     Blurb,
-    Blurb2
+    Blurb2,
   },
   data() {
     return {

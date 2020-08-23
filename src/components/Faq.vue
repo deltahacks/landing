@@ -82,7 +82,7 @@ export default Vue.extend({
       if (!this.expanded.includes(index)) {
         this.expanded.push(index);
       } else {
-        this.expanded = this.expanded.filter(each => each !== index);
+        this.expanded = this.expanded.filter((each) => each !== index);
       }
     },
     selectCategory(name: string) {
