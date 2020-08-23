@@ -1,6 +1,7 @@
 <template>
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
+      <navigation />
       <Landing id="landing" />
       <div class="blurb-group">
         <img class="spshp" :src="SAT" />
@@ -77,7 +78,7 @@ import ASTR3 from '@/assets/astro.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
-
+import Navigation from '../components/Navbar2.vue';
 import sponsors_data from '@/data/sponsors_data.ts';
 import VueRellax from 'vue-rellax';
 
@@ -94,6 +95,7 @@ export default Vue.extend({
     AboutUsStats,
     Blurb,
     Blurb2,
+    Navigation,
   },
   data() {
     return {
