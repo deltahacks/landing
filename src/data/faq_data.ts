@@ -55,7 +55,7 @@ export default {
     {
       q: 'I was rejected, is there any way I can still attend?',
       a: `We cannot take walk-ins at DeltaHacks because we've met the event capacity. We hope to see you at DeltaHacks VII!`,
-    }
+    },
   ],
   misc: [
     {

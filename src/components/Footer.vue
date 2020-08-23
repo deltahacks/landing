@@ -13,7 +13,7 @@
         ·
         <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>
       </p>
-      <p class="footer-company-name">Deltahacks &copy; 2019</p>
+      <p class="footer-company-name">Deltahacks &copy; 2020</p>
       <!-- <div>
         <i class="fa fa-map-marker"></i>
         <p><span>1280 Main St W</span> Hamilton, ON</p>

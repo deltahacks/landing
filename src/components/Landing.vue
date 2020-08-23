@@ -257,13 +257,13 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map(k => esc(k) + '=' + esc(params[k]))
+        .map((k) => esc(k) + '=' + esc(params[k]))
         .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
         query;
-      fetch(url, { mode: 'cors' }).then(response => {
+      fetch(url, { mode: 'cors' }).then((response) => {
         /* :) */
       });
 
