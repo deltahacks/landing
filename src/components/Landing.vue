@@ -89,10 +89,10 @@
           class="fade-in"
           style="font-family: Montserrat; font-size: 30px; font-weight: 600"
         >Got it, thanks!</div>
-        <!-- <span
+        <span
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-date"
-        >January 25th and 26th, 2020 • McMaster University</span> -->
+        >McMaster University</span>
       </div>
     </div>
   </div>
