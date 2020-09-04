@@ -22,14 +22,21 @@
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
+        <a
+          v-if="!enteringName && !enteringEmail && !gotit"
+          class="landing-button fade-in"
+          @click="enteringName = true"
+        >
+          DH7 Mailing list
+        </a>
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           href="https://www.my.deltahacks.com"
-        >Login</a>-->
-        <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
+        >Login</a> -->
+        <!-- <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
         <a class="landing-button fade-in" href="/DH-Challenges.pdf">Challenges</a>
-        <a class="landing-button fade-in" href="/DH-Workshops.pdf">Workshops</a>
+        <a class="landing-button fade-in" href="/DH-Workshops.pdf">Workshops</a> -->
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -41,7 +48,7 @@
           <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
             <i
               class="fa fa-arrow-circle-o-left fa-3x"
-              :style="{ alignSelf: 'center', marginRight: '19px' }"
+              :style="{ alignSelf: 'center', marginRight: '19px', fontSize: '3.5em' }"
             />
           </div>
           <input
@@ -49,13 +56,14 @@
             placeholder="Your Name"
             id="email-input"
             v-model="name"
+            required
             @keyup.enter="(enteringName = false), (enteringEmail = true)"
           />
           <div class="email-button" @click="(enteringName = false), (enteringEmail = true)">
             <i
               v-show="name.length >= 2"
               class="fa fa-arrow-circle-o-right fa-3x fade-in"
-              :style="{ alignSelf: 'center' }"
+              :style="{ alignSelf: 'center', fontSize: '3.5em' }"
             />
           </div>
         </div>
@@ -64,14 +72,14 @@
             <div class="email-button" @click="(enteringName = true), (enteringEmail = false)">
               <i
                 class="fa fa-arrow-circle-o-left fa-3x"
-                :style="{ alignSelf: 'center', marginRight: '19px' }"
+                :style="{ alignSelf: 'center', marginRight: '19px', fontSize: '3.5em' }"
               />
             </div>
             <input type="email" placeholder="Your email" id="email-input" v-model="email" required />
             <button type="submit" class="email-button">
               <i
-                class="fa fa-arrow-circle-o-right fa-4x"
-                :style="{ alignSelf: 'center', fontSize: '4.35em' }"
+                class="fa fa-arrow-circle-o-right fa-3x"
+                :style="{ alignSelf: 'center', fontSize: '4.2em' }"
               />
             </button>
           </div>
@@ -84,7 +92,7 @@
         <span
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-date"
-        >January 25th and 26th, 2020 • McMaster University</span>
+        >McMaster University</span>
       </div>
     </div>
   </div>
