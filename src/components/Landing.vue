@@ -21,14 +21,19 @@
         VI
       </h1>
       <img class="vi-back" :src="VI" />
-      <div class="landing-left-container">
-        <a
+      <div class="new-thingy">
+        <div class="new-thingy-inner">
+        <h2>DH7 Mailing List</h2>
+        </div>
+        </div>
+      <!-- <div class="landing-left-container"> -->
+        <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
           @click="enteringName = true"
         >
           DH7 Mailing list
-        </a>
+        </a> -->
         <!-- <a
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-button fade-in"
@@ -44,7 +49,7 @@
         >
           Sponsor
         </a>-->
-        <div v-if="enteringName" class="email-group fade-in">
+        <!-- <div v-if="enteringName" class="email-group fade-in">
           <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
             <i
               class="fa fa-arrow-circle-o-left fa-3x"
@@ -93,7 +98,7 @@
           v-if="!enteringName && !enteringEmail && !gotit"
           class="landing-date"
         >McMaster University</span>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -465,6 +470,19 @@ export default Vue.extend({
   position: relative;
 }
 
+.new-thingy{
+clip-path: polygon(0% 0%, 100% 0%, 100% 31%, 75% 100%, 0% 100%);
+  background-color: grey;
+  width: 400px;
+  height: 100px;
+  /* margin-left: 300px; */
+  /* align-items: center;
+  text-align: center; */
+  display: inline-flex; 
+}
+.new-thingy-inner{
+  margin: auto 25px;
+}
 .main-planet {
   width: 40%;
   height: 45%;
