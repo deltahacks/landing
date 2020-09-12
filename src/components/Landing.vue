@@ -17,13 +17,22 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: 300">Hacks</span>
-        VI
+      Delta<span style="font-weight: 300">Hacks</span>
+        VII
+      <p style=" margin:0px 0px 0px -340px; font-size:20px;">at McMaster University</p>
       </h1>
-      <img class="vi-back" :src="VI" />
-      <div class="new-thingy">
-        <div class="new-thingy-inner">
-        <h2>DH7 Mailing List</h2>
+      <img class="vi-back" :src="VI" /> 
+      <div class="grey-dh7-blob1">
+        <div class="grey-dh7-blob1-inner">
+          <div class="grey-dh7-blob1-navlink">
+        <a>Schedule</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Challenges</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Workshops</a>
+          </div>
+        </div>
+        </div>
+             <div class="grey-dh7-blob2">
+        <div class="grey-dh7-blob2-inner">
+          <p>Hacker Application Dropping In T-Minus</p>
+          <h1 style="font-size:4em; margin:0px;">00:00:00</h1>
         </div>
         </div>
       <!-- <div class="landing-left-container"> -->
@@ -389,6 +398,7 @@ export default Vue.extend({
   color: white;
   padding-top: 15%;
   font-weight: 600;
+  margin-bottom: 10px !important;
 }
 .landing-left-mlh {
   margin: 2vh 0 0vh;
@@ -470,18 +480,38 @@ export default Vue.extend({
   position: relative;
 }
 
-.new-thingy{
-clip-path: polygon(0% 0%, 100% 0%, 100% 31%, 75% 100%, 0% 100%);
-  background-color: grey;
-  width: 400px;
-  height: 100px;
+.grey-dh7-blob1{
+clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 90% 100%, 0% 100%);
+  background-color: #464646;
+  width: 380px;
+  height: 70px;
+  margin-right:200px!important ;
   /* margin-left: 300px; */
   /* align-items: center;
   text-align: center; */
   display: inline-flex; 
 }
-.new-thingy-inner{
+.grey-dh7-blob1-inner{
   margin: auto 25px;
+}
+.grey-dh7-blob1-navlink{
+  color:white;
+  cursor: pointer!important;
+}
+.grey-dh7-blob2{
+  margin-top: 20px!important;
+clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+  background-color: #464646;
+  width: 380px;
+  height: 150px;
+  margin-right:200px!important ;
+  /* margin-left: 300px; */
+  /* align-items: center;
+  text-align: center; */
+  display: inline-flex; 
+}
+.grey-dh7-blob2-inner{
+  margin: 0 25px;
 }
 .main-planet {
   width: 40%;
