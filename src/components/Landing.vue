@@ -31,8 +31,8 @@
         </div>
              <div class="grey-dh7-blob2">
         <div class="grey-dh7-blob2-inner">
-          <p>Hacker Application Dropping In T-Minus</p>
-          <h1 style="font-size:4em; margin:0px;">00:00:00</h1>
+          <p style="font-size: 13px; font-weight:600;">HACKER APPLICATIONS DROPPING IN T-MINUS</p>
+          <h1 style="font-size:55px; margin:0px;">00 : 00 : 00</h1>
         </div>
         </div>
       <!-- <div class="landing-left-container"> -->
@@ -511,7 +511,7 @@ clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   display: inline-flex; 
 }
 .grey-dh7-blob2-inner{
-  margin: 0 25px;
+  margin: 0 20px;
 }
 .main-planet {
   width: 40%;
