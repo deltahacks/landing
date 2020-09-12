@@ -503,7 +503,7 @@ clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 90% 100%, 0% 100%);
 clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 380px;
-  height: 150px;
+  height: 115px;
   margin-right:200px!important ;
   /* margin-left: 300px; */
   /* align-items: center;
