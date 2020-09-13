@@ -18,8 +18,8 @@
     <div id="left">
       <h1 class="landing-title">
       Delta<span style="font-weight: 300">Hacks</span>
-        VII
-      <p style=" margin:0px 0px 0px -340px; font-size:20px;">at McMaster University</p>
+        7
+      <p style=" margin:0px 0px 0px -285px; font-size:20px;">at McMaster University</p>
       </h1>
       <img class="vi-back" :src="VI" /> 
       <div class="grey-dh7-blob1">
@@ -408,6 +408,7 @@ export default Vue.extend({
   padding-top: 15%;
   font-weight: 600;
   margin-bottom: 10px !important;
+  margin-right:55px;
 }
 .landing-left-mlh {
   margin: 2vh 0 0vh;
