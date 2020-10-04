@@ -1,7 +1,6 @@
 <template>
-<div>
-  <p>This is the header components</p>
-  <div class="back">
+<div class="back">
+  <p style="color: white">This is the header component(s)</p>
         <div class="grey-dh7-blob1">
         <div class="grey-dh7-blob1-inner">
           <div class="grey-dh7-blob1-navlink">
@@ -37,7 +36,7 @@
         </div>
       </div>
       </div>
-      </div>
+    
 </template>
 
 
@@ -50,9 +49,11 @@ export default Vue.extend({
 <style>
 .back{
   background-color: #203a43;
-  padding-left:200px;
+  padding-left:2%;
   padding-top:20px;
   padding-bottom:20px;
+  width: 100vw;
+  padding-right:5%;
 }
 p {
     text-align: center;
@@ -60,7 +61,7 @@ p {
 .grey-dh7-blob1 {
   clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 380px;
+  width: 370px;
   height: 70px;
   margin-right: 200px !important ;
   /* margin-left: 300px; */
@@ -79,7 +80,7 @@ p {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 380px;
+  width: 370px;
   height: 115px;
   margin-right: 200px !important ;
   color: white;
@@ -95,7 +96,7 @@ p {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 380px;
+  width: 370px;
   height: 200px;
   margin-right: 200px !important ;
   padding: 0px;
