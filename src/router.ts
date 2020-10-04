@@ -25,7 +25,7 @@ export default new Router({
     },
     {
       path: '/new/Faq',
-      name: 'Faq',
+      name: 'faq',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
     },
   ],
