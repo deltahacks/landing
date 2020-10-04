@@ -129,7 +129,8 @@ export default Vue.extend({
   height: 350px;
   overflow: hidden;
   margin: 0 auto;
-  background: lighten;
+  background:rgba(0,0,0,0.4);
+  color: rgba(255, 255, 255, 1);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0% 50%);
 }
 
@@ -165,7 +166,6 @@ export default Vue.extend({
   overflow: auto;
   position: relative;
   z-index: 40;
-  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.15);
   text-align: center;
   padding-bottom: 2vh;
@@ -232,7 +232,9 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%); 
-    
+    height: 700px; 
+    width: 90%; 
+    background: none;
   }
   .faq h1 {
     padding: 0px;
@@ -241,7 +243,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     padding: 0px;
-    margin-top: 4vh;
+    background:rgba(0,0,0,0.4);
   }
   .category-bubble {
     text-align: center;
@@ -267,10 +269,6 @@ export default Vue.extend({
     margin-top: 10px; 
     margin-bottom: 10px; 
     clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0% 50%);
-  }
-  .faq-container {
-    height: 700px;
-    width: 90%;
   }
   .answer-box {
     font-weight: 400;
