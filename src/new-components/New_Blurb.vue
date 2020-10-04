@@ -1,7 +1,7 @@
 <template>
     <div :class="['container', align]">
         <h2 class="heading">{{ header }}</h2>
-        <div id='desc' :class="['description', align]">
+        <div id='corner' :class="['description', align]">
             <p v-html="body"></p>
             <form v-if="hasButton" :action="buttonLink">
                 <input class="button" type="submit" :value="buttonText">
@@ -17,7 +17,7 @@ export default Vue.extend({
     props: {
         align: {
             type: String,
-            default: 'center',
+            default: 'left',
         },
         header: {
             type: String,
@@ -25,7 +25,7 @@ export default Vue.extend({
         },
         body: {
             type: String,
-            default: 'Insert Text Here<br>.<br>.<br>.<br>Insert Text Here',
+            default: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across Canada, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
         },
         hasButton: {
             type: Boolean,
@@ -46,8 +46,8 @@ export default Vue.extend({
   padding: 5%;
   text-overflow: ellipsis;
 }
-#desc.right{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 10vmin 100%, 0 calc(100% - 10vmin));
+#corner.right{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 8vmin 100%, 0 calc(100% - 8vmin));
 }
 
 .left {
@@ -55,8 +55,8 @@ export default Vue.extend({
   padding: 5%;
   text-overflow: ellipsis;
 }
-#desc.left{
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vmin), calc(100% - 10vmin) 100%, 0 100%);
+#corner.left{
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vmin), calc(100% - 8vmin) 100%, 0 100%);
 }
 
 .center {
@@ -64,12 +64,12 @@ export default Vue.extend({
   padding: 5%;
   text-overflow: ellipsis;
 }
-#desc.center{
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vmin), calc(100% - 10vmin) 100%, 10vmin 100%, 0 calc(100% - 10vmin));
+#corner.center{
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8vmin), calc(100% - 8vmin) 100%, 8vmin 100%, 0 calc(100% - 8vmin));
 }
 
 .heading {
-    color: black;
+    color: white;
     padding: 1% 3%;
     font-size: 35px;
     font-weight: 800;
@@ -113,15 +113,15 @@ p {
 
 @media screen and (max-width: 720px){
 
-    #desc.right{
+    #corner.right{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 15vmin 100%, 0 calc(100% - 15vmin));
     }
 
-    #desc.left{
+    #corner.left{
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15vmin), calc(100% - 15vmin) 100%, 0 100%);
     }
 
-    #desc.center{
+    #corner.center{
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15vmin), calc(100% - 15vmin) 100%, 15vmin 100%, 0 calc(100% - 15vmin));
     }
 
