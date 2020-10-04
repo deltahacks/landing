@@ -1,6 +1,7 @@
 <template>
 <div>
-  <p>This is the header components.</p>
+  <p>This is the header components</p>
+  <div class="back">
         <div class="grey-dh7-blob1">
         <div class="grey-dh7-blob1-inner">
           <div class="grey-dh7-blob1-navlink">
@@ -10,7 +11,7 @@
             >
           </div>
         </div>
-      </div>
+      </div><br>
       <div class="grey-dh7-blob2">
         <div class="grey-dh7-blob2-inner">
           <p style="font-size: 13px; font-weight: 600">
@@ -18,7 +19,7 @@
           </p>
           <h1 style="font-size: 55px; margin: 0px">00 : 00 : 00</h1>
         </div>
-      </div>
+      </div><br>
       <div class="grey-dh7-blob3">
         <div class="grey-dh7-blob3-inner">
           <p style="font-size: 20px; font-weight: 600; margin-bottom: 10px">
@@ -36,15 +37,23 @@
         </div>
       </div>
       </div>
+      </div>
 </template>
 
 
 <script lang="ts">
 import Vue from 'vue';
-
+export default Vue.extend({
+});
 </script>
 
 <style>
+.back{
+  background-color: #203a43;
+  padding-left:200px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
 p {
     text-align: center;
 }
@@ -73,6 +82,7 @@ p {
   width: 380px;
   height: 115px;
   margin-right: 200px !important ;
+  color: white;
   /* margin-left: 300px; */
   /* align-items: center;
   text-align: center; */
@@ -89,6 +99,7 @@ p {
   height: 200px;
   margin-right: 200px !important ;
   padding: 0px;
+  color: white;
   /* margin-left: 300px; */
   /* align-items: center;
   text-align: center; */
@@ -99,7 +110,7 @@ p {
   padding: 0px;
 }
 .grey-dh7-blob3-input {
-  margin: 5px 0 5px 0;
+  margin: 5px 0 5px 30px;
   width: 300px;
   height: 35px;
   background-color: #333333;
@@ -114,7 +125,7 @@ p {
 }
 .grey-dh7-blob3-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-right: 200px;
+  margin-left:30px;
   background-color: #333333;
   border: 0px;
   height: 35px;

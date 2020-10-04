@@ -23,5 +23,10 @@ export default new Router({
       name: 'sample',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Sample.vue'),
     },
+    {
+      path: '/new/Header',
+      name: 'Header',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Header.vue'),
+    },
   ],
 });
