@@ -137,24 +137,9 @@ export default Vue.extend({
   z-index: -5;
 }
 
-h1 {
-  position: fixed;
-  top: 10%;
-  width: 70%;
-  left: 0px;
-  margin-left: 15%;
-  text-align: center;
-  display: block;
-  font-family: Josefin Sans;
-}
-
 #faq1 {
   z-index: 1;
   margin-bottom: 10%;
-}
-
-#landing {
-  height: 100vh;
 }
 
 @media screen and (max-width: 720px) {

@@ -50,7 +50,7 @@ export default Vue.extend({
 #left {
   flex: 1;
   text-align: left;
-  padding-left: 5vw;
+  padding-left: 8vw;
   padding-top: 5vh;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
