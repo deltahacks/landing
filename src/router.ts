@@ -23,5 +23,10 @@ export default new Router({
       name: 'sample',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Sample.vue'),
     },
+    {
+      path: '/newbackdrop',
+      name: 'NewBackdrop',
+      component: () => import(/* webpackChunkName: "about" */ './views/NewBackdrop.vue'),
+    },
   ],
 });
