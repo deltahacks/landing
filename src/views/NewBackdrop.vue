@@ -2,6 +2,15 @@
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <Landing id="landing" />
+      <img class="sideItem leftCyber left-top-building" :src="LeftCyberBuilding" />
+      <img class="sideItem rightCyber right-top-building" :src="RightCyberBuilding" />
+      <img class="sideItem left-construction" :src="LeftConstruction" />
+      <img class="sideItem rightCyber right-construction" :src="RightConstruction" />
+      <img class="sideItem leftCyber left-mid-building" :src="LeftMidBuilding" />
+      <img class="sideItem rightCyber right-mid-building" :src="RightMidBuilding" />
+      <img class="sideItem leftCyber left-lower-building" :src="LeftLowerBuilding" />
+      <img class="sideItem rightCyber right-lower-building" :src="RightLowerBuilding" />
+
       <div class="blurb-group">
       </div>
       <div class="spacer" style="height: 10vh" />
@@ -21,7 +30,14 @@
 <script lang="ts">
 import Vue from 'vue';
 import Landing from '@/new-components/Landing.vue';
-
+import LeftCyberBuilding from '@/assets/cyber/left_top_building.svg';
+import RightCyberBuilding from '@/assets/cyber/right_top_building.svg';
+import LeftConstruction from '@/assets/cyber/left_construction.svg';
+import RightConstruction from '@/assets/cyber/right_construction.svg';
+import LeftMidBuilding from '@/assets/cyber/left_mid_building.svg';
+import RightMidBuilding from '@/assets/cyber/right_mid_building.svg';
+import LeftLowerBuilding from '@/assets/cyber/left_lower_building.svg';
+import RightLowerBuilding from '@/assets/cyber/right_lower_building.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
@@ -39,6 +55,14 @@ export default Vue.extend({
   data() {
     return {
       scr: 0,
+      LeftCyberBuilding,
+      RightCyberBuilding,
+      LeftConstruction,
+      RightConstruction,
+      LeftMidBuilding,
+      RightMidBuilding,
+      LeftLowerBuilding,
+      RightLowerBuilding,
       opacities: { d1: '1', d2: '1', d3: '1', d4: '1', d5: '1' },
     };
   },
@@ -97,6 +121,23 @@ export default Vue.extend({
   color: white;
   height: 5400px;
 }
+
+.sideItem {
+  width: 20vw;
+}
+
+.leftCyber {
+  z-index: 1;
+  left: 0;
+  position: absolute;
+}
+
+.rightCyber {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+}
+
 .blend {
   background-blend-mode: overlay;
   height: 500vh;
