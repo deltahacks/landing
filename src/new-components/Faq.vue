@@ -10,7 +10,7 @@
           :class="{ 'category-bubble': true, selected: selected === name }"
           
         >
-          <div :style="{ width: '100%' }" @click="selectCategory(name)">
+          <div class="category-name" @click="selectCategory(name)">
             {{
             name.charAt(0).toUpperCase() + name.substring(1)
             }}
@@ -88,9 +88,15 @@ export default Vue.extend({
       }
     },
     selectCategory(name: string) {
-      this.selected =
-        this.selected !== name ? name : this.isMobile() ? '' : this.selected;
-      this.expanded = [0];
+      if(this.selected !== name){
+        this.selected = name;
+        this.expanded = [0];
+      }
+      else {
+        if(this.isMobile()){
+          this.selected='';
+        }
+      }
     },
   },
   created(): void {
@@ -100,6 +106,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+
 .faq {
   display: flex;
   flex-direction: column;
@@ -107,7 +114,6 @@ export default Vue.extend({
 }
 
 .faq h1 {
-  padding-bottom: 1%;
   font-weight: 800;
   font-size: 38px;
 }
@@ -129,7 +135,7 @@ export default Vue.extend({
   height: 350px;
   overflow: hidden;
   margin: 0 auto;
-  background:rgba(0,0,0,0.4);
+  background:rgba(100, 100, 100, 1);
   color: rgba(255, 255, 255, 1);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0% 50%);
 }
@@ -140,22 +146,32 @@ export default Vue.extend({
   min-width: 220px;
   padding-top: 3%;
   cursor: pointer;
-  background:rgba(0,0,0,0.2); 
+  background:rgba(0,0,0,0.3); 
 }
 
 .category-bubble {
   text-align: left;
   font-size: 20px;
-  padding: 8% 10%;
   transition: 0.1s ease-in-out;
   margin-left: 10px; 
   margin-right: 10px; 
+  margin-top: 2.5px;
+  margin-bottom: 2.5px;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%);
+  transition:0.2s; 
+}
+
+.category-bubble:hover {
+  background:rgba(0,0,0,0.2);
+}
+
+.category-name {
+  padding: 8% 10%
 }
 
 .selected {
   font-size: 20px;
   background:rgba(0,0,0,0.4); 
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%); 
 }
 
 .faq-area {
@@ -236,22 +252,29 @@ export default Vue.extend({
     width: 90%; 
     background: none;
   }
-  .faq h1 {
-    padding: 0px;
-  }
+ 
   .categories {
     display: flex;
     flex-direction: column;
-    padding: 0px;
-    background:rgba(0,0,0,0.4);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background:rgba(100, 100, 100, 1);
   }
   .category-bubble {
     text-align: center;
     font-size: 22px;
-    padding: 2%;
-    padding-bottom: 5%;
-    padding-top: 5%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%);
   }
+
+  .category-bubble:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .category-name {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
   .selected {
     font-size: 30px;
     font-weight: 800;
@@ -260,18 +283,17 @@ export default Vue.extend({
     font-size: 24px; 
     font-weight: 800;
     opacity: 0.99;
-    padding: 10px 20px;
+    padding: 0px 20px;
     color: rgba(255, 255, 255, 1);
     background-color: rgba(255, 255, 255, 0.2);
     transition: 0.1s ease-in-out;
     cursor: pointer;
     z-index: 10000;
-    margin-top: 10px; 
-    margin-bottom: 10px; 
     clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0% 50%);
   }
   .answer-box {
     font-weight: 400;
+
   }
   #desktop-faq {
     display: none;
@@ -291,12 +313,10 @@ export default Vue.extend({
     transition: max-height 0.3s;
   }
 }
+
 ::-webkit-scrollbar {
   width: 0px; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #ff0000;
-}
+
 </style>
