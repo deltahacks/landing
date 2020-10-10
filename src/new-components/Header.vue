@@ -95,7 +95,6 @@ export default Vue.extend({
         // @ts-ignore
         .map((k) => esc(k) + "=" + esc(params[k]))
         .join("&");
-      alert(query);
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
