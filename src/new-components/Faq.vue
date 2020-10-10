@@ -88,15 +88,15 @@ export default Vue.extend({
       }
     },
     selectCategory(name: string) {
-      if(this.selected !== name){
+      if (this.selected !== name) {
         this.selected = name;
         this.expanded = [0];
-      }
-      else {
-        if(this.isMobile()){
-          this.selected='';
+      } else {
+          if (this.isMobile()) {
+          this.selected = '';
         }
       }
+
     },
   },
   created(): void {
