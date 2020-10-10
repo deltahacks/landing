@@ -1,82 +1,160 @@
 <template>
-<div class="back">
-  <p style="color: white">This is the header component(s)</p>
-        <div class="grey-dh7-blob1">
-        <div class="grey-dh7-blob1-inner">
-          <div class="grey-dh7-blob1-navlink">
-            <a>Schedule</a
-            >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Challenges</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a
-              >Workshops</a
-            >
-          </div>
-        </div>
-      </div><br>
-      <div class="grey-dh7-blob2">
-        <div class="grey-dh7-blob2-inner">
-          <p style="font-size: 13px; font-weight: 600">
-            HACKER APPLICATIONS DROPPING IN T-MINUS
-          </p>
-          <h1 style="font-size: 55px; margin: 0px">00 : 00 : 00</h1>
-        </div>
-      </div><br>
-      <div class="grey-dh7-blob3">
-        <div class="grey-dh7-blob3-inner">
-          <p style="font-size: 20px; font-weight: 600; margin-bottom: 10px">
-            DH7 MAILING LIST
-          </p>
-          <input class="grey-dh7-blob3-input" placeholder="Your Name" />
-          <input class="grey-dh7-blob3-input" placeholder="Your Email" />
-          <br />
-          <button
-            class="grey-dh7-blob3-button"
-            onclick="alert('Wow you are on the waiting list lmaoo!')"
+  <div class="back">
+    <p style="color: white">This is the header component(s)</p>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="navbar-navlink">
+          <a>Schedule</a
+          >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Challenges</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a
+            >Workshops</a
           >
-            Submit
-          </button>
         </div>
       </div>
+    </div>
+    <br />
+    <div class="apps-due">
+      <div class="apps-due-inner">
+        <p id="apps-due-header" style="font-size: 13px; font-weight: 600">
+          HACKER APPLICATIONS DROPPING IN T-MINUS
+        </p>
+        <h1 id="countdown" style="font-size: 55px; margin: 0px">00 : 00 : 00</h1>
       </div>
-    
+    </div>
+    <br />
+    <div class="mailbox">
+      <a
+        v-if="!enteringInfo && !gotit"
+        class="mailing-button fade-in"
+        @click="enteringInfo = true"
+      >
+        DH7 Mailing list
+      </a>
+      <form v-on:submit.prevent="handleSubmit">
+        <div v-if="enteringInfo && !gotit" class="input-box">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="input-field"
+            v-model="name"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            class="input-field"
+            v-model="email"
+            required
+          />
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </form>
+      <div
+        v-if="gotit"
+        class="fade-in confirmation-box"
+      >
+        Got it, thanks!
+      </div>
+    </div>
+  </div>
 </template>
 
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 export default Vue.extend({
+  data() {
+    return {
+      enteringInfo: false,
+      email: "",
+      name: "",
+      gotit: false,
+    };
+  },
+  methods: {
+    handleSubmit() {
+      // Changed it to use query params bc post request wasn't working, most likely due to cors errors.
+
+      // tslint:disable-next-line
+      const email_address = this.$data.email;
+      // tslint:disable-next-line
+      const name_input = this.$data.name;
+
+      this.name = "";
+      this.email = "";
+
+      const params = {
+        email: email_address,
+        name: name_input,
+      };
+
+      this.gotit = true;
+      this.enteringInfo = false;
+
+      const esc = encodeURIComponent;
+      const query = Object.keys(params)
+        // @ts-ignore
+        .map((k) => esc(k) + "=" + esc(params[k]))
+        .join("&");
+      alert(query);
+      const url =
+        'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
+        '?' +
+        query;
+      fetch(url, { mode: 'cors' }).then((response) => {
+        /* :) */
+      });
+
+      setTimeout(() => {
+        this.gotit = false;
+      }, 4000);
+    },
+  },
 });
 </script>
 
 <style>
-.back{
+.back {
   background-color: #203a43;
-  padding-left:2%;
-  padding-top:20px;
-  padding-bottom:20px;
-  width: 100vw;
-  padding-right:5%;
+  height: 80vh;
+  padding-left: 10px;
+  overflow: hidden!important;
 }
 p {
-    text-align: center;
+  text-align: center;
 }
-.grey-dh7-blob1 {
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.navbar {
   clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 370px;
   height: 70px;
   margin-right: 200px !important ;
-  /* margin-left: 300px; */
-  /* align-items: center;
-  text-align: center; */
   display: inline-flex;
 }
-.grey-dh7-blob1-inner {
+.navbar-inner {
   margin: auto 25px;
 }
-.grey-dh7-blob1-navlink {
+.navbar-navlink {
   color: white;
   cursor: pointer !important;
 }
-.grey-dh7-blob2 {
+.apps-due {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
@@ -84,15 +162,12 @@ p {
   height: 115px;
   margin-right: 200px !important ;
   color: white;
-  /* margin-left: 300px; */
-  /* align-items: center;
-  text-align: center; */
   display: inline-flex;
 }
-.grey-dh7-blob2-inner {
+.apps-due-inner {
   margin: 0 20px;
 }
-.grey-dh7-blob3 {
+.mailbox {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
@@ -101,16 +176,9 @@ p {
   margin-right: 200px !important ;
   padding: 0px;
   color: white;
-  /* margin-left: 300px; */
-  /* align-items: center;
-  text-align: center; */
   display: inline-flex;
 }
-.grey-dh7-blob3-inner {
-  margin: 0 0 0 0;
-  padding: 0px;
-}
-.grey-dh7-blob3-input {
+.input-field {
   margin: 5px 0 5px 30px;
   width: 300px;
   height: 35px;
@@ -121,12 +189,12 @@ p {
   cursor: pointer;
   padding: 0px;
 }
-.grey-dh7-blob3-input::placeholder {
+.input-field::placeholder {
   color: #dcdcdc !important;
 }
-.grey-dh7-blob3-button {
+.submit-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-left:30px;
+  margin-left: 30px;
   background-color: #333333;
   border: 0px;
   height: 35px;
@@ -135,5 +203,46 @@ p {
   margin-top: 5px;
   cursor: pointer;
   padding: 0px;
+}
+.mailing-button {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 20px;
+}
+.mailing-button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+.input-box{
+  margin-top: 30px;
+}
+.confirmation-box{
+  margin: auto;
+  font-family: Montserrat; 
+  font-size: 30px; 
+  font-weight: 600;
+}
+
+
+/* ------------------------------- For Mobile devices --------------------------------- */
+@media only screen and (max-width: 700px) and (min-width: 100px) {
+.navbar, .apps-due, .mailbox {
+  width: 95%;
+}
+
+.navbar-navlink{
+  font-size: 3.7vw !important;
+}
+#apps-due-header{
+  font-size: 3.2vw !important;
+}
+
+#countdown{
+  font-size:12vw !important;
+}
+
 }
 </style>
