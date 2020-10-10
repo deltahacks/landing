@@ -18,7 +18,7 @@
     <div id="left">
       <h1 class="landing-title">
         Delta<span style="font-weight: 300">Hacks</span>
-        VI
+        7
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">

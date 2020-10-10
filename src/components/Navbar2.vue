@@ -21,7 +21,7 @@
     <div class="rounded-box">
       <a href="https://deltahacks.com" id="title" class="heading">
         Delta<span style="font-weight: 300">Hacks</span>
-        VI
+        7
       </a>
       <a class="heading link" v-scroll-to="'#footer'" @scroll="handleScroll">
         Contact
