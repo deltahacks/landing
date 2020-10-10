@@ -19,9 +19,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Backdrop.vue'),
     },
     {
-      path: '/new/sample',
-      name: 'sample',
-      component: () => import(/* webpackChunkName: "about" */ './new-components/Sample.vue'),
+      path: '/new/blurb',
+      name: 'blurb',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
     },
     {
       path: '/new/Header',
