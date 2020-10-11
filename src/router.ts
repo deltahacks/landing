@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Faq from './components/Faq.vue';
+import Faq from './new-components/Faq.vue';
 import Backdrop from './views/Backdrop.vue';
 
 Vue.use(Router);
@@ -22,6 +22,11 @@ export default new Router({
       path: '/new/blurb',
       name: 'blurb',
       component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
+    },
+    {
+      path: '/new/Faq',
+      name: 'faq',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
     },
   ],
 });
