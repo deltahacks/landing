@@ -13,6 +13,7 @@
         style="width:100%"
       />
     </a>
+    <div id="particles-js"></div>
     <div id="left">
       <h1 class="landing-title">
         DeltaHacks 7
@@ -24,19 +25,160 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import 'particles.js';
 import Mlh from '@/assets/mlh.png';
 
+declare global {
+  interface Window {
+    particlesJS: any;
+  }
+}
+
 export default Vue.extend({
-  name: 'Landing',
+  name: 'particles',
+  mounted() {
+    this.initParticles();
+  },
   data() {
     return {
       Mlh,
     };
   },
+  methods: {
+    initParticles() {
+      window.particlesJS('particles-js', {
+        particles: {
+          number: {
+            value: 200,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: '#ffffff',
+          },
+          shape: {
+            type: 'circle',
+            stroke: {
+              width: 0,
+              color: '#ffffff',
+            },
+            polygon: {
+              nb_sides: 5,
+            },
+            image: {
+              src: 'img/github.svg',
+              width: 50,
+              height: 50,
+            },
+          },
+          opacity: {
+            value: 0.48927153781200905,
+            random: false,
+            anim: {
+              enable: true,
+              speed: 0.3,
+              opacity_min: 0,
+              sync: false,
+            },
+          },
+          size: {
+            value: 4,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 2,
+              size_min: 1,
+              sync: false,
+            },
+          },
+          line_linked: {
+            enable: false,
+            distance: 150,
+            color: '#ffffff',
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 0.1,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200,
+            },
+          },
+        },
+        interactivity: {
+          detect_on: 'window',
+          events: {
+            onhover: {
+              enable: true,
+              mode: 'bubble',
+            },
+            onclick: {
+              enable: true,
+              mode: 'push',
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 200,
+              size: 3,
+              duration: 3,
+              opacity: 1,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.5,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    },
+  },
 });
 </script>
 
 <style>
+.fade-in {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.4s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .flex-container {
   font-family: 'Montserrat';
   display: flex;
@@ -45,6 +187,15 @@ export default Vue.extend({
   align-content: center;
   width: 90%;
   padding-top: 2%;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 #left {
