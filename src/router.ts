@@ -26,7 +26,7 @@ export default new Router({
     {
       path: '/new/gradient',
       name: 'gradient',
-      component: () => import(/* webpackChunkName: "about" */ './new-views/New_Backdrop.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
     },
   ],
 });
