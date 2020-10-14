@@ -24,6 +24,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
     },
     {
+      path: '/new/Header',
+      name: 'Header',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Header.vue'),
+    },
+    {
       path: '/new/Faq',
       name: 'faq',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
