@@ -1,6 +1,5 @@
 <template>
   <div class="back">
-    <p style="color: white">This is the header component(s)</p>
     <div class="navbar">
       <div class="navbar-inner">
         <div class="navbar-navlink">
@@ -112,12 +111,7 @@ export default Vue.extend({
 </script>
 
 <style>
-.back {
-  background-color: #203a43;
-  height: 80vh;
-  padding-left: 10px;
-  overflow: hidden!important;
-}
+
 p {
   text-align: center;
 }

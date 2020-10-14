@@ -19,12 +19,14 @@
         DeltaHacks 7
       </h1>
       <h1 class="landing-subtitle">at McMaster University</h1>
+    <Header/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import Header from '@/new-components/Header.vue';
 import 'particles.js';
 import Mlh from '@/assets/mlh.png';
 
@@ -36,6 +38,9 @@ declare global {
 
 export default Vue.extend({
   name: 'particles',
+  components: {
+    Header,
+  },
   mounted() {
     this.initParticles();
   },
@@ -199,6 +204,7 @@ export default Vue.extend({
 }
 
 #left {
+  z-index: 2;
   flex: 1;
   text-align: left;
   padding-left: 8vw;
