@@ -2,14 +2,14 @@
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <Landing id="landing" />
-      <img class="sideItem leftCyber left-top-building" :src="LeftCyberBuilding" />
-      <img class="sideItem rightCyber right-top-building" :src="RightCyberBuilding" />
-      <img class="sideItem left-construction" :src="LeftConstruction" />
-      <img class="sideItem rightCyber right-construction" :src="RightConstruction" />
-      <img class="sideItem leftCyber left-mid-building" :src="LeftMidBuilding" />
-      <img class="sideItem rightCyber right-mid-building" :src="RightMidBuilding" />
-      <img class="sideItem leftCyber left-lower-building" :src="LeftLowerBuilding" />
-      <img class="sideItem rightCyber right-lower-building" :src="RightLowerBuilding" />
+      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-top-building" :src="LeftCyberBuilding" />
+      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-top-building" :src="RightCyberBuilding" />
+      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-construction" :src="LeftConstruction" />
+      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-construction" :src="RightConstruction" />
+      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-mid-building" :src="LeftMidBuilding" />
+      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-mid-building" :src="RightMidBuilding" />
+      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-lower-building" :src="LeftLowerBuilding" />
+      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-lower-building" :src="RightLowerBuilding" />
 
       <div class="blurb-group">
       </div>
@@ -19,11 +19,11 @@
       <div class="spacer" style="height: 10vh" />
       <div class="spacer" style="height: 50vh" />
     </div>
-    <div class="gradient" id="d1" :style="{ opacity: opacities.d1 }" />
-    <div class="gradient" id="d2" :style="{ opacity: opacities.d2 }" />
-    <div class="gradient" id="d3" :style="{ opacity: opacities.d3 }" />
-    <div class="gradient" id="d4" :style="{ opacity: opacities.d4 }" />
-    <div class="gradient" id="d5" />
+    <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
+    <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
+    <div class="gradient" id="c2" :style="{ opacity: opacities[2] }" />
+    <div class="gradient" id="c3" :style="{ opacity: opacities[3] }" />
+    <div class="gradient" id="c4" />
   </div>
 </template>
 
@@ -63,44 +63,23 @@ export default Vue.extend({
       RightMidBuilding,
       LeftLowerBuilding,
       RightLowerBuilding,
-      opacities: { d1: '1', d2: '1', d3: '1', d4: '1', d5: '1' },
+      opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3},
+      opacities: ['1', '1', '1', '1'],
+      threshholds_map: { point0: 0, point1: 1, point2: 2, point3: 3, point4: 4},
+      threshholds: [0, 1400, 2800, 3600, 3900],
+      th_mobile: [0, 1400, 2800, 3600, 4400],
     };
   },
   methods: {
     isMobile: (): boolean => window.innerWidth <= 720,
     handleScroll() {
       const y = window.scrollY || window.pageYOffset;
-      if (y < 1400) {
-        this.opacities.d1 = String((-1 / 1400) * y + 1);
-        this.opacities.d2 = '1';
-        this.opacities.d3 = '1';
-        this.opacities.d4 = '1';
-      } else if (y < 2800) {
-        this.opacities.d1 = '0';
-        this.opacities.d2 = String((-1 / 1400) * y + 2);
-        this.opacities.d3 = '1';
-        this.opacities.d4 = '1';
-      } else if (y < 3600) {
-        this.opacities.d1 = '0';
-        this.opacities.d2 = '0';
-        this.opacities.d3 = String((-1 / 800) * y + 9 / 2);
-        this.opacities.d4 = '1';
-      } else if (
-        (this.isMobile() && y < 4400) ||
-        (!this.isMobile() && y < 3900)
-      ) {
-        this.opacities.d1 = '0';
-        this.opacities.d2 = '0';
-        this.opacities.d3 = '0';
-        this.opacities.d4 = String((-1 / 800) * y + 11 / 2);
-      } else if (
-        (this.isMobile() && y >= 4400) ||
-        (!this.isMobile() && y >= 3900)
-      ) {
-        this.opacities.d1 = '0';
-        this.opacities.d2 = '0';
-        this.opacities.d3 = '0';
-        this.opacities.d4 = '0';
+      for (let i = 0; i < this.opacities.length; i++) {
+        if (!this.isMobile()) {
+          Vue.set(this.opacities, i, String ((y - this.threshholds[i + 1]) / -(this.threshholds[i + 1] - this.threshholds[i])));
+        } else {
+          Vue.set(this.opacities, i, String ((y - this.th_mobile[i + 1]) / -(this.th_mobile[i + 1] - this.th_mobile[i])));
+        }
       }
     },
   },
@@ -119,7 +98,7 @@ export default Vue.extend({
 }
 .app {
   color: white;
-  height: 5400px;
+  height: inherit;
 }
 
 .sideItem {
@@ -127,15 +106,50 @@ export default Vue.extend({
 }
 
 .leftCyber {
-  z-index: 1;
-  left: 0;
+  z-index: 10;
+  left: -12%;
   position: absolute;
 }
 
 .rightCyber {
-  z-index: 1;
-  position: absolute;
+  z-index: 10;
   right: 0;
+  position: absolute;
+}
+
+#left-top-building {
+  top: 600px;
+}
+
+#right-top-building {
+  top: 600px;
+}
+
+#left-construction {
+  left: -7%;
+  top: 2300px;
+}
+
+#right-construction {
+  top: 2250px;
+}
+
+#left-mid-building {
+  top: 3300px;
+  left: -6%;
+}
+
+#right-mid-building {
+  top: 3150px;
+}
+
+#left-lower-building {
+  left: -6%;
+  top: 3750px;
+}
+
+#right-lower-building {
+  top: 3750px;
 }
 
 .blend {
@@ -155,25 +169,24 @@ export default Vue.extend({
   top: 0;
   left: 0;
   position: fixed;
-  color: black;
 }
-#d1 {
-  background: rgb(32, 58, 67) none repeat scroll 0% 0%;
+#c0 {
+  background: #5c58b6 none repeat scroll 0% 0%;
   z-index: -1;
 }
-#d2 {
-  background: rgb(40, 60, 134) none repeat scroll 0% 0%;
+#c1 {
+  background: #b957ce none repeat scroll 0% 0%;
   z-index: -2;
 }
-#d3 {
-  background: rgb(91, 107, 167) none repeat scroll 0% 0%;
+#c2 {
+  background: #5994ce none repeat scroll 0% 0%;
   z-index: -3;
 }
-#d4 {
-  background: rgb(201, 214, 255) none repeat scroll 0% 0%;
+#c3 {
+  background: #3a4e93 none repeat scroll 0% 0%;
   z-index: -4;
 }
-#d5 {
+#c4 {
   background-color: rgb(237, 247, 255);
   z-index: -5;
 }
