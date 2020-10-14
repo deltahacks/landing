@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Faq from './components/Faq.vue';
+import Faq from './new-components/Faq.vue';
 import Backdrop from './views/Backdrop.vue';
 
 Vue.use(Router);
@@ -27,6 +27,16 @@ export default new Router({
       path: '/new/gradient',
       name: 'gradient',
       component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
+    },
+    {
+      path: '/new/Header',
+      name: 'Header',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Header.vue'),
+    },
+    {
+      path: '/new/Faq',
+      name: 'faq',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
     },
   ],
 });
