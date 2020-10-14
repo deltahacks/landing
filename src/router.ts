@@ -43,5 +43,10 @@ export default new Router({
       name: 'Landing',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Landing.vue'),
     },
+    {
+      path: '/new/gradient',
+      name: 'gradient',
+      component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
+    },
   ],
 });
