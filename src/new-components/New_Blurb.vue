@@ -6,7 +6,6 @@
             <form v-if="hasButton" :action="buttonLink">
                 <input class="button" type="submit" :value="buttonText">
             </form>
-            <div v-else><br><br></div>
         </div>
     </div>
 </template>

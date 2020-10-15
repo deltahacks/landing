@@ -2,22 +2,31 @@
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <Landing id="landing" />
-      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-top-building" :src="LeftCyberBuilding" />
-      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-top-building" :src="RightCyberBuilding" />
-      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-construction" :src="LeftConstruction" />
-      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-construction" :src="RightConstruction" />
-      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-mid-building" :src="LeftMidBuilding" />
-      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-mid-building" :src="RightMidBuilding" />
-      <img v-if="!isMobile()" class="sideItem leftCyber" id="left-lower-building" :src="LeftLowerBuilding" />
-      <img v-if="!isMobile()" class="sideItem rightCyber" id="right-lower-building" :src="RightLowerBuilding" />
-
+      <!-- <img v-if="!isMobile()" class="sideItem leftCyber" :src="LeftCyber" />
+      <img v-if="!isMobile()" class="sideItem rightCyber" :src="RightCyber" /> -->
       <div class="blurb-group">
+        <NewBlurb 
+          header="To Infinity and Beyond"
+          :body="blurb1_text"
+          :buttonText="blurb1_button"
+          align="right"
+          :buttonLink="blurb1_link"
+          class="cyberBlurb"
+          id="blurb-1"
+        />
+          <NewBlurb 
+          header="The Hackathon for Change"
+          :body="blurb1_text"
+          align="left"
+          :hasButton="false"
+          class="cyberBlurb"
+          id="blurb-2"
+        />
       </div>
-      <div class="spacer" style="height: 10vh" />
       <div class="blurb-group blurb-align-right">
       </div>
       <div class="spacer" style="height: 10vh" />
-      <div class="spacer" style="height: 50vh" />
+      <FAQ id="faq1" initialSelect="general" />
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
     <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
@@ -30,6 +39,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import Landing from '@/new-components/Landing.vue';
+import NewBlurb from '@/new-components/New_Blurb.vue';
+import FAQ from '@/new-components/Faq.vue';
+
 import LeftCyberBuilding from '@/assets/cyber/left_top_building.svg';
 import RightCyberBuilding from '@/assets/cyber/right_top_building.svg';
 import LeftConstruction from '@/assets/cyber/left_construction.svg';
@@ -38,6 +50,9 @@ import LeftMidBuilding from '@/assets/cyber/left_mid_building.svg';
 import RightMidBuilding from '@/assets/cyber/right_mid_building.svg';
 import LeftLowerBuilding from '@/assets/cyber/left_lower_building.svg';
 import RightLowerBuilding from '@/assets/cyber/right_lower_building.svg';
+
+import LeftCyber from '@/assets/cyber/left_side.svg';
+import RightCyber from '@/assets/cyber/right_side.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
@@ -50,11 +65,15 @@ Vue.use(VueRellax);
 export default Vue.extend({
   name: 'app',
   components: {
+    FAQ,
+    NewBlurb,
     Landing,
   },
   data() {
     return {
       scr: 0,
+      LeftCyber,
+      RightCyber,
       LeftCyberBuilding,
       RightCyberBuilding,
       LeftConstruction,
@@ -68,6 +87,10 @@ export default Vue.extend({
       threshholds_map: { point0: 0, point1: 1, point2: 2, point3: 3, point4: 4},
       threshholds: [0, 1400, 2800, 3600, 3900],
       th_mobile: [0, 1400, 2800, 3600, 4400],
+      blurb1_text: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across Canada, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks 7!`,
+      blurb1_button: `DeltaHacks 6 DevPost`,
+      blurb1_link: `https://deltahacks6.devpost.com/`,
+      blurb2_text2: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
     };
   },
   methods: {
@@ -101,10 +124,25 @@ export default Vue.extend({
   height: inherit;
 }
 
+.cyberBlurb {
+  width: 50%;
+}
+
+#blurb-1 {
+  margin-left: 20%;
+}
+
+#blurb-2 {
+  margin-left: 10%;
+}
+
 .sideItem {
   width: 20vw;
 }
 
+#faq1 {
+  width: 90%;
+}
 .leftCyber {
   z-index: 10;
   left: -12%;
@@ -115,41 +153,6 @@ export default Vue.extend({
   z-index: 10;
   right: 0;
   position: absolute;
-}
-
-#left-top-building {
-  top: 600px;
-}
-
-#right-top-building {
-  top: 600px;
-}
-
-#left-construction {
-  left: -7%;
-  top: 2300px;
-}
-
-#right-construction {
-  top: 2250px;
-}
-
-#left-mid-building {
-  top: 3300px;
-  left: -6%;
-}
-
-#right-mid-building {
-  top: 3150px;
-}
-
-#left-lower-building {
-  left: -6%;
-  top: 3750px;
-}
-
-#right-lower-building {
-  top: 3750px;
 }
 
 .blend {
@@ -197,6 +200,13 @@ export default Vue.extend({
 }
 
 @media screen and (max-width: 720px) {
+  #faq1 {
+    width: 100%;
+  }
+  .cyberBlurb {
+    width: 100%;
+    margin: 150px 0 !important;
+  }
   .blurb-group {
     display: flex;
     flex-direction: column;
