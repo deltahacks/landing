@@ -19,6 +19,12 @@
                 <feMergeNode in="SourceGraphic"/>
             </feMerge>
         </filter>
+         <filter id="inner-glow">
+            <feFlood flood-color="red"/>
+            <feComposite in2="SourceAlpha" operator="out"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite operator="atop" in2="SourceGraphic"/>
+        </filter> 
     </defs>
     <g id="Layer_2" dcata-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -28,7 +34,7 @@
             :points="points"
             :fill="gradient()"
             :stroke="stroke"
-            :stroke-width="5"
+            :stroke-width="4"
             filter="url(#glow)"
           />
         </g>
@@ -116,6 +122,6 @@ text {
 }
 
 .cls-2 {
-  opacity: 0.74;
+  opacity: 1;
 }
 </style>
