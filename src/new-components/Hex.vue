@@ -44,8 +44,9 @@
         :y="yVal - r * 0.1"
         text-anchor="middle"
         fill="white"
-        :font-size="r * 0.5"
-        font-family="Arial"
+        :font-size="r * 0.6"
+        font-family="montserrat"
+        font-weight="520"
         dy=".3em"
       >
         {{ number }}
@@ -55,9 +56,10 @@
         :y="yVal + r * 0.25"
         text-anchor="middle"
         fill="white"
-        :font-size="r * 0.2"
-        font-family="Arial"
-        dy=".3em"
+        :font-size="r * 0.27"
+        font-family="montserrat"
+        font-weight="510"
+        dy=".5em"
       >
         {{ content }}
       </text>
