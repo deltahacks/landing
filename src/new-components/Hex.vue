@@ -12,6 +12,13 @@
         <stop offset="0" :stop-color="start_gradient" />
         <stop offset="1" :stop-color="end_gradient" />
       </linearGradient>
+       <filter id="glow">
+            <feGaussianBlur stdDeviation="7" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
     </defs>
     <g id="Layer_2" dcata-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -22,6 +29,7 @@
             :fill="gradient()"
             :stroke="stroke"
             :stroke-width="5"
+            filter="url(#glow)"
           />
         </g>
       </g>
@@ -76,20 +84,21 @@ export default Vue.extend({
       phase: Math.random() * 30 * Math.PI,
       period: 90 / (10 + this.depth),
       amplitude: this.depth / 3,
+      stroke2: this.stroke,
     };
   },
   mounted() {
-    requestAnimationFrame(this.tick);
+    // requestAnimationFrame(this.tick);
   },
   methods: {
-    tick() {
-      this.time += 1;
-      this.yVal +=
-        0.5 *
-        this.amplitude *
-        Math.sin((this.time * 0.5) / this.period + this.phase);
-      requestAnimationFrame(this.tick);
-    },
+    // tick() {
+    //   this.time += 1;
+    //   this.yVal +=
+    //     0.5 *
+    //     this.amplitude *
+    //     Math.sin((this.time * 0.5) / this.period + this.phase);
+    //   requestAnimationFrame(this.tick);
+    // },
     gradient() {
       return 'url(#' + this.number + ')';
     },
