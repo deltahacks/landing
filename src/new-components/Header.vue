@@ -1,15 +1,5 @@
 <template>
   <div class="back">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="navbar-navlink">
-          <a>Schedule</a
-          >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Challenges</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a
-            >Workshops</a
-          >
-        </div>
-      </div>
-    </div>
     <br />
     <div class="apps-due">
       <div class="apps-due-inner">
@@ -137,7 +127,6 @@ p {
   background-color: #464646;
   width: 370px;
   height: 70px;
-  margin-right: 200px !important ;
   display: inline-flex;
 }
 .navbar-inner {
@@ -148,12 +137,10 @@ p {
   cursor: pointer !important;
 }
 .apps-due {
-  margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 370px;
   height: 115px;
-  margin-right: 200px !important ;
   color: white;
   display: inline-flex;
 }
@@ -166,7 +153,6 @@ p {
   background-color: #464646;
   width: 370px;
   height: 200px;
-  margin-right: 200px !important ;
   padding: 0px;
   color: white;
   display: inline-flex;

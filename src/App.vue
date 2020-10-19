@@ -42,6 +42,7 @@ export default {
 
 body {
   margin: 0 !important;
+  overflow-x: hidden;
 }
 #app {
   font-family: Montserrat;

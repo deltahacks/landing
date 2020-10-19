@@ -2,8 +2,8 @@
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <Landing id="landing" />
-      <!-- <img v-if="!isMobile()" class="sideItem leftCyber" :src="LeftCyber" />
-      <img v-if="!isMobile()" class="sideItem rightCyber" :src="RightCyber" /> -->
+      <img v-if="!isMobile()" class="sideItem" id="leftCyber" :src="LeftCyber" />
+        <img v-if="!isMobile()" class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
         <NewBlurb 
           header="To Infinity and Beyond"
@@ -41,18 +41,8 @@ import Vue from 'vue';
 import Landing from '@/new-components/Landing.vue';
 import NewBlurb from '@/new-components/New_Blurb.vue';
 import FAQ from '@/new-components/Faq.vue';
-
-import LeftCyberBuilding from '@/assets/cyber/left_top_building.svg';
-import RightCyberBuilding from '@/assets/cyber/right_top_building.svg';
-import LeftConstruction from '@/assets/cyber/left_construction.svg';
-import RightConstruction from '@/assets/cyber/right_construction.svg';
-import LeftMidBuilding from '@/assets/cyber/left_mid_building.svg';
-import RightMidBuilding from '@/assets/cyber/right_mid_building.svg';
-import LeftLowerBuilding from '@/assets/cyber/left_lower_building.svg';
-import RightLowerBuilding from '@/assets/cyber/right_lower_building.svg';
-
-import LeftCyber from '@/assets/cyber/left_side.svg';
-import RightCyber from '@/assets/cyber/right_side.svg';
+import LeftCyber from '@/assets/cyber/left_asset.svg';
+import RightCyber from '@/assets/cyber/right_asset.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
@@ -66,22 +56,15 @@ export default Vue.extend({
   name: 'app',
   components: {
     FAQ,
+    Navigation,
     NewBlurb,
-    Landing,
+    Landing
   },
   data() {
     return {
       scr: 0,
       LeftCyber,
       RightCyber,
-      LeftCyberBuilding,
-      RightCyberBuilding,
-      LeftConstruction,
-      RightConstruction,
-      LeftMidBuilding,
-      RightMidBuilding,
-      LeftLowerBuilding,
-      RightLowerBuilding,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3},
       opacities: ['1', '1', '1', '1'],
       threshholds_map: { point0: 0, point1: 1, point2: 2, point3: 3, point4: 4},
@@ -137,22 +120,24 @@ export default Vue.extend({
 }
 
 .sideItem {
-  width: 20vw;
+  z-index: 2;
+  width: 38vw;
+  position: absolute;
+}
+
+#leftCyber {
+  left: -20%;
+  top: 43vh;
+}
+
+#rightCyber {
+  top: 55vh;
+  right: -18%;
 }
 
 #faq1 {
-  width: 90%;
-}
-.leftCyber {
-  z-index: 10;
-  left: -12%;
-  position: absolute;
-}
-
-.rightCyber {
-  z-index: 10;
-  right: 0;
-  position: absolute;
+  width: 80%;
+  margin-left: 100px;
 }
 
 .blend {
@@ -202,6 +187,7 @@ export default Vue.extend({
 @media screen and (max-width: 720px) {
   #faq1 {
     width: 100%;
+    margin-left: 0;
   }
   .cyberBlurb {
     width: 100%;

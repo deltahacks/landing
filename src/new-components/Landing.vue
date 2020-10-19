@@ -204,7 +204,7 @@ export default Vue.extend({
 }
 
 #left {
-  z-index: 2;
+  z-index: 3;
   flex: 1;
   text-align: left;
   padding-left: 8vw;
@@ -213,7 +213,7 @@ export default Vue.extend({
 }
 
 .landing-title {
-  font-size: 5em;
+  font-size: 5.5em;
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
@@ -221,6 +221,7 @@ export default Vue.extend({
 
 .landing-subtitle {
   margin-top: 0vh;
+  margin-bottom: 0vh;
   font-size: 2.3em;
   font-weight: 300;
 }
