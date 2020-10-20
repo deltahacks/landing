@@ -33,6 +33,7 @@
             class="cls-2"
             :points="points"
             :fill="gradient()"
+            :fill-opacity="0.2"
             :stroke="stroke"
             :stroke-width="4"
             filter="url(#glow)"
@@ -46,7 +47,7 @@
         fill="white"
         :font-size="r * 0.6"
         font-family="montserrat"
-        font-weight="520"
+        font-weight="500"
         dy=".3em"
       >
         {{ number }}
@@ -58,7 +59,7 @@
         fill="white"
         :font-size="r * 0.27"
         font-family="montserrat"
-        font-weight="510"
+        font-weight="430"
         dy=".5em"
       >
         {{ content }}
