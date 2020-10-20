@@ -38,5 +38,10 @@ export default new Router({
       name: 'faq',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
     },
+    {
+      path: '/new/Sponsors',
+      name: 'sponsors',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Sponsors.vue'),
+    },
   ],
 });
