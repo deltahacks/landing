@@ -44,8 +44,8 @@ export default Vue.extend({
 
 .home {
   width: auto;
-  height: 3.5vw;
-  margin: 1vw 3vw 1vw 8vw;
+  height: 2.4vw;
+  margin: 1.35vw 2.5vw 1.35vw 8vw;
   transition: 0.5s;
   cursor: pointer;
 }
@@ -56,9 +56,9 @@ export default Vue.extend({
 .link {
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.75vw;
-  font-weight: 600;
-  margin: 0 1.25vw 0 1.25vw;
+  font-size: 1.375vw;
+  font-weight: 650;
+  margin: 0 1vw 0 1vw;
   text-decoration: none;
   transition: 0.5s;
   cursor: pointer;
@@ -70,9 +70,9 @@ export default Vue.extend({
 .bar{
   color: white;
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.75vw;
+  font-size: 1.25vw;
   font-weight: 600;
-  margin: 0 1.25vw 0 1.25vw;
+  margin: 0 1vw 0 1vw;
   text-decoration: none;
   transition: 0.5s;
   user-select: none;

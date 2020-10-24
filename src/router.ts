@@ -41,7 +41,7 @@ export default new Router({
     {
       path: '/new/Nav',
       name: 'nav',
-      component: () => import(/* webpackChunkName: "about" */ './new-components/New_Navbar2.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar2.vue'),
     },
   ],
 });
