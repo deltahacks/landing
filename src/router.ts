@@ -38,5 +38,10 @@ export default new Router({
       name: 'faq',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Faq.vue'),
     },
+    {
+      path: '/new/Nav',
+      name: 'nav',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar2.vue'),
+    },
   ],
 });
