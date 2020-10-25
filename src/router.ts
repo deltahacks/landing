@@ -24,6 +24,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
     },
     {
+      path: '/new/gradient',
+      name: 'gradient',
+      component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
+    },
+    {
       path: '/new/Header',
       name: 'Header',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Header.vue'),
