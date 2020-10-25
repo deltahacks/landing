@@ -14,13 +14,16 @@
       />
     </a>
     <div id="particles-js"></div>
+    <div id="background">
+      <img class="backItem" :src="Background" />
+    <!-- <img v-if="!isMobile()" class="backItem" id="background" :src="Background" /> -->
     <div id="left">
       <h1 class="landing-title">
         DeltaHacks 7
       </h1>
       <h1 class="landing-subtitle">at McMaster University</h1>
     <Header/>
-    </div>
+    </div></div>
   </div>
 </template>
 
@@ -28,6 +31,7 @@
 import Vue from 'vue';
 import Header from '@/new-components/Header.vue';
 import 'particles.js';
+import Background from '@/assets/cyber/bg_transparent.svg';
 import Mlh from '@/assets/mlh.png';
 
 declare global {
@@ -47,6 +51,7 @@ export default Vue.extend({
   data() {
     return {
       Mlh,
+      Background
     };
   },
   methods: {
@@ -195,20 +200,21 @@ export default Vue.extend({
 }
 
 #particles-js {
-  width: 100%;
+  width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index:-1;
 }
 
 #left {
-  z-index: 3;
+  z-index: 4;
   flex: 1;
-  text-align: left;
+  /* text-align: left; */
   padding-left: 8vw;
-  padding-top: 5vh;
+  /* margin-left: 8vw; */
+  /* padding-top: 5vh; */
   /* background-image: url('../assets/landing-bg.svg'); */
 }
 
@@ -217,6 +223,7 @@ export default Vue.extend({
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
+  width: 500px!important;
 }
 
 .landing-subtitle {
@@ -268,6 +275,22 @@ export default Vue.extend({
   top: 0;
   width: 10%;
   z-index: 10000;
+}
+
+.backItem {
+  z-index: -1;
+  display: block;
+  /* margin-left: 50vw; */
+  width:100vw;
+  top:0px!important;
+  position: absolute;
+}
+
+#background{
+  z-index: 0;
+  position: relative;
+  margin-right: 50vw!important;
+  margin-bottom: 10vh!important;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {

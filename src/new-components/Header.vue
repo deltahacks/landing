@@ -122,6 +122,9 @@ p {
   }
 }
 
+.back{
+  margin-left:40px!important;
+}
 .navbar {
   clip-path: polygon(0% 0%, 100% 0%, 100% 30%, 90% 100%, 0% 100%);
   background-color: #464646;
