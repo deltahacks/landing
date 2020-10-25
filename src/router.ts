@@ -21,7 +21,7 @@ export default new Router({
     {
       path: '/new/blurb',
       name: 'blurb',
-      component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Blurb.vue'),
     },
     {
       path: '/new/gradient',

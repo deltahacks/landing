@@ -1,11 +1,12 @@
 <template>
   <div :class="{ app: true, blend: true }">
     <div class="scroll">
+      <navigation/>
       <Landing id="landing" />
       <img v-if="!isMobile()" class="sideItem" id="leftCyber" :src="LeftCyber" />
         <img v-if="!isMobile()" class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
-        <NewBlurb 
+        <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
           :buttonText="blurb1_button"
@@ -14,7 +15,7 @@
           class="cyberBlurb"
           id="blurb-1"
         />
-          <NewBlurb 
+          <Blurb 
           header="The Hackathon for Change"
           :body="blurb1_text"
           align="left"
@@ -39,14 +40,14 @@
 <script lang="ts">
 import Vue from 'vue';
 import Landing from '@/new-components/Landing.vue';
-import NewBlurb from '@/new-components/New_Blurb.vue';
+import Blurb from '@/new-components/Blurb.vue';
 import FAQ from '@/new-components/Faq.vue';
 import LeftCyber from '@/assets/cyber/left_asset.svg';
 import RightCyber from '@/assets/cyber/right_asset.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
-import Navigation from '../components/Navbar2.vue';
+import Navigation from '../new-components/Navbar2.vue';
 import VueRellax from 'vue-rellax';
 
 Vue.use(VueScrollReveal);
@@ -57,7 +58,7 @@ export default Vue.extend({
   components: {
     FAQ,
     Navigation,
-    NewBlurb,
+    Blurb,
     Landing
   },
   data() {
