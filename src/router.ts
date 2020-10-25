@@ -43,5 +43,10 @@ export default new Router({
       name: 'sponsors',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Sponsors.vue'),
     },
+    {
+      path: '/new/Nav',
+      name: 'nav',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar2.vue'),
+    },
   ],
 });
