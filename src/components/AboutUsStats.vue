@@ -88,7 +88,7 @@ export default Vue.extend({
       hexes: [
         {
           desktop: {
-            points: "417.5,328 542.5,328 605,220 542.5,115.5 417.7,115.5 355,220",
+            points: '417.5,328 542.5,328 605,220 542.5,115.5 417.7,115.5 355,220',
             r: 125,
             x: 480,
             y: 220,
@@ -104,11 +104,11 @@ export default Vue.extend({
           depth: 1,
           start_gradient: '#808080',
           end_gradient: '#808080',
-          stroke: '#2bb4c4'
+          stroke: '#2bb4c4',
         },
         {
           desktop: {
-            points: "252.5,194.95 327.5,194.95 365,130 327.5,65.05 252.5,65.05 215,130",
+            points: '252.5,194.95 327.5,194.95 365,130 327.5,65.05 252.5,65.05 215,130',
             r: 75,
             x: 290,
             y: 130,
@@ -124,11 +124,11 @@ export default Vue.extend({
           depth: 2,
           start_gradient: '#808080',
           end_gradient: '#808080',
-          stroke: '#2bb4c4'
+          stroke: '#2bb4c4',
         },
         {
           desktop: {
-            points: "260,331.96 320,331.96 350,280 320,228.04 260,228.04 230,280",
+            points: '260,331.96 320,331.96 350,280 320,228.04 260,228.04 230,280',
             r: 60,
             x: 290,
             y: 280,
@@ -144,7 +144,7 @@ export default Vue.extend({
           depth: 1,
           start_gradient: '#808080',
           end_gradient: '#808080',
-          stroke:'#ed4d67'
+          stroke: '#ed4d67',
         },
         {
           desktop: {
@@ -164,8 +164,8 @@ export default Vue.extend({
           depth: 2,
           start_gradient: '#808080',
           end_gradient: '#808080',
-          stroke:'#f8d466'
-          
+          stroke: '#f8d466',
+
         },
         // {
         //   desktop: {
@@ -186,7 +186,7 @@ export default Vue.extend({
         // },
         {
           desktop: {
-            points: "627.5,374.95 702.5,374.95 740,310 702.5,245.05 627.5,245.05 590,310",
+            points: '627.5,374.95 702.5,374.95 740,310 702.5,245.05 627.5,245.05 590,310',
             r: 75,
             x: 665,
             y: 310,
@@ -202,7 +202,7 @@ export default Vue.extend({
           depth: 3,
           start_gradient: '#808080',
           end_gradient: '#808080',
-          stroke:'#ed4d67'
+          stroke: '#ed4d67',
         },
       ],
     };
