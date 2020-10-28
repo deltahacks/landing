@@ -207,13 +207,13 @@ export default Vue.extend({
   z-index: 3;
   flex: 1;
   text-align: left;
-  padding-left: 8vw;
+  padding-left: 10vw;
   padding-top: 5vh;
   /* background-image: url('../assets/landing-bg.svg'); */
 }
 
 .landing-title {
-  font-size: 5.5em;
+  font-size: 6em;
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
@@ -222,7 +222,7 @@ export default Vue.extend({
 .landing-subtitle {
   margin-top: 0vh;
   margin-bottom: 0vh;
-  font-size: 2.3em;
+  font-size: 2.5em;
   font-weight: 300;
 }
 

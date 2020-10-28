@@ -6,6 +6,7 @@
       <img v-if="!isMobile()" class="sideItem" id="leftCyber" :src="LeftCyber" />
         <img v-if="!isMobile()" class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
+        <div class="spacer" style="height: 20vh" />
         <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -15,6 +16,7 @@
           class="cyberBlurb"
           id="blurb-1"
         />
+        <div class="spacer" style="height: 15vh" />
           <Blurb 
           header="The Hackathon for Change"
           :body="blurb1_text"
@@ -24,9 +26,11 @@
           id="blurb-2"
         />
       </div>
+      <div class="spacer" style="height: 15vh" />
+      <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 10vh" />
+      <div class="spacer" style="height: 15vh" />
       <FAQ id="faq1" initialSelect="general" />
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
@@ -42,6 +46,8 @@ import Vue from 'vue';
 import Landing from '@/new-components/Landing.vue';
 import Blurb from '@/new-components/Blurb.vue';
 import FAQ from '@/new-components/Faq.vue';
+import AboutUsStats from '@/new-components/AboutStats.vue';
+
 import LeftCyber from '@/assets/cyber/left_asset.svg';
 import RightCyber from '@/assets/cyber/right_asset.svg';
 
@@ -56,6 +62,7 @@ Vue.use(VueRellax);
 export default Vue.extend({
   name: 'app',
   components: {
+    AboutUsStats,
     FAQ,
     Navigation,
     Blurb,
@@ -141,6 +148,11 @@ export default Vue.extend({
   margin-left: 100px;
 }
 
+#stats {
+  width: 75%;
+  margin-left: 130px;
+}
+
 .blend {
   background-blend-mode: overlay;
   height: 500vh;
@@ -187,6 +199,10 @@ export default Vue.extend({
 
 @media screen and (max-width: 720px) {
   #faq1 {
+    width: 100%;
+    margin-left: 0;
+  }
+  #stats {
     width: 100%;
     margin-left: 0;
   }
