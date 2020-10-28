@@ -100,14 +100,14 @@ export default Vue.extend({
     // requestAnimationFrame(this.tick);
   },
   methods: {
-    // tick() {
-    //   this.time += 1;
-    //   this.yVal +=
-    //     0.5 *
-    //     this.amplitude *
-    //     Math.sin((this.time * 0.5) / this.period + this.phase);
-    //   requestAnimationFrame(this.tick);
-    // },
+    tick() {
+      this.time += 1;
+      this.yVal +=
+         0.5 *
+         this.amplitude *
+         Math.sin((this.time * 0.5) / this.period + this.phase);
+      requestAnimationFrame(this.tick);
+     },
     gradient() {
       return 'url(#' + this.number + ')';
     },
