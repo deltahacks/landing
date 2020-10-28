@@ -40,7 +40,6 @@
 <script lang="ts">
 import Vue from 'vue';
 import Bubble from '@/components/Bubble.vue';
-
 export default Vue.extend({
   name: 'About',
   components: {
@@ -195,7 +194,6 @@ export default Vue.extend({
   position: relative;
   padding-top: 0;
 }
-
 @media only screen and (max-width: 700px) {
   #mobile {
     display: block;
@@ -205,7 +203,6 @@ export default Vue.extend({
     width: 0px;
   }
 }
-
 @media only screen and (min-width: 701px) {
   #mobile {
     display: none;
