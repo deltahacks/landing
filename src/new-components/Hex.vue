@@ -48,7 +48,7 @@
         :font-size="r * 0.6"
         font-family="montserrat"
         font-weight="500"
-        dy=".3em"
+        dy=".25em"
       >
         {{ number }}
       </text>

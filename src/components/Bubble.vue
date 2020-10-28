@@ -16,12 +16,12 @@
     <g id="Layer_2" dcata-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
         <g class="cls-1">
-          <polygon
+          <circle
             class="cls-2"
-            :points="points"
+            :cx="x"
+            :cy="yVal"
+            :r="r"
             :fill="gradient()"
-            :stroke="stroke"
-            :stroke-width="5"
           />
         </g>
       </g>
@@ -53,7 +53,6 @@
 
 <script lang="ts">
 import Vue from 'vue';
-
 export default Vue.extend({
   name: 'Bubble',
   components: {},
@@ -61,13 +60,11 @@ export default Vue.extend({
     r: Number,
     x: Number,
     y: Number,
-    points: String,
     depth: Number,
     number: Number,
     content: String,
     start_gradient: String,
     end_gradient: String,
-    stroke: String,
   },
   data() {
     return {
@@ -101,11 +98,9 @@ export default Vue.extend({
 text {
   font-family: 'Montserrat', sans-serif;
 }
-
 .cls-1 {
-  opacity: 1;
+  opacity: 0.25;
 }
-
 .cls-2 {
   opacity: 0.74;
 }
