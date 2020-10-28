@@ -19,6 +19,19 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Backdrop.vue'),
     },
     {
+      path: '/new/stats',
+      name: 'stats',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Dummy.vue'),
+    },
+    {
+      path: '/new/sample',
+      name: 'sample',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Sample.vue'),
+    },
+    {
       path: '/new/blurb',
       name: 'blurb',
       component: () => import(/* webpackChunkName: "about" */ './new-components/Blurb.vue'),
@@ -52,6 +65,16 @@ export default new Router({
       path: '/new/gradient',
       name: 'gradient',
       component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
+    },
+    {
+      path: '/new/Sponsors',
+      name: 'sponsors',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Sponsors.vue'),
+    },
+    {
+      path: '/new/Nav',
+      name: 'nav',
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar2.vue'),
     },
   ],
 });
