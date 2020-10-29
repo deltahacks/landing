@@ -3,8 +3,8 @@
     <div class="scroll">
       <navigation/>
       <Landing id="landing" />
-      <img v-if="!isMobile()" class="sideItem" id="leftCyber" :src="LeftCyber" />
-        <img v-if="!isMobile()" class="sideItem" id="rightCyber" :src="RightCyber" />
+      <img class="sideItem" id="leftCyber" :src="LeftCyber" />
+      <img class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
         <div class="spacer" style="height: 20vh" />
         <Blurb 
@@ -30,8 +30,11 @@
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 15vh" />
+      <div class="spacer" style="height: 30vh" />
       <FAQ id="faq1" initialSelect="general" />
+      <div class="spacer" style="height: 100vh" />
+      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
+      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
     <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
@@ -47,6 +50,7 @@ import Landing from '@/new-components/Landing.vue';
 import Blurb from '@/new-components/Blurb.vue';
 import FAQ from '@/new-components/Faq.vue';
 import AboutUsStats from '@/new-components/AboutStats.vue';
+import Sponsors from '@/new-components/Sponsors.vue';
 
 import LeftCyber from '@/assets/cyber/left_asset.svg';
 import RightCyber from '@/assets/cyber/right_asset.svg';
@@ -55,6 +59,7 @@ import RightCyber from '@/assets/cyber/right_asset.svg';
 import VueScrollReveal from 'vue-scroll-reveal';
 import Navigation from '../new-components/Navbar2.vue';
 import VueRellax from 'vue-rellax';
+import sponsors_data from '@/data/sponsors_data.ts';
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -66,11 +71,13 @@ export default Vue.extend({
     FAQ,
     Navigation,
     Blurb,
-    Landing
+    Landing,
+    Sponsors
   },
   data() {
     return {
       scr: 0,
+      sponsors_data,
       LeftCyber,
       RightCyber,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3},
@@ -222,6 +229,12 @@ export default Vue.extend({
     .blurb-group {
       margin-top: -70px;
     }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .sideItem {
+    display: none;
   }
 }
 </style>
