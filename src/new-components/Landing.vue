@@ -57,7 +57,7 @@ export default Vue.extend({
             value: 200,
             density: {
               enable: true,
-              value_area: 800,
+              value_area: 1600,
             },
           },
           color: {
@@ -194,16 +194,16 @@ export default Vue.extend({
   /* height: 800px; */
   height: 20%;
   padding-top: 2%;
-    background-image: url('../assets/cyber/bg_transparent.svg');
-    /* background-position: center; */
-    background-position-y: 1vw;
-    background-repeat: no-repeat;
-    background-size: 100vw;
+  background-image: url('../assets/cyber/bg_transparent.svg');
+  /* background-position: center; */
+  background-position-y: 1vw;
+  background-repeat: no-repeat;
+  background-size: 100vw;
 
 }
 
 #particles-js {
-  width: 50%;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
