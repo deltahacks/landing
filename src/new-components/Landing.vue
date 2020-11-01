@@ -288,7 +288,6 @@ export default Vue.extend({
     flex: 1;
     text-align: center;
     padding-left: 0;
-    padding-top: 12vh;
   }
   
   .landing-subtitle {

@@ -16,23 +16,23 @@
           class="cyberBlurb"
           id="blurb-1"
         />
-        <div class="spacer" style="height: 15vh" />
+        <div class="spacer" style="height: 16vh" />
           <Blurb 
           header="The Hackathon for Change"
-          :body="blurb1_text"
+          :body="blurb2_text"
           align="left"
           :hasButton="false"
           class="cyberBlurb"
           id="blurb-2"
         />
       </div>
-      <div class="spacer" style="height: 15vh" />
+      <div class="spacer" style="height: 20vh" />
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 30vh" />
+      <div class="spacer" style="height: 35vh" />
       <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" style="height: 100vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 100vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
     </div>
@@ -88,7 +88,7 @@ export default Vue.extend({
       blurb1_text: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across Canada, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks 7!`,
       blurb1_button: `DeltaHacks 6 DevPost`,
       blurb1_link: `https://deltahacks6.devpost.com/`,
-      blurb2_text2: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 6th year running, DeltaHacks VI is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
+      blurb2_text: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 7th year running, DeltaHacks 7 is our biggest and best DeltaHacks yet. Join us this January and take part in an experience you won’t forget!`,
     };
   },
   methods: {
@@ -127,11 +127,13 @@ export default Vue.extend({
 }
 
 #blurb-1 {
+  padding-top: 20vh;
   margin-left: 20%;
 }
 
 #blurb-2 {
-  margin-left: 10%;
+  margin-left: 15%;
+  width: 55%;
 }
 
 .sideItem {
@@ -152,12 +154,12 @@ export default Vue.extend({
 
 #faq1 {
   width: 80%;
-  margin-left: 100px;
+  margin-left: 8vw;
 }
 
 #stats {
   width: 75%;
-  margin-left: 130px;
+  margin-left: 9vw;
 }
 
 .blend {
@@ -179,23 +181,23 @@ export default Vue.extend({
   position: fixed;
 }
 #c0 {
-  background: #5c58b6 none repeat scroll 0% 0%;
+  background: rgb(24, 24, 24) none repeat scroll 0% 0%;
   z-index: -1;
 }
 #c1 {
-  background: #b957ce none repeat scroll 0% 0%;
+  background: rgb(57, 57, 57) none repeat scroll 0% 0%;
   z-index: -2;
 }
 #c2 {
-  background: #5994ce none repeat scroll 0% 0%;
+  background:rgb(45, 45, 45) none repeat scroll 0% 0%;
   z-index: -3;
 }
 #c3 {
-  background: #3a4e93 none repeat scroll 0% 0%;
+  background:rgb(36, 36, 36) none repeat scroll 0% 0%;
   z-index: -4;
 }
 #c4 {
-  background-color: rgb(237, 247, 255);
+  background-color: rgb(24, 24, 24);
   z-index: -5;
 }
 
@@ -214,8 +216,9 @@ export default Vue.extend({
     margin-left: 0;
   }
   .cyberBlurb {
-    width: 100%;
+    width: 100% !important;
     margin: 150px 0 !important;
+    padding-top: 0 !important;
   }
   .blurb-group {
     display: flex;
