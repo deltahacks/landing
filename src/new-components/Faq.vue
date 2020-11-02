@@ -167,7 +167,6 @@ export default Vue.extend({
 
 .category-name {
   padding: 8% 10%;
-  font-size: 28px;
 }
 
 .selected {
@@ -176,6 +175,7 @@ export default Vue.extend({
 }
 
 .faq-area {
+  scrollbar-width: none;
   padding-left: 4%;
   padding-right: 8%;
   padding-top: 2%;
@@ -199,7 +199,7 @@ export default Vue.extend({
 }
 
 .question-box {
-  font-size: 22px;
+  font-size: 19px;
   padding: 3% 0;
   padding-bottom: 1%;
   text-align: left;
