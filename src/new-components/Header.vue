@@ -1,27 +1,25 @@
 <template>
   <div class="back">
     <br />
-    <!-- <div class="apps-due">
+    <div class="apps-due">
       <div class="apps-due-inner">
-        <p id="apps-due-header" style="font-size: 1.6em; font-weight: 600">
+        <p id="apps-due-header" style="font-size: 13px; font-weight: 600">
           HACKER APPLICATIONS DROPPING IN T-MINUS
         </p>
-        <h1 id="countdown" style="font-size: 5em; margin-left: 3vw;">00 : 00 : 00</h1>
+        <h1 id="countdown" style="font-size: 55px; margin: 0px">00 : 00 : 00</h1>
       </div>
-    </div> -->
-    <!-- <br /> -->
+    </div>
+    <br />
     <div class="mailbox">
-      <!-- <a
+      <a
         v-if="!enteringInfo && !gotit"
         class="mailing-button fade-in"
         @click="enteringInfo = true"
       >
         DH7 Mailing list
-      </a> -->
+      </a>
       <form v-on:submit.prevent="handleSubmit">
         <div v-if="enteringInfo && !gotit" class="input-box">
-          <p class="mailing-list-header">DH7 Mailing list</p>
-          <br>
           <input
             type="text"
             placeholder="Your Name"
@@ -29,15 +27,13 @@
             v-model="name"
             required
           />
-          <br>
           <input
             type="email"
-            placeholder="Your Email"
+            placeholder="Your email"
             class="input-field"
             v-model="email"
             required
           />
-          <br>
           <button type="submit" class="submit-button">Submit</button>
         </div>
       </form>
@@ -57,7 +53,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      enteringInfo: true,
+      enteringInfo: false,
       email: "",
       name: "",
       gotit: false,
@@ -143,79 +139,52 @@ p {
   color: white;
   cursor: pointer !important;
 }
-.mailing-list-header{font-size: 3em;
-padding-bottom: 0px!important;
-margin-bottom: 0px!important;
-}
-
 .apps-due {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
-  /* width: 40vw;
-  height: 30vh; */
-    width: 800px;
-  height: auto;
+  width: 370px;
+  height: 115px;
   color: white;
   display: inline-flex;
 }
-#apps-due-header{
-  padding-bottom: 0px!important;
-  margin-bottom: 0px!important;
-}
-#countdown{
-    padding-top: 0px!important;
-  margin-top: 10px!important;
-  }
 .apps-due-inner {
-  margin-top: 5vh;
-  margin-left:4vw;
-    margin-right:4vw;
-    margin-bottom: 2vh;
+  margin: 0 20px;
 }
 .mailbox {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
-  /* width: 370px;
-  height: 200px; */
-  height: auto;
-  /* width: auto; */
-  width: 800px;
+  width: 370px;
+  height: 200px;
   padding: 0px;
   color: white;
   display: inline-flex;
 }
 .input-field {
-  margin-left: 3vw;
-  margin-top: 0;
-  margin-right:3vw;
-  margin-bottom: 30px;
-  width: 26.5vw;
-  height: 5vh;
+  margin: 5px 0 5px 30px;
+  width: 300px;
+  height: 35px;
   background-color: #333333;
   border: 0px;
   text-align: center;
   color: white !important;
   cursor: pointer;
   padding: 0px;
-  font-size: 1.6em;
 }
 .input-field::placeholder {
   color: #dcdcdc !important;
 }
 .submit-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-left:  3vw;
-  margin-bottom: 3vh;
+  margin-left: 30px;
   background-color: #333333;
   border: 0px;
-  height: 5vh;
-  width: 10vw;
+  height: 35px;
+  width: 100px;
   color: white;
   margin-top: 5px;
   cursor: pointer;
   padding: 0px;
-  font-size: 1.6em;
 }
 .mailing-button {
   font-size: 20px;
@@ -230,10 +199,7 @@ margin-bottom: 0px!important;
   cursor: pointer;
 }
 .input-box{
-  margin-top: 5vh;
-  margin-left:4vw;
-    margin-right:4vw;
-    margin-bottom: 2vh;
+  margin-top: 30px;
 }
 .confirmation-box{
   margin: auto;

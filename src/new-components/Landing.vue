@@ -1,8 +1,8 @@
 
 <template>
   <div class="flex-container">
-      <!-- <div class="layer">
-    </div> -->
+      <div class="layer">
+    </div>
     <a
       id="mlh-trust-badge"
       class="mlh-badge"
@@ -59,7 +59,7 @@ export default Vue.extend({
             value: 200,
             density: {
               enable: true,
-              value_area: 700,
+              value_area: 1600,
             },
           },
           color: {
@@ -198,26 +198,26 @@ export default Vue.extend({
   padding-top: 2%;
   background-image: url('../assets/cyber/bg_transparent.svg');
   /* background-position: center; */
-  background-position-y: 2vw;
+  background-position-y: 1vw;
   background-repeat: no-repeat;
   background-size: 100vw;
 }
 
 .layer {
     z-index: -1!important;
-    height: 1800px;
+    height: 500px;
     position: relative;
-    top: 30%;
-    left: -55%!important;
+    top: 40%;
+    left: -70%!important;
     width: 100%;
     /* background: linear-gradient(120deg, #f6d365 0%, #fda085 100%); */
     opacity: 100%!important;
-  background: radial-gradient(circle 600px at 33% 33%, yellow, yellow, lightyellow, transparent);
+  background: radial-gradient(circle 150px at 33% 33%, yellow, yellow, lightyellow, transparent);
 }
 
 #particles-js {
   width: 100%;
-  height: 30%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
@@ -230,7 +230,7 @@ export default Vue.extend({
   text-align: left;
   padding-left: 3vw;
   margin-left: 3vw;
-  /* padding-top: 3vh; */
+  padding-top: 5vh;
 }
 
 .landing-title {
