@@ -102,6 +102,9 @@ export default Vue.extend({
 
 <style>
 
+p {
+  text-align: center;
+}
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;

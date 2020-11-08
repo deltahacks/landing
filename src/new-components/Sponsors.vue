@@ -1,5 +1,5 @@
 <template>
-  <div class="backSponsor">
+  <div class="back">
     <div class="container">
       <div v-if="main">
         <h1 id="sponsors-title">Sponsors</h1>
@@ -80,12 +80,15 @@ export default Vue.extend({
 img {
   user-select: none;
 }
-.backSponsor {
+html {
+  overflow-x: hidden;
+}
+.back {
   width: 100vw;
   padding-top: 10px;
 }
 .container {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
   color: white;
 }

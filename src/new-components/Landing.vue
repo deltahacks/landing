@@ -228,12 +228,13 @@ export default Vue.extend({
   z-index: 4;
   flex: 1;
   text-align: left;
-  padding-left: 10vw;
+  padding-left: 3vw;
+  margin-left: 3vw;
   padding-top: 5vh;
 }
 
 .landing-title {
-  font-size: 6em;
+  font-size: 5em;
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
@@ -244,7 +245,8 @@ export default Vue.extend({
 .landing-subtitle {
   margin-top: 0vh;
   margin-bottom: 0vh;
-  font-size: 2.5em;
+  font-size: 2.3em;
+      margin-left: 2.5vw;
   font-weight: 300;
 }
 
@@ -309,6 +311,7 @@ export default Vue.extend({
     flex: 1;
     text-align: center;
     padding-left: 0;
+    padding-top: 12vh;
   }
   
   .landing-subtitle {

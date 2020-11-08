@@ -114,8 +114,8 @@ export default Vue.extend({
 }
 
 .faq h1 {
-  font-weight: 700;
-  font-size: 44px;
+  font-weight: 800;
+  font-size: 38px;
 }
 
 #mobile-faq {
@@ -135,7 +135,7 @@ export default Vue.extend({
   height: 350px;
   overflow: hidden;
   margin: 0 auto;
-  background:rgba(70, 70, 70, 1);
+  background:rgba(100, 100, 100, 1);
   color: rgba(255, 255, 255, 1);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0% 50%);
 }
@@ -166,7 +166,7 @@ export default Vue.extend({
 }
 
 .category-name {
-  padding: 8% 10%;
+  padding: 8% 10%
 }
 
 .selected {
@@ -175,7 +175,6 @@ export default Vue.extend({
 }
 
 .faq-area {
-  scrollbar-width: none;
   padding-left: 4%;
   padding-right: 8%;
   padding-top: 2%;
