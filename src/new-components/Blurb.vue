@@ -69,9 +69,9 @@ export default Vue.extend({
 
 .heading {
     color: white;
-    padding: 1% 3%;
-    font-size: 35px;
-    font-weight: 800;
+    padding: 2% 3%;
+    font-size: 42px;
+    font-weight: 600;
     margin: 0;
 }
 
@@ -88,8 +88,8 @@ export default Vue.extend({
     outline: none;
     border: none;
     padding: 10px 20px;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 25px;
+    font-weight: 600;
     background-color: rgb(30, 30, 30);
     transition: 0.1s ease-in-out;
     cursor: pointer;  
@@ -107,10 +107,16 @@ export default Vue.extend({
 
 p {
     color:white;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 @media screen and (max-width: 720px){
+    .heading {
+        font-size: 35px;
+    }
+    .button {
+        font-size: 17px;
+    }
 
     #corner.right{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 15vmin 100%, 0 calc(100% - 15vmin));
@@ -127,6 +133,7 @@ p {
     .container {
         width: 100%;
         padding: 0;
+        text-align: center;
     }
     .container > h2 {
         padding: 0 5%;
