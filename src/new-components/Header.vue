@@ -11,13 +11,13 @@
     </div>
     <br />
     <div class="mailbox">
-      <a
+      <!-- <a
         v-if="!enteringInfo && !gotit"
         class="mailing-button fade-in"
         @click="enteringInfo = true"
       >
         DH7 Mailing list
-      </a>
+      </a> -->
       <form v-on:submit.prevent="handleSubmit">
         <div v-if="enteringInfo && !gotit" class="input-box">
           <input
@@ -53,7 +53,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      enteringInfo: false,
+      enteringInfo: true,
       email: "",
       name: "",
       gotit: false,
