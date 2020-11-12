@@ -34,12 +34,7 @@ export default new Router({
     {
       path: '/new/blurb',
       name: 'blurb',
-      component: () => import(/* webpackChunkName: "about" */ './new-components/New_Blurb.vue'),
-    },
-    {
-      path: '/new/gradient',
-      name: 'gradient',
-      component: () => import(/* webpackChunkName: "about" */ './new-views/New_Gradient.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Blurb.vue'),
     },
     {
       path: '/new/Header',
@@ -59,7 +54,7 @@ export default new Router({
     {
       path: '/new/Nav',
       name: 'nav',
-      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar2.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './new-components/Navbar.vue'),
     },
   ],
 });

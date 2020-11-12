@@ -3,6 +3,9 @@
   <div class="test">a</div>
   <div class="nav-container">
     <img class='home' src="../assets/logolarge.png" alt="DH Logo" @click="goHome">
+    <a class="mlink" href="https://www.deltahacks.com/">
+      <a class="bold">Delta</a>Hacks <a class="bold">7</a>
+    </a>
     <a class="link" v-scroll-to="'#blurb-2'" @scroll="handleScroll">
       About
     </a>
@@ -87,21 +90,47 @@ export default Vue.extend({
   z-index: -5;
 }
 
+.mlink{
+  display: none;
+}
+
 @media (orientation: portrait){
+  /* .nav-container {
+    justify-content: center;
+  } */
   .home{
     width: auto;
-    height: 3.5vmax;
-    margin: 5vmin 3.5vmin 5vmin 5vmin;
+    height: 4vmax;
+    margin: 5.5vmin 3.5vmin 5.5vmin 10vmin;
   }
   .link{
-    font-size: 3.5vmin;
+    /* font-size: 3.5vmin;
     font-weight: 1000;
-    margin: 0 1.5vmin 0 1.5vmin;
+    margin: 0 1.5vmin 0 1.5vmin; */
+    display: none;
   }
   .bar{
-    font-size: 3.5vmin;
+    /* font-size: 3.5vmin;
     font-weight: 900;
-    margin: 0 1.5vmin 0 1.5vmin;
+    margin: 0 1.5vmin 0 1.5vmin; */
+    display: none;
+  }
+  .mlink{
+    display: initial;
+    color: white;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6vmin;
+    font-weight: 150;
+    margin: 0 1.5vmin 0 1.5vmin; 
+  }
+  .mlink:active {
+    filter: brightness(0.5);
+  }
+  .bold{
+    font-weight: 525;
   }
 }
 </style>
