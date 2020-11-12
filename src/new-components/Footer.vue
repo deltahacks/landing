@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-      <img src="../assets/cyber/space_car.svg" />
+      <img id="space-car" src="../assets/cyber/space_car.svg" />
   </div>
 </template>
 

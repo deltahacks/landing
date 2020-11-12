@@ -6,7 +6,7 @@
         <p id="apps-due-header">
           HACKER APPLICATIONS DROPPING IN T-MINUS
         </p>
-        <h1 id="countdown">00 : 00 : 00</h1>
+        <h1 id="countdown">{{hours}}h : {{mpad}}{{minutes}}m : {{spad}}{{seconds}}s</h1>
       </div>
     </div>
     <br />
@@ -51,6 +51,13 @@ export default Vue.extend({
       email: '',
       name: '',
       gotit: false,
+      current: new Date(),
+      target: new Date(1606003200),
+      hours: 99,
+      minutes: 99,
+      seconds: 99,
+      spad: '',
+      mpad: '',
     };
   },
   methods: {
@@ -90,6 +97,31 @@ export default Vue.extend({
         this.gotit = false;
       }, 4000);
     },
+  },
+  mounted() {
+    setInterval(() => {
+      const dateFuture: any = new Date(1606003200000);
+      const dateNow: any = new Date();
+
+      let delta = Math.abs(dateFuture - dateNow) / 1000;
+
+      // calculate (and subtract) whole hours
+      const hours = Math.floor(delta / 3600);
+      this.hours = hours;
+      delta -= hours * 3600;
+
+      // calculate (and subtract) whole minutes
+      const minutes = Math.floor(delta / 60) % 60;
+      this.minutes = minutes;
+      this.mpad = this.minutes < 10 ? '0' : '';
+      delta -= minutes * 60;
+
+      // what's left is seconds
+      const seconds = delta % 60;  // in theory the modulus is not required
+      this.seconds = Math.floor(seconds);
+      this.spad = this.seconds < 10 ? '0' : '';
+
+    }, 0, 1000);
   },
 });
 </script>
@@ -144,9 +176,10 @@ export default Vue.extend({
   font-weight: 600;
 }
 #countdown {
-  font-size: 2.72vw;
+  font-size: 2.1vw;
   margin: 0px;
   margin-top: -1vh;
+  padding-left: 0.2vw;
 }
 
 #mail-text {

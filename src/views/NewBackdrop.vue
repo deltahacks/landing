@@ -35,9 +35,8 @@
       <div class="spacer" v-if="!isMobile()" style="height: 15vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <div class="footer">
+      <div class="spacer" v-if="!isMobile()" style="height: 25vh" />
       <Footer/>
-      </div>
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
     <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
@@ -170,7 +169,6 @@ export default Vue.extend({
 
 .blend {
   background-blend-mode: overlay;
-  height: 500vh;
 }
 
 .scroll {
@@ -214,6 +212,9 @@ export default Vue.extend({
 
 
 @media screen and (max-width: 720px) {
+  .scroll {
+    max-height: none;
+  }
   #faq1 {
     width: 100%;
     margin-left: 0;

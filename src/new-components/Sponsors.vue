@@ -82,7 +82,7 @@ img {
 }
 .backSponsor {
   width: 100vw;
-  padding-top: 10px;
+  padding-top: 1vh;
 }
 .container {
   width: 60%;
@@ -98,14 +98,7 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 30px;
-}
-
-@media screen and (max-width: 500px) {
-  .level--1 > div > a > img {
-    max-width: 250px;
-    max-height: 250px;
-  }
+  padding-bottom: 3vh;
 }
 
 .level--1 {
@@ -114,13 +107,13 @@ img {
 .level--1 > div {
   margin-left: 2.5%;
   margin-right: 2.5%;
-  margin-top: 25px;
-  line-height: 25px;
+  margin-top: 2.5vh;
+  line-height: 2.5vh;
 }
 .level--1 > div > a > img {
   box-sizing: border-box;
   max-width: 300px;
-  max-height: 300px;
+  max-height: 30vh;
 }
 .level--2 {
   width: 99%;
@@ -129,17 +122,17 @@ img {
 .level--2 > div {
   margin-left: 2%;
   margin-right: 2%;
-  margin-top: 25px;
-  line-height: 30px;
+  margin-top: 2.5vh;
+  line-height: 3vh;
 }
 .level--2 > div > a > img {
   max-width: 225px;
-  max-height: 225px;
+  max-height: 22.5vh;
 }
 #sponsors-title {
   font-weight: 800;
   position: relative;
-  font-size: 35px;
+  font-size: 2.2vw;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -151,6 +144,45 @@ img {
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .level--1 > div > a > img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+  
+  .backSponsor {
+  width: 100vw;
+  padding-top: 10px;
+  }
+
+  .square {
+    padding-bottom: 30px;
+  }
+
+  .level--1 > div {
+    margin-top: 25px;
+    line-height: 25px;
+  }
+  .level--1 > div > a > img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .level--2 {
+    width: 99%;
+  }
+  .level--2 > div {
+    margin-top: 25px;
+    line-height: 30px;
+  }
+  .level--2 > div > a > img {
+    max-width: 225px;
+    max-height: 225px;
+  }
+  #sponsors-title {
+    font-size: 35px;
+  }
 }
 </style>
 
