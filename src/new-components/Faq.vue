@@ -115,7 +115,7 @@ export default Vue.extend({
 
 .faq h1 {
   font-weight: 700;
-  font-size: 44px;
+  font-size: 2.25vw;
 }
 
 #mobile-faq {
@@ -132,7 +132,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: row;
   width: 65%; 
-  height: 350px;
+  height: 36vh;
   overflow: hidden;
   margin: 0 auto;
   background:rgba(70, 70, 70, 1);
@@ -143,7 +143,7 @@ export default Vue.extend({
 .categories {
   display: flex;
   flex-direction: column;
-  min-width: 220px;
+  min-width: 11.5vw;
   padding-top: 3%;
   cursor: pointer;
   background:rgba(0,0,0,0.3); 
@@ -151,12 +151,12 @@ export default Vue.extend({
 
 .category-bubble {
   text-align: left;
-  font-size: 20px;
+  font-size: 1.1vw;
   transition: 0.1s ease-in-out;
-  margin-left: 10px; 
-  margin-right: 10px; 
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+  margin-left: 0.55vw; 
+  margin-right: 0.55vw; 
+  margin-top: 0.25vh;
+  margin-bottom: 0.25vh;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%);
   transition:0.2s; 
 }
@@ -170,7 +170,7 @@ export default Vue.extend({
 }
 
 .selected {
-  font-size: 20px;
+  font-size: 1.2vw;
   background:rgba(0,0,0,0.4); 
 }
 
@@ -199,7 +199,7 @@ export default Vue.extend({
 }
 
 .question-box {
-  font-size: 19px;
+  font-size: 0.95vw;
   padding: 3% 0;
   padding-bottom: 1%;
   text-align: left;
@@ -216,7 +216,7 @@ export default Vue.extend({
   max-height: 500px;
   overflow: hidden;
   padding: 1% 0;
-  font-size: 16px;
+  font-size: 0.85vw;
 }
 
 .open-enter-active,
