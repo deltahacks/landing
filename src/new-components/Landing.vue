@@ -1,5 +1,7 @@
 
 <template>
+<div id="b">
+  <img id="bruh" src="../assets/cyber/title_nostars.svg" />
   <div class="flex-container">
     <a
       id="mlh-trust-badge"
@@ -16,11 +18,12 @@
     <div id="particles-js"></div>
     <div id="left">
       <h1 class="landing-title">
-        DeltaHacks 7
+        <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
       </h1>
       <h1 class="landing-subtitle">at McMaster University</h1>
-    <Header/>
+      <Header/>
     </div>
+  </div>
   </div>
 </template>
 
@@ -184,19 +187,37 @@ export default Vue.extend({
   }
 }
 
+#delta-title {
+  font-weight: 600;
+}
+#hacks-title {
+  font-weight: 200;
+}
+
+#bruh {
+  position: absolute;
+  z-index: 1;
+  background-image: url('../assets/cyber/title_nostars.svg');
+  width: 100%;
+  height: 95%;
+}
+
 .flex-container {
   font-family: 'Montserrat';
   display: flex;
   flex-direction: row;
   flex-direction: row-reverse;
   align-content: center;
-  width: 90%;
+  width: 100%;
+  height: 87vh;
   padding-top: 2%;
+  border: 1px solid red;
+  z-index: 1000;
 }
 
 #particles-js {
   width: 100%;
-  height: 100%;
+  height: 55%;
   position: absolute;
   top: 0;
   left: 0;
@@ -208,12 +229,11 @@ export default Vue.extend({
   flex: 1;
   text-align: left;
   padding-left: 10vw;
-  padding-top: 5vh;
-  /* background-image: url('../assets/landing-bg.svg'); */
+  padding-top: 0.5vh;
 }
 
 .landing-title {
-  font-size: 6em;
+  font-size: 4.5vw;
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
@@ -222,7 +242,7 @@ export default Vue.extend({
 .landing-subtitle {
   margin-top: 0vh;
   margin-bottom: 0vh;
-  font-size: 2.5em;
+  font-size: 1.8vw;
   font-weight: 300;
 }
 
