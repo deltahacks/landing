@@ -70,13 +70,13 @@ export default Vue.extend({
 .heading {
     color: white;
     padding: 2% 3%;
-    font-size: 4.5vmin;
+    font-size: 4vmin;
     font-weight: 600;
     margin: 0;
 }
 
 .description {
-    padding: 1% 3%;
+    padding: 2% 3%;
     margin: 2.5vh inherit;
     z-index: 40;
     background: rgb(85, 85, 85);
@@ -106,7 +106,7 @@ export default Vue.extend({
 
 p {
     color:white;
-    font-size: 2.4vmin;
+    font-size: 2.2vmin;
 }
 
 @media screen and (max-width: 720px){

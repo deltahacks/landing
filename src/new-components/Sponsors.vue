@@ -112,8 +112,8 @@ img {
 }
 .level--1 > div > a > img {
   box-sizing: border-box;
-  max-width: 300px;
-  max-height: 30vh;
+  max-width: 15vw;
+  max-height: 18vh;
 }
 .level--2 {
   width: 99%;
@@ -126,8 +126,8 @@ img {
   line-height: 3vh;
 }
 .level--2 > div > a > img {
-  max-width: 225px;
-  max-height: 22.5vh;
+  max-width: 11.5vw;
+  max-height: 12.5vh;
 }
 #sponsors-title {
   font-weight: 800;
@@ -151,7 +151,7 @@ img {
     max-width: 250px;
     max-height: 250px;
   }
-  
+
   .backSponsor {
   width: 100vw;
   padding-top: 10px;

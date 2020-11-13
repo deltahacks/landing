@@ -6,7 +6,7 @@
       <img class="sideItem" id="leftCyber" :src="LeftCyber" />
       <img class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
-        <div class="spacer" style="height: 4.5vh" />
+        <div class="spacer" style="height: 2.5vmax" />
         <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -16,7 +16,7 @@
           class="cyberBlurb"
           id="blurb-1"
         />
-        <div class="spacer" style="height: 14vh" />
+        <div class="spacer" style="height: 7vmax" />
           <Blurb 
           header="The Hackathon for Change"
           :body="blurb2_text"
@@ -26,16 +26,16 @@
           id="blurb-2"
         />
       </div>
-      <div class="spacer" style="height: 20vh" />
+      <div class="spacer" style="height: 10.5vmax" />
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 25vh" />
+      <div class="spacer" style="height: 13vmax" />
       <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" v-if="!isMobile()" style="height: 15vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 7.5vmax" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <div class="spacer" v-if="!isMobile()" style="height: 25vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 13vmax" />
       <Footer/>
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />

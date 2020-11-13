@@ -162,13 +162,13 @@ export default Vue.extend({
 .apps-due {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 20vw;
-  height: 10.5vh;
+  width: 20vmax;
+  height: 5.5vmax;
   color: white;
   display: inline-flex;
 }
 .apps-due-inner {
-  margin: 0 1vw;
+  margin: 0 1vmax;
 }
 
 #apps-due-header {
@@ -176,16 +176,16 @@ export default Vue.extend({
   font-weight: 600;
 }
 #countdown {
-  font-size: 2.1vw;
+  font-size: 2.05vw;
   margin: 0px;
-  margin-top: -1vh;
-  padding-left: 0.2vw;
+  margin-top: -0.5vmax;
+  padding-left: 0.2vmax;
 }
 
 #mail-text {
   text-align: left;
-  margin-top: 1vh;
-  margin-left: 1.2vw;
+  margin-top: 0.5vmax;
+  margin-left: 1.2vmax;
   font-weight: 600;
   font-size: 1vw;
 }
@@ -193,8 +193,8 @@ export default Vue.extend({
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 20vw;
-  height: 19vh;
+  width: 20vmax;
+  height: 10.2vmax;
   padding: 0px;
   color: white;
   display: inline-flex;
@@ -203,8 +203,8 @@ export default Vue.extend({
 }
 .input-field {
   margin: 0.2vw 0 0.1vw 1.2vw;
-  width: 17vw;
-  height: 3.5vh;
+  width: 17vmax;
+  height: 1.85vmax;
   background-color: #333333;
   border: 0px;
   text-align: center;
@@ -221,8 +221,8 @@ export default Vue.extend({
   margin-left: 1.2vw;
   background-color: #272727;
   border: 0px;
-  height: 4vh;
-  width: 6vw;
+  height: 2.2vmax;
+  width: 6vmax;
   color: white;
   margin-top: 0.3vw;
   cursor: pointer;

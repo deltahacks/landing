@@ -131,8 +131,8 @@ export default Vue.extend({
 .faq-container {
   display: flex;
   flex-direction: row;
-  width: 65%; 
-  height: 36vh;
+  width: 67%; 
+  height: 19vmax;
   overflow: hidden;
   margin: 0 auto;
   background:rgba(70, 70, 70, 1);
@@ -143,7 +143,7 @@ export default Vue.extend({
 .categories {
   display: flex;
   flex-direction: column;
-  min-width: 11.5vw;
+  min-width: 11.5vmax;
   padding-top: 3%;
   cursor: pointer;
   background:rgba(0,0,0,0.3); 
@@ -153,10 +153,10 @@ export default Vue.extend({
   text-align: left;
   font-size: 1.1vw;
   transition: 0.1s ease-in-out;
-  margin-left: 0.55vw; 
-  margin-right: 0.55vw; 
-  margin-top: 0.25vh;
-  margin-bottom: 0.25vh;
+  margin-left: 0.55vmax; 
+  margin-right: 0.55vmax; 
+  margin-top: 0.125vmax;
+  margin-bottom: 0.125vmax;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%);
   transition:0.2s; 
 }
@@ -185,7 +185,7 @@ export default Vue.extend({
   z-index: 40;
   background: rgba(255, 255, 255, 0.15);
   text-align: center;
-  padding-bottom: 2vh;
+  padding-bottom: 1vmax;
 }
 
 .mobile-faq-area {

@@ -198,8 +198,9 @@ export default Vue.extend({
   position: absolute;
   z-index: 1;
   background-image: url('../assets/cyber/title_nostars.svg');
-  width: 100%;
-  height: 95%;
+  background-repeat: no-repeat;
+  width: 99vmax;
+  height: 50vmax;
 }
 
 .flex-container {
@@ -211,7 +212,6 @@ export default Vue.extend({
   width: 100%;
   height: 87vh;
   padding-top: 2%;
-  border: 1px solid red;
   z-index: 1000;
 }
 
