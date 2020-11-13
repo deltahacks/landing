@@ -82,7 +82,7 @@ img {
 }
 .backSponsor {
   width: 100vw;
-  padding-top: 1vh;
+  padding-top: 10px;
 }
 .container {
   width: 60%;
@@ -98,7 +98,14 @@ img {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 3vh;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .level--1 > div > a > img {
+    max-width: 250px;
+    max-height: 250px;
+  }
 }
 
 .level--1 {
@@ -107,13 +114,13 @@ img {
 .level--1 > div {
   margin-left: 2.5%;
   margin-right: 2.5%;
-  margin-top: 2.5vh;
-  line-height: 2.5vh;
+  margin-top: 25px;
+  line-height: 25px;
 }
 .level--1 > div > a > img {
   box-sizing: border-box;
-  max-width: 15vw;
-  max-height: 18vh;
+  max-width: 300px;
+  max-height: 300px;
 }
 .level--2 {
   width: 99%;
@@ -122,17 +129,17 @@ img {
 .level--2 > div {
   margin-left: 2%;
   margin-right: 2%;
-  margin-top: 2.5vh;
-  line-height: 3vh;
+  margin-top: 25px;
+  line-height: 30px;
 }
 .level--2 > div > a > img {
-  max-width: 11.5vw;
-  max-height: 12.5vh;
+  max-width: 225px;
+  max-height: 225px;
 }
 #sponsors-title {
   font-weight: 800;
   position: relative;
-  font-size: 2.2vw;
+  font-size: 35px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -144,45 +151,6 @@ img {
   align-items: center;
   text-align: center;
   justify-content: center;
-}
-
-@media screen and (max-width: 500px) {
-  .level--1 > div > a > img {
-    max-width: 250px;
-    max-height: 250px;
-  }
-
-  .backSponsor {
-  width: 100vw;
-  padding-top: 10px;
-  }
-
-  .square {
-    padding-bottom: 30px;
-  }
-
-  .level--1 > div {
-    margin-top: 25px;
-    line-height: 25px;
-  }
-  .level--1 > div > a > img {
-    max-width: 300px;
-    max-height: 300px;
-  }
-  .level--2 {
-    width: 99%;
-  }
-  .level--2 > div {
-    margin-top: 25px;
-    line-height: 30px;
-  }
-  .level--2 > div > a > img {
-    max-width: 225px;
-    max-height: 225px;
-  }
-  #sponsors-title {
-    font-size: 35px;
-  }
 }
 </style>
 

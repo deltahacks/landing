@@ -2,6 +2,8 @@
 <template>
 <div id="b">
   <img id="bruh" src="../assets/cyber/title_nostars.svg" />
+  <img id="bruh2" src="../assets/cyber/title_nostars2.svg" />
+
   <div class="flex-container">
     <a
       id="mlh-trust-badge"
@@ -197,10 +199,15 @@ export default Vue.extend({
 #bruh {
   position: absolute;
   z-index: 1;
-  background-image: url('../assets/cyber/title_nostars.svg');
-  background-repeat: no-repeat;
-  width: 99vmax;
-  height: 50vmax;
+  width: 100vw;
+  height: 50vw;
+}
+#bruh2 {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 50vw;
+  visibility: hidden;
 }
 
 .flex-container {
@@ -210,7 +217,6 @@ export default Vue.extend({
   flex-direction: row-reverse;
   align-content: center;
   width: 100%;
-  height: 87vh;
   padding-top: 2%;
   z-index: 1000;
 }
@@ -322,37 +328,27 @@ export default Vue.extend({
   }
 
 }
-@media only screen and (max-width: 1200px) {
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    padding: 1vh;
+@media only screen and (max-width: 1250px) {
+  #bruh {
+    visibility: hidden;
   }
-
+  #bruh2 {
+    visibility:unset;
+    width: 100vw;
+    height: 75vw;
+  }
   #left {
-    flex: 1;
-    text-align: center;
-    padding-left: 0;
-    padding-top: 12vh;
+    margin-top: 3%;
   }
+    .landing-title {
+    font-size: 60px;
 
-  .landing-title {
-    font-size: 2.5em;
-    color: white;
-    font-weight: 600;
-    margin-bottom: 0vh;
   }
   
   .landing-subtitle {
-    margin-top: 0vh;
-    font-size: 1.2em;
-    font-weight: 300;
+    font-size: 27px;
   }
-
-  .landing-left-mlh {
-    margin: 3vh 0 0;
-    padding: 0vh 0px 0vh;
-  }
+  
 
 }
 </style>

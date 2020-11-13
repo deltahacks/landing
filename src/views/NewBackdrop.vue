@@ -6,7 +6,7 @@
       <img class="sideItem" id="leftCyber" :src="LeftCyber" />
       <img class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
-        <div class="spacer" style="height: 2.5vmax" />
+        <div class="spacer" style="height: 30vh" />
         <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -16,7 +16,7 @@
           class="cyberBlurb"
           id="blurb-1"
         />
-        <div class="spacer" style="height: 7vmax" />
+        <div class="spacer" style="height: 15vh" />
           <Blurb 
           header="The Hackathon for Change"
           :body="blurb2_text"
@@ -26,17 +26,19 @@
           id="blurb-2"
         />
       </div>
-      <div class="spacer" style="height: 10.5vmax" />
+      <div class="spacer" style="height: 15vh" />
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
       <div class="spacer" style="height: 13vmax" />
       <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" v-if="!isMobile()" style="height: 7.5vmax" />
+      <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <div class="spacer" v-if="!isMobile()" style="height: 13vmax" />
+      <div class="f">
+      <div class="spacer" v-if="!isMobile()" style="height: 25vh" />
       <Footer/>
+      </div>
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
     <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
@@ -243,9 +245,21 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1250px) {
   .sideItem {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .f {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .f {
+    display: inline;
   }
 }
 </style>

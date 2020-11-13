@@ -162,13 +162,13 @@ export default Vue.extend({
 .apps-due {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 20vmax;
-  height: 5.5vmax;
+  width: 20vw;
+  height: 5.5vw;
   color: white;
   display: inline-flex;
 }
 .apps-due-inner {
-  margin: 0 1vmax;
+  margin: 0 1vw;
 }
 
 #apps-due-header {
@@ -178,14 +178,14 @@ export default Vue.extend({
 #countdown {
   font-size: 2.05vw;
   margin: 0px;
-  margin-top: -0.5vmax;
+  margin-top: -0.5vw;
   padding-left: 0.2vmax;
 }
 
 #mail-text {
   text-align: left;
-  margin-top: 0.5vmax;
-  margin-left: 1.2vmax;
+  margin-top: 0.5vw;
+  margin-left: 1.2vw;
   font-weight: 600;
   font-size: 1vw;
 }
@@ -203,8 +203,8 @@ export default Vue.extend({
 }
 .input-field {
   margin: 0.2vw 0 0.1vw 1.2vw;
-  width: 17vmax;
-  height: 1.85vmax;
+  width: 17vw;
+  height: 1.85vw;
   background-color: #333333;
   border: 0px;
   text-align: center;
@@ -221,8 +221,8 @@ export default Vue.extend({
   margin-left: 1.2vw;
   background-color: #272727;
   border: 0px;
-  height: 2.2vmax;
-  width: 6vmax;
+  height: 2.2vw;
+  width: 6vw;
   color: white;
   margin-top: 0.3vw;
   cursor: pointer;
@@ -252,7 +252,100 @@ export default Vue.extend({
   font-weight: 600;
 }
 
+@media only screen and (max-width: 1250px) {
+  .apps-due {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+    background-color: #464646;
+    width: 35%;
+    height: 9vw;
+    color: white;
+    display: inline-flex;
+}
+.apps-due-inner {
+  margin: 0 1vw;
+}
 
+#apps-due-header {
+  font-size: 1.15vw;
+  font-weight: 600;
+}
+#countdown {
+  font-size: 3.3vw;
+  margin: 0px;
+  margin-top: -0.5vw;
+  padding-left: 0.2vmax;
+}
+
+#mail-text {
+  text-align: left;
+  margin-top: 2%;
+  margin-left: 5%;
+  font-weight: 600;
+  font-size: 20px;
+}
+.mailbox {
+  margin-top: 20px !important;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
+  background-color: #464646;
+  width: 35%;
+  height: 185px;
+  padding: 0px;
+  color: white;
+  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  margin: 1.5% 0 0.8% 5%;
+  width: 86%;
+  height: 35px;
+  background-color: #333333;
+  border: 0px;
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+  padding: 0px;
+  font-size: 13px;
+}
+.input-field::placeholder {
+  color: #dcdcdc !important;
+}
+.submit-button {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+  margin-left: 5%;
+  background-color: #272727;
+  border: 0px;
+  height: 35px;
+  width: 80px;
+  color: white;
+  margin-top: 1%;
+  cursor: pointer;
+  padding: 0px;
+  font-size: 17px;
+  font-weight: 550;
+}
+.mailing-button {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 20px;
+}
+.mailing-button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+.input-box{
+  margin-top: 1.2vh;
+}
+.confirmation-box{
+  margin: auto;
+  font-family: Montserrat; 
+  font-size: 30px; 
+  font-weight: 600;
+}
+}
 /* ------------------------------- For Mobile devices --------------------------------- */
 @media only screen and (max-width: 700px) and (min-width: 100px) {
 .navbar, .apps-due, .mailbox {
