@@ -1,8 +1,9 @@
 
 <template>
 <div id="b">
-  <img id="bruh" src="../assets/cyber/title_nostars.svg" />
-  <img id="bruh2" src="../assets/cyber/title_nostars2.svg" />
+  <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
+  <img class="bruh" id="b2" src="../assets/cyber/sky_sun_1.svg" />
+  <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
 
   <div class="flex-container">
     <a
@@ -59,7 +60,7 @@ export default Vue.extend({
       window.particlesJS('particles-js', {
         particles: {
           number: {
-            value: 200,
+            value: 220,
             density: {
               enable: true,
               value_area: 800,
@@ -196,20 +197,23 @@ export default Vue.extend({
   font-weight: 200;
 }
 
-#bruh {
+.bruh {
   position: absolute;
   z-index: 1;
   width: 100vw;
   height: 50vw;
 }
-#bruh2 {
+
+.bruh2 {
   position: absolute;
   z-index: 1;
   width: 100vw;
   height: 50vw;
   visibility: hidden;
 }
-
+#b1 {
+  z-index: 2;
+}
 .flex-container {
   font-family: 'Montserrat';
   display: flex;
@@ -329,10 +333,10 @@ export default Vue.extend({
 
 }
 @media only screen and (max-width: 1250px) {
-  #bruh {
+  .bruh {
     visibility: hidden;
   }
-  #bruh2 {
+  .bruh2 {
     visibility:unset;
     width: 100vw;
     height: 75vw;
