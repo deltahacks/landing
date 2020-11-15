@@ -6,7 +6,7 @@
       <img class="sideItem" id="leftCyber" :src="LeftCyber" />
       <img class="sideItem" id="rightCyber" :src="RightCyber" />
       <div class="blurb-group">
-        <div class="spacer" style="height: 20vh" />
+        <div class="spacer" style="height: 30vh" />
         <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -16,7 +16,7 @@
           class="cyberBlurb"
           id="blurb-1"
         />
-        <div class="spacer" style="height: 16vh" />
+        <div class="spacer" style="height: 15vh" />
           <Blurb 
           header="The Hackathon for Change"
           :body="blurb2_text"
@@ -26,15 +26,19 @@
           id="blurb-2"
         />
       </div>
-      <div class="spacer" style="height: 20vh" />
+      <div class="spacer" style="height: 15vh" />
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 35vh" />
+      <div class="spacer" style="height: 13vmax" />
       <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" v-if="!isMobile()" style="height: 100vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+      <div class="f">
+      <div class="spacer" v-if="!isMobile()" style="height: 25vh" />
+      <Footer/>
+      </div>
     </div>
     <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
     <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
@@ -51,6 +55,7 @@ import Blurb from '@/new-components/Blurb.vue';
 import FAQ from '@/new-components/Faq.vue';
 import AboutUsStats from '@/new-components/AboutStats.vue';
 import Sponsors from '@/new-components/Sponsors.vue';
+import Footer from '@/new-components/Footer.vue';
 
 import LeftCyber from '@/assets/cyber/left_asset.svg';
 import RightCyber from '@/assets/cyber/right_asset.svg';
@@ -72,7 +77,8 @@ export default Vue.extend({
     Navigation,
     Blurb,
     Landing,
-    Sponsors
+    Sponsors,
+    Footer,
   },
   data() {
     return {
@@ -114,6 +120,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+
 .blurb-align-right {
   margin-right: -200px !important;
 }
@@ -164,7 +171,6 @@ export default Vue.extend({
 
 .blend {
   background-blend-mode: overlay;
-  height: 500vh;
 }
 
 .scroll {
@@ -181,11 +187,11 @@ export default Vue.extend({
   position: fixed;
 }
 #c0 {
-  background: rgb(24, 24, 24) none repeat scroll 0% 0%;
+  background: rgb(55, 55, 55) none repeat scroll 0% 0%;
   z-index: -1;
 }
 #c1 {
-  background: rgb(57, 57, 57) none repeat scroll 0% 0%;
+  background: rgb(55, 55, 55) none repeat scroll 0% 0%;
   z-index: -2;
 }
 #c2 {
@@ -206,7 +212,11 @@ export default Vue.extend({
   margin-bottom: 10%;
 }
 
+
 @media screen and (max-width: 720px) {
+  .scroll {
+    max-height: none;
+  }
   #faq1 {
     width: 100%;
     margin-left: 0;
@@ -235,9 +245,21 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1250px) {
   .sideItem {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .f {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .f {
+    display: inline;
   }
 }
 </style>

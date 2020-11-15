@@ -115,7 +115,7 @@ export default Vue.extend({
 
 .faq h1 {
   font-weight: 700;
-  font-size: 44px;
+  font-size: 4.4vmin;
 }
 
 #mobile-faq {

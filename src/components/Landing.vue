@@ -17,8 +17,8 @@
     <img class="main-planet" :src="Planet" />
     <div id="left">
       <h1 class="landing-title">
-        Delta<span style="font-weight: 300">Hacks</span>
-        7
+        Delta<span style="color:blue; font-weight: 300">Hacks</span>
+        7 
       </h1>
       <img class="vi-back" :src="VI" />
       <div class="landing-left-container">
@@ -134,7 +134,7 @@ export default Vue.extend({
       window.particlesJS('particles-js', {
         particles: {
           number: {
-            value: 200,
+            value: 150,
             density: {
               enable: true,
               value_area: 800,
