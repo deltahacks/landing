@@ -6,7 +6,6 @@
             <form v-if="hasButton" :action="buttonLink">
                 <input class="button" type="submit" :value="buttonText">
             </form>
-            <div v-else><br><br></div>
         </div>
     </div>
 </template>
@@ -70,14 +69,14 @@ export default Vue.extend({
 
 .heading {
     color: white;
-    padding: 1% 3%;
-    font-size: 35px;
-    font-weight: 800;
+    padding: 2% 3%;
+    font-size: 4vmin;
+    font-weight: 600;
     margin: 0;
 }
 
 .description {
-    padding: 1% 3%;
+    padding: 2% 3%;
     margin: 2.5vh inherit;
     z-index: 40;
     background: rgb(85, 85, 85);
@@ -88,11 +87,10 @@ export default Vue.extend({
     color:white;
     outline: none;
     border: none;
-    padding: 10px 20px;
-    font-size: 17px;
-    font-weight: 800;
+    padding: 1.1vmin 2vmin;
+    font-size: 2.7vmin;
+    font-weight: 550;
     background-color: rgb(30, 30, 30);
-    transition: 0.1s ease-in-out;
     cursor: pointer;  
     margin: 1.5vh 0;
     -webkit-appearance: none;
@@ -108,10 +106,16 @@ export default Vue.extend({
 
 p {
     color:white;
-    font-size: 20px;
+    font-size: 2.2vmin;
 }
 
 @media screen and (max-width: 720px){
+    .heading {
+        font-size: 35px;
+    }
+    .button {
+        font-size: 17px;
+    }
 
     #corner.right{
         clip-path: polygon(0 0, 100% 0, 100% 100%, 15vmin 100%, 0 calc(100% - 15vmin));
@@ -128,6 +132,7 @@ p {
     .container {
         width: 100%;
         padding: 0;
+        text-align: center;
     }
     .container > h2 {
         padding: 0 5%;

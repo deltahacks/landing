@@ -1,36 +1,19 @@
 <template>
   <div class="back">
-    <p style="color: white">This is the header component(s)</p>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <div class="navbar-navlink">
-          <a>Schedule</a
-          >&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a>Challenges</a>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;<a
-            >Workshops</a
-          >
-        </div>
-      </div>
-    </div>
     <br />
     <div class="apps-due">
       <div class="apps-due-inner">
-        <p id="apps-due-header" style="font-size: 13px; font-weight: 600">
+        <p id="apps-due-header">
           HACKER APPLICATIONS DROPPING IN T-MINUS
         </p>
-        <h1 id="countdown" style="font-size: 55px; margin: 0px">00 : 00 : 00</h1>
+        <h1 id="countdown">{{hours}}h : {{mpad}}{{minutes}}m : {{spad}}{{seconds}}s</h1>
       </div>
     </div>
     <br />
     <div class="mailbox">
-      <a
-        v-if="!enteringInfo && !gotit"
-        class="mailing-button fade-in"
-        @click="enteringInfo = true"
-      >
-        DH7 Mailing list
-      </a>
       <form v-on:submit.prevent="handleSubmit">
-        <div v-if="enteringInfo && !gotit" class="input-box">
+        <div id="mail-text">Mailing List Signup</div>
+        <div v-if="!enteringInfo && !gotit" class="input-box">
           <input
             type="text"
             placeholder="Your Name"
@@ -40,7 +23,7 @@
           />
           <input
             type="email"
-            placeholder="Your email"
+            placeholder="Your Email"
             class="input-field"
             v-model="email"
             required
@@ -60,14 +43,21 @@
 
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from 'vue';
 export default Vue.extend({
   data() {
     return {
       enteringInfo: false,
-      email: "",
-      name: "",
+      email: '',
+      name: '',
       gotit: false,
+      current: new Date(),
+      target: new Date(1606003200),
+      hours: 99,
+      minutes: 99,
+      seconds: 99,
+      spad: '',
+      mpad: '',
     };
   },
   methods: {
@@ -79,8 +69,8 @@ export default Vue.extend({
       // tslint:disable-next-line
       const name_input = this.$data.name;
 
-      this.name = "";
-      this.email = "";
+      this.name = '';
+      this.email = '';
 
       const params = {
         email: email_address,
@@ -93,8 +83,8 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + "=" + esc(params[k]))
-        .join("&");
+        .map((k) => esc(k) + '=' + esc(params[k]))
+        .join('&');
       const url =
         'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
         '?' +
@@ -108,19 +98,36 @@ export default Vue.extend({
       }, 4000);
     },
   },
+  mounted() {
+    setInterval(() => {
+      const dateFuture: any = new Date(1606003200000);
+      const dateNow: any = new Date();
+
+      let delta = Math.abs(dateFuture - dateNow) / 1000;
+
+      // calculate (and subtract) whole hours
+      const hours = Math.floor(delta / 3600);
+      this.hours = hours;
+      delta -= hours * 3600;
+
+      // calculate (and subtract) whole minutes
+      const minutes = Math.floor(delta / 60) % 60;
+      this.minutes = minutes;
+      this.mpad = this.minutes < 10 ? '0' : '';
+      delta -= minutes * 60;
+
+      // what's left is seconds
+      const seconds = delta % 60;  // in theory the modulus is not required
+      this.seconds = Math.floor(seconds);
+      this.spad = this.seconds < 10 ? '0' : '';
+
+    }, 0, 1000);
+  },
 });
 </script>
 
 <style>
-.back {
-  background-color: #203a43;
-  height: 80vh;
-  padding-left: 10px;
-  overflow: hidden!important;
-}
-p {
-  text-align: center;
-}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -143,7 +150,6 @@ p {
   background-color: #464646;
   width: 370px;
   height: 70px;
-  margin-right: 200px !important ;
   display: inline-flex;
 }
 .navbar-inner {
@@ -154,54 +160,75 @@ p {
   cursor: pointer !important;
 }
 .apps-due {
-  margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 370px;
-  height: 115px;
-  margin-right: 200px !important ;
+  width: 20vw;
+  height: 5.5vw;
   color: white;
   display: inline-flex;
 }
 .apps-due-inner {
-  margin: 0 20px;
+  margin: 0 1vw;
+}
+
+#apps-due-header {
+  font-size: 0.72vw;
+  font-weight: 600;
+}
+#countdown {
+  font-size: 2.05vw;
+  margin: 0px;
+  margin-top: -0.5vw;
+  padding-left: 0.2vmax;
+}
+
+#mail-text {
+  text-align: left;
+  margin-top: 0.5vw;
+  margin-left: 1.2vw;
+  font-weight: 600;
+  font-size: 1vw;
 }
 .mailbox {
   margin-top: 20px !important;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
-  width: 370px;
-  height: 200px;
-  margin-right: 200px !important ;
+  width: 20vmax;
+  height: 10.2vmax;
   padding: 0px;
   color: white;
   display: inline-flex;
+  display: flex;
+  flex-direction: column;
 }
 .input-field {
-  margin: 5px 0 5px 30px;
-  width: 300px;
-  height: 35px;
+  margin: 0.2vw 0 0.1vw 1.2vw;
+  width: 17vw;
+  height: 1.85vw;
   background-color: #333333;
   border: 0px;
   text-align: center;
   color: white !important;
   cursor: pointer;
   padding: 0px;
+  font-size: 0.8vw;
 }
 .input-field::placeholder {
   color: #dcdcdc !important;
 }
 .submit-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-left: 30px;
-  background-color: #333333;
+  margin-left: 1.2vw;
+  background-color: #272727;
   border: 0px;
-  height: 35px;
-  width: 100px;
+  height: 2.2vw;
+  width: 6vw;
   color: white;
-  margin-top: 5px;
+  margin-top: 0.3vw;
   cursor: pointer;
   padding: 0px;
+  font-size: 0.8vw;
+  font-weight: 550;
 }
 .mailing-button {
   font-size: 20px;
@@ -216,7 +243,7 @@ p {
   cursor: pointer;
 }
 .input-box{
-  margin-top: 30px;
+  margin-top: 1.2vh;
 }
 .confirmation-box{
   margin: auto;
@@ -225,7 +252,100 @@ p {
   font-weight: 600;
 }
 
+@media only screen and (max-width: 1250px) {
+  .apps-due {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+    background-color: #464646;
+    width: 35%;
+    height: 9vw;
+    color: white;
+    display: inline-flex;
+}
+.apps-due-inner {
+  margin: 0 1vw;
+}
 
+#apps-due-header {
+  font-size: 1.15vw;
+  font-weight: 600;
+}
+#countdown {
+  font-size: 3.3vw;
+  margin: 0px;
+  margin-top: -0.5vw;
+  padding-left: 0.2vmax;
+}
+
+#mail-text {
+  text-align: left;
+  margin-top: 2%;
+  margin-left: 5%;
+  font-weight: 600;
+  font-size: 20px;
+}
+.mailbox {
+  margin-top: 20px !important;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
+  background-color: #464646;
+  width: 35%;
+  height: 185px;
+  padding: 0px;
+  color: white;
+  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+}
+.input-field {
+  margin: 1.5% 0 0.8% 5%;
+  width: 86%;
+  height: 35px;
+  background-color: #333333;
+  border: 0px;
+  text-align: center;
+  color: white !important;
+  cursor: pointer;
+  padding: 0px;
+  font-size: 13px;
+}
+.input-field::placeholder {
+  color: #dcdcdc !important;
+}
+.submit-button {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+  margin-left: 5%;
+  background-color: #272727;
+  border: 0px;
+  height: 35px;
+  width: 80px;
+  color: white;
+  margin-top: 1%;
+  cursor: pointer;
+  padding: 0px;
+  font-size: 17px;
+  font-weight: 550;
+}
+.mailing-button {
+  font-size: 20px;
+  font-weight: 600;
+  margin: auto;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 20px;
+}
+.mailing-button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+.input-box{
+  margin-top: 1.2vh;
+}
+.confirmation-box{
+  margin: auto;
+  font-family: Montserrat; 
+  font-size: 30px; 
+  font-weight: 600;
+}
+}
 /* ------------------------------- For Mobile devices --------------------------------- */
 @media only screen and (max-width: 700px) and (min-width: 100px) {
 .navbar, .apps-due, .mailbox {
