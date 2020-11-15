@@ -36,7 +36,7 @@
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <div class="f">
-      <div class="spacer" v-if="!isMobile()" style="height: 25vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 35vh" />
       <Footer/>
       </div>
     </div>
