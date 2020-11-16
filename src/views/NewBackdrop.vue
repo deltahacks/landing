@@ -156,6 +156,7 @@ export default Vue.extend({
 .app {
   color: white;
   height: inherit;
+  overflow-x: hidden;
 }
 
 .cyberBlurb {
