@@ -100,7 +100,7 @@ export default Vue.extend({
     },
   },
   created(): void {
-    this.selected = !this.isMobile() ? this.initialSelect : '';
+    this.selected = this.initialSelect;
   },
 });
 </script>

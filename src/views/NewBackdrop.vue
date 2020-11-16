@@ -42,7 +42,7 @@
       </div>
       <div class="spacer" style="height: 13vmax" />
       <img class="mobileSep" id="B5" :src="B5">
-      <div class="mobileBackgroundDark">
+      <div class="mobileBackgroundDark faqBound">
       <FAQ id="faq1" initialSelect="general" />
       <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
       <img class="mobileSep" id="B3-2" :src="B3">
@@ -250,6 +250,9 @@ export default Vue.extend({
   .gradient {
     display: none;
   }
+  .faqBound {
+    padding-top: 10%;
+  }
   .mobileBackgroundLight {
     background-color: rgb(55, 55, 55);
   }
@@ -263,7 +266,7 @@ export default Vue.extend({
     height: 20vh !important;
   }
   #mobileSpacerMid {
-    height: 4vh !important;
+    height: 5vh !important;
   }
   .mobileSep {
     margin-top: -1vh;
@@ -282,9 +285,9 @@ export default Vue.extend({
     margin-left: 0;
   }
   .cyberBlurb {
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 0 !important;
-    padding-top: 0 !important;
+    padding-top: 15% !important;
   }
   .blurb-group {
     display: flex;

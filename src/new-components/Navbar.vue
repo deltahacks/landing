@@ -46,7 +46,6 @@ export default Vue.extend({
   width: auto;
   height: 2.4vw;
   margin: 1.35vw 2.5vw 1.35vw 8vw;
-  transition: 0.5s;
   cursor: pointer;
 }
 .home:hover{
@@ -60,7 +59,6 @@ export default Vue.extend({
   font-weight: 650;
   margin: 0 1vw 0 1vw;
   text-decoration: none;
-  transition: 0.5s;
   cursor: pointer;
 }
 .link:hover {
@@ -74,12 +72,25 @@ export default Vue.extend({
   font-weight: 600;
   margin: 0 1vw 0 1vw;
   text-decoration: none;
-  transition: 0.5s;
   user-select: none;
 }
 
 .mlink{
   display: none;
+}
+
+@media screen and (max-width: 1250px) {
+  .home {
+    margin: 1.5vw 2.5vw 1.5vw 8vw;
+  }
+  .link{
+    font-size: 2.25vw;
+    margin: 0 1.1vw 0 1.1vw;
+  }
+  .bar{
+    font-size: 2.25vw;
+    margin: 0 1.1vw 0 1.1vw;
+  }
 }
 
 @media screen and (max-width: 720px){

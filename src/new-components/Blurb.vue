@@ -80,7 +80,6 @@ export default Vue.extend({
 
 .description {
     padding: 1% 3%;
-    margin: 2.5vh inherit;
     z-index: 40;
     background: rgb(85, 85, 85);
     padding-bottom: 2vh;
@@ -141,11 +140,10 @@ p {
     }
     p {
         color:white;
-        font-size: 3.5vmin;
+        font-size: 3.75vmin;
     }
     .description {
         padding: 1vmin 1vmin 1vmin 1vmin;
-        margin: 2.5vh inherit;
         z-index: 40;
         background: rgb(85, 85, 85);
     }
@@ -172,13 +170,10 @@ p {
     .container {
         width: 100%;
         text-align: center;
+        
     }
     .container > h2 {
         padding: 0 5%;
-    }
-    .description {
-        margin-right: 4vw;
-        margin-left: 4vw;
     }
     .description > p {
         padding: 0 5%;

@@ -330,8 +330,8 @@ export default Vue.extend({
     margin: 3vh 0 0;
     padding: 0vh 0px 0vh;
   }
-
 }
+
 @media only screen and (max-width: 1250px) {
   .bruh {
     visibility: hidden;
@@ -352,7 +352,17 @@ export default Vue.extend({
   .landing-subtitle {
     font-size: 27px;
   }
-  
+}
 
+@media only screen and (max-width: 700px) {
+  #particles-js {
+    height: 25%;
+  }
+  .landing-title {
+    font-size: 45px;
+  }
+  .landing-subtitle {
+    font-size: 20px;
+  }
 }
 </style>

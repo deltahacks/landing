@@ -190,7 +190,7 @@ export default Vue.extend({
   font-size: 1vw;
 }
 .mailbox {
-  margin-top: 20px !important;
+  margin-top: 20px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 20vmax;
@@ -284,7 +284,7 @@ export default Vue.extend({
   font-size: 20px;
 }
 .mailbox {
-  margin-top: 20px !important;
+  margin-top: 20px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 35%;
@@ -365,6 +365,9 @@ export default Vue.extend({
 
 .apps-due {
   display: none;
+}
+.mailbox {
+  margin-top: 42%;
 }
 
 }
