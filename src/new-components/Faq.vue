@@ -1,7 +1,7 @@
 <template>
   <div class="faq" id="faqScroll">
     <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
-    <h1 id="mobile-faq">FAQ</h1>
+    <h1 id="mobile-faq">FAQ - Frequently Asked Questions</h1>
     <div class="faq-container">
       <div class="categories">
         <div
@@ -135,7 +135,7 @@ export default Vue.extend({
   height: 350px;
   overflow: hidden;
   margin: 0 auto;
-  background:rgba(70, 70, 70, 1);
+  background:rgba(85, 85, 85, 1);
   color: rgba(255, 255, 255, 1);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0% 50%);
 }
@@ -248,67 +248,84 @@ export default Vue.extend({
   .faq-container {
     display: flex;
     flex-direction: column;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%); 
     height: 700px; 
     width: 90%; 
     background: none;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%);
   }
- 
+
   .categories {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
     padding-bottom: 10px;
-    background:rgba(100, 100, 100, 1);
+    background: rgba(85,85,85,1)
   }
+
   .category-bubble {
     text-align: center;
-    font-size: 22px;
+    margin: 0px 0px 10px 0px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%);
   }
 
   .category-bubble:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: none;
   }
 
   .category-name {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 10px 40px 10px 20px;
+    margin-left: 10px;
+    text-align: left;
+    width: 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%);
   }
 
   .selected {
-    font-size: 30px;
-    font-weight: 800;
     text-align: center;
     text-decoration: none;
-    font-size: 24px; 
-    font-weight: 800;
-    opacity: 0.99;
-    padding: 0px 20px;
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.2);
+    background: none;
     transition: 0.1s ease-in-out;
     cursor: pointer;
     z-index: 10000;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0% 50%);
   }
+
+  .selected .category-name {
+    background:rgba(0,0,0,0.4); 
+  }
+
+  .question-box {
+    font-size: 15px;
+    margin: 0px;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+
   .answer-box {
     font-weight: 400;
-
+    font-size: 15px; 
   }
+
   #desktop-faq {
     display: none;
   }
+
   #mobile-faq {
     display: block;
   }
+
   .mobile-faq-area {
     display: block;
-    padding: 3%;
+    margin-top: 10px;
+    padding: 20px;
+    background:rgb(110, 110, 110); /* change this */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0% 50%);
   }
+
   .faq-area {
     display: none;
   }
+
   .open-enter-active,
   .open-leave-active {
     transition: max-height 0.3s;
