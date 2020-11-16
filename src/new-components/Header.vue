@@ -363,5 +363,9 @@ export default Vue.extend({
   font-size:12vw !important;
 }
 
+.apps-due {
+  display: none;
+}
+
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="container">
       <div v-if="main">
         <img class="rocket-img" :src="rocket" />
-        <h1 id="sponsors-title">Sponsors</h1>
+        <h1 id="sponsors-title">Current and Previous Sponsors</h1>
         <!-- <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
           <a href="mailto:sponsorship@deltahacks.com"
