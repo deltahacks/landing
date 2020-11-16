@@ -1,8 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import Faq from './new-components/Faq.vue';
-import Backdrop from './views/Backdrop.vue';
 
 Vue.use(Router);
 
