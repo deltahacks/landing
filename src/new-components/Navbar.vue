@@ -4,7 +4,7 @@
     <a class="mlink" href="https://www.deltahacks.com/">
       <a class="bold">Delta</a>Hacks <a class="bold">7</a>
     </a>
-    <a class="link" v-scroll-to="'#blurb-2'" @scroll="handleScroll">
+    <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll">
       About
     </a>
     <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll">
@@ -40,6 +40,8 @@ export default Vue.extend({
   justify-content: flex-start safe;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 2;
 }
 
 .home {
