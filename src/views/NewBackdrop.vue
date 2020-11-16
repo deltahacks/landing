@@ -9,7 +9,7 @@
       <div id="mobileSpacerMidTop" class="spacer" style="height: 30vh" />
       </div>
       <div class="blurb-group">
-        <div class="mobileBackgroundDark">
+        <div class="mobileBackgroundDark mobileTopBlurb">
         <img class="mobileSep" id="B3" :src="B5">
         <Blurb 
           header="To Infinity and Beyond"
@@ -304,7 +304,7 @@ export default Vue.extend({
     background-color: rgb(12, 12, 12);
   }
   #mobileSpacerMidTop {
-    height: 20vh !important;
+    height: 0vh !important;
   }
   #mobileSpacerMid {
     height: 5vh !important;
@@ -323,6 +323,20 @@ export default Vue.extend({
     margin-bottom: -1vh;
     display: inline;
   }
+  .mobileTopBlurb {
+    background-color: rgb(55, 55, 55);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .mobileTopBlurb {
+    background-color: rgb(26, 26, 26);
+  }
+  #mobileSpacerMidTop {
+    height: 20vh !important;
+
+  }
+  
 }
 
 @media screen and (max-width: 1700px) {
