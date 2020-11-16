@@ -9,8 +9,8 @@
       <div id="mobileSpacerMidTop" class="spacer" style="height: 30vh" />
       </div>
       <div class="blurb-group">
-        <div class="mobileBackgroundMid">
-        <img class="mobileSep mobileBackgroundLight" :src="B3">
+        <div class="mobileBackgroundDark">
+        <img class="mobileSep" id="B3" :src="B5">
         <Blurb 
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -21,9 +21,9 @@
           id="blurb-1"
         />
         <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
-        <img class="mobileSep mobileBackgroundMid" :src="B2">
+        <img class="mobileSep" :src="B6">
         </div>
-        <div class="mobileBackgroundDark">
+        <div class="mobileBackgroundMid">
           <Blurb 
           header="The Hackathon for Change"
           :body="blurb2_text"
@@ -32,26 +32,28 @@
           class="cyberBlurb"
           id="blurb-2"
         />
-        <div class="spacer" style="height: 15vh" />
-        <img class="mobileSep mobileBackgroundDark" :src="B7">
+        <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
+        <img class="mobileSep" :src="B4">
       </div>
       </div>
-      <div class="mobileBackgroundMid">
+      <div class="mobileBackgroundDarkest">
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right">
       </div>
-      <div class="spacer" style="height: 13vmax" />
-      <img class="mobileSep" id="B5" :src="B5">
+      <div id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
+      <img class="mobileSep" :src="B5">
       <div class="mobileBackgroundDark faqBound">
       <FAQ id="faq1" initialSelect="general" />
       <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
-      <img class="mobileSep" id="B3-2" :src="B3">
+      <img class="mobileSep" :src="B3">
       </div>
+      <div class="mobileBackgroundMid">
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
       <div class="f">
       <div class="spacer" v-if="!isMobile()" style="height: 35vh" />
       <Footer/>
+      </div>
       </div>
       </div>
     </div>
@@ -80,7 +82,7 @@ import B3 from '@/assets/cyber/B3.svg';
 import B4 from '@/assets/cyber/B4.svg';
 import B5 from '@/assets/cyber/B5.svg';
 import B6 from '@/assets/cyber/B6.svg';
-import B7 from '@/assets/cyber/B6.svg';
+import B7 from '@/assets/cyber/B7.svg';
 
 // @ts-ignore
 import VueScrollReveal from 'vue-scroll-reveal';
@@ -248,31 +250,8 @@ export default Vue.extend({
 
 
 @media screen and (max-width: 720px) {
-  .gradient {
-    display: none;
-  }
   .faqBound {
     padding-top: 10%;
-  }
-  .mobileBackgroundLight {
-    background-color: rgb(55, 55, 55);
-  }
-  .mobileBackgroundMid {
-    background-color: rgb(40, 40, 40);
-  }
-  .mobileBackgroundDark {
-    background-color: rgb(26, 26, 26);
-  }
-  #mobileSpacerMidTop {
-    height: 20vh !important;
-  }
-  #mobileSpacerMid {
-    height: 5vh !important;
-  }
-  .mobileSep {
-    margin-top: -1vh;
-    margin-bottom: -1vh;
-    display: inline;
   }
   .scroll {
     max-height: none;
@@ -306,8 +285,43 @@ export default Vue.extend({
 }
 
 @media screen and (max-width: 1250px) {
+  .gradient {
+    display: none;
+  }
   .sideItem {
     display: none;
+  }
+  .mobileBackgroundLight {
+    background-color: rgb(55, 55, 55);
+  }
+  .mobileBackgroundMid {
+    background-color: rgb(40, 40, 40);
+  }
+  .mobileBackgroundDark {
+    background-color: rgb(26, 26, 26);
+  }
+  .mobileBackgroundDarkest {
+    background-color: rgb(12, 12, 12);
+  }
+  #mobileSpacerMidTop {
+    height: 20vh !important;
+  }
+  #mobileSpacerMid {
+    height: 5vh !important;
+  }
+  #mobileSpacerUpperMid {
+    height: 5vh !important;
+  }
+  #mobileSpacerLowerMid {
+    height: 10vh !important;
+  }
+  #B3 {
+    margin-top: -7vh;
+  }
+  .mobileSep {
+    margin-top: -1vh;
+    margin-bottom: -1vh;
+    display: inline;
   }
 }
 
