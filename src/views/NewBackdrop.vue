@@ -326,6 +326,7 @@ export default Vue.extend({
   .mobileTopBlurb {
     background-color: rgb(55, 55, 55);
   }
+
 }
 
 @media screen and (max-width: 720px) {
@@ -335,6 +336,9 @@ export default Vue.extend({
   #mobileSpacerMidTop {
     height: 20vh !important;
 
+  }
+  #B3 {
+    display: unset;
   }
   
 }

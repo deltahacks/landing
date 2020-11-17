@@ -23,7 +23,7 @@
       <h1 class="landing-title">
         <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
       </h1>
-      <h1 class="landing-subtitle">at McMaster University</h1>
+      <h1 class="landing-subtitle">March 5-7, 2020 •  Virtual Hackathon <br/>McMaster University</h1>
       <Header/>
     </div>
   </div>
@@ -252,7 +252,7 @@ export default Vue.extend({
 .landing-subtitle {
   margin-top: 0vh;
   margin-bottom: 0vh;
-  font-size: 1.8vw;
+  font-size: 1.2vw;
   font-weight: 300;
 }
 
@@ -352,17 +352,20 @@ export default Vue.extend({
   .landing-subtitle {
     font-size: 27px;
   }
+  .flex-container {
+    padding-top: 1%;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   #particles-js {
-    height: 25%;
+    height: 15%;
   }
   .landing-title {
     font-size: 45px;
   }
   .landing-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 </style>
