@@ -17,7 +17,7 @@
       Contact
     </a>
     <p class="bar">|</p>
-    <a href="https://www.my.deltahacks.com" class="link">Login</a>
+    <a href="https://www.my.deltahacks.com" id="login" class="link">Login</a>
   </div>
 </template>
 
@@ -108,13 +108,14 @@ export default Vue.extend({
     /* font-size: 3.5vmin;
     font-weight: 1000;
     margin: 0 1.5vmin 0 1.5vmin; */
-    display: none;
+    display: none
   }
   .bar{
     /* font-size: 3.5vmin;
     font-weight: 900;
     margin: 0 1.5vmin 0 1.5vmin; */
-    display: none;
+    font-size: 5vmin;
+    display: initial;
   }
   .mlink{
     display: initial;
@@ -132,6 +133,11 @@ export default Vue.extend({
   }
   .bold{
     font-weight: 525;
+  }
+  #login {
+    display: initial;
+    font-size: 5vmin;
+    font-weight: 500;
   }
 }
 </style>

@@ -6,7 +6,7 @@
   <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
 
   <div class="flex-container">
-    <a
+    <!--<a
       id="mlh-trust-badge"
       class="mlh-badge"
       href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
@@ -17,7 +17,7 @@
         alt="Major League Hacking 2020 Hackathon Season"
         style="width:100%"
       />
-    </a>
+    </a>-->
     <div id="particles-js"></div>
     <div id="left">
       <h1 class="landing-title">
@@ -247,6 +247,7 @@ export default Vue.extend({
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
+  margin-left: -0.5%;
 }
 
 .landing-subtitle {
