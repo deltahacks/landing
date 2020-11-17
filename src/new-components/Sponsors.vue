@@ -2,7 +2,7 @@
   <div class="backSponsor">
     <div class="container">
       <div v-if="main">
-        <h1 id="sponsors-title">Sponsors</h1>
+        <h1 id="sponsors-title">Current and Former Sponsors</h1>
         <!-- <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
           <a href="mailto:sponsorship@deltahacks.com"
@@ -151,6 +151,12 @@ img {
   align-items: center;
   text-align: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  #sponsors-title {
+    font-size: 20px;
+  }
 }
 </style>
 
