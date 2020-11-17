@@ -70,24 +70,24 @@ export default {
       alt: 'Algorand',
     },
     {
-      logo: Deloitte,
-      href: 'https://www2.deloitte.com/ca/en/pages/careers/topics/students.html',
-      alt: 'Deloitte',
-    },
-    {
       logo: FDM,
       href: 'https://www.fdmgroup.com/en-ca/ca-home/',
       alt: 'FDM',
     },
     {
-      logo: L3Harris,
-      href: 'https://www.l3harris.com/careers',
-      alt: 'L3Harris',
+      logo: Deloitte,
+      href: 'https://www2.deloitte.com/ca/en/pages/careers/topics/students.html',
+      alt: 'Deloitte',
     },
     {
       logo: Voiceflow,
       href: 'https://www.voiceflow.com/',
       alt: 'Voiceflow',
+    },
+    {
+      logo: L3Harris,
+      href: 'https://www.l3harris.com/careers',
+      alt: 'L3Harris',
     },
     {
       logo: DigitalOcean,
