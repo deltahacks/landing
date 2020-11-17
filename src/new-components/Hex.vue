@@ -12,16 +12,31 @@
         <stop offset="0" :stop-color="start_gradient" />
         <stop offset="1" :stop-color="end_gradient" />
       </linearGradient>
+       <filter id="glow">
+            <feGaussianBlur stdDeviation="7" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+         <filter id="inner-glow">
+            <feFlood flood-color="red"/>
+            <feComposite in2="SourceAlpha" operator="out"/>
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite operator="atop" in2="SourceGraphic"/>
+        </filter> 
     </defs>
     <g id="Layer_2" dcata-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
         <g class="cls-1">
-          <circle
+          <polygon
             class="cls-2"
-            :cx="x"
-            :cy="yVal"
-            :r="r"
+            :points="points"
             :fill="gradient()"
+            :fill-opacity="0.2"
+            :stroke="stroke"
+            :stroke-width="4"
+            filter="url(#glow)"
           />
         </g>
       </g>
@@ -30,9 +45,10 @@
         :y="yVal - r * 0.1"
         text-anchor="middle"
         fill="white"
-        :font-size="r * 0.5"
-        font-family="Arial"
-        dy=".3em"
+        :font-size="r * 0.6"
+        font-family="montserrat"
+        font-weight="500"
+        dy=".25em"
       >
         {{ number }}
       </text>
@@ -41,9 +57,10 @@
         :y="yVal + r * 0.25"
         text-anchor="middle"
         fill="white"
-        :font-size="r * 0.2"
-        font-family="Arial"
-        dy=".3em"
+        :font-size="r * 0.27"
+        font-family="montserrat"
+        font-weight="430"
+        dy=".5em"
       >
         {{ content }}
       </text>
@@ -53,6 +70,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
   name: 'Bubble',
   components: {},
@@ -60,11 +78,13 @@ export default Vue.extend({
     r: Number,
     x: Number,
     y: Number,
+    points: String,
     depth: Number,
     number: Number,
     content: String,
     start_gradient: String,
     end_gradient: String,
+    stroke: String,
   },
   data() {
     return {
@@ -73,20 +93,21 @@ export default Vue.extend({
       phase: Math.random() * 30 * Math.PI,
       period: 90 / (10 + this.depth),
       amplitude: this.depth / 3,
+      stroke2: this.stroke,
     };
   },
   mounted() {
-    requestAnimationFrame(this.tick);
+    // requestAnimationFrame(this.tick);
   },
   methods: {
     tick() {
       this.time += 1;
       this.yVal +=
-        0.5 *
-        this.amplitude *
-        Math.sin((this.time * 0.5) / this.period + this.phase);
+         0.5 *
+         this.amplitude *
+         Math.sin((this.time * 0.5) / this.period + this.phase);
       requestAnimationFrame(this.tick);
-    },
+     },
     gradient() {
       return 'url(#' + this.number + ')';
     },
@@ -98,10 +119,12 @@ export default Vue.extend({
 text {
   font-family: 'Montserrat', sans-serif;
 }
+
 .cls-1 {
-  opacity: 0.25;
+  opacity: 1;
 }
+
 .cls-2 {
-  opacity: 0.74;
+  opacity: 1;
 }
 </style>
