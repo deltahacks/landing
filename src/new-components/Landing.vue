@@ -202,7 +202,7 @@ export default Vue.extend({
   z-index: 1;
   width: 100vw;
   height: 50vw;
-  min-height: 800px;
+  min-height: 720px;
 }
 
 .bruh2 {
