@@ -166,17 +166,19 @@ export default Vue.extend({
   height: 5.5vw;
   color: white;
   display: inline-flex;
+  min-width: 325px;
+  min-height: 90px;
 }
 .apps-due-inner {
   margin: 0 1vw;
 }
 
 #apps-due-header {
-  font-size: 0.72vw;
+  font-size: max(0.7vw, 11.5px);
   font-weight: 600;
 }
 #countdown {
-  font-size: 2.05vw;
+  font-size: max(36px, 2.2vw);
   margin: 0px;
   margin-top: -0.5vw;
   padding-left: 0.2vmax;
@@ -184,10 +186,10 @@ export default Vue.extend({
 
 #mail-text {
   text-align: left;
-  margin-top: 0.5vw;
-  margin-left: 1.2vw;
+  margin-top: 3%;
+  margin-left: 6%;
   font-weight: 600;
-  font-size: 1vw;
+  font-size: calc(12px + 0.5vw);
 }
 .mailbox {
   margin-top: 20px;
@@ -200,35 +202,40 @@ export default Vue.extend({
   display: inline-flex;
   display: flex;
   flex-direction: column;
+  min-width: 325px;
+  min-height: 175px
 }
 .input-field {
-  margin: 0.2vw 0 0.1vw 1.2vw;
-  width: 17vw;
+  margin: 1% 0 0.5% 6%;
+  width: 85%;
   height: 1.85vw;
+  min-height: 30px;
   background-color: #333333;
   border: 0px;
   text-align: center;
   color: white !important;
   cursor: pointer;
   padding: 0px;
-  font-size: 0.8vw;
+  font-size: calc(7px + 0.5vw);
 }
 .input-field::placeholder {
   color: #dcdcdc !important;
 }
 .submit-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-left: 1.2vw;
+  margin-left: 6%;
   background-color: #272727;
   border: 0px;
   height: 2.2vw;
   width: 6vw;
   color: white;
-  margin-top: 0.3vw;
+  margin-top: 1.5%;
   cursor: pointer;
   padding: 0px;
-  font-size: 0.8vw;
+  font-size: calc(10px + 0.3vw);
   font-weight: 550;
+  min-height: 40px;
+  min-width: 90px;
 }
 .mailing-button {
   font-size: 20px;
@@ -266,11 +273,9 @@ export default Vue.extend({
 }
 
 #apps-due-header {
-  font-size: 1.15vw;
   font-weight: 600;
 }
 #countdown {
-  font-size: 3.3vw;
   margin: 0px;
   margin-top: -0.5vw;
   padding-left: 0.2vmax;
