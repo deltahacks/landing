@@ -100,7 +100,7 @@ export default Vue.extend({
   },
   mounted() {
     setInterval(() => {
-      const dateFuture: any = new Date(1606003200000);
+      const dateFuture: any = new Date(1606066031000);
       const dateNow: any = new Date();
 
       let delta = Math.abs(dateFuture - dateNow) / 1000;
