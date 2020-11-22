@@ -6,7 +6,7 @@
         <p id="apps-due-header">
           HACKER APPLICATIONS DROPPING IN T-MINUS
         </p>
-        <h1 id="countdown">Later Today!</h1>
+        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Apply Now!</a></h1>
       </div>
     </div>
     <br />
@@ -134,6 +134,11 @@ export default Vue.extend({
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.4s;
+}
+
+#apply-link {
+  color: white;
+  text-decoration: none;
 }
 
 @keyframes fadeInOpacity {
