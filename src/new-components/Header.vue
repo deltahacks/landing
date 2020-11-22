@@ -6,7 +6,7 @@
         <p id="apps-due-header">
           HACKER APPLICATIONS DROPPING IN T-MINUS
         </p>
-        <h1 id="countdown">{{hours}}h : {{mpad}}{{minutes}}m : {{spad}}{{seconds}}s</h1>
+        <h1 id="countdown">Later Today!</h1>
       </div>
     </div>
     <br />
