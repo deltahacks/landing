@@ -4,9 +4,9 @@
     <div class="apps-due">
       <div class="apps-due-inner">
         <p id="apps-due-header">
-          HACKER APPLICATIONS DROPPING IN T-MINUS
+          APPLICATIONS ARE NOW OPEN!
         </p>
-        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Apply Now!</a></h1>
+        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Click Here to Apply!</a></h1>
       </div>
     </div>
     <br />
@@ -183,10 +183,9 @@ export default Vue.extend({
   font-weight: 600;
 }
 #countdown {
-  font-size: max(36px, 2.2vw);
+  font-size: max(28px, 1.7vw);
   margin: 0px;
   margin-top: -0.5vw;
-  padding-left: 0.2vmax;
 }
 
 #mail-text {
