@@ -119,7 +119,7 @@ export default Vue.extend({
             x: 290,
             y: 100,
           },
-          number: 24,
+          number: 36,
           content: 'Hours',
           depth: 2,
           start_gradient: '#808080',
