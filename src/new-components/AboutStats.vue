@@ -51,7 +51,7 @@ export default Vue.extend({
     Hex,
   },
   mounted() {
-    this.getlasthash();
+    //this.getlasthash();
   },
   methods: {
     getlasthash() {
@@ -139,8 +139,8 @@ export default Vue.extend({
             x: 90,
             y: 440,
           },
-          number: 111,
-          content: 'Commits',
+          number: 55,
+          content: 'Mentors',
           depth: 1,
           start_gradient: '#808080',
           end_gradient: '#808080',
@@ -197,8 +197,8 @@ export default Vue.extend({
             x: 320,
             y: 600,
           },
-          number: 55,
-          content: 'Mentors',
+          number: 2500,
+          content: 'Applicants',
           depth: 3,
           start_gradient: '#808080',
           end_gradient: '#808080',
