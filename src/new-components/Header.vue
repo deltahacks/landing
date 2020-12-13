@@ -6,7 +6,7 @@
         <p id="apps-due-header">
           APPLICATIONS ARE NOW OPEN!
         </p>
-        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Click Here to Apply!</a></h1>
+        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Click <u>Here</u> to Apply!</a></h1>
       </div>
     </div>
     <br />
@@ -222,9 +222,16 @@ export default Vue.extend({
   padding: 0px;
   font-size: calc(7px + 0.5vw);
 }
-.input-field::placeholder {
+
+input::placeholder {
   color: #dcdcdc !important;
+  font-family: 'Montserrat';
 }
+
+input:focus::placeholder {
+    color: transparent;
+}
+
 .submit-button {
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
   margin-left: 6%;

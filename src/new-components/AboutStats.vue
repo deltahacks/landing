@@ -51,7 +51,7 @@ export default Vue.extend({
     Hex,
   },
   mounted() {
-    //this.getlasthash();
+    // this.getlasthash();
   },
   methods: {
     getlasthash() {
