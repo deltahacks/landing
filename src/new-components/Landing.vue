@@ -23,7 +23,7 @@
       <h1 class="landing-title">
         <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
       </h1>
-      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University</h1>
+      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University<br/><strong class="deadline">Application Deadline: January 10th</strong></h1>
       <Header/>
     </div>
   </div>
@@ -299,6 +299,9 @@ export default Vue.extend({
   top: 0;
   width: 10%;
   z-index: 10000;
+}
+.deadline {
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {

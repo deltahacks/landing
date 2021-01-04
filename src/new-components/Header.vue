@@ -383,7 +383,7 @@ input:focus::placeholder {
   display: none;
 }
 .mailbox {
-  margin-top: 42%;
+  margin-top: 38%;
 }
 
 }
