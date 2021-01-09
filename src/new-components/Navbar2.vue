@@ -12,8 +12,8 @@
     <a class="link" v-scroll-to="'#sponsor'" @scroll="handleScroll">
       Sponsors
     </a>
-    <a class="link" v-scroll-to="'#footer'" @scroll="handleScroll">
-      Contact
+    <a class="link" href="mailto:hello@deltahacks.com" target=“_blank”> 
+      Contact 
     </a>
     <p class="bar">|</p>
     <a href="https://www.my.deltahacks.com" class="link">Login</a>
