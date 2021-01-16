@@ -11,7 +11,7 @@ export default {
     },
     {
       q: 'Who can participate?',
-      a: `Anyone who is willing to learn and have fun! If you have an idea - or even if you don't, you're invited! All university and high school students over 14 during the date of the event are welcome at DeltaHacks!`,
+      a: `Anyone who is willing to learn and have fun! If you have an idea - or even if you don't, you're invited! All university and high school students over 13 during the date of the event are welcome at DeltaHacks!`,
     },
     {
       q: 'I have never been to a hackathon before, what should I do?',
