@@ -23,7 +23,7 @@
       <h1 class="landing-title">
         <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
       </h1>
-      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University<br/><strong class="deadline">Application Deadline: January 24th</strong></h1>
+      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University</h1><!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
       <Header/>
     </div>
   </div>
