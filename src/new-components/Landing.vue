@@ -6,24 +6,24 @@
   <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
 
   <div class="flex-container">
-    <!--<a
+    <a
       id="mlh-trust-badge"
       class="mlh-badge"
-      href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020-season&utm_content=white"
+      href="https://mlh.io/seasons/2021/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white"
       target="_blank"
     >
       <img
-        src="https://s3.amazonaws.com/logged-assets/trust-badge/2020/mlh-trust-badge-2020-white.svg"
+        src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-white.svg"
         alt="Major League Hacking 2020 Hackathon Season"
         style="width:100%"
       />
-    </a>-->
+    </a>
     <div id="particles-js"></div>
     <div id="left">
       <h1 class="landing-title">
         <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
       </h1>
-      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University<br/><strong class="deadline">Application Deadline: January 24th</strong></h1>
+      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University</h1><!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
       <Header/>
     </div>
   </div>
