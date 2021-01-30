@@ -12,5 +12,10 @@ export default new Router({
       name: 'backdrop',
       component: () => import(/* webpackChunkName: "about" */ './views/NewBackdrop.vue'),
     },
+    {
+    path: '/social',
+    name: 'socialLinks',
+    component: () => import(/* webpackChunkName: "about" */ './new-components/social.vue'),
+    },
   ],
 });
