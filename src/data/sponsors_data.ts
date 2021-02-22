@@ -14,6 +14,12 @@ import L3Harris from '@/assets/sponsors/L3Harris.png';
 import Voiceflow from '@/assets/sponsors/Voiceflow.png';
 import DigitalOcean from '@/assets/sponsors/Digitalocean.png';
 import Hypercare from '@/assets/sponsors/Hypercare.png';
+import BirlaCarbon from '@/assets/sponsors/BirlaCarbon.png';
+import MSU from '@/assets/sponsors/MSU.png';
+import EchoAR from '@/assets/sponsors/echoAR.png';
+import Sketch from '@/assets/sponsors/sketch.svg';
+import KuzoClass from '@/assets/sponsors/kuzoclass.png';
+import McMasterAlumni from '@/assets/sponsors/mcmasteralumni.png';
 
 export default {
   primary: [
@@ -99,5 +105,35 @@ export default {
       href: 'https://www.hypercare.com/',
       alt: 'Hypercare',
     },
+    {
+      logo: BirlaCarbon,
+      href: 'https://www.birlacarbon.com/',
+      alt: 'Birla Carbon'
+    },
+    {
+      logo: MSU,
+      href: 'https://www.msumcmaster.ca/',
+      alt: 'McMaster Student Union'
+    },
+    {
+      logo: EchoAR,
+      href: 'https://www.echoar.xyz/',
+      alt: 'echoAR'
+    },
+    {
+      logo: Sketch,
+      href: 'https://www.sketch.com/',
+      alt: 'Sketch'
+    },
+    {
+      logo: KuzoClass,
+      href: 'https://kuzoclass.com/',
+      alt: 'KuzoClass'
+    },
+    {
+      logo: McMasterAlumni,
+      href: 'https://www.mcmaster.ca/ua/alumni/maa2017/',
+      alt: 'McMaster Alumni Association'
+    }
   ],
 };
