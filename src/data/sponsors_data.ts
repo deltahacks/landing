@@ -1,44 +1,30 @@
-import InnovationFactory from '@/assets/sponsors/InnovationFactory.png';
 import Nokia from '@/assets/sponsors/Nokia.png';
-import ArcelorMittal from '@/assets/sponsors/ArcelorMittal.png';
 import MacEng from '@/assets/sponsors/MacEng.png';
 import TD from '@/assets/sponsors/TD.png';
 import MSE from '@/assets/sponsors/MSE.png';
 import RBC from '@/assets/sponsors/RBC.png';
 import CSE from '@/assets/sponsors/CSE.png';
 import MES from '@/assets/sponsors/MES.png';
-import Algorand from '@/assets/sponsors/Algorand.png';
 import Deloitte from '@/assets/sponsors/Deloitte.png';
-import FDM from '@/assets/sponsors/FDM.svg';
-import L3Harris from '@/assets/sponsors/L3Harris.png';
-import Voiceflow from '@/assets/sponsors/Voiceflow.png';
+import FDM from '@/assets/sponsors/FDM.png';
 import DigitalOcean from '@/assets/sponsors/Digitalocean.png';
-import Hypercare from '@/assets/sponsors/Hypercare.png';
 import BirlaCarbon from '@/assets/sponsors/BirlaCarbon.png';
 import MSU from '@/assets/sponsors/MSU.png';
 import EchoAR from '@/assets/sponsors/echoAR.png';
 import Sketch from '@/assets/sponsors/sketch.svg';
 import KuzoClass from '@/assets/sponsors/kuzoclass.png';
 import McMasterAlumni from '@/assets/sponsors/mcmasteralumni.png';
+import StickerMule from '@/assets/sponsors/sticker-mule2.png';
 
 export default {
   primary: [
-    {
-      logo: InnovationFactory,
-      href: 'https://www.innovationfactory.ca/',
-      alt: 'Innovation Factory',
-    },
-    {
+
+  ],
+  secondary: [
+        {
       logo: Nokia,
       href: 'https://www.nokia.com/about-us/careers/student-and-graduate-opportunities/',
       alt: 'Nokia',
-    },
-  ],
-  secondary: [
-    {
-      logo: ArcelorMittal,
-      href: 'http://dofasco.arcelormittal.com/',
-      alt: 'Dofasco Arcelor Mittal',
     },
     {
       logo: MacEng,
@@ -71,11 +57,6 @@ export default {
       alt: 'MES',
     },
     {
-      logo: Algorand,
-      href: 'https://www.algorand.com/',
-      alt: 'Algorand',
-    },
-    {
       logo: FDM,
       href: 'https://www.fdmgroup.com/en-ca/ca-home/',
       alt: 'FDM',
@@ -86,54 +67,44 @@ export default {
       alt: 'Deloitte',
     },
     {
-      logo: Voiceflow,
-      href: 'https://www.voiceflow.com/',
-      alt: 'Voiceflow',
-    },
-    {
-      logo: L3Harris,
-      href: 'https://www.l3harris.com/careers',
-      alt: 'L3Harris',
-    },
-    {
       logo: DigitalOcean,
       href: 'https://www.digitalocean.com/careers/',
       alt: 'DigitalOcean',
     },
     {
-      logo: Hypercare,
-      href: 'https://www.hypercare.com/',
-      alt: 'Hypercare',
-    },
-    {
       logo: BirlaCarbon,
       href: 'https://www.birlacarbon.com/',
-      alt: 'Birla Carbon'
+      alt: 'Birla Carbon',
     },
     {
       logo: MSU,
       href: 'https://www.msumcmaster.ca/',
-      alt: 'McMaster Student Union'
+      alt: 'McMaster Student Union',
     },
     {
       logo: EchoAR,
       href: 'https://www.echoar.xyz/',
-      alt: 'echoAR'
+      alt: 'echoAR',
     },
     {
       logo: Sketch,
       href: 'https://www.sketch.com/',
-      alt: 'Sketch'
+      alt: 'Sketch',
     },
     {
       logo: KuzoClass,
       href: 'https://kuzoclass.com/',
-      alt: 'KuzoClass'
+      alt: 'KuzoClass',
     },
     {
       logo: McMasterAlumni,
       href: 'https://www.mcmaster.ca/ua/alumni/maa2017/',
-      alt: 'McMaster Alumni Association'
-    }
+      alt: 'McMaster Alumni Association',
+    },
+    {
+      logo: StickerMule,
+      href: 'http://hackp.ac/mlh-stickermule-hackathons/',
+      alt: 'StickerMule',
+    },
   ],
 };
