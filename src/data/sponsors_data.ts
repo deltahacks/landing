@@ -15,6 +15,7 @@ import Sketch from '@/assets/sponsors/sketch.svg';
 import KuzoClass from '@/assets/sponsors/kuzoclass.png';
 import McMasterAlumni from '@/assets/sponsors/mcmasteralumni.png';
 import StickerMule from '@/assets/sponsors/sticker-mule2.png';
+import Pinnacle from '@/assets/sponsors/pinnacle.png';
 
 export default {
   primary: [
@@ -62,11 +63,6 @@ export default {
       alt: 'FDM',
     },
     {
-      logo: Deloitte,
-      href: 'https://www2.deloitte.com/ca/en/pages/careers/topics/students.html',
-      alt: 'Deloitte',
-    },
-    {
       logo: DigitalOcean,
       href: 'https://www.digitalocean.com/careers/',
       alt: 'DigitalOcean',
@@ -105,6 +101,11 @@ export default {
       logo: StickerMule,
       href: 'http://hackp.ac/mlh-stickermule-hackathons/',
       alt: 'StickerMule',
+    },
+    {
+      logo: Pinnacle,
+      href: 'https://pinnacle.us.org/',
+      alt: 'Pinnacle',
     },
   ],
 };
