@@ -4,9 +4,9 @@
     <div class="apps-due">
       <div class="apps-due-inner">
         <p id="apps-due-header">
-          APPLICATIONS ARE NOW OPEN!
+          APPLICATIONS ARE NOW CLOSED!
         </p>
-        <h1 id="countdown"><a id="apply-link" href="https://my.deltahacks.com">Click <u>Here</u> to Apply!</a></h1>
+        <h1 id="countdown">Event schedule coming soon!</h1>
       </div>
     </div>
     <br />
@@ -183,7 +183,7 @@ export default Vue.extend({
   font-weight: 600;
 }
 #countdown {
-  font-size: max(28px, 1.7vw);
+  font-size: max(22px, 1.2vw);
   margin: 0px;
   margin-top: -0.5vw;
 }
