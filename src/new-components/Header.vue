@@ -6,11 +6,12 @@
         <p id="apps-due-header">
           APPLICATIONS ARE NOW CLOSED!
         </p>
-        <h1 id="countdown">Event schedule coming soon!</h1>
+        <h1 id="countdown">Event information found below!</h1>
       </div>
     </div>
     <br />
-    <div class="mailbox">
+    <Info/>
+    <!-- <div class="mailbox">
       <form v-on:submit.prevent="handleSubmit">
         <div id="mail-text">Mailing List Signup</div>
         <div v-if="!enteringInfo && !gotit" class="input-box">
@@ -37,13 +38,14 @@
       >
         Got it, thanks!
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 
 <script lang="ts">
 import Vue from 'vue';
+import Info from '@/new-components/Info.vue';
 export default Vue.extend({
   data() {
     return {
@@ -59,6 +61,9 @@ export default Vue.extend({
       spad: '',
       mpad: '',
     };
+  },
+  components: {
+    Info,
   },
   methods: {
     handleSubmit() {
