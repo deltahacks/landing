@@ -1,13 +1,13 @@
 <template>
 <div class="buttonbox">
     <form :action="b1Link">
-        <input class="button" type="submit" :value="b1Text">
+        <input class="button tempFontFix" type="submit" :value="b1Text">
     </form>
     <form :action="b2Link">
-        <input class="button" type="submit" :value="b2Text">
+        <input class="button tempFontFix" type="submit" :value="b2Text">
     </form>
     <form :action="b3Link">
-        <input class="button" type="submit" :value="b3Text">
+        <input class="button tempFontFix" type="submit" :value="b3Text">
     </form>
 </div>    
 </template>
@@ -29,6 +29,9 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.tempFontFix{
+  font-family: 'Montserrat'!important;
+}
 .buttonbox {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vmin), calc(100% - 4vmin) 100%, 0 100%);
   margin-top: 2vmin;
