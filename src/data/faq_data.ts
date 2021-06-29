@@ -26,7 +26,7 @@ export default {
   ],
   logistics: [
     {
-      q: 'Will DeltaHacks 7 be in person or virtual?',
+      q: 'Will DeltaHacks 8 be in person or virtual?',
       a:
         'Attendee safety is our top priority, so DeltaHacks will be taking place online this year. We are currently considering different options for online platforms. Further details will be released closer to the event date!',
     },
@@ -41,7 +41,7 @@ export default {
     {
       q: 'What do I need to participate?',
       a:
-        'As DeltaHacks 7 will be online, all you require is a computer and an internet connection! Also grab some yummy snacks and be ready to build some amazing projects!',
+        'As DeltaHacks 8 will be online, all you require is a computer and an internet connection! Also grab some yummy snacks and be ready to build some amazing projects!',
     },
     {
       q: 'Will hardware be provided?',

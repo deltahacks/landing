@@ -3,14 +3,12 @@
     <br />
     <div class="apps-due">
       <div class="apps-due-inner">
-        <p id="apps-due-header">
-          APPLICATIONS ARE NOW CLOSED!
-        </p>
-        <h1 id="countdown">Event information found below!</h1>
+        <p id="apps-due-header">STAY TUNED FOR APPLICATIONS!</p>
+        <h1 id="countdown">DeltaHacks 7 information found below!</h1>
       </div>
     </div>
     <br />
-    <Info/>
+    <Info />
     <!-- <div class="mailbox">
       <form v-on:submit.prevent="handleSubmit">
         <div id="mail-text">Mailing List Signup</div>
@@ -44,22 +42,22 @@
 
 
 <script lang="ts">
-import Vue from 'vue';
-import Info from '@/new-components/Info.vue';
+import Vue from "vue";
+import Info from "@/new-components/Info.vue";
 export default Vue.extend({
   data() {
     return {
       enteringInfo: false,
-      email: '',
-      name: '',
+      email: "",
+      name: "",
       gotit: false,
       current: new Date(),
       target: new Date(1606003200),
       hours: 99,
       minutes: 99,
       seconds: 99,
-      spad: '',
-      mpad: '',
+      spad: "",
+      mpad: "",
     };
   },
   components: {
@@ -74,8 +72,8 @@ export default Vue.extend({
       // tslint:disable-next-line
       const name_input = this.$data.name;
 
-      this.name = '';
-      this.email = '';
+      this.name = "";
+      this.email = "";
 
       const params = {
         email: email_address,
@@ -88,13 +86,13 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + '=' + esc(params[k]))
-        .join('&');
+        .map((k) => esc(k) + "=" + esc(params[k]))
+        .join("&");
       const url =
-        'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
-        '?' +
+        "https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp" +
+        "?" +
         query;
-      fetch(url, { mode: 'cors' }).then((response) => {
+      fetch(url, { mode: "cors" }).then((response) => {
         /* :) */
       });
 
@@ -104,35 +102,37 @@ export default Vue.extend({
     },
   },
   mounted() {
-    setInterval(() => {
-      const dateFuture: any = new Date(1606066031000);
-      const dateNow: any = new Date();
+    setInterval(
+      () => {
+        const dateFuture: any = new Date(1606066031000);
+        const dateNow: any = new Date();
 
-      let delta = Math.abs(dateFuture - dateNow) / 1000;
+        let delta = Math.abs(dateFuture - dateNow) / 1000;
 
-      // calculate (and subtract) whole hours
-      const hours = Math.floor(delta / 3600);
-      this.hours = hours;
-      delta -= hours * 3600;
+        // calculate (and subtract) whole hours
+        const hours = Math.floor(delta / 3600);
+        this.hours = hours;
+        delta -= hours * 3600;
 
-      // calculate (and subtract) whole minutes
-      const minutes = Math.floor(delta / 60) % 60;
-      this.minutes = minutes;
-      this.mpad = this.minutes < 10 ? '0' : '';
-      delta -= minutes * 60;
+        // calculate (and subtract) whole minutes
+        const minutes = Math.floor(delta / 60) % 60;
+        this.minutes = minutes;
+        this.mpad = this.minutes < 10 ? "0" : "";
+        delta -= minutes * 60;
 
-      // what's left is seconds
-      const seconds = delta % 60;  // in theory the modulus is not required
-      this.seconds = Math.floor(seconds);
-      this.spad = this.seconds < 10 ? '0' : '';
-
-    }, 0, 1000);
+        // what's left is seconds
+        const seconds = delta % 60; // in theory the modulus is not required
+        this.seconds = Math.floor(seconds);
+        this.spad = this.seconds < 10 ? "0" : "";
+      },
+      0,
+      1000
+    );
   },
 });
 </script>
 
 <style>
-
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -212,7 +212,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   min-width: 325px;
-  min-height: 175px
+  min-height: 175px;
 }
 .input-field {
   margin: 1% 0 0.5% 6%;
@@ -230,11 +230,11 @@ export default Vue.extend({
 
 input::placeholder {
   color: #dcdcdc !important;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 input:focus::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 .submit-button {
@@ -265,13 +265,13 @@ input:focus::placeholder {
   background-color: gray;
   cursor: pointer;
 }
-.input-box{
+.input-box {
   margin-top: 1.2vh;
 }
-.confirmation-box{
+.confirmation-box {
   margin: auto;
-  font-family: Montserrat; 
-  font-size: 30px; 
+  font-family: Montserrat;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -283,113 +283,114 @@ input:focus::placeholder {
     height: 9vw;
     color: white;
     display: inline-flex;
-}
-.apps-due-inner {
-  margin: 0 1vw;
-}
+  }
+  .apps-due-inner {
+    margin: 0 1vw;
+  }
 
-#apps-due-header {
-  font-weight: 600;
-}
-#countdown {
-  margin: 0px;
-  margin-top: -0.5vw;
-  padding-left: 0.2vmax;
-}
+  #apps-due-header {
+    font-weight: 600;
+  }
+  #countdown {
+    margin: 0px;
+    margin-top: -0.5vw;
+    padding-left: 0.2vmax;
+  }
 
-#mail-text {
-  text-align: left;
-  margin-top: 2%;
-  margin-left: 5%;
-  font-weight: 600;
-  font-size: 20px;
-}
-.mailbox {
-  margin-top: 20px;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
-  background-color: #464646;
-  width: 35%;
-  height: 185px;
-  padding: 0px;
-  color: white;
-  display: inline-flex;
-  display: flex;
-  flex-direction: column;
-}
-.input-field {
-  margin: 1.5% 0 0.8% 5%;
-  width: 86%;
-  height: 35px;
-  background-color: #333333;
-  border: 0px;
-  text-align: center;
-  color: white !important;
-  cursor: pointer;
-  padding: 0px;
-  font-size: 13px;
-}
-.input-field::placeholder {
-  color: #dcdcdc !important;
-}
-.submit-button {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
-  margin-left: 5%;
-  background-color: #272727;
-  border: 0px;
-  height: 35px;
-  width: 80px;
-  color: white;
-  margin-top: 1%;
-  cursor: pointer;
-  padding: 0px;
-  font-size: 17px;
-  font-weight: 550;
-}
-.mailing-button {
-  font-size: 20px;
-  font-weight: 600;
-  margin: auto;
-  border: 2px solid white;
-  border-radius: 30px;
-  padding: 20px;
-}
-.mailing-button:hover {
-  background-color: gray;
-  cursor: pointer;
-}
-.input-box{
-  margin-top: 1.2vh;
-}
-.confirmation-box{
-  margin: auto;
-  font-family: Montserrat; 
-  font-size: 30px; 
-  font-weight: 600;
-}
+  #mail-text {
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .mailbox {
+    margin-top: 20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
+    background-color: #464646;
+    width: 35%;
+    height: 185px;
+    padding: 0px;
+    color: white;
+    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+  }
+  .input-field {
+    margin: 1.5% 0 0.8% 5%;
+    width: 86%;
+    height: 35px;
+    background-color: #333333;
+    border: 0px;
+    text-align: center;
+    color: white !important;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 13px;
+  }
+  .input-field::placeholder {
+    color: #dcdcdc !important;
+  }
+  .submit-button {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+    margin-left: 5%;
+    background-color: #272727;
+    border: 0px;
+    height: 35px;
+    width: 80px;
+    color: white;
+    margin-top: 1%;
+    cursor: pointer;
+    padding: 0px;
+    font-size: 17px;
+    font-weight: 550;
+  }
+  .mailing-button {
+    font-size: 20px;
+    font-weight: 600;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 20px;
+  }
+  .mailing-button:hover {
+    background-color: gray;
+    cursor: pointer;
+  }
+  .input-box {
+    margin-top: 1.2vh;
+  }
+  .confirmation-box {
+    margin: auto;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 600;
+  }
 }
 /* ------------------------------- For Mobile devices --------------------------------- */
 @media only screen and (max-width: 700px) and (min-width: 100px) {
-.navbar, .apps-due, .mailbox {
-  width: 95%;
-}
+  .navbar,
+  .apps-due,
+  .mailbox {
+    width: 95%;
+  }
 
-.navbar-navlink{
-  font-size: 3.7vw !important;
-}
-#apps-due-header{
-  font-size: 3.2vw !important;
-}
+  .navbar-navlink {
+    font-size: 3.7vw !important;
+  }
+  #apps-due-header {
+    font-size: 3.2vw !important;
+  }
 
-#countdown{
-  font-size:12vw !important;
-}
+  #countdown {
+    font-size: 12vw !important;
+  }
 
-.apps-due {
-  display: none;
-}
-.mailbox {
-  margin-top: 38%;
-}
-
+  .apps-due {
+    display: none;
+  }
+  .mailbox {
+    margin-top: 38%;
+  }
 }
 </style>

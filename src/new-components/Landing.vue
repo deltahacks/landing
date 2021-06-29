@@ -1,40 +1,45 @@
 
 <template>
-<div id="b">
-  <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
-  <img class="bruh" id="b2" src="../assets/cyber/sky_sun_1.svg" />
-  <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
+  <div id="b">
+    <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
+    <img class="bruh" id="b2" src="../assets/cyber/sky_sun_1.svg" />
+    <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
 
-  <div class="flex-container">
-    <a
-      id="mlh-trust-badge"
-      class="mlh-badge"
-      href="https://mlh.io/seasons/2021/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white"
-      target="_blank"
-    >
-      <img
-        src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-white.svg"
-        alt="Major League Hacking 2020 Hackathon Season"
-        style="width:100%"
-      />
-    </a>
-    <div id="particles-js"></div>
-    <div id="left">
-      <h1 class="landing-title">
-        <span id="delta-title">Delta<span id="hacks-title">Hacks</span> 7</span>
-      </h1>
-      <h1 class="landing-subtitle">March 5-7, 2021 •  Virtual Hackathon <br/>McMaster University</h1><!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
-      <Header/>
+    <div class="flex-container">
+      <a
+        id="mlh-trust-badge"
+        class="mlh-badge"
+        href="https://mlh.io/seasons/2021/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2021-season&utm_content=white"
+        target="_blank"
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-white.svg"
+          alt="Major League Hacking 2020 Hackathon Season"
+          style="width: 100%"
+        />
+      </a>
+      <div id="particles-js"></div>
+      <div id="left">
+        <h1 class="landing-title">
+          <span id="delta-title"
+            >Delta<span id="hacks-title">Hacks</span> 8</span
+          >
+        </h1>
+        <h1 class="landing-subtitle">
+          January 14-16, 2022 • Virtual Hackathon <br />McMaster University
+        </h1>
+        <!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
+        <Header />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Header from '@/new-components/Header.vue';
-import 'particles.js';
-import Mlh from '@/assets/mlh.png';
+import Vue from "vue";
+import Header from "@/new-components/Header.vue";
+import "particles.js";
+import Mlh from "@/assets/mlh.png";
 
 declare global {
   interface Window {
@@ -43,7 +48,7 @@ declare global {
 }
 
 export default Vue.extend({
-  name: 'particles',
+  name: "particles",
   components: {
     Header,
   },
@@ -57,7 +62,7 @@ export default Vue.extend({
   },
   methods: {
     initParticles() {
-      window.particlesJS('particles-js', {
+      window.particlesJS("particles-js", {
         particles: {
           number: {
             value: 220,
@@ -67,19 +72,19 @@ export default Vue.extend({
             },
           },
           color: {
-            value: '#ffffff',
+            value: "#ffffff",
           },
           shape: {
-            type: 'circle',
+            type: "circle",
             stroke: {
               width: 0,
-              color: '#ffffff',
+              color: "#ffffff",
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
-              src: 'img/github.svg',
+              src: "img/github.svg",
               width: 50,
               height: 50,
             },
@@ -107,17 +112,17 @@ export default Vue.extend({
           line_linked: {
             enable: false,
             distance: 150,
-            color: '#ffffff',
+            color: "#ffffff",
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
             speed: 0.1,
-            direction: 'none',
+            direction: "none",
             random: true,
             straight: false,
-            out_mode: 'out',
+            out_mode: "out",
             bounce: false,
             attract: {
               enable: false,
@@ -127,15 +132,15 @@ export default Vue.extend({
           },
         },
         interactivity: {
-          detect_on: 'window',
+          detect_on: "window",
           events: {
             onhover: {
               enable: true,
-              mode: 'bubble',
+              mode: "bubble",
             },
             onclick: {
               enable: true,
-              mode: 'push',
+              mode: "push",
             },
             resize: true,
           },
@@ -216,7 +221,7 @@ export default Vue.extend({
   z-index: 2;
 }
 .flex-container {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   display: flex;
   flex-direction: row;
   flex-direction: row-reverse;
@@ -289,7 +294,6 @@ export default Vue.extend({
   transition: 0.4s;
 }
 
-
 .mlh-badge {
   display: block;
   max-width: 100px;
@@ -310,26 +314,26 @@ export default Vue.extend({
     flex-direction: column;
     padding: 1vh;
   }
-  
+
   .landing-title {
     font-size: 4em;
     color: white;
     font-weight: 600;
     margin-bottom: 0vh;
   }
-  
+
   #left {
     flex: 1;
     text-align: center;
     padding-left: 0;
   }
-  
+
   .landing-subtitle {
     margin-top: 0vh;
     font-size: 1.4em;
     font-weight: 300;
   }
-  
+
   .landing-left-mlh {
     margin: 3vh 0 0;
     padding: 0vh 0px 0vh;
@@ -341,18 +345,17 @@ export default Vue.extend({
     visibility: hidden;
   }
   .bruh2 {
-    visibility:unset;
+    visibility: unset;
     width: 100vw;
     height: 75vw;
   }
   #left {
     margin-top: 3%;
   }
-    .landing-title {
+  .landing-title {
     font-size: 60px;
-
   }
-  
+
   .landing-subtitle {
     font-size: 27px;
   }
