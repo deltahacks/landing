@@ -1,7 +1,7 @@
 <template>
   <div class="back">
     <br />
-    <div class="apps-due">
+    <!-- <div class="apps-due">
       <div class="apps-due-inner">
         <p id="apps-due-header">STAY TUNED FOR APPLICATIONS!</p>
         <h1 id="countdown">
@@ -10,8 +10,8 @@
       </div>
     </div>
     <br />
-    <Info />
-    <!-- <div class="mailbox">
+    <Info /> -->
+    <div class="mailbox">
       <form v-on:submit.prevent="handleSubmit">
         <div id="mail-text">Mailing List Signup</div>
         <div v-if="!enteringInfo && !gotit" class="input-box">
@@ -38,7 +38,7 @@
       >
         Got it, thanks!
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
