@@ -66,12 +66,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Landing from "@/new-components/Landing.vue";
-import Blurb from "@/new-components/Blurb.vue";
-import FAQ from "@/new-components/Faq.vue";
-import AboutUsStats from "@/new-components/AboutStats.vue";
-import Sponsors from "@/new-components/Sponsors.vue";
-import Footer from "@/new-components/Footer.vue";
+import Landing from "@/components/Landing.vue";
+import Blurb from "@/components/Blurb.vue";
+import FAQ from "@/components/Faq.vue";
+import AboutUsStats from "@/components/AboutStats.vue";
+import Sponsors from "@/components/Sponsors.vue";
+import Footer from "@/components/Footer.vue";
 
 import LeftCyber from "@/assets/cyber/left_asset.svg";
 import RightCyber from "@/assets/cyber/right_asset.svg";
@@ -85,7 +85,7 @@ import B7 from "@/assets/cyber/B7.svg";
 
 // @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
-import Navigation from "../new-components/Navbar.vue";
+import Navigation from "../components/Navbar.vue";
 import VueRellax from "vue-rellax";
 import sponsors_data from "@/data/sponsors_data.ts";
 

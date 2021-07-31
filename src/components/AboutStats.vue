@@ -43,7 +43,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Hex from '@/new-components/Hex.vue';
+import Hex from '@/components/Hex.vue';
 
 export default Vue.extend({
   name: 'About',

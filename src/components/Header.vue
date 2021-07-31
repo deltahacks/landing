@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Info from "@/new-components/Info.vue";
+import Info from "@/components/Info.vue";
 export default Vue.extend({
   data() {
     return {

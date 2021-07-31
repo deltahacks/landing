@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Header from "@/new-components/Header.vue";
+import Header from "@/components/Header.vue";
 import "particles.js";
 import Mlh from "@/assets/mlh.png";
 
