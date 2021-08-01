@@ -85,7 +85,7 @@ import B7 from "@/assets/cyber/B7.svg";
 
 // @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
-import Navigation from "../components/Navbar.vue";
+import Navigation from "@/components/Navbar.vue";
 import VueRellax from "vue-rellax";
 import sponsors_data from "@/data/sponsors_data.ts";
 
