@@ -44,22 +44,22 @@
 
 
 <script lang="ts">
-import Vue from "vue";
-import Info from "@/components/Info.vue";
+import Vue from 'vue';
+import Info from '@/components/Info.vue';
 export default Vue.extend({
   data() {
     return {
       enteringInfo: false,
-      email: "",
-      name: "",
+      email: '',
+      name: '',
       gotit: false,
       current: new Date(),
       target: new Date(1606003200),
       hours: 99,
       minutes: 99,
       seconds: 99,
-      spad: "",
-      mpad: "",
+      spad: '',
+      mpad: '',
     };
   },
   components: {
@@ -74,8 +74,8 @@ export default Vue.extend({
       // tslint:disable-next-line
       const name_input = this.$data.name;
 
-      this.name = "";
-      this.email = "";
+      this.name = '';
+      this.email = '';
 
       const params = {
         email: email_address,
@@ -88,13 +88,13 @@ export default Vue.extend({
       const esc = encodeURIComponent;
       const query = Object.keys(params)
         // @ts-ignore
-        .map((k) => esc(k) + "=" + esc(params[k]))
-        .join("&");
+        .map((k) => esc(k) + '=' + esc(params[k]))
+        .join('&');
       const url =
-        "https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp" +
-        "?" +
+        'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
+        '?' +
         query;
-      fetch(url, { mode: "cors" }).then((response) => {
+      fetch(url, { mode: 'cors' }).then((response) => {
         /* :) */
       });
 
@@ -119,16 +119,16 @@ export default Vue.extend({
         // calculate (and subtract) whole minutes
         const minutes = Math.floor(delta / 60) % 60;
         this.minutes = minutes;
-        this.mpad = this.minutes < 10 ? "0" : "";
+        this.mpad = this.minutes < 10 ? '0' : '';
         delta -= minutes * 60;
 
         // what's left is seconds
         const seconds = delta % 60; // in theory the modulus is not required
         this.seconds = Math.floor(seconds);
-        this.spad = this.seconds < 10 ? "0" : "";
+        this.spad = this.seconds < 10 ? '0' : '';
       },
       0,
-      1000
+      1000,
     );
   },
 });

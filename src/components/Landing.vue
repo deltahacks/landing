@@ -36,10 +36,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Header from "@/components/Header.vue";
-import "particles.js";
-import Mlh from "@/assets/mlh.png";
+import Vue from 'vue';
+import Header from '@/components/Header.vue';
+import 'particles.js';
+import Mlh from '@/assets/mlh.png';
 
 declare global {
   interface Window {
@@ -48,7 +48,7 @@ declare global {
 }
 
 export default Vue.extend({
-  name: "particles",
+  name: 'particles',
   components: {
     Header,
   },
@@ -62,7 +62,7 @@ export default Vue.extend({
   },
   methods: {
     initParticles() {
-      window.particlesJS("particles-js", {
+      window.particlesJS('particles-js', {
         particles: {
           number: {
             value: 220,
@@ -72,19 +72,19 @@ export default Vue.extend({
             },
           },
           color: {
-            value: "#ffffff",
+            value: '#ffffff',
           },
           shape: {
-            type: "circle",
+            type: 'circle',
             stroke: {
               width: 0,
-              color: "#ffffff",
+              color: '#ffffff',
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
-              src: "img/github.svg",
+              src: 'img/github.svg',
               width: 50,
               height: 50,
             },
@@ -112,17 +112,17 @@ export default Vue.extend({
           line_linked: {
             enable: false,
             distance: 150,
-            color: "#ffffff",
+            color: '#ffffff',
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
             speed: 0.1,
-            direction: "none",
+            direction: 'none',
             random: true,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             bounce: false,
             attract: {
               enable: false,
@@ -132,15 +132,15 @@ export default Vue.extend({
           },
         },
         interactivity: {
-          detect_on: "window",
+          detect_on: 'window',
           events: {
             onhover: {
               enable: true,
-              mode: "bubble",
+              mode: 'bubble',
             },
             onclick: {
               enable: true,
-              mode: "push",
+              mode: 'push',
             },
             resize: true,
           },
