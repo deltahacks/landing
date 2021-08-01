@@ -4,16 +4,6 @@
   </div>
 </template>
 
-<script>
-import Navigation from './components/Navbar2.vue';
-
-export default {
-  components: {
-    Navigation,
-  },
-};
-</script>
-
 <style>
 @font-face {
   font-family: 'Montserrat';
