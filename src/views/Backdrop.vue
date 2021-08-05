@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ app: true, blend: true }">
+  <div class="app">
+    <navigation />
+  </div>
+  <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
       <div class="mobileBackgroundLight">
         <navigation />
@@ -61,7 +64,7 @@
     <div class="gradient" id="c2" :style="{ opacity: opacities[2] }" />
     <div class="gradient" id="c3" :style="{ opacity: opacities[3] }" />
     <div class="gradient" id="c4" />
-  </div>
+  </div> -->
 </template>
 
 <script lang="ts">
@@ -175,8 +178,12 @@ export default Vue.extend({
 }
 .app {
   color: white;
-  height: inherit;
+  height: 100vh;
   overflow-x: hidden;
+  background-image: url(../assets/Backimg/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .cyberBlurb {
