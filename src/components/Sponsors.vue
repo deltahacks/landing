@@ -32,19 +32,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 // @ts-ignore
-import VueScrollReveal from 'vue-scroll-reveal';
+import VueScrollReveal from "vue-scroll-reveal";
 Vue.use(VueScrollReveal, {
-  class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+  class: "v-scroll-reveal", // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
   duration: 1000,
   scale: 1.35,
-  distance: '10px',
+  distance: "10px",
   mobile: true,
 });
 
 export default Vue.extend({
-  name: 'Sponsors',
+  name: "Sponsors",
   props: {
     sponsorList: Array,
     main: Boolean,
@@ -62,21 +62,20 @@ export default Vue.extend({
   computed: {
     getClass() {
       if (this.main) {
-        return 'level--1';
+        return "level--1";
       } else if (this.secondary) {
-        return 'level--2';
+        return "level--2";
       }
     },
   },
 
   mounted() {
-    const VanillaTilt = require('vanilla-tilt');
+    const VanillaTilt = require("vanilla-tilt");
   },
 });
 </script>
 
 <style>
-
 img {
   user-select: none;
 }
@@ -159,4 +158,3 @@ img {
   }
 }
 </style>
-
