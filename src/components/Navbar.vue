@@ -1,20 +1,21 @@
 <template>
   <div class="nav-container">
-    <img class='home' src="../assets/logolarge.png" alt="DH Logo" @click="goHome">
+    <img
+      class="home"
+      src="../assets/logolarge.png"
+      alt="DH Logo"
+      @click="goHome"
+    />
     <a class="mlink" href="https://www.deltahacks.com/">
       <a class="bold">Delta</a>Hacks <a class="bold">7</a>
     </a>
-    <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll">
-      About
-    </a>
-    <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll">
-      FAQ
-    </a>
+    <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll"> About </a>
+    <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll"> FAQ </a>
     <a class="link" v-scroll-to="'#sponsor'" @scroll="handleScroll">
       Sponsors
     </a>
-    <a class="link" href="mailto:hello@deltahacks.com" target=“_blank”> 
-      Contact 
+    <a class="link" href="mailto:hello@deltahacks.com" target="“_blank”">
+      Contact
     </a>
     <p class="bar">|</p>
     <a href="https://www.my.deltahacks.com" id="login" class="link">Login</a>
@@ -22,12 +23,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 
 export default Vue.extend({
   methods: {
     goHome() {
-      window.open('https://www.deltahacks.com/', '_self');
+      window.open("https://www.deltahacks.com/", "_self");
     },
   },
 });
@@ -51,13 +52,13 @@ export default Vue.extend({
   margin: 1.35vw 2.5vw 1.35vw 8vw;
   cursor: pointer;
 }
-.home:hover{
+.home:hover {
   filter: brightness(0.6);
 }
 
 .link {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.375vw;
   font-weight: 650;
   margin: 0 1vw 0 1vw;
@@ -68,9 +69,9 @@ export default Vue.extend({
   filter: brightness(0.5);
 }
 
-.bar{
+.bar {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25vw;
   font-weight: 600;
   margin: 0 1vw 0 1vw;
@@ -78,7 +79,7 @@ export default Vue.extend({
   user-select: none;
 }
 
-.mlink{
+.mlink {
   display: none;
 }
 
@@ -86,53 +87,53 @@ export default Vue.extend({
   .home {
     margin: 1.5vw 2.5vw 1.5vw 8vw;
   }
-  .link{
+  .link {
     font-size: 2.25vw;
     margin: 0 1.1vw 0 1.1vw;
   }
-  .bar{
+  .bar {
     font-size: 2.25vw;
     margin: 0 1.1vw 0 1.1vw;
   }
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
   /* .nav-container {
     justify-content: center;
   } */
-  .home{
+  .home {
     width: auto;
     height: 4vmax;
     margin: 5.5vmin 3.5vmin 5.5vmin 10vmin;
   }
-  .link{
+  .link {
     /* font-size: 3.5vmin;
     font-weight: 1000;
     margin: 0 1.5vmin 0 1.5vmin; */
-    display: none
+    display: none;
   }
-  .bar{
+  .bar {
     /* font-size: 3.5vmin;
     font-weight: 900;
     margin: 0 1.5vmin 0 1.5vmin; */
     font-size: 5vmin;
     display: initial;
   }
-  .mlink{
+  .mlink {
     display: initial;
     color: white;
     border: none;
     outline: none;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 6vmin;
     font-weight: 150;
-    margin: 0 1.5vmin 0 1.5vmin; 
+    margin: 0 1.5vmin 0 1.5vmin;
   }
   .mlink:active {
     filter: brightness(0.5);
   }
-  .bold{
+  .bold {
     font-weight: 525;
   }
   #login {

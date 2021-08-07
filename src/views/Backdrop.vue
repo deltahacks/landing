@@ -68,35 +68,35 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import Landing from '@/components/Landing.vue';
-import Blurb from '@/components/Blurb.vue';
-import FAQ from '@/components/Faq.vue';
-import AboutUsStats from '@/components/AboutStats.vue';
-import Sponsors from '@/components/Sponsors.vue';
-import Footer from '@/components/Footer.vue';
+import Vue from "vue";
+import Landing from "@/components/Landing.vue";
+import Blurb from "@/components/Blurb.vue";
+import FAQ from "@/components/Faq.vue";
+import AboutUsStats from "@/components/AboutStats.vue";
+import Sponsors from "@/components/Sponsors.vue";
+import Footer from "@/components/Footer.vue";
 
-import LeftCyber from '@/assets/cyber/left_asset.svg';
-import RightCyber from '@/assets/cyber/right_asset.svg';
-import B1 from '@/assets/cyber/B1.svg';
-import B2 from '@/assets/cyber/B2.svg';
-import B3 from '@/assets/cyber/B3.svg';
-import B4 from '@/assets/cyber/B4.svg';
-import B5 from '@/assets/cyber/B5.svg';
-import B6 from '@/assets/cyber/B6.svg';
-import B7 from '@/assets/cyber/B7.svg';
+import LeftCyber from "@/assets/cyber/left_asset.svg";
+import RightCyber from "@/assets/cyber/right_asset.svg";
+import B1 from "@/assets/cyber/B1.svg";
+import B2 from "@/assets/cyber/B2.svg";
+import B3 from "@/assets/cyber/B3.svg";
+import B4 from "@/assets/cyber/B4.svg";
+import B5 from "@/assets/cyber/B5.svg";
+import B6 from "@/assets/cyber/B6.svg";
+import B7 from "@/assets/cyber/B7.svg";
 
 // @ts-ignore
-import VueScrollReveal from 'vue-scroll-reveal';
-import Navigation from '@/components/Navbar.vue';
-import VueRellax from 'vue-rellax';
-import sponsors_data from '@/data/sponsors_data.ts';
+import VueScrollReveal from "vue-scroll-reveal";
+import Navigation from "@/components/Navbar.vue";
+import VueRellax from "vue-rellax";
+import sponsors_data from "@/data/sponsors_data";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
 
 export default Vue.extend({
-  name: 'app',
+  name: "app",
   components: {
     AboutUsStats,
     FAQ,
@@ -120,7 +120,7 @@ export default Vue.extend({
       LeftCyber,
       RightCyber,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3 },
-      opacities: ['1', '1', '1', '1'],
+      opacities: ["1", "1", "1", "1"],
       threshholds_map: {
         point0: 0,
         point1: 1,
@@ -147,8 +147,8 @@ export default Vue.extend({
             i,
             String(
               (y - this.threshholds[i + 1]) /
-                -(this.threshholds[i + 1] - this.threshholds[i]),
-            ),
+                -(this.threshholds[i + 1] - this.threshholds[i])
+            )
           );
         } else {
           Vue.set(
@@ -156,18 +156,18 @@ export default Vue.extend({
             i,
             String(
               (y - this.th_mobile[i + 1]) /
-                -(this.th_mobile[i + 1] - this.th_mobile[i]),
-            ),
+                -(this.th_mobile[i + 1] - this.th_mobile[i])
+            )
           );
         }
       }
     },
   },
   created() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   },
 });
 </script>
