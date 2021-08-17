@@ -8,15 +8,16 @@
           v-for="name in Object.keys(faqData)"
           :key="name"
           :class="{ 'category-bubble': true, selected: selected === name }"
-          
         >
           <div class="category-name" @click="selectCategory(name)">
-            {{
-            name.charAt(0).toUpperCase() + name.substring(1)
-            }}
+            {{ name.charAt(0).toUpperCase() + name.substring(1) }}
           </div>
           <transition name="open">
-            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
+            <div
+              :key="name + 's'"
+              v-if="selected === name"
+              class="mobile-faq-area"
+            >
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
@@ -26,15 +27,16 @@
                 <div class="question">
                   {{ elm.q }}
                   <span :class="{ arrow: true, rotate: index === expanded }">
-                    <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
+                    <i
+                      v-if="expanded.includes(index)"
+                      class="fa fa-caret-up fa-xs"
+                    ></i>
                     <i v-else class="fa fa-caret-down fa-xs"></i>
                   </span>
                 </div>
                 <transition name="open">
                   <div v-if="expanded.includes(index)" class="answer-box">
-                    {{
-                    elm.a
-                    }}
+                    {{ elm.a }}
                   </div>
                 </transition>
               </div>
@@ -43,19 +45,24 @@
         </div>
       </div>
       <div class="faq-area">
-        <div v-for="(elm, index) in faqData[selected]" :key="elm.q" class="question-box">
+        <div
+          v-for="(elm, index) in faqData[selected]"
+          :key="elm.q"
+          class="question-box"
+        >
           <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
             <span :class="{ arrow: true }">
-              <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
+              <i
+                v-if="expanded.includes(index)"
+                class="fa fa-caret-up fa-xs"
+              ></i>
               <i v-else class="fa fa-caret-down fa-xs"></i>
             </span>
           </div>
           <transition name="open">
             <div v-if="expanded.includes(index)" class="answer-box">
-              {{
-              elm.a
-              }}
+              {{ elm.a }}
             </div>
           </transition>
         </div>
@@ -65,16 +72,16 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import faqData from '@/data/faq_data.ts';
+import Vue from "vue";
+import faqData from "@/data/faq_data";
 
 export default Vue.extend({
-  name: 'Faq',
-  props: ['initialSelect'],
+  name: "Faq",
+  props: ["initialSelect"],
   data(): { faqData: any; selected: string; expanded: number[] } {
     return {
       faqData,
-      selected: '',
+      selected: "",
       expanded: [0],
     };
   },
@@ -92,11 +99,10 @@ export default Vue.extend({
         this.selected = name;
         this.expanded = [0];
       } else {
-          if (this.isMobile()) {
-          this.selected = '';
+        if (this.isMobile()) {
+          this.selected = "";
         }
       }
-
     },
   },
   created(): void {
@@ -106,11 +112,10 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
 .faq {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .faq h1 {
@@ -131,11 +136,11 @@ export default Vue.extend({
 .faq-container {
   display: flex;
   flex-direction: row;
-  width: 65%; 
+  width: 65%;
   height: 350px;
   overflow: hidden;
   margin: 0 auto;
-  background:rgba(85, 85, 85, 1);
+  background: rgba(85, 85, 85, 1);
   color: rgba(255, 255, 255, 1);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0% 50%);
 }
@@ -146,23 +151,23 @@ export default Vue.extend({
   min-width: 220px;
   padding-top: 3%;
   cursor: pointer;
-  background:rgba(0,0,0,0.3); 
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .category-bubble {
   text-align: left;
   font-size: 20px;
   transition: 0.1s ease-in-out;
-  margin-left: 10px; 
-  margin-right: 10px; 
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 2.5px;
   margin-bottom: 2.5px;
   clip-path: polygon(0 0, 100% 0, 100% 70%, 93% 100%, 0 100%, 0% 50%);
-  transition:0.2s; 
+  transition: 0.2s;
 }
 
 .category-bubble:hover {
-  background:rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .category-name {
@@ -171,7 +176,7 @@ export default Vue.extend({
 
 .selected {
   font-size: 20px;
-  background:rgba(0,0,0,0.4); 
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .faq-area {
@@ -248,8 +253,8 @@ export default Vue.extend({
   .faq-container {
     display: flex;
     flex-direction: column;
-    height: 700px; 
-    width: 90%; 
+    height: 700px;
+    width: 90%;
     background: none;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0% 50%);
   }
@@ -259,7 +264,7 @@ export default Vue.extend({
     flex-direction: column;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: rgba(85,85,85,1)
+    background: rgba(85, 85, 85, 1);
   }
 
   .category-bubble {
@@ -291,7 +296,7 @@ export default Vue.extend({
   }
 
   .selected .category-name {
-    background:rgba(0,0,0,0.4); 
+    background: rgba(0, 0, 0, 0.4);
   }
 
   .question-box {
@@ -303,7 +308,7 @@ export default Vue.extend({
 
   .answer-box {
     font-weight: 400;
-    font-size: 15px; 
+    font-size: 15px;
   }
 
   #desktop-faq {
@@ -318,7 +323,7 @@ export default Vue.extend({
     display: block;
     margin-top: 10px;
     padding: 20px;
-    background:rgb(110, 110, 110); /* change this */
+    background: rgb(110, 110, 110); /* change this */
     clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%, 0% 50%);
   }
 
@@ -336,5 +341,4 @@ export default Vue.extend({
   width: 0px; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
-
 </style>
