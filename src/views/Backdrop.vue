@@ -186,21 +186,27 @@ export default Vue.extend({
 /* Newly added styles */
 #leftBuilding {
   top: 12vh;
+  width: 100%;
+  height: auto;
 }
 
 #rightBuilding {
   top: 12vh;
+  right: -20vh;
+  width: 100%;
+  height: auto;
 }
 
 #middleBuilding {
-  top: 12vh;
+  top: -15vh;
   position: absolute;
   z-index: 2;
+  width: 111%;
+  height: auto;
 }
 
 .sideItem {
   z-index: 1;
-  width: 40vw;
   position: absolute;
 }
 
