@@ -1,6 +1,9 @@
 <template>
   <div class="app">
     <navigation />
+    <img class="sideItem" id="leftBuilding" :src="LeftBuilding" />
+    <img class="sideItem" id="middleBuilding" :src="MiddleBuilding" />
+    <img class="sideItem" id="rightBuilding" :src="RightBuilding" />
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -69,28 +72,32 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Landing from "@/components/Landing.vue";
-import Blurb from "@/components/Blurb.vue";
-import FAQ from "@/components/Faq.vue";
-import AboutUsStats from "@/components/AboutStats.vue";
-import Sponsors from "@/components/Sponsors.vue";
-import Footer from "@/components/Footer.vue";
+// import Landing from "@/components/Landing.vue";
+// import Blurb from "@/components/Blurb.vue";
+// import FAQ from "@/components/Faq.vue";
+// import AboutUsStats from "@/components/AboutStats.vue";
+// import Sponsors from "@/components/Sponsors.vue";
+// import Footer from "@/components/Footer.vue";
 
-import LeftCyber from "@/assets/cyber/left_asset.svg";
-import RightCyber from "@/assets/cyber/right_asset.svg";
-import B1 from "@/assets/cyber/B1.svg";
-import B2 from "@/assets/cyber/B2.svg";
-import B3 from "@/assets/cyber/B3.svg";
-import B4 from "@/assets/cyber/B4.svg";
-import B5 from "@/assets/cyber/B5.svg";
-import B6 from "@/assets/cyber/B6.svg";
-import B7 from "@/assets/cyber/B7.svg";
+// import LeftCyber from "@/assets/cyber/left_asset.svg";
+// import RightCyber from "@/assets/cyber/right_asset.svg";
+// import B1 from "@/assets/cyber/B1.svg";
+// import B2 from "@/assets/cyber/B2.svg";
+// import B3 from "@/assets/cyber/B3.svg";
+// import B4 from "@/assets/cyber/B4.svg";
+// import B5 from "@/assets/cyber/B5.svg";
+// import B6 from "@/assets/cyber/B6.svg";
+// import B7 from "@/assets/cyber/B7.svg";
 
-// @ts-ignore
+// // @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
-import Navigation from "@/components/Navbar.vue";
 import VueRellax from "vue-rellax";
-import sponsors_data from "@/data/sponsors_data";
+import Navigation from "@/components/Navbar.vue";
+// import sponsors_data from "@/data/sponsors_data";
+
+import MiddleBuilding from "@/new_assets/back_middle_building.svg";
+import LeftBuilding from "@/new_assets/left_building.svg";
+import RightBuilding from "@/new_assets/right_building.svg";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -98,27 +105,30 @@ Vue.use(VueRellax);
 export default Vue.extend({
   name: "app",
   components: {
-    AboutUsStats,
-    FAQ,
+    // AboutUsStats,
+    // FAQ,
     Navigation,
-    Blurb,
-    Landing,
-    Sponsors,
-    Footer,
+    // Blurb,
+    // Landing,
+    // Sponsors,
+    // Footer,
   },
   data() {
     return {
-      B1,
-      B2,
-      B3,
-      B4,
-      B5,
-      B6,
-      B7,
-      scr: 0,
-      sponsors_data,
-      LeftCyber,
-      RightCyber,
+      MiddleBuilding,
+      LeftBuilding,
+      RightBuilding,
+      // B1,
+      // B2,
+      // B3,
+      // B4,
+      // B5,
+      // B6,
+      // B7,
+      // scr: 0,
+      // sponsors_data,
+      // LeftCyber,
+      // RightCyber,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3 },
       opacities: ["1", "1", "1", "1"],
       threshholds_map: {
@@ -173,6 +183,34 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+/* Newly added styles */
+#leftBuilding {
+  top: 12vh;
+}
+
+#rightBuilding {
+  top: 12vh;
+}
+
+#middleBuilding {
+  top: 12vh;
+  position: absolute;
+  z-index: 2;
+}
+
+.sideItem {
+  z-index: 1;
+  width: 40vw;
+  position: absolute;
+}
+
+/* .sideBuilding {
+  top: 50vh;
+  right: 50%;
+} */
+
+/* Newly added styles */
+
 .blurb-align-right {
   margin-right: -200px !important;
 }
@@ -202,12 +240,6 @@ export default Vue.extend({
 #blurb-2 {
   margin-left: 15%;
   width: 55%;
-}
-
-.sideItem {
-  z-index: 2;
-  width: 38vw;
-  position: absolute;
 }
 
 #leftCyber {
