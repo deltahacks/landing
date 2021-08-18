@@ -185,23 +185,26 @@ export default Vue.extend({
 <style scoped>
 /* Newly added styles */
 #leftBuilding {
-  top: 12vh;
+  top: -25vh;
   width: 100%;
   height: auto;
 }
 
 #rightBuilding {
-  top: 12vh;
+  top: -25vh;
   right: -20vh;
   width: 100%;
   height: auto;
 }
 
 #middleBuilding {
-  top: -15vh;
+  top: -25vh;
+  left: 5vw;
   position: absolute;
   z-index: 2;
-  width: 111%;
+  width: 100%;
+  max-width: 112%;
+
   height: auto;
 }
 
