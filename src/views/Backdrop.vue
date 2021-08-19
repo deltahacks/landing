@@ -94,7 +94,7 @@ import Vue from "vue";
 // import B6 from "@/assets/cyber/B6.svg";
 // import B7 from "@/assets/cyber/B7.svg";
 
-// // @ts-ignore
+// @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
 import VueRellax from "vue-rellax";
 import Navigation from "@/components/Navbar.vue";
