@@ -4,6 +4,12 @@
     <img class="sideItem" id="leftBuilding" :src="LeftBuilding" />
     <img class="sideItem" id="middleBuilding" :src="MiddleBuilding" />
     <img class="sideItem" id="rightBuilding" :src="RightBuilding" />
+    <img
+      class="sideItem"
+      id="rightBuildingDesigns"
+      :src="RightBuildingDesigns"
+    />
+    <img class="sideItem" id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -95,9 +101,11 @@ import VueRellax from "vue-rellax";
 import Navigation from "@/components/Navbar.vue";
 // import sponsors_data from "@/data/sponsors_data";
 
-import MiddleBuilding from "@/new_assets/back_middle_building.svg";
+import MiddleBuilding from "@/new_assets/back_middle_building_designs.svg";
 import LeftBuilding from "@/new_assets/left_building.svg";
 import RightBuilding from "@/new_assets/right_building.svg";
+import RightBuildingDesigns from "@/new_assets/right_building_designs.svg";
+import LeftBuildingDesigns from "@/new_assets/left_building_designs.svg";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -118,6 +126,8 @@ export default Vue.extend({
       MiddleBuilding,
       LeftBuilding,
       RightBuilding,
+      RightBuildingDesigns,
+      LeftBuildingDesigns,
       // B1,
       // B2,
       // B3,
@@ -185,38 +195,43 @@ export default Vue.extend({
 <style scoped>
 /* Newly added styles */
 #leftBuilding {
-  top: -25vh;
+  top: -12vh;
   width: 100%;
-  height: auto;
 }
 
 #rightBuilding {
-  top: -25vh;
-  right: -20vh;
+  top: -12vh;
   width: 100%;
-  height: auto;
 }
 
 #middleBuilding {
-  top: -25vh;
-  left: 5vw;
-  position: absolute;
+  top: -12vh;
+  left: 3vw;
   z-index: 2;
   width: 100%;
-  max-width: 112%;
+  display: block;
+}
 
-  height: auto;
+#rightBuildingDesigns {
+  top: -12vh;
+  left: 3vw;
+  width: 100%;
+  display: block;
+  z-index: 3;
+}
+
+#leftBuildingDesigns {
+  top: -12vh;
+  width: 100%;
+  z-index: 3;
 }
 
 .sideItem {
   z-index: 1;
   position: absolute;
+  display: block;
+  bottom: 100%;
 }
-
-/* .sideBuilding {
-  top: 50vh;
-  right: 50%;
-} */
 
 /* Newly added styles */
 
@@ -353,9 +368,9 @@ export default Vue.extend({
   .gradient {
     display: none;
   }
-  .sideItem {
+  /* .sideItem {
     display: none;
-  }
+  } */
   .mobileBackgroundLight {
     background-color: rgb(55, 55, 55);
   }
