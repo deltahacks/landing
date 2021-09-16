@@ -1,15 +1,14 @@
 <template>
   <div class="app">
     <navigation />
-    <img class="sideItem" id="leftBuilding" :src="LeftBuilding" />
-    <img class="sideItem" id="middleBuilding" :src="MiddleBuilding" />
-    <img class="sideItem" id="rightBuilding" :src="RightBuilding" />
-    <img
-      class="sideItem"
-      id="rightBuildingDesigns"
-      :src="RightBuildingDesigns"
-    />
-    <img class="sideItem" id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
+
+    <img class="backItem" id="leftBuilding" :src="LeftBuilding" />
+    <img class="backItem" id="middleBuilding" :src="MiddleBuilding" />
+    <img class="backItem" id="rightBuilding" :src="RightBuilding" />
+    <img class="backItem" id="rightBuildingDesigns" :src="RightBuildingDesigns" />
+    <img class="backItem" id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
+    <img class="backItem" id="metro" :src="Metro" />
+    <img class="backItem" id="bridge" :src="Bridge" />
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -73,7 +72,7 @@
     <div class="gradient" id="c2" :style="{ opacity: opacities[2] }" />
     <div class="gradient" id="c3" :style="{ opacity: opacities[3] }" />
     <div class="gradient" id="c4" />
-  </div> -->
+  </div>-->
 </template>
 
 <script lang="ts">
@@ -106,6 +105,8 @@ import LeftBuilding from "@/new_assets/left_building.svg";
 import RightBuilding from "@/new_assets/right_building.svg";
 import RightBuildingDesigns from "@/new_assets/right_building_designs.svg";
 import LeftBuildingDesigns from "@/new_assets/left_building_designs.svg";
+import Metro from "@/new_assets/metro.svg";
+import Bridge from "@/new_assets/bridge.svg";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -128,6 +129,8 @@ export default Vue.extend({
       RightBuilding,
       RightBuildingDesigns,
       LeftBuildingDesigns,
+      Metro,
+      Bridge,
       // B1,
       // B2,
       // B3,
@@ -206,7 +209,7 @@ export default Vue.extend({
 
 #middleBuilding {
   top: -12vh;
-  left: 3vw;
+  left: 2vw;
   z-index: 2;
   width: 100%;
   display: block;
@@ -226,8 +229,19 @@ export default Vue.extend({
   z-index: 3;
 }
 
-.sideItem {
-  z-index: 1;
+#metro {
+  z-index: 10;
+  width: 100%;
+  top: -12vh;
+}
+
+#bridge {
+  z-index: 4;
+  width: 100%;
+  top: -12vh;
+}
+
+.backItem {
   position: absolute;
   display: block;
   bottom: 100%;
