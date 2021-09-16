@@ -217,7 +217,7 @@ export default Vue.extend({
 
 #rightBuildingDesigns {
   top: -12vh;
-  left: 3vw;
+  left: 2vw;
   width: 100%;
   display: block;
   z-index: 3;
