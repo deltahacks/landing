@@ -9,6 +9,7 @@
     <img class="backItem" id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
     <img class="backItem" id="metro" :src="Metro" />
     <img class="backItem" id="bridge" :src="Bridge" />
+    <img class="backItem" id="logo" :src="Logo" />
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -107,6 +108,7 @@ import RightBuildingDesigns from "@/new_assets/right_building_designs.svg";
 import LeftBuildingDesigns from "@/new_assets/left_building_designs.svg";
 import Metro from "@/new_assets/metro.svg";
 import Bridge from "@/new_assets/bridge.svg";
+import Logo from "@/new_assets/DH splash art.png";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -131,6 +133,7 @@ export default Vue.extend({
       LeftBuildingDesigns,
       Metro,
       Bridge,
+      Logo,
       // B1,
       // B2,
       // B3,
@@ -239,6 +242,14 @@ export default Vue.extend({
   z-index: 4;
   width: 100%;
   top: -12vh;
+}
+
+#logo {
+  z-index: 1;
+  width: 50%;
+  top: 15vh;
+  left: 25vw;
+  position: absolute;
 }
 
 .backItem {
