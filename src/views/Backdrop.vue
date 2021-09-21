@@ -1,7 +1,6 @@
 <template>
   <div class="app">
     <navigation />
-
     <img class="backItem" id="leftBuilding" :src="LeftBuilding" />
     <img class="backItem" id="middleBuilding" :src="MiddleBuilding" />
     <img class="backItem" id="rightBuilding" :src="RightBuilding" />
@@ -267,7 +266,7 @@ export default Vue.extend({
   color: white;
   height: 100vh;
   overflow-x: hidden;
-  background-image: url(../assets/Backimg/back.jpg);
+  background-image: url(../new_assets/background.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
