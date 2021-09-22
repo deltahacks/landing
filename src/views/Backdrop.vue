@@ -264,9 +264,9 @@ export default Vue.extend({
 
 #logo {
   z-index: 1;
-  width: 50%;
-  top: 15vh;
-  left: 25vw;
+  width: 80%;
+  top: 10vh;
+  left: 10vw;
   position: absolute;
 }
 
