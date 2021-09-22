@@ -1,14 +1,15 @@
 <template>
-  <div class="app">
+  <div>
     <navigation />
-    <img class="backItem" id="leftBuilding" :src="LeftBuilding" />
-    <img class="backItem" id="middleBuilding" :src="MiddleBuilding" />
-    <img class="backItem" id="rightBuilding" :src="RightBuilding" />
-    <img class="backItem" id="rightBuildingDesigns" :src="RightBuildingDesigns" />
-    <img class="backItem" id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
-    <img class="backItem" id="metro" :src="Metro" />
-    <img class="backItem" id="bridge" :src="Bridge" />
-    <img class="backItem" id="logo" :src="Logo" />
+    <img id="background" :src="Background" />
+    <img id="leftBuilding" :src="LeftBuilding" />
+    <img id="middleBuilding" :src="MiddleBuilding" />
+    <img id="rightBuilding" :src="RightBuilding" />
+    <img id="rightBuildingDesigns" :src="RightBuildingDesigns" />
+    <img id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
+    <img id="metro" :src="Metro" />
+    <img id="bridge" :src="Bridge" />
+    <img id="logo" :src="Logo" />
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -108,6 +109,7 @@ import LeftBuildingDesigns from "@/new_assets/left_building_designs.svg";
 import Metro from "@/new_assets/metro.svg";
 import Bridge from "@/new_assets/bridge.svg";
 import Logo from "@/new_assets/DH splash art.png";
+import Background from "@/new_assets/background.svg";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -133,6 +135,8 @@ export default Vue.extend({
       Metro,
       Bridge,
       Logo,
+      Background,
+
       // B1,
       // B2,
       // B3,
@@ -200,16 +204,19 @@ export default Vue.extend({
 <style scoped>
 /* Newly added styles */
 #leftBuilding {
+  position: absolute;
   top: -12vh;
   width: 100%;
 }
 
 #rightBuilding {
+  position: absolute;
   top: -12vh;
   width: 100%;
 }
 
 #middleBuilding {
+  position: absolute;
   top: -12vh;
   left: 2vw;
   z-index: 2;
@@ -218,6 +225,7 @@ export default Vue.extend({
 }
 
 #rightBuildingDesigns {
+  position: absolute;
   top: -12vh;
   left: 2vw;
   width: 100%;
@@ -226,21 +234,32 @@ export default Vue.extend({
 }
 
 #leftBuildingDesigns {
+  position: absolute;
   top: -12vh;
   width: 100%;
   z-index: 3;
 }
 
 #metro {
+  position: absolute;
   z-index: 10;
   width: 100%;
   top: -12vh;
 }
 
 #bridge {
+  position: absolute;
   z-index: 4;
   width: 100%;
   top: -12vh;
+}
+
+#background {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  top: -12vh;
+  overflow: visible;
 }
 
 #logo {
@@ -251,12 +270,6 @@ export default Vue.extend({
   position: absolute;
 }
 
-.backItem {
-  position: absolute;
-  display: block;
-  bottom: 100%;
-}
-
 /* Newly added styles */
 
 .blurb-align-right {
@@ -265,7 +278,6 @@ export default Vue.extend({
 .app {
   color: white;
   height: 100vh;
-  overflow-x: hidden;
   background-image: url(../new_assets/background.svg);
   background-repeat: no-repeat;
   background-position: center;
