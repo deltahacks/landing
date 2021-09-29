@@ -1,6 +1,44 @@
 <template>
   <div>
     <navigation />
+    <Landing id="landing" />
+
+    <div class="blurb-group">
+      <div>
+        <Blurb
+          header="To Infinity and Beyond"
+          :body="blurb1_text"
+          :buttonText="blurb1_button"
+          align="right"
+          :buttonLink="blurb1_link"
+          class="cyberBlurb"
+          id="blurb-1"
+        />
+        <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
+        <img class="mobileSep" :src="B6" />
+      </div>
+      <div class="mobileBackgroundMid">
+        <Blurb
+          header="The Hackathon for Change"
+          :body="blurb2_text"
+          align="left"
+          :hasButton="false"
+          class="cyberBlurb"
+          id="blurb-2"
+        />
+      </div>
+    </div>
+    <AboutUsStats id="stats" />
+    <div class="blurb-group blurb-align-right"></div>
+    <div id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
+
+    <div class="mobileBackgroundDark faqBound">
+      <FAQ id="faq1" initialSelect="general" />
+      <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
+      <img class="mobileSep" :src="B3" />
+    </div>
+
+    <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
     <img id="leftBuilding" :src="LeftBuilding" />
     <img id="middleBuilding" :src="MiddleBuilding" />
@@ -9,7 +47,15 @@
     <img id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
     <img id="metro" :src="Metro" />
     <img id="bridge" :src="Bridge" />
-    <img id="logo" :src="Logo" />
+
+    <div class="mobileBackgroundMid">
+      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
+      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+      <div class="f">
+        <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
+        <Footer />
+      </div>
+    </div>
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -78,11 +124,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-// import Landing from "@/components/Landing.vue";
-// import Blurb from "@/components/Blurb.vue";
-// import FAQ from "@/components/Faq.vue";
-// import AboutUsStats from "@/components/AboutStats.vue";
-// import Sponsors from "@/components/Sponsors.vue";
+import Landing from "@/components/Landing.vue";
+import Blurb from "@/components/Blurb.vue";
+import FAQ from "@/components/Faq.vue";
+import AboutUsStats from "@/components/AboutStats.vue";
+import Sponsors from "@/components/Sponsors.vue";
 // import Footer from "@/components/Footer.vue";
 
 // import LeftCyber from "@/assets/cyber/left_asset.svg";
@@ -99,7 +145,7 @@ import Vue from "vue";
 import VueScrollReveal from "vue-scroll-reveal";
 import VueRellax from "vue-rellax";
 import Navigation from "@/components/Navbar.vue";
-// import sponsors_data from "@/data/sponsors_data";
+import sponsors_data from "@/data/sponsors_data";
 
 import MiddleBuilding from "@/new_assets/back_middle_building_designs.svg";
 import LeftBuilding from "@/new_assets/left_building.svg";
@@ -117,12 +163,12 @@ Vue.use(VueRellax);
 export default Vue.extend({
   name: "app",
   components: {
-    // AboutUsStats,
-    // FAQ,
+    AboutUsStats,
+    FAQ,
     Navigation,
-    // Blurb,
-    // Landing,
-    // Sponsors,
+    Blurb,
+    Landing,
+    Sponsors,
     // Footer,
   },
   data() {
@@ -145,7 +191,7 @@ export default Vue.extend({
       // B6,
       // B7,
       // scr: 0,
-      // sponsors_data,
+      sponsors_data,
       // LeftCyber,
       // RightCyber,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3 },
@@ -207,19 +253,21 @@ export default Vue.extend({
   position: absolute;
   top: -12vh;
   width: 100%;
+  z-index: -95;
 }
 
 #rightBuilding {
   position: absolute;
   top: -12vh;
   width: 100%;
+  z-index: -95;
 }
 
 #middleBuilding {
   position: absolute;
   top: -12vh;
   left: 2vw;
-  z-index: 2;
+  z-index: -90;
   width: 100%;
   display: block;
 }
@@ -230,19 +278,19 @@ export default Vue.extend({
   left: 2vw;
   width: 100%;
   display: block;
-  z-index: 3;
+  z-index: -90;
 }
 
 #leftBuildingDesigns {
   position: absolute;
   top: -12vh;
   width: 100%;
-  z-index: 3;
+  z-index: -90;
 }
 
 #metro {
   position: absolute;
-  z-index: 10;
+  z-index: -80;
   width: 100%;
   top: -12vh;
 }
@@ -256,14 +304,14 @@ export default Vue.extend({
 
 #background {
   position: absolute;
-  z-index: 0;
+  z-index: -100;
   width: 100%;
   top: -12vh;
   overflow: visible;
 }
 
 #logo {
-  z-index: 1;
+  z-index: -80;
   width: 80%;
   top: 10vh;
   left: 10vw;

@@ -1,8 +1,8 @@
 <template>
   <div id="b">
-    <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
+    <!-- <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
     <img class="bruh" id="b2" src="../assets/cyber/sky_sun_1.svg" />
-    <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />
+    <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />-->
 
     <div class="flex-container">
       <a
@@ -14,19 +14,17 @@
         <img
           src="https://s3.amazonaws.com/logged-assets/trust-badge/2021/mlh-trust-badge-2021-white.svg"
           alt="Major League Hacking 2020 Hackathon Season"
-          style="width: 100%"
+          style="width: 90%"
         />
       </a>
-      <div id="particles-js"></div>
+      <!-- <div id="particles-js"></div> -->
       <div id="left">
-        <h1 class="landing-title">
-          <span id="delta-title"
-            >Delta<span id="hacks-title">Hacks</span> 8</span
-          >
-        </h1>
-        <h1 class="landing-subtitle">
-          January 14-16, 2022 • Virtual Hackathon <br />McMaster University
-        </h1>
+        <!-- <h1 class="landing-title">
+          <span id="delta-title">
+            Delta
+            <span id="hacks-title">Hacks</span> 8
+          </span>
+        </h1>/-->
         <!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
         <Header />
       </div>
@@ -240,10 +238,11 @@ export default Vue.extend({
 }
 
 #left {
-  z-index: 3;
+  z-index: 12;
   flex: 1;
   text-align: left;
   padding-left: 10vw;
+  padding-top: 30vh;
 }
 
 .landing-title {
@@ -324,7 +323,8 @@ export default Vue.extend({
   #left {
     flex: 1;
     text-align: center;
-    padding-left: 0;
+    padding-left: -20vw;
+    padding-top: 0;
   }
 
   .landing-subtitle {
