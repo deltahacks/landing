@@ -15,9 +15,9 @@
           id="blurb-1"
         />
         <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
-        <img class="mobileSep" :src="B6" />
       </div>
-      <div class="mobileBackgroundMid">
+
+      <div>
         <Blurb
           header="The Hackathon for Change"
           :body="blurb2_text"
@@ -297,7 +297,7 @@ export default Vue.extend({
 
 #bridge {
   position: absolute;
-  z-index: 4;
+  z-index: -10;
   width: 100%;
   top: -12vh;
 }
@@ -341,7 +341,7 @@ export default Vue.extend({
 }
 
 #blurb-1 {
-  padding-top: 20vh;
+  padding-top: 25vh;
   margin-left: 20%;
 }
 
@@ -361,11 +361,13 @@ export default Vue.extend({
 }
 
 #faq1 {
+  top: -10%;
   width: 80%;
   margin-left: 8vw;
 }
 
 #stats {
+  padding-top: 40vh;
   width: 75%;
   margin-left: 9vw;
 }
@@ -409,7 +411,7 @@ export default Vue.extend({
 }
 
 #faq1 {
-  z-index: 1;
+  z-index: 100;
   margin-bottom: 10%;
 }
 
@@ -436,7 +438,9 @@ export default Vue.extend({
   .blurb-group {
     display: flex;
     flex-direction: column;
+    z-index: 100000;
   }
+
   .blurb-align-right {
     margin-right: 0 !important;
   }

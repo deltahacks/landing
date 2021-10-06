@@ -4,9 +4,7 @@
     <div class="apps-due">
       <div class="apps-due-inner">
         <p id="apps-due-header">STAY TUNED FOR APPLICATIONS!</p>
-        <h1 id="countdown">
-          Last year's DeltaHacks 7 information found below!
-        </h1>
+        <h1 id="countdown">Last year's DeltaHacks 7 information found below!</h1>
       </div>
     </div>
     <br />
@@ -38,7 +36,7 @@
       >
         Got it, thanks!
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 
