@@ -9,15 +9,12 @@
           :key="name"
           :class="{ 'category-bubble': true, selected: selected === name }"
         >
-          <div class="category-name" @click="selectCategory(name)">
-            {{ name.charAt(0).toUpperCase() + name.substring(1) }}
-          </div>
+          <div
+            class="category-name"
+            @click="selectCategory(name)"
+          >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
           <transition name="open">
-            <div
-              :key="name + 's'"
-              v-if="selected === name"
-              class="mobile-faq-area"
-            >
+            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
               <div
                 v-for="(elm, index) in faqData[selected]"
                 :key="elm.q"
@@ -27,17 +24,12 @@
                 <div class="question">
                   {{ elm.q }}
                   <span :class="{ arrow: true, rotate: index === expanded }">
-                    <i
-                      v-if="expanded.includes(index)"
-                      class="fa fa-caret-up fa-xs"
-                    ></i>
+                    <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
                     <i v-else class="fa fa-caret-down fa-xs"></i>
                   </span>
                 </div>
                 <transition name="open">
-                  <div v-if="expanded.includes(index)" class="answer-box">
-                    {{ elm.a }}
-                  </div>
+                  <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
                 </transition>
               </div>
             </div>
@@ -45,25 +37,16 @@
         </div>
       </div>
       <div class="faq-area">
-        <div
-          v-for="(elm, index) in faqData[selected]"
-          :key="elm.q"
-          class="question-box"
-        >
+        <div v-for="(elm, index) in faqData[selected]" :key="elm.q" class="question-box">
           <div class="question" @click="toggleQuestion(index)">
             {{ elm.q }}
             <span :class="{ arrow: true }">
-              <i
-                v-if="expanded.includes(index)"
-                class="fa fa-caret-up fa-xs"
-              ></i>
+              <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
               <i v-else class="fa fa-caret-down fa-xs"></i>
             </span>
           </div>
           <transition name="open">
-            <div v-if="expanded.includes(index)" class="answer-box">
-              {{ elm.a }}
-            </div>
+            <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
           </transition>
         </div>
       </div>
@@ -121,6 +104,7 @@ export default Vue.extend({
 .faq h1 {
   font-weight: 700;
   font-size: 4.4vmin;
+  color: white;
 }
 
 #mobile-faq {

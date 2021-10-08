@@ -1,5 +1,5 @@
 <template>
-  <div :class="['container', align]">
+  <div :class="['container', align, 'bringFront']">
     <h2 class="heading">{{ header }}</h2>
     <div id="corner" :class="['description', align]">
       <p v-html="body"></p>
@@ -43,6 +43,16 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+/* .background {
+  background-color: black;
+  padding: 5px;
+  opacity: 80%;
+} */
+
+.bringFront {
+  z-index: 10;
+}
+
 .right {
   text-align: right;
   padding: 5%;

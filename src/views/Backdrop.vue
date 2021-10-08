@@ -1,10 +1,11 @@
+//1570 width need to change smth
+
 <template>
-  <div>
+  <div :class="{ app: true, blend: true }">
     <navigation />
     <Landing id="landing" />
-
     <div class="blurb-group">
-      <div>
+      <div class="mobileBackgroundDark mobileTopBlurb">
         <Blurb
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -15,27 +16,43 @@
           id="blurb-1"
         />
         <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
+        <img class="mobileSep" :src="B6" />
       </div>
 
-      <div>
-        <Blurb
-          header="The Hackathon for Change"
-          :body="blurb2_text"
-          align="left"
-          :hasButton="false"
-          class="cyberBlurb"
-          id="blurb-2"
-        />
+      <div class="mobileBackgroundMid mobileTopBlurb">
+        <div class="mobileBackgroundMid">
+          <Blurb
+            header="The Hackathon for Change"
+            :body="blurb2_text"
+            align="left"
+            :hasButton="false"
+            class="cyberBlurb"
+            id="blurb-2"
+          />
+
+          <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
+          <img class="mobileSep" :src="B4" />
+        </div>
       </div>
     </div>
-    <AboutUsStats id="stats" />
-    <div class="blurb-group blurb-align-right"></div>
-    <div id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
-
-    <div class="mobileBackgroundDark faqBound">
-      <FAQ id="faq1" initialSelect="general" />
-      <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
-      <img class="mobileSep" :src="B3" />
+    <div class="mobileBackgroundDarkest">
+      <AboutUsStats id="stats" />
+      <div class="blurb-group blurb-align-right"></div>
+      <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
+      <img class="mobileSep" :src="B5" />
+      <div class="mobileBackgroundDark faqBound">
+        <FAQ id="faq1" initialSelect="general" />
+        <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
+        <img class="mobileSep" :src="B3" />
+      </div>
+      <div class="mobileBackgroundMid">
+        <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
+        <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+        <div class="f">
+          <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
+          <Footer />
+        </div>
+      </div>
     </div>
 
     <img id="logo" :src="Logo" />
@@ -47,15 +64,6 @@
     <img id="leftBuildingDesigns" :src="LeftBuildingDesigns" />
     <img id="metro" :src="Metro" />
     <img id="bridge" :src="Bridge" />
-
-    <div class="mobileBackgroundMid">
-      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
-      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <div class="f">
-        <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
-        <Footer />
-      </div>
-    </div>
   </div>
   <!-- <div :class="{ app: true, blend: true }">
     <div class="scroll">
@@ -133,13 +141,13 @@ import Sponsors from "@/components/Sponsors.vue";
 
 // import LeftCyber from "@/assets/cyber/left_asset.svg";
 // import RightCyber from "@/assets/cyber/right_asset.svg";
-// import B1 from "@/assets/cyber/B1.svg";
-// import B2 from "@/assets/cyber/B2.svg";
-// import B3 from "@/assets/cyber/B3.svg";
-// import B4 from "@/assets/cyber/B4.svg";
-// import B5 from "@/assets/cyber/B5.svg";
-// import B6 from "@/assets/cyber/B6.svg";
-// import B7 from "@/assets/cyber/B7.svg";
+import B1 from "@/assets/cyber/B1.svg";
+import B2 from "@/assets/cyber/B2.svg";
+import B3 from "@/assets/cyber/B3.svg";
+import B4 from "@/assets/cyber/B4.svg";
+import B5 from "@/assets/cyber/B5.svg";
+import B6 from "@/assets/cyber/B6.svg";
+import B7 from "@/assets/cyber/B7.svg";
 
 // @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
@@ -147,9 +155,9 @@ import VueRellax from "vue-rellax";
 import Navigation from "@/components/Navbar.vue";
 import sponsors_data from "@/data/sponsors_data";
 
-import MiddleBuilding from "@/new_assets/back_middle_building_designs.svg";
-import LeftBuilding from "@/new_assets/left_building.svg";
-import RightBuilding from "@/new_assets/right_building.svg";
+import MiddleBuilding from "@/new_assets/back_middle_building_designs.png";
+import LeftBuilding from "@/new_assets/left_building.png";
+import RightBuilding from "@/new_assets/right_building.png";
 import RightBuildingDesigns from "@/new_assets/right_building_designs.svg";
 import LeftBuildingDesigns from "@/new_assets/left_building_designs.svg";
 import Metro from "@/new_assets/metro.svg";
@@ -183,13 +191,13 @@ export default Vue.extend({
       Logo,
       Background,
 
-      // B1,
-      // B2,
-      // B3,
-      // B4,
-      // B5,
-      // B6,
-      // B7,
+      B1,
+      B2,
+      B3,
+      B4,
+      B5,
+      B6,
+      B7,
       // scr: 0,
       sponsors_data,
       // LeftCyber,
@@ -248,88 +256,11 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-/* Newly added styles */
-#leftBuilding {
-  position: absolute;
-  top: -12vh;
-  width: 100%;
-  z-index: -95;
-}
-
-#rightBuilding {
-  position: absolute;
-  top: -12vh;
-  width: 100%;
-  z-index: -95;
-}
-
-#middleBuilding {
-  position: absolute;
-  top: -12vh;
-  left: 2vw;
-  z-index: -90;
-  width: 100%;
-  display: block;
-}
-
-#rightBuildingDesigns {
-  position: absolute;
-  top: -12vh;
-  left: 2vw;
-  width: 100%;
-  display: block;
-  z-index: -90;
-}
-
-#leftBuildingDesigns {
-  position: absolute;
-  top: -12vh;
-  width: 100%;
-  z-index: -90;
-}
-
-#metro {
-  position: absolute;
-  z-index: -80;
-  width: 100%;
-  top: -12vh;
-}
-
-#bridge {
-  position: absolute;
-  z-index: -10;
-  width: 100%;
-  top: -12vh;
-}
-
-#background {
-  position: absolute;
-  z-index: -100;
-  width: 100%;
-  top: -12vh;
-  overflow: visible;
-}
-
-#logo {
-  z-index: -80;
-  width: 80%;
-  top: 10vh;
-  left: 10vw;
-  position: absolute;
-}
-
-/* Newly added styles */
-
 .blurb-align-right {
   margin-right: -200px !important;
 }
 .app {
-  color: white;
-  height: 100vh;
-  background-image: url(../new_assets/background.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  contain: style layout paint;
 }
 
 .cyberBlurb {
@@ -340,13 +271,76 @@ export default Vue.extend({
   display: none;
 }
 
+/* Newly added styles */
+#leftBuilding {
+  position: absolute;
+  top: -12vh;
+  width: 100%;
+  z-index: -95;
+}
+#rightBuilding {
+  position: absolute;
+  top: -12vh;
+  width: 100%;
+  z-index: -95;
+}
+#middleBuilding {
+  position: absolute;
+  top: -12vh;
+  left: 2vw;
+  z-index: -90;
+  width: 100%;
+  display: block;
+}
+#rightBuildingDesigns {
+  position: absolute;
+  top: -12vh;
+  left: 2vw;
+  width: 100%;
+  display: block;
+  z-index: -90;
+}
+#leftBuildingDesigns {
+  position: absolute;
+  top: -12vh;
+  width: 100%;
+  z-index: -90;
+  left: 0.2vw;
+}
+#metro {
+  position: absolute;
+  z-index: -80;
+  width: 100%;
+  top: -12vh;
+}
+#bridge {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  top: -12vh;
+}
+#background {
+  position: absolute;
+  z-index: -100;
+  width: 100%;
+  top: -12vh;
+  overflow: visible;
+}
+#logo {
+  z-index: -80;
+  width: 80%;
+  top: 10vh;
+  left: 10vw;
+  position: absolute;
+} /* Newly added styles */
+
 #blurb-1 {
-  padding-top: 25vh;
+  margin-top: 25vh;
   margin-left: 20%;
 }
 
 #blurb-2 {
-  margin-left: 15%;
+  margin-left: 18%;
   width: 55%;
 }
 
@@ -361,13 +355,11 @@ export default Vue.extend({
 }
 
 #faq1 {
-  top: -10%;
   width: 80%;
   margin-left: 8vw;
 }
 
 #stats {
-  padding-top: 40vh;
   width: 75%;
   margin-left: 9vw;
 }
