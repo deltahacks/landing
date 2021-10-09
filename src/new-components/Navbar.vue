@@ -2,7 +2,7 @@
   <div class="nav-container">
     <img class='home' src="../assets/logolarge.png" alt="DH Logo" @click="goHome">
     <a class="mlink" href="https://www.deltahacks.com/">
-      <a class="bold">Delta</a>Hacks <a class="bold">7</a>
+      <a class="bold">Delta</a>Hacks <a class="bold">8</a>
     </a>
     <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll">
       About

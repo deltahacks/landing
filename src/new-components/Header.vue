@@ -10,7 +10,7 @@
       </div>
     </div>
     <br />
-    <Info /> -->
+    <Info />
     <div class="mailbox">
       <form v-on:submit.prevent="handleSubmit">
         <div id="mail-text">Mailing List Signup</div>
@@ -38,6 +38,10 @@
       >
         Got it, thanks!
       </div>
+    </div> -->
+    <div class="apply">
+      <div id="apply-text">Applications are now open!</div>
+      <a href="https://my.deltahacks.com/" target="_blank"> <button type="submit" class="submit-button">Apply Now</button> </a>
     </div>
   </div>
 </template>
@@ -216,6 +220,28 @@ export default Vue.extend({
   min-width: 325px;
   min-height: 175px;
 }
+#apply-text {
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 6%;
+  font-weight: 600;
+  font-size: calc(12px + 0.5vw);
+}
+.apply {
+  margin-top: 20px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
+  background-color: #464646;
+  width: 20vmax;
+  height: 8vmax;
+  padding: 0px;
+  color: white;
+  display: inline-flex;
+  display: flex;
+  flex-direction: column;
+  min-width: 325px;
+  min-height: 15px;
+}
 .input-field {
   margin: 1% 0 0.5% 6%;
   width: 85%;
@@ -318,6 +344,25 @@ input:focus::placeholder {
     display: flex;
     flex-direction: column;
   }
+  #apply-text {
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 5%;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .apply {
+    margin-top: 20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
+    background-color: #464646;
+    width: 35%;
+    height: 100px;
+    padding: 0px;
+    color: white;
+    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+  }
   .input-field {
     margin: 1.5% 0 0.8% 5%;
     width: 86%;
@@ -339,7 +384,7 @@ input:focus::placeholder {
     background-color: #272727;
     border: 0px;
     height: 35px;
-    width: 80px;
+    width: 120px;
     color: white;
     margin-top: 1%;
     cursor: pointer;

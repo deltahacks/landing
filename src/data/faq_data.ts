@@ -7,7 +7,7 @@ export default {
     },
     {
       q: 'What is DeltaHacks?',
-      a: `The word “delta Δ” stands for change, and we used this definition to name DeltaHacks - McMaster’s annual Hackathon for Change. This year, DeltaHacks will be a 500-particiapnt event taking place the first week of March 2021. We hope to inspire students to hack for positive changes that align with their passions - whether it's for the environment, health, inequality, education, or more!`,
+      a: `The word “delta Δ” stands for change, and we used this definition to name DeltaHacks - McMaster’s annual Hackathon for Change. This year, DeltaHacks will be a 600-participant event taking place the third weekend of January 2022. We hope to inspire students to hack for positive changes that align with their passions - whether it's for the environment, health, inequality, education, or more!`,
     },
     {
       q: 'Who can participate?',
@@ -36,7 +36,7 @@ export default {
     },
     {
       q: `What's the event schedule like?`,
-      a: `We'll be putting up one  closer to the event, you can  expect a lot of talks and presentations, fun events, and a lot of great food!`,
+      a: `We'll be putting up one closer to the event, you can expect a lot of talks and presentations, fun events, and a lot of chances to meet new people and win prizes!`,
     },
     {
       q: 'What do I need to participate?',
@@ -51,7 +51,7 @@ export default {
   application: [
     {
       q: `What's the application deadline?`,
-      a: `Priority applications are due Sunday, December 13th - apply by then for a better chance to be accepted!`,
+      a: `Priority applications are due Sunday, October 31, 2021. Apply by then for a better chance to be accepted!`,
     },
     {
       q: 'How long will it be until I hear back about my application?',
