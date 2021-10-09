@@ -384,7 +384,7 @@ input:focus::placeholder {
     background-color: #272727;
     border: 0px;
     height: 35px;
-    width: 80px;
+    width: 120px;
     color: white;
     margin-top: 1%;
     cursor: pointer;
