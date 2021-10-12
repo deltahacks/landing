@@ -4,8 +4,37 @@
   <div :class="{ app: true, blend: true }">
     <navigation />
     <Landing id="landing" />
-    <div class="blurb-group">
-      <div class="mobileBackgroundDark mobileTopBlurb">
+    <div class="mobileBackgroundDark mobileTopBlurb">
+      <img id="bill1" :src="BB1" />
+      <div class="blurb-group">
+        <Billboard
+          header="To Infinity and Beyond"
+          :body="blurb1_text"
+          :buttonText="blurb1_button"
+          align="right"
+          :buttonLink="blurb1_link"
+          :billboardPic="BB1"
+        />
+        <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
+        <img class="mobileSep" :src="B6" />
+      </div>
+      <div class="mobileBackgroundMid mobileTopBlurb">
+        <div class="mobileBackgroundMid">
+          <Billboard
+            header="The Hackathon for Change"
+            :body="blurb2_text"
+            align="left"
+            :hasButton="false"
+            :billboardPic="BB2"
+            id="blurb-2"
+          />
+
+          <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
+          <img class="mobileSep" :src="B4" />
+        </div>
+      </div>
+      <!-- <div class="mobileBackgroundDark mobileTopBlurb">
+        <img id="bill1" :src="BB1" />
         <Blurb
           header="To Infinity and Beyond"
           :body="blurb1_text"
@@ -18,7 +47,6 @@
         <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
         <img class="mobileSep" :src="B6" />
       </div>
-
       <div class="mobileBackgroundMid mobileTopBlurb">
         <div class="mobileBackgroundMid">
           <Blurb
@@ -33,9 +61,9 @@
           <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
           <img class="mobileSep" :src="B4" />
         </div>
-      </div>
+      </div>-->
     </div>
-    <div class="mobileBackgroundDarkest">
+    <!-- <div class="mobileBackgroundDarkest">
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right"></div>
       <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
@@ -53,7 +81,7 @@
           <Footer />
         </div>
       </div>
-    </div>
+    </div>-->
 
     <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
@@ -65,69 +93,6 @@
     <img id="metro" :src="Metro" />
     <img id="bridge" :src="Bridge" />
   </div>
-  <!-- <div :class="{ app: true, blend: true }">
-    <div class="scroll">
-      <div class="mobileBackgroundLight">
-        <navigation />
-        <Landing id="landing" />
-        <img class="sideItem" id="leftCyber" :src="LeftCyber" />
-        <img class="sideItem" id="rightCyber" :src="RightCyber" />
-        <div id="mobileSpacerMidTop" class="spacer" style="height: 30vh" />
-      </div>
-      <div class="blurb-group">
-        <div class="mobileBackgroundDark mobileTopBlurb">
-          <img class="mobileSep" id="B3" :src="B5" />
-          <Blurb
-            header="To Infinity and Beyond"
-            :body="blurb1_text"
-            :buttonText="blurb1_button"
-            align="right"
-            :buttonLink="blurb1_link"
-            class="cyberBlurb"
-            id="blurb-1"
-          />
-          <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
-          <img class="mobileSep" :src="B6" />
-        </div>
-        <div class="mobileBackgroundMid">
-          <Blurb
-            header="The Hackathon for Change"
-            :body="blurb2_text"
-            align="left"
-            :hasButton="false"
-            class="cyberBlurb"
-            id="blurb-2"
-          />
-          <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
-          <img class="mobileSep" :src="B4" />
-        </div>
-      </div>
-      <div class="mobileBackgroundDarkest">
-        <AboutUsStats id="stats" />
-        <div class="blurb-group blurb-align-right"></div>
-        <div id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
-        <img class="mobileSep" :src="B5" />
-        <div class="mobileBackgroundDark faqBound">
-          <FAQ id="faq1" initialSelect="general" />
-          <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
-          <img class="mobileSep" :src="B3" />
-        </div>
-        <div class="mobileBackgroundMid">
-          <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
-          <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-          <div class="f">
-            <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
-            <Footer />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="gradient" id="c0" :style="{ opacity: opacities[0] }" />
-    <div class="gradient" id="c1" :style="{ opacity: opacities[1] }" />
-    <div class="gradient" id="c2" :style="{ opacity: opacities[2] }" />
-    <div class="gradient" id="c3" :style="{ opacity: opacities[3] }" />
-    <div class="gradient" id="c4" />
-  </div>-->
 </template>
 
 <script lang="ts">
@@ -137,6 +102,7 @@ import Blurb from "@/components/Blurb.vue";
 import FAQ from "@/components/Faq.vue";
 import AboutUsStats from "@/components/AboutStats.vue";
 import Sponsors from "@/components/Sponsors.vue";
+import Billboard from "@/components/Billboard.vue";
 // import Footer from "@/components/Footer.vue";
 
 // import LeftCyber from "@/assets/cyber/left_asset.svg";
@@ -164,6 +130,8 @@ import Metro from "@/new_assets/metro.svg";
 import Bridge from "@/new_assets/bridge.svg";
 import Logo from "@/new_assets/DH splash art.png";
 import Background from "@/new_assets/background.svg";
+import BB1 from "@/new_assets/billboard.svg";
+import BB2 from "@/new_assets/billboard_2.svg";
 
 Vue.use(VueScrollReveal);
 Vue.use(VueRellax);
@@ -177,6 +145,7 @@ export default Vue.extend({
     Blurb,
     Landing,
     Sponsors,
+    Billboard,
     // Footer,
   },
   data() {
@@ -198,6 +167,10 @@ export default Vue.extend({
       B5,
       B6,
       B7,
+
+      BB1,
+      BB2,
+
       // scr: 0,
       sponsors_data,
       // LeftCyber,
@@ -259,9 +232,6 @@ export default Vue.extend({
 .blurb-align-right {
   margin-right: -200px !important;
 }
-.app {
-  contain: style layout paint;
-}
 
 .cyberBlurb {
   width: 50%;
@@ -272,6 +242,13 @@ export default Vue.extend({
 }
 
 /* Newly added styles */
+#bill1 {
+  position: absolute;
+  top: -80vh;
+  width: 100%;
+  z-index: -15;
+}
+
 #leftBuilding {
   position: absolute;
   top: -12vh;
@@ -336,12 +313,12 @@ export default Vue.extend({
 
 #blurb-1 {
   margin-top: 25vh;
-  margin-left: 20%;
+  margin-left: 18%;
 }
 
 #blurb-2 {
-  margin-left: 18%;
-  width: 55%;
+  margin-top: 75%;
+  margin-left: -2%;
 }
 
 #leftCyber {

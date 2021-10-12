@@ -1,5 +1,6 @@
 <template>
-  <div :class="['container', align, 'bringFront']">
+  <div :class="['container', align]">
+    <div id="beam" :class="align"></div>
     <h2 class="heading">{{ header }}</h2>
     <div id="corner" :class="['description', align]">
       <p v-html="body"></p>
@@ -43,16 +44,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-/* .background {
-  background-color: black;
-  padding: 5px;
-  opacity: 80%;
-} */
-
-.bringFront {
-  z-index: 10;
-}
-
 .right {
   text-align: right;
   padding: 5%;
@@ -77,6 +68,15 @@ export default Vue.extend({
   );
 }
 
+/* #beam.left {
+  width: 400px;
+  height: 2px;
+  background-color: black;
+  margin-left: 42vw;
+  position: absolute;
+  z-index: -10;
+} */
+
 .center {
   text-align: center;
   padding: 5%;
@@ -94,8 +94,10 @@ export default Vue.extend({
 }
 
 .heading {
-  color: white;
-  padding: 2% 3%;
+  color: black;
+  padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
   font-size: 4.5vmin;
   font-weight: 600;
   margin: 0;
@@ -155,12 +157,20 @@ p {
   font-size: 2.4vmin;
 }
 
+@media screen and (max-width: 1250px) {
+  .heading {
+    color: white;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .heading {
     font-size: 7.25vmin;
     font-weight: 650;
     margin-bottom: 2vmin;
+    color: white;
   }
+
   p {
     color: white;
     font-size: 3.75vmin;
@@ -224,3 +234,4 @@ p {
   }
 }
 </style>
+
