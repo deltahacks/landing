@@ -312,7 +312,7 @@ export default Vue.extend({
 #stats {
   width: 75%;
   margin-left: 9vw;
-  margin-top: -3%;
+  margin-top: -10%;
 }
 
 .blend {

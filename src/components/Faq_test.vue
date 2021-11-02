@@ -99,11 +99,6 @@ export default Vue.extend({
 
  
 <style scoped>
-.faq-billboard {
-  width: 120vw !important;
-  margin-left: -10%;
-}
-
 .faq {
   display: flex;
   flex-direction: column;
