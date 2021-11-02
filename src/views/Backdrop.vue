@@ -1,41 +1,10 @@
-//1570 width need to change smth
-
 <template>
   <div :class="{ app: true, blend: true }">
     <navigation />
     <Landing id="landing" />
-    <div class="mobileBackgroundDark mobileTopBlurb">
-      <img id="bill1" :src="BB1" />
-      <div class="blurb-group">
-        <Billboard
-          header="To Infinity and Beyond"
-          :body="blurb1_text"
-          :buttonText="blurb1_button"
-          align="right"
-          :buttonLink="blurb1_link"
-          :billboardPic="BB1"
-        />
-        <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
-        <img class="mobileSep" :src="B6" />
-      </div>
-      <div class="mobileBackgroundMid mobileTopBlurb">
-        <div class="mobileBackgroundMid">
-          <Billboard
-            header="The Hackathon for Change"
-            :body="blurb2_text"
-            align="left"
-            :hasButton="false"
-            :billboardPic="BB2"
-            id="blurb-2"
-          />
-
-          <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
-          <img class="mobileSep" :src="B4" />
-        </div>
-      </div>
-      <!-- <div class="mobileBackgroundDark mobileTopBlurb">
-        <img id="bill1" :src="BB1" />
-        <Blurb
+    <div class="blurb-group">
+      <div class="mobileBackgroundDark mobileTopBlurb">
+        <!-- <Blurb
           header="To Infinity and Beyond"
           :body="blurb1_text"
           :buttonText="blurb1_button"
@@ -43,45 +12,66 @@
           :buttonLink="blurb1_link"
           class="cyberBlurb"
           id="blurb-1"
+        />-->
+
+        <Billboard
+          header="To Infinity and Beyond"
+          :body="blurb1_text"
+          :buttonText="blurb1_button"
+          align="right"
+          :buttonLink="blurb1_link"
+          :billboardPic="BB1"
+          id="billboard-1"
         />
+
         <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
         <img class="mobileSep" :src="B6" />
       </div>
       <div class="mobileBackgroundMid mobileTopBlurb">
         <div class="mobileBackgroundMid">
-          <Blurb
+          <!-- <Blurb
             header="The Hackathon for Change"
             :body="blurb2_text"
             align="left"
             :hasButton="false"
             class="cyberBlurb"
             id="blurb-2"
+          />-->
+
+          <Billboard
+            header="The Hackathon for Change"
+            :body="blurb2_text"
+            align="left"
+            :hasButton="false"
+            :billboardPic="BB2"
+            id="billboard-2"
           />
 
           <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
           <img class="mobileSep" :src="B4" />
         </div>
-      </div>-->
+      </div>
     </div>
-    <!-- <div class="mobileBackgroundDarkest">
+
+    <div class="mobileBackgroundDarkest">
       <AboutUsStats id="stats" />
       <div class="blurb-group blurb-align-right"></div>
       <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
       <img class="mobileSep" :src="B5" />
       <div class="mobileBackgroundDark faqBound">
-        <FAQ id="faq1" initialSelect="general" />
+        <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
         <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
         <img class="mobileSep" :src="B3" />
       </div>
-      <div class="mobileBackgroundMid">
+      <!-- <div class="mobileBackgroundMid">
         <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
         <Sponsors :sponsorList="sponsors_data.secondary" secondary />
         <div class="f">
           <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
           <Footer />
         </div>
-      </div>
-    </div>-->
+      </div>-->
+    </div>
 
     <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
@@ -99,14 +89,11 @@
 import Vue from "vue";
 import Landing from "@/components/Landing.vue";
 import Blurb from "@/components/Blurb.vue";
-import FAQ from "@/components/Faq.vue";
+import FAQ from "@/components/Faq_test.vue";
 import AboutUsStats from "@/components/AboutStats.vue";
 import Sponsors from "@/components/Sponsors.vue";
 import Billboard from "@/components/Billboard.vue";
-// import Footer from "@/components/Footer.vue";
 
-// import LeftCyber from "@/assets/cyber/left_asset.svg";
-// import RightCyber from "@/assets/cyber/right_asset.svg";
 import B1 from "@/assets/cyber/B1.svg";
 import B2 from "@/assets/cyber/B2.svg";
 import B3 from "@/assets/cyber/B3.svg";
@@ -140,13 +127,12 @@ export default Vue.extend({
   name: "app",
   components: {
     AboutUsStats,
-    FAQ,
     Navigation,
     Blurb,
     Landing,
     Sponsors,
     Billboard,
-    // Footer,
+    FAQ,
   },
   data() {
     return {
@@ -171,10 +157,7 @@ export default Vue.extend({
       BB1,
       BB2,
 
-      // scr: 0,
       sponsors_data,
-      // LeftCyber,
-      // RightCyber,
       opacities_map: { color0: 0, color1: 1, color2: 2, color3: 3 },
       opacities: ["1", "1", "1", "1"],
       threshholds_map: {
@@ -193,6 +176,7 @@ export default Vue.extend({
     };
   },
   methods: {
+    isPreMobile: (): boolean => window.innerWidth <= 1250,
     isMobile: (): boolean => window.innerWidth <= 720,
     handleScroll() {
       const y = window.scrollY || window.pageYOffset;
@@ -233,21 +217,11 @@ export default Vue.extend({
   margin-right: -200px !important;
 }
 
-.cyberBlurb {
-  width: 50%;
-}
-
 .mobileSep {
   display: none;
 }
 
 /* Newly added styles */
-#bill1 {
-  position: absolute;
-  top: -80vh;
-  width: 100%;
-  z-index: -15;
-}
 
 #leftBuilding {
   position: absolute;
@@ -311,14 +285,13 @@ export default Vue.extend({
   position: absolute;
 } /* Newly added styles */
 
-#blurb-1 {
-  margin-top: 25vh;
-  margin-left: 18%;
+#billboard-1 {
+  margin-top: 25%;
 }
 
-#blurb-2 {
-  margin-top: 75%;
-  margin-left: -2%;
+#billboard-2 {
+  margin-top: 0%;
+  margin-left: -13%;
 }
 
 #leftCyber {
@@ -332,13 +305,14 @@ export default Vue.extend({
 }
 
 #faq1 {
-  width: 80%;
-  margin-left: 8vw;
+  margin-top: -8%;
+  margin-left: -2%;
 }
 
 #stats {
   width: 75%;
   margin-left: 9vw;
+  margin-top: -3%;
 }
 
 .blend {

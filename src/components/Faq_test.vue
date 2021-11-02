@@ -1,54 +1,56 @@
 <template>
-  <div class="faq" id="faqScroll">
-    <img id="billboard" :src="billboardPic" />
-    <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
-    <h1 id="mobile-faq">FAQ - Frequently Asked Questions</h1>
-    <div class="faq-container">
-      <div class="categories">
-        <div
-          v-for="name in Object.keys(faqData)"
-          :key="name"
-          :class="{ 'category-bubble': true, selected: selected === name }"
-        >
+  <div id="faq-billboard">
+    <img style="width: 130vw; marginLeft:-12%;" :src="billboardPic" />
+    <div class="faq" id="faqScroll">
+      <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
+      <h1 id="mobile-faq">FAQ - Frequently Asked Questions</h1>
+      <div class="faq-container">
+        <div class="categories">
           <div
-            class="category-name"
-            @click="selectCategory(name)"
-          >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
-          <transition name="open">
-            <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
-              <div
-                v-for="(elm, index) in faqData[selected]"
-                :key="elm.q"
-                @click="toggleQuestion(index)"
-                class="question-box"
-              >
-                <div class="question">
-                  {{ elm.q }}
-                  <span :class="{ arrow: true, rotate: index === expanded }">
-                    <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
-                    <i v-else class="fa fa-caret-down fa-xs"></i>
-                  </span>
+            v-for="name in Object.keys(faqData)"
+            :key="name"
+            :class="{ 'category-bubble': true, selected: selected === name }"
+          >
+            <div
+              class="category-name"
+              @click="selectCategory(name)"
+            >{{ name.charAt(0).toUpperCase() + name.substring(1) }}</div>
+            <transition name="open">
+              <div :key="name + 's'" v-if="selected === name" class="mobile-faq-area">
+                <div
+                  v-for="(elm, index) in faqData[selected]"
+                  :key="elm.q"
+                  @click="toggleQuestion(index)"
+                  class="question-box"
+                >
+                  <div class="question">
+                    {{ elm.q }}
+                    <span :class="{ arrow: true, rotate: index === expanded }">
+                      <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
+                      <i v-else class="fa fa-caret-down fa-xs"></i>
+                    </span>
+                  </div>
+                  <transition name="open">
+                    <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
+                  </transition>
                 </div>
-                <transition name="open">
-                  <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
-                </transition>
               </div>
-            </div>
-          </transition>
-        </div>
-      </div>
-      <div class="faq-area">
-        <div v-for="(elm, index) in faqData[selected]" :key="elm.q" class="question-box">
-          <div class="question" @click="toggleQuestion(index)">
-            {{ elm.q }}
-            <span :class="{ arrow: true }">
-              <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
-              <i v-else class="fa fa-caret-down fa-xs"></i>
-            </span>
+            </transition>
           </div>
-          <transition name="open">
-            <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
-          </transition>
+        </div>
+        <div class="faq-area">
+          <div v-for="(elm, index) in faqData[selected]" :key="elm.q" class="question-box">
+            <div class="question" @click="toggleQuestion(index)">
+              {{ elm.q }}
+              <span :class="{ arrow: true }">
+                <i v-if="expanded.includes(index)" class="fa fa-caret-up fa-xs"></i>
+                <i v-else class="fa fa-caret-down fa-xs"></i>
+              </span>
+            </div>
+            <transition name="open">
+              <div v-if="expanded.includes(index)" class="answer-box">{{ elm.a }}</div>
+            </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -95,29 +97,24 @@ export default Vue.extend({
 });
 </script>
 
-
+ 
 <style scoped>
-.content {
-  margin-left: 17%;
-  margin-top: -35%;
-  width: 70vw;
-}
-
-.billboard {
-  width: 110vw;
+.faq-billboard {
+  width: 120vw !important;
   margin-left: -10%;
-  position: absolute;
 }
 
 .faq {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
+  margin-top: -42%;
 }
 .faq h1 {
   font-weight: 700;
-  font-size: 4.4vmin;
-  color: white;
+  font-size: 3.5vw;
+  color: rgb(55, 55, 55);
+  margin-bottom: 0.5rem;
 }
 #mobile-faq {
   text-align: center;
@@ -130,7 +127,7 @@ export default Vue.extend({
 .faq-container {
   display: flex;
   flex-direction: row;
-  width: 65%;
+  width: 70%;
   height: 350px;
   overflow: hidden;
   margin: 0 auto;

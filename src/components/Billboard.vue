@@ -78,7 +78,7 @@ export default Vue.extend({
 }
 
 .heading {
-  color: black;
+  color: rgb(56, 56, 56);
   padding-left: 1%;
   padding-right: 1%;
   font-size: 3.5vw;
