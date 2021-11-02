@@ -213,9 +213,6 @@ export default Vue.extend({
   font-size: calc(12px + 0.5vw);
 }
 .apply {
-  margin-top: 20px;
-  margin-left: 50px;
-
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
   background-color: #464646;
   width: 20vmax;
@@ -340,8 +337,6 @@ input:focus::placeholder {
     font-size: 20px;
   }
   .apply {
-    margin-top: 20px;
-
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 90% 100%, 0% 100%);
     background-color: #464646;
     width: 35%;

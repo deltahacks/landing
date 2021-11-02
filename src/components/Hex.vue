@@ -1,8 +1,5 @@
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       <linearGradient
         :id="number"
@@ -36,7 +33,7 @@
             class="cls-2"
             :points="points"
             :fill="gradient()"
-            :fill-opacity="0.2"
+            :fill-opacity="0.4"
             :stroke="stroke"
             :stroke-width="4"
             filter="url(#glow)"
@@ -52,9 +49,7 @@
         font-family="montserrat"
         font-weight="500"
         dy=".25em"
-      >
-        {{ number }}
-      </text>
+      >{{ number }}</text>
       <text
         :x="x"
         :y="yVal + r * 0.25"
@@ -64,9 +59,7 @@
         font-family="montserrat"
         font-weight="430"
         dy=".5em"
-      >
-        {{ content }}
-      </text>
+      >{{ content }}</text>
     </g>
   </svg>
 </template>

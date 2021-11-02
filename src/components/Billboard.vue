@@ -1,11 +1,9 @@
 <template>
-  <div :class="['container', 'billboard', align]">
-    <img id="bill1" :src="billboardPic" />
-
+  <div :class="['billboard', align]">
+    <img :src="billboardPic" />
     <div class="content">
-      <div id="corner" :class="align">
+      <div :class="align">
         <h2 class="heading">{{ header }}</h2>
-
         <p v-html="body"></p>
         <form v-if="hasButton" :action="buttonLink">
           <input class="button" type="submit" :value="buttonText" />
@@ -13,20 +11,6 @@
       </div>
     </div>
   </div>
-
-  <!-- <div :class="['container', align]">
-    <div id="beam" :class="align"></div>
-    <h2 class="heading">{{ header }}</h2>
-    <div id="corner" :class="['description', align]">
-      <p v-html="body"></p>
-      <form v-if="hasButton" :action="buttonLink">
-        <input class="button" type="submit" :value="buttonText" />
-      </form>
-    </div>
-    <form :class="align" v-if="hasButton" :action="buttonLink">
-      <input :class="['mbutton', align]" type="submit" :value="buttonText" />
-    </form>
-  </div>-->
 </template>
 
 <script lang="ts">
@@ -54,6 +38,8 @@ export default Vue.extend({
       default: "DeltaHacks VII Button",
     },
     billboardPic: {
+      // Must pass in a loaded image
+      type: Object,
       default: "@/new_assets/billboard.svg",
     },
     buttonLink: String,
@@ -64,7 +50,7 @@ export default Vue.extend({
 <style scoped>
 .content {
   margin-left: 17%;
-  margin-top: -38%;
+  margin-top: -35%;
   width: 70vw;
 }
 
@@ -78,39 +64,17 @@ export default Vue.extend({
   padding: 5%;
   text-overflow: ellipsis;
 }
-#corner.right {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 8vmin 100%, 0 calc(100% - 8vmin));
-}
 
 .left {
   text-align: left;
   padding: 5%;
   text-overflow: ellipsis;
 }
-#corner.left {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 8vmin),
-    calc(100% - 8vmin) 100%,
-    0 100%
-  );
-}
 
 .center {
   text-align: center;
   padding: 5%;
   text-overflow: ellipsis;
-}
-#corner.center {
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 8vmin),
-    calc(100% - 8vmin) 100%,
-    8vmin 100%,
-    0 calc(100% - 8vmin)
-  );
 }
 
 .heading {
@@ -119,13 +83,6 @@ export default Vue.extend({
   padding-right: 1%;
   font-size: 3.5vw;
   font-weight: 600;
-}
-
-.description {
-  padding: 1% 3%;
-  z-index: 40;
-  background: rgb(85, 85, 85);
-  padding-bottom: 2vh;
 }
 
 .button {
@@ -148,7 +105,6 @@ export default Vue.extend({
   background-color: rgba(0, 0, 0, 0.25);
   transition: 0.2s;
 }
-
 .mbutton {
   color: white;
   outline: none;
@@ -172,6 +128,6 @@ export default Vue.extend({
 
 p {
   color: rgb(85, 85, 85);
-  font-size: 1.8vw;
+  font-size: 1.5vw;
 }
 </style>
