@@ -63,24 +63,14 @@ export default Vue.extend({
 
 <style scoped>
 .content {
-  margin-left: 15%;
-  padding-top: 10vh;
-  width: 60vw;
+  margin-left: 17%;
+  margin-top: -38%;
+  width: 70vw;
 }
 
 .billboard {
-  position: absolute;
-  z-index: 100;
-  width: 100vw;
-  margin-top: 45vh;
-}
-
-#bill1 {
-  position: absolute;
-  z-index: -15;
-  width: 94%;
-  margin-top: -5vh;
-  left: 0vw;
+  width: 110vw;
+  margin-left: -10%;
 }
 
 .right {
@@ -107,15 +97,6 @@ export default Vue.extend({
   );
 }
 
-/* #beam.left {
-  width: 400px;
-  height: 2px;
-  background-color: black;
-  margin-left: 42vw;
-  position: absolute;
-  z-index: -10;
-} */
-
 .center {
   text-align: center;
   padding: 5%;
@@ -136,7 +117,7 @@ export default Vue.extend({
   color: black;
   padding-left: 1%;
   padding-right: 1%;
-  font-size: 4.5vmin;
+  font-size: 3.5vw;
   font-weight: 600;
 }
 
@@ -191,83 +172,6 @@ export default Vue.extend({
 
 p {
   color: rgb(85, 85, 85);
-  font-size: 2.4vmin;
-}
-
-@media screen and (max-width: 1250px) {
-  .heading {
-    color: white;
-  }
-}
-
-@media screen and (max-width: 720px) {
-  .heading {
-    font-size: 7.25vmin;
-    font-weight: 650;
-    margin-bottom: 2vmin;
-    color: white;
-  }
-
-  p {
-    color: white;
-    font-size: 3.75vmin;
-  }
-  .description {
-    padding: 1vmin 1vmin 1vmin 1vmin;
-    z-index: 40;
-    background: rgb(85, 85, 85);
-  }
-  .button {
-    display: none;
-  }
-
-  .mbutton {
-    display: initial;
-  }
-
-  #corner.right {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 100%,
-      12.5vmin 100%,
-      0 calc(100% - 12.5vmin)
-    );
-  }
-
-  #corner.left {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 12.5vmin),
-      calc(100% - 12.5vmin) 100%,
-      0 100%
-    );
-  }
-
-  #corner.center {
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% calc(100% - 12.5vmin),
-      calc(100% - 12.5vmin) 100%,
-      12.5vmin 100%,
-      0 calc(100% - 12.5vmin)
-    );
-  }
-
-  .container {
-    width: 100%;
-    text-align: center;
-  }
-  .container > h2 {
-    padding: 0 5%;
-  }
-  .description > p {
-    padding: 0 5%;
-  }
-  .container > button {
-    margin: 0 5%;
-  }
+  font-size: 1.8vw;
 }
 </style>
