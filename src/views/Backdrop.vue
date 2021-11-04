@@ -59,8 +59,14 @@
     <!-- <div class="mobileBackgroundDark faqBound"> -->
     <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
     <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
-    <!-- <img class="mobileSep" :src="B3" /> -->
-    <!-- </div> -->
+    <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
+
+    <div>
+      <img class="mobileSep" :src="B4" style="marginBottom: -10%" />
+      <img class="mobileSep" id="B3" :src="B5" style="marginBottom: -10%" />
+      <img class="mobileSep" :src="B3" />
+    </div>
+
     <div class="mobileBackgroundMid">
       <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
       <Sponsors :sponsorList="sponsors_data.secondary" secondary />
@@ -69,7 +75,7 @@
         <Footer />
       </div>
     </div>
-    <!-- </div> -->
+    <!-- </div>-->
     <!-- make all background go down for mobile? -->
     <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
@@ -211,6 +217,10 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.app {
+  /* background-color: black; */
+}
+
 .blurb-align-right {
   margin-right: -200px !important;
 }
