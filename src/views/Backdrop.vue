@@ -61,20 +61,18 @@
     <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
     <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
 
-    <div>
-      <img class="mobileSep" :src="B4" style="marginBottom: -10%" />
-      <img class="mobileSep" id="B3" :src="B5" style="marginBottom: -10%" />
-      <img class="mobileSep" :src="B3" />
-    </div>
-
-    <div class="mobileBackgroundMid">
-      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
-      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-      <div class="f">
-        <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
-        <Footer />
+    <div class="bottom">
+      <img class="fadebottom" :src="BTest" />
+      <div class="mobileBackgroundMid">
+        <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
+        <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+        <div class="f">
+          <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
+          <Footer />
+        </div>
       </div>
     </div>
+
     <!-- </div>-->
     <!-- make all background go down for mobile? -->
     <img id="logo" :src="Logo" />
@@ -105,6 +103,7 @@ import B4 from "@/assets/cyber/B4.svg";
 import B5 from "@/assets/cyber/B5.svg";
 import B6 from "@/assets/cyber/B6.svg";
 import B7 from "@/assets/cyber/B7.svg";
+import BTest from "@/assets/cyber/B5 (1).svg";
 
 // @ts-ignore
 import VueScrollReveal from "vue-scroll-reveal";
@@ -157,6 +156,7 @@ export default Vue.extend({
       B5,
       B6,
       B7,
+      BTest,
 
       BB1,
       BB2,
@@ -217,10 +217,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.app {
-  /* background-color: black; */
-}
-
 .blurb-align-right {
   margin-right: -200px !important;
 }
@@ -322,9 +318,27 @@ export default Vue.extend({
   margin-top: -10%;
 }
 
+.bottom {
+  margin-top: 30vw;
+}
+
 .scroll {
   top: 20px;
   height: 100%;
+}
+
+.mobileBackgroundMid {
+  background-color: rgb(40, 40, 40);
+}
+
+.fadebottom {
+  margin-top: -1vh;
+  margin-bottom: -1vh;
+  display: inline;
+}
+
+.faq1 {
+  margin-bottom: 20vh;
 }
 
 .gradient {
