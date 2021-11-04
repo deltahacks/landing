@@ -388,7 +388,7 @@ export default Vue.extend({
   }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1500px) {
   .gradient {
     display: none;
   }
