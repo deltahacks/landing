@@ -1,10 +1,10 @@
 <template>
-  <div :class="{ app: true, blend: true }">
+  <div class="app">
     <navigation />
     <Landing id="landing" />
     <div class="blurb-group">
-      <div class="mobileBackgroundDark mobileTopBlurb">
-        <!-- <Blurb
+      <!-- <div class="mobileBackgroundDark mobileTopBlurb"> -->
+      <!-- <Blurb
           header="To Infinity and Beyond"
           :body="blurb1_text"
           :buttonText="blurb1_button"
@@ -12,67 +12,65 @@
           :buttonLink="blurb1_link"
           class="cyberBlurb"
           id="blurb-1"
-        />-->
+      />-->
 
-        <Billboard
-          header="To Infinity and Beyond"
-          :body="blurb1_text"
-          :buttonText="blurb1_button"
-          align="right"
-          :buttonLink="blurb1_link"
-          :billboardPic="BB1"
-          id="billboard-1"
-        />
-
-        <div id="mobileSpacerMid" class="spacer" style="height: 15vh" />
-        <img class="mobileSep" :src="B6" />
-      </div>
-      <div class="mobileBackgroundMid mobileTopBlurb">
-        <div class="mobileBackgroundMid">
-          <!-- <Blurb
+      <Billboard
+        header="To Infinity and Beyond"
+        :body="blurb1_text"
+        :buttonText="blurb1_button"
+        align="right"
+        :buttonLink="blurb1_link"
+        :billboardPic="BB1"
+        id="billboard-1"
+      />
+      <div class="spacer" style="height: 15vh" />
+      <!-- <img class="mobileSep" :src="B6" /> -->
+      <!-- </div>
+      <div class="mobileBackgroundMid mobileTopBlurb">-->
+      <!-- <div class="mobileBackgroundMid"> -->
+      <!-- <Blurb
             header="The Hackathon for Change"
             :body="blurb2_text"
             align="left"
             :hasButton="false"
             class="cyberBlurb"
             id="blurb-2"
-          />-->
+      />-->
 
-          <Billboard
-            header="The Hackathon for Change"
-            :body="blurb2_text"
-            align="left"
-            :hasButton="false"
-            :billboardPic="BB2"
-            id="billboard-2"
-          />
+      <Billboard
+        header="The Hackathon for Change"
+        :body="blurb2_text"
+        align="left"
+        :hasButton="false"
+        :billboardPic="BB2"
+        id="billboard-2"
+      />
+      <div class="spacer" style="height: 15vh" />
+      <!-- <img class="mobileSep" :src="B4" /> -->
+    </div>
+    <!-- </div>
+    </div>-->
 
-          <div id="mobileSpacerUpperMid" class="spacer" style="height: 15vh" />
-          <img class="mobileSep" :src="B4" />
-        </div>
+    <!-- <div class="mobileBackgroundDarkest"> -->
+    <AboutUsStats id="stats" />
+    <div class="blurb-group blurb-align-right"></div>
+    <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
+    <!-- <img class="mobileSep" :src="B5" /> -->
+    <!-- <div class="mobileBackgroundDark faqBound"> -->
+    <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
+    <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
+    <!-- <img class="mobileSep" :src="B3" /> -->
+    <!-- </div> -->
+    <div class="mobileBackgroundMid">
+      <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
+      <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+      <div class="f">
+        <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
+        <Footer />
       </div>
     </div>
-
-    <div class="mobileBackgroundDarkest">
-      <AboutUsStats id="stats" />
-      <div class="blurb-group blurb-align-right"></div>
-      <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
-      <img class="mobileSep" :src="B5" />
-      <div class="mobileBackgroundDark faqBound">
-        <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
-        <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
-        <img class="mobileSep" :src="B3" />
-      </div>
-      <!-- <div class="mobileBackgroundMid">
-        <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
-        <Sponsors :sponsorList="sponsors_data.secondary" secondary />
-        <div class="f">
-          <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
-          <Footer />
-        </div>
-      </div>-->
-    </div>
-
+    <!-- </div> -->
+    <!-- make all background go down for mobile? -->
     <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
     <img id="leftBuilding" :src="LeftBuilding" />
@@ -108,7 +106,7 @@ import VueRellax from "vue-rellax";
 import Navigation from "@/components/Navbar.vue";
 import sponsors_data from "@/data/sponsors_data";
 
-import MiddleBuilding from "@/new_assets/back_middle_building_designs.png";
+import MiddleBuilding from "@/new_assets/back_middle_building_designs 1.png";
 import LeftBuilding from "@/new_assets/left_building.png";
 import RightBuilding from "@/new_assets/right_building.png";
 import RightBuildingDesigns from "@/new_assets/right_building_designs.svg";
@@ -241,7 +239,6 @@ export default Vue.extend({
   left: 2vw;
   z-index: -90;
   width: 100%;
-  display: block;
 }
 #rightBuildingDesigns {
   position: absolute;
@@ -291,7 +288,7 @@ export default Vue.extend({
 
 #billboard-2 {
   margin-top: 0%;
-  margin-left: -13%;
+  margin-left: -12%;
 }
 
 #leftCyber {
@@ -313,10 +310,6 @@ export default Vue.extend({
   width: 75%;
   margin-left: 9vw;
   margin-top: -10%;
-}
-
-.blend {
-  background-blend-mode: overlay;
 }
 
 .scroll {

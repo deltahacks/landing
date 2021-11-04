@@ -1,7 +1,8 @@
 <template>
   <div class="back">
-    <br />
-    <!-- <br />
+    <Button buttonText="Apply Now!" buttonLink="https://my.deltahacks.com/" />
+
+    <!-- 
     <div class="apps-due">
       <div class="apps-due-inner">
         <p id="apps-due-header">STAY TUNED FOR APPLICATIONS!</p>
@@ -20,19 +21,21 @@
         </div>
       </form>
       <div v-if="gotit" class="fade-in confirmation-box">Got it, thanks!</div>
-    </div>-->
+    </div>
     <div class="apply">
       <div id="apply-text">Applications are now open!</div>
       <a href="https://my.deltahacks.com/" target="_blank">
         <button type="submit" class="submit-button">Apply Now</button>
       </a>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Info from "@/components/Info.vue";
+import Button from "@/components/Button.vue";
+
 export default Vue.extend({
   data() {
     return {
@@ -51,6 +54,7 @@ export default Vue.extend({
   },
   components: {
     Info,
+    Button,
   },
   methods: {
     handleSubmit() {
@@ -122,6 +126,13 @@ export default Vue.extend({
 </script>
 
 <style>
+.back {
+  margin: 0 auto;
+  top: 40vw;
+  left: 30vw;
+  position: absolute;
+}
+
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;

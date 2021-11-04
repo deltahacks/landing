@@ -1,6 +1,6 @@
 <template>
   <div id="faq-billboard">
-    <img style="width: 130vw; marginLeft:-12%;" :src="billboardPic" />
+    <img v-show="!isMobile()" style="width: 130vw; marginLeft:-12%;" :src="billboardPic" />
     <div class="faq" id="faqScroll">
       <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
       <h1 id="mobile-faq">FAQ - Frequently Asked Questions</h1>
@@ -123,7 +123,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: row;
   width: 70%;
-  height: 350px;
+  height: 30vw;
   overflow: hidden;
   margin: 0 auto;
   background: rgba(85, 85, 85, 1);
