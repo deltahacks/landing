@@ -1,22 +1,14 @@
 <template>
   <div class="nav-container">
-    <img
-      class="home"
-      src="../assets/logolarge.png"
-      alt="DH Logo"
-      @click="goHome"
-    />
+    <img class="home" src="../assets/logolarge.png" alt="DH Logo" @click="goHome" />
     <a class="mlink" href="https://www.deltahacks.com/">
-      <a class="bold">Delta</a>Hacks <a class="bold">7</a>
+      <a class="bold">Delta</a>Hacks
+      <a class="bold">7</a>
     </a>
-    <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll"> About </a>
-    <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll"> FAQ </a>
-    <a class="link" v-scroll-to="'#sponsor'" @scroll="handleScroll">
-      Sponsors
-    </a>
-    <a class="link" href="mailto:hello@deltahacks.com" target="“_blank”">
-      Contact
-    </a>
+    <a class="link" v-scroll-to="'#blurb-1'" @scroll="handleScroll">About</a>
+    <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll">FAQ</a>
+    <a class="link" v-scroll-to="'#sponsor'" @scroll="handleScroll">Sponsors</a>
+    <a class="link" href="mailto:hello@deltahacks.com" target="“_blank”">Contact</a>
     <p class="bar">|</p>
     <a href="https://www.my.deltahacks.com" id="login" class="link">Login</a>
   </div>
@@ -40,7 +32,7 @@ export default Vue.extend({
   display: flex;
   justify-content: flex-start safe;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.4);
   position: relative;
   z-index: 2;
   padding-left: 1.8%;

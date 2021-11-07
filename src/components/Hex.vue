@@ -33,7 +33,7 @@
             class="cls-2"
             :points="points"
             :fill="gradient()"
-            :fill-opacity="0.4"
+            :fill-opacity="0.7"
             :stroke="stroke"
             :stroke-width="4"
             filter="url(#glow)"
