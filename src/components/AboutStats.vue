@@ -19,7 +19,7 @@
           />
         </svg>
       </div>
-      <div id="mobile">
+      <!-- <div id="mobile">
         <svg viewBox="0 0 500 700">
           <Hex
             v-for="(hex, index) in hexes"
@@ -36,7 +36,7 @@
             :stroke="hex.stroke"
           />
         </svg>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
@@ -217,7 +217,7 @@ export default Vue.extend({
   padding-top: 0;
 }
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   #mobile {
     display: block;
   }
@@ -234,5 +234,5 @@ export default Vue.extend({
   #desktop {
     display: block;
   }
-}
+} */
 </style>

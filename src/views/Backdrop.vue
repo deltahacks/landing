@@ -290,11 +290,12 @@ export default Vue.extend({
 
 #billboard-1 {
   margin-top: 25%;
+  margin-left: -5%;
 }
 
 #billboard-2 {
   margin-top: 0%;
-  margin-left: -12%;
+  margin-left: -16%;
 }
 
 #leftCyber {
@@ -375,7 +376,32 @@ export default Vue.extend({
   margin-bottom: 10%;
 }
 
+@media screen and (max-width: 1100px) {
+  .bottom {
+    margin-top: 10%;
+  }
+  #billboard-1 {
+    margin-top: 15%;
+  }
+  #billboard-2 {
+    margin-top: -20%;
+    margin-left: -15%;
+  }
+  #faq1 {
+    margin-top: -10%;
+  }
+}
+
 @media screen and (max-width: 720px) {
+  #billboard-1 {
+    margin-top: -10%;
+    margin-left: -15%;
+  }
+  #billboard-2 {
+    margin-top: -40%;
+    margin-left: -20%;
+  }
+
   .faqBound {
     padding-top: 10%;
   }
@@ -386,10 +412,17 @@ export default Vue.extend({
     width: 100%;
     margin-left: 0;
   }
+
+  .bottom {
+    margin-top: -25%;
+  }
+
   #stats {
     width: 100%;
-    margin-left: 0;
+    margin-left: -3vw;
+    margin-top: -30%;
   }
+
   .cyberBlurb {
     width: 90% !important;
     margin: 0 0 !important;

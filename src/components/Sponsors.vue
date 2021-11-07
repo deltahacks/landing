@@ -8,14 +8,10 @@
           <a href="mailto:sponsorship@deltahacks.com"
             >sponsorship@deltahacks.com</a
           >
-        </p> -->
+        </p>-->
       </div>
       <div :class="['square', getClass]">
-        <div
-          v-for="(sponsor, index) in sponsorList"
-          v-bind:key="index"
-          v-scroll-reveal
-        >
+        <div v-for="(sponsor, index) in sponsorList" v-bind:key="index" v-scroll-reveal>
           <a :href="sponsor.href" target="_blank">
             <img
               :src="sponsor.logo"
@@ -81,7 +77,7 @@ img {
 }
 .backSponsor {
   width: 100vw;
-  padding-top: 10px;
+  padding-top: 60px;
 }
 .container {
   width: 60%;

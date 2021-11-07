@@ -1,5 +1,5 @@
 <template>
-  <div class="back">
+  <div class="newbutton">
     <Button buttonText="Apply Now!" buttonLink="https://my.deltahacks.com/" />
 
     <!-- 
@@ -126,10 +126,11 @@ export default Vue.extend({
 </script>
 
 <style>
-.back {
-  margin: 0 auto;
-  top: 40vw;
-  left: 30vw;
+.newbutton {
+  z-index: -80;
+  width: 80%;
+  top: 35vw;
+  left: 3vw;
   position: absolute;
 }
 
@@ -435,6 +436,28 @@ input:focus::placeholder {
   }
   .mailbox {
     margin-top: 38%;
+  }
+}
+
+/* ------------------------------- For Mobile devices (Button) --------------------------------- */
+
+@media screen and (max-width: 1100px) {
+  .newbutton {
+    z-index: -80;
+    width: 80%;
+    top: 38vw;
+    left: 3vw;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .newbutton {
+    z-index: -80;
+    width: 80%;
+    top: 45vw;
+    left: 3vw;
+    position: absolute;
   }
 }
 </style>

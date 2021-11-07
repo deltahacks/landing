@@ -69,7 +69,7 @@ body {
 }
 .cta {
   display: flex;
-  padding: 10px 45px;
+  padding: 1vw 3vw;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   font-size: 2vw;

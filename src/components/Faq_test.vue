@@ -1,6 +1,6 @@
 <template>
   <div id="faq-billboard">
-    <img v-show="!isMobile()" style="width: 130vw; marginLeft:-12%;" :src="billboardPic" />
+    <img id="billimage" :src="billboardPic" />
     <div class="faq" id="faqScroll">
       <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
       <h1 id="mobile-faq">FAQ - Frequently Asked Questions</h1>
@@ -99,6 +99,11 @@ export default Vue.extend({
 
  
 <style scoped>
+#billimage {
+  width: 130vw;
+  margin-left: -12%;
+}
+
 .faq {
   display: flex;
   flex-direction: column;
@@ -219,7 +224,7 @@ export default Vue.extend({
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 720px) {
   .faq-container {
     display: flex;
     flex-direction: column;

@@ -250,7 +250,7 @@ export default Vue.extend({
   color: white;
   font-weight: 600;
   margin-bottom: 0vh;
-  margin-left: -0.5%;
+  margin-left: -1%;
 }
 
 .landing-subtitle {

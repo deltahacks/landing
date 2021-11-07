@@ -89,7 +89,7 @@ export default Vue.extend({
   color: white;
   outline: none;
   border: none;
-  padding: 1.1vmin 2vmin;
+  padding: 1vmin 2vmin;
   font-size: 2.7vmin;
   font-weight: 550;
   background-color: rgb(30, 30, 30);
@@ -129,5 +129,17 @@ export default Vue.extend({
 p {
   color: rgb(85, 85, 85);
   font-size: 1.5vw;
+}
+
+@media screen and (max-width: 720px) {
+  p {
+    color: rgb(85, 85, 85);
+    font-size: 1.8vw;
+  }
+
+  .billboard {
+    width: 130vw;
+    margin-left: -100%;
+  }
 }
 </style>
