@@ -225,6 +225,18 @@ export default Vue.extend({
   transform: rotate(180deg);
 }
 @media only screen and (max-width: 720px) {
+  .faq h1 {
+    font-weight: 700;
+    font-size: 5vw;
+    color: Black;
+    margin-bottom: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  #billimage {
+    display: none;
+  }
+
   .faq-container {
     display: flex;
     flex-direction: column;

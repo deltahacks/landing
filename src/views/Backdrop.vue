@@ -411,6 +411,7 @@ export default Vue.extend({
   #faq1 {
     width: 100%;
     margin-left: 0;
+    margin-top: 30%;
   }
 
   .bottom {
