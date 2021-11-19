@@ -134,7 +134,7 @@ p {
 @media screen and (max-width: 720px) {
   p {
     color: rgb(85, 85, 85);
-    font-size: 2vw;
+    font-size: 1.9vw;
   }
 
   .billboard {
