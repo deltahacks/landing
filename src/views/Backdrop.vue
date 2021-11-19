@@ -370,6 +370,7 @@ export default Vue.extend({
   }
   .mobileFaqBackgroundDark {
     background: rgba(26, 26, 26);
+    margin-top: 20%;
   }
 
   #billboard-2 {

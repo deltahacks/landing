@@ -1,5 +1,7 @@
 <template>
   <div id="faq-billboard">
+    <img id="metro" :src="Metro" />
+
     <img id="billimage" :src="billboardPic" />
     <div class="faq" id="faqScroll">
       <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
@@ -60,15 +62,17 @@
 <script lang="ts">
 import Vue from "vue";
 import faqData from "@/data/faq_data";
+import Metro from "@/new_assets/metro.png";
 
 export default Vue.extend({
   name: "Faq",
   props: ["initialSelect", "billboardPic"],
-  data(): { faqData: any; selected: string; expanded: number[] } {
+  data() {
     return {
       faqData,
       selected: "",
       expanded: [0],
+      Metro,
     };
   },
   methods: {
@@ -103,12 +107,18 @@ export default Vue.extend({
   width: 130vw;
   margin-left: -12%;
 }
+#metro {
+  width: 130%;
+  margin-bottom: 50%;
+  margin-top: -54%;
+  margin-left: -16%;
+}
 
 .faq {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  margin-top: -42%;
+  margin-top: -45%;
 }
 .faq h1 {
   font-weight: 700;
