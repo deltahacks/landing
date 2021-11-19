@@ -228,9 +228,10 @@ export default Vue.extend({
   .faq h1 {
     font-weight: 700;
     font-size: 5vw;
-    color: Black;
+    color: white;
     margin-bottom: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
   }
 
   #billimage {

@@ -3,17 +3,6 @@
     <navigation />
     <Landing id="landing" />
     <div class="blurb-group">
-      <!-- <div class="mobileBackgroundDark mobileTopBlurb"> -->
-      <!-- <Blurb
-          header="To Infinity and Beyond"
-          :body="blurb1_text"
-          :buttonText="blurb1_button"
-          align="right"
-          :buttonLink="blurb1_link"
-          class="cyberBlurb"
-          id="blurb-1"
-      />-->
-
       <Billboard
         header="To Infinity and Beyond"
         :body="blurb1_text"
@@ -24,18 +13,6 @@
         id="billboard-1"
       />
       <div class="spacer" style="height: 15vh" />
-      <!-- <img class="mobileSep" :src="B6" /> -->
-      <!-- </div>
-      <div class="mobileBackgroundMid mobileTopBlurb">-->
-      <!-- <div class="mobileBackgroundMid"> -->
-      <!-- <Blurb
-            header="The Hackathon for Change"
-            :body="blurb2_text"
-            align="left"
-            :hasButton="false"
-            class="cyberBlurb"
-            id="blurb-2"
-      />-->
 
       <Billboard
         header="The Hackathon for Change"
@@ -46,7 +23,6 @@
         id="billboard-2"
       />
       <div class="spacer" style="height: 15vh" />
-      <!-- <img class="mobileSep" :src="B4" /> -->
     </div>
     <!-- </div>
     </div>-->
@@ -56,14 +32,14 @@
     <div class="blurb-group blurb-align-right"></div>
     <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
     <!-- <img class="mobileSep" :src="B5" /> -->
-    <!-- <div class="mobileBackgroundDark faqBound"> -->
-    <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
-    <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
-    <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
-
+    <div class="mobileFaqBackgroundDark faqBound">
+      <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
+      <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
+      <div class="spacer" v-if="!isMobile()" style="height: 7.5vh" />
+    </div>
     <div class="bottom">
       <img class="fadebottom" :src="BTest" />
-      <div class="mobileBackgroundMid">
+      <div class="mobileBackgroundMid sponsorBound">
         <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
         <Sponsors :sponsorList="sponsors_data.secondary" secondary />
         <div class="f">
@@ -174,7 +150,7 @@ export default Vue.extend({
       threshholds: [0, 1400, 2800, 3600, 3900],
       th_mobile: [0, 1400, 2800, 3600, 4400],
       blurb1_text: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across North America, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks 8!`,
-      blurb1_button: `DeltaHacks 7 DevPost`,
+      blurb1_button: `DeltaHacks 8 DevPost`,
       blurb1_link: `https://deltahacks7.devpost.com/`,
       blurb2_text: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 8th year running, DeltaHacks 8 is our biggest and best DeltaHacks yet. Join us this March and take part in an experience you won’t forget!`,
     };
@@ -221,8 +197,8 @@ export default Vue.extend({
   margin-right: -200px !important;
 }
 
-.mobileSep {
-  display: none;
+.app {
+  overflow: hidden;
 }
 
 /* Newly added styles */
@@ -242,14 +218,13 @@ export default Vue.extend({
 #middleBuilding {
   position: absolute;
   top: -12vh;
-  left: 2vw;
+  left: 1vw;
   z-index: -90;
-  width: 100%;
+  width: 98%;
 }
 #rightBuildingDesigns {
   position: absolute;
   top: -12vh;
-  left: 2vw;
   width: 100%;
   display: block;
   z-index: -90;
@@ -295,7 +270,7 @@ export default Vue.extend({
 
 #billboard-2 {
   margin-top: 0%;
-  margin-left: -16%;
+  margin-left: -13%;
 }
 
 #leftCyber {
@@ -310,7 +285,6 @@ export default Vue.extend({
 
 #faq1 {
   margin-top: -8%;
-  margin-left: -2%;
 }
 
 #stats {
@@ -321,15 +295,12 @@ export default Vue.extend({
 
 .bottom {
   margin-top: 30vw;
+  width: 100%;
 }
 
 .scroll {
   top: 20px;
   height: 100%;
-}
-
-.mobileBackgroundMid {
-  background-color: rgb(40, 40, 40);
 }
 
 .fadebottom {
@@ -397,6 +368,19 @@ export default Vue.extend({
     margin-top: -10%;
     margin-left: -15%;
   }
+  .mobileFaqBackgroundDark {
+    background: rgba(26, 26, 26);
+    -webkit-mask-image: -webkit-gradient(
+      linear,
+      top,
+      bottom,
+      from(rgba(26, 26, 26, 0)),
+      to(rgba(26, 26, 26, 1))
+    );
+
+    width: 100%;
+  }
+
   #billboard-2 {
     margin-top: -40%;
     margin-left: -20%;
@@ -405,13 +389,14 @@ export default Vue.extend({
   .faqBound {
     padding-top: 10%;
   }
+
   .scroll {
     max-height: none;
   }
   #faq1 {
     width: 100%;
     margin-left: 0;
-    margin-top: 30%;
+    margin-top: 40%;
   }
 
   .bottom {
@@ -433,6 +418,7 @@ export default Vue.extend({
     display: flex;
     flex-direction: column;
     z-index: 100000;
+    overflow: hidden;
   }
 
   .blurb-align-right {
