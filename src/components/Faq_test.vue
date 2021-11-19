@@ -1,6 +1,6 @@
 <template>
   <div id="faq-billboard">
-    <img id="metro" :src="Metro" />
+    <img v-show="isMobile()" id="metro" :src="Metro" />
 
     <img id="billimage" :src="billboardPic" />
     <div class="faq" id="faqScroll">
@@ -76,7 +76,7 @@ export default Vue.extend({
     };
   },
   methods: {
-    isMobile: (): boolean => window.innerWidth <= 700,
+    isMobile: (): boolean => window.innerWidth <= 720,
     toggleQuestion(index: number) {
       if (!this.expanded.includes(index)) {
         this.expanded.push(index);
@@ -118,7 +118,7 @@ export default Vue.extend({
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  margin-top: -45%;
+  margin-top: -43%;
 }
 .faq h1 {
   font-weight: 700;
