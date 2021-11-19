@@ -370,19 +370,10 @@ export default Vue.extend({
   }
   .mobileFaqBackgroundDark {
     background: rgba(26, 26, 26);
-    -webkit-mask-image: -webkit-gradient(
-      linear,
-      top,
-      bottom,
-      from(rgba(26, 26, 26, 0)),
-      to(rgba(26, 26, 26, 1))
-    );
-
-    width: 100%;
   }
 
   #billboard-2 {
-    margin-top: -40%;
+    margin-top: -30%;
     margin-left: -20%;
   }
 
@@ -406,7 +397,8 @@ export default Vue.extend({
   #stats {
     width: 100%;
     margin-left: -3vw;
-    margin-top: -30%;
+    margin-top: -25%;
+    margin-bottom: 10%;
   }
 
   .cyberBlurb {

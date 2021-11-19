@@ -134,12 +134,18 @@ p {
 @media screen and (max-width: 720px) {
   p {
     color: rgb(85, 85, 85);
-    font-size: 1.8vw;
+    font-size: 2vw;
   }
 
   .billboard {
     width: 130vw;
     margin-left: -100%;
+  }
+
+  .content {
+    margin-left: 17%;
+    margin-top: -35%;
+    width: 80vw;
   }
 }
 </style>
