@@ -46,7 +46,7 @@ export default {
   application: [
     {
       q: `What's the application deadline?`,
-      a: `Priority applications are due Sunday, December 13th - apply by then for a better chance to be accepted!`,
+      a: `Priority applications are due Sunday, October 31, 2021. Apply by then for a better chance to be accepted!`,
     },
     {
       q: "How long will it be until I hear back about my application?",

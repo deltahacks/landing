@@ -297,7 +297,7 @@ export default Vue.extend({
   max-width: 100px;
   min-width: 60px;
   position: fixed;
-  right: 50px;
+  right: 30px;
   top: 0;
   width: 10%;
   z-index: 10000;
