@@ -217,7 +217,7 @@ export default Vue.extend({
 }
 #middleBuilding {
   position: absolute;
-  top: -12vh;
+  top: -8vh;
   left: 1vw;
   z-index: -90;
   width: 98%;
