@@ -400,7 +400,7 @@ export default Vue.extend({
     width: 100%;
     margin-left: -3vw;
     margin-top: -25%;
-    margin-bottom: 10%;
+    margin-bottom: 18%;
   }
 
   .cyberBlurb {
