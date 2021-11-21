@@ -285,6 +285,7 @@ export default Vue.extend({
 
 #faq1 {
   margin-top: -8%;
+  margin-bottom: 100%;
 }
 
 #stats {
@@ -307,10 +308,6 @@ export default Vue.extend({
   margin-top: -1vh;
   margin-bottom: -1vh;
   display: inline;
-}
-
-.faq1 {
-  margin-bottom: 20vh;
 }
 
 .gradient {
@@ -342,9 +339,13 @@ export default Vue.extend({
   z-index: -5;
 }
 
+.mobileBackgroundMid {
+  background-color: rgb(40, 40, 40);
+}
+
 #faq1 {
   z-index: 100;
-  margin-bottom: 10%;
+  margin-bottom: -10%;
 }
 
 @media screen and (max-width: 1100px) {

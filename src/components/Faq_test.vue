@@ -1,7 +1,6 @@
 <template>
-  <div id="faq-billboard">
-    <img v-show="isMobile()" id="metro" :src="Metro" />
-
+  <div>
+    <img id="metro1" :src="Metro" />
     <img id="billimage" :src="billboardPic" />
     <div class="faq" id="faqScroll">
       <h1 id="desktop-faq">FAQ - Frequently Asked Questions</h1>
@@ -107,7 +106,7 @@ export default Vue.extend({
   width: 130vw;
   margin-left: -12%;
 }
-#metro {
+#metro1 {
   width: 130%;
   margin-bottom: 50%;
   margin-top: -54%;
@@ -234,6 +233,12 @@ export default Vue.extend({
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+@media screen and (min-width: 720px) {
+  #metro1 {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 720px) {
   .faq h1 {
     font-weight: 700;
