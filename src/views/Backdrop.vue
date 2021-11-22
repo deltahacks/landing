@@ -42,6 +42,8 @@
       <div class="mobileBackgroundMid sponsorBound">
         <Sponsors :sponsorList="sponsors_data.primary" main id="sponsor" />
         <Sponsors :sponsorList="sponsors_data.secondary" secondary />
+        <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
+
         <div class="f">
           <div class="spacer" v-if="!isMobile()" style="height: 20vh" />
           <Footer />
@@ -270,7 +272,7 @@ export default Vue.extend({
 
 #billboard-2 {
   margin-top: 0%;
-  margin-left: -13%;
+  margin-left: -12%;
 }
 
 #leftCyber {
@@ -290,13 +292,14 @@ export default Vue.extend({
 
 #stats {
   width: 75%;
-  margin-left: 9vw;
-  margin-top: -10%;
+  margin-left: 10vw;
 }
 
 .bottom {
   margin-top: 30vw;
   width: 100%;
+  bottom: 0; /*Just Stay at the
+bottom*/
 }
 
 .scroll {
