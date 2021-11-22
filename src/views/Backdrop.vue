@@ -260,13 +260,13 @@ export default Vue.extend({
 #logo {
   z-index: -80;
   width: 80%;
-  top: 10vh;
+  top: 20vh;
   left: 10vw;
   position: absolute;
 } /* Newly added styles */
 
 #billboard-1 {
-  margin-top: 25%;
+  margin-top: 28%;
   margin-left: -5%;
 }
 
