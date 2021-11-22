@@ -260,7 +260,7 @@ export default Vue.extend({
 #logo {
   z-index: -80;
   width: 80%;
-  top: 20vh;
+  top: 10vh;
   left: 10vw;
   position: absolute;
 } /* Newly added styles */
