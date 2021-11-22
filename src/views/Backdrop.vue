@@ -219,15 +219,16 @@ export default Vue.extend({
 }
 #middleBuilding {
   position: absolute;
-  top: -8vh;
+  top: -12vh;
   left: 1vw;
   z-index: -90;
-  width: 98%;
+  width: 100%;
 }
 #rightBuildingDesigns {
   position: absolute;
   top: -12vh;
   width: 100%;
+  right: -1vw;
   display: block;
   z-index: -90;
 }
