@@ -1,33 +1,6 @@
 <template>
   <div class="newbutton">
     <Button buttonText="Apply Now!" buttonLink="https://my.deltahacks.com/" />
-
-    <!-- 
-    <div class="apps-due">
-      <div class="apps-due-inner">
-        <p id="apps-due-header">STAY TUNED FOR APPLICATIONS!</p>
-        <h1 id="countdown">Last year's DeltaHacks 7 information found below!</h1>
-      </div>
-    </div>
-    <br />
-    <Info />
-    <div class="mailbox">
-      <form v-on:submit.prevent="handleSubmit">
-        <div id="mail-text">Mailing List Signup</div>
-        <div v-if="!enteringInfo && !gotit" class="input-box">
-          <input type="text" placeholder="Your Name" class="input-field" v-model="name" required />
-          <input type="email" placeholder="Your Email" class="input-field" v-model="email" required />
-          <button type="submit" class="submit-button">Submit</button>
-        </div>
-      </form>
-      <div v-if="gotit" class="fade-in confirmation-box">Got it, thanks!</div>
-    </div>
-    <div class="apply">
-      <div id="apply-text">Applications are now open!</div>
-      <a href="https://my.deltahacks.com/" target="_blank">
-        <button type="submit" class="submit-button">Apply Now</button>
-      </a>
-    </div>-->
   </div>
 </template>
 

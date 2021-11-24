@@ -1,9 +1,5 @@
 <template>
   <div id="b">
-    <!-- <img class="bruh" id="b1" src="../assets/cyber/building_grounds_1.svg" />
-    <img class="bruh" id="b2" src="../assets/cyber/sky_sun_1.svg" />
-    <img class="bruh2" src="../assets/cyber/title_nostars2.svg" />-->
-
     <div class="flex-container">
       <a
         id="mlh-trust-badge"
@@ -17,15 +13,7 @@
           style="width: 90%"
         />
       </a>
-      <!-- <div id="particles-js"></div> -->
       <div id="left">
-        <!-- <h1 class="landing-title">
-          <span id="delta-title">
-            Delta
-            <span id="hacks-title">Hacks</span> 8
-          </span>
-        </h1>/-->
-        <!--<br/><strong class="deadline">Application Deadline: January 24th</strong>-->
         <Header />
       </div>
     </div>

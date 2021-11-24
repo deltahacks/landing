@@ -24,14 +24,9 @@
       />
       <div class="spacer" style="height: 15vh" />
     </div>
-    <!-- </div>
-    </div>-->
-
-    <!-- <div class="mobileBackgroundDarkest"> -->
     <AboutUsStats id="stats" />
     <div class="blurb-group blurb-align-right"></div>
     <div v-if="isMobile()" id="mobileSpacerLowerMid" class="spacer" style="height: 13vmax" />
-    <!-- <img class="mobileSep" :src="B5" /> -->
     <div class="mobileFaqBackgroundDark faqBound">
       <FAQ id="faq1" initialSelect="general" :billboardPic="BB1" />
       <div v-if="!isMobile()" class="spacer" style="height: 7.5vh" />
@@ -50,9 +45,6 @@
         </div>
       </div>
     </div>
-
-    <!-- </div>-->
-    <!-- make all background go down for mobile? -->
     <img id="logo" :src="Logo" />
     <img id="background" :src="Background" />
     <img id="leftBuilding" :src="LeftBuilding" />
