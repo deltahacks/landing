@@ -188,7 +188,6 @@ export default Vue.extend({
   min-width: 325px;
   min-height: 175px;
 }
-
 #apply-text {
   text-align: left;
   margin-top: 5%;
@@ -210,7 +209,6 @@ export default Vue.extend({
   min-width: 325px;
   min-height: 15px;
 }
-
 .input-field {
   margin: 1% 0 0.5% 6%;
   width: 85%;
@@ -332,7 +330,6 @@ input:focus::placeholder {
     display: flex;
     flex-direction: column;
   }
-
   .input-field {
     margin: 1.5% 0 0.8% 5%;
     width: 86%;
