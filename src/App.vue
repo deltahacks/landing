@@ -4,39 +4,29 @@
   </div>
 </template>
 
-<script>
-import Navigation from './components/Navbar2.vue';
-
-export default {
-  components: {
-    Navigation,
-  },
-};
-</script>
-
 <style>
 @font-face {
-  font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-Light.ttf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Light.ttf");
   font-weight: 300;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-Regular.ttf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.ttf");
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-SemiBold.ttf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-SemiBold.ttf");
   font-weight: 600;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-Bold.ttf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Bold.ttf");
   font-weight: 700;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-ExtraBold.ttf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-ExtraBold.ttf");
   font-weight: 800;
 }
 

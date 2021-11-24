@@ -1,110 +1,30 @@
-
 <template>
-  <div class="flex-container">
-    <a
-      id="mlh-trust-badge"
-      class="mlh-badge"
-      href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2022-season&utm_content=white"
-      target="_blank"
-    >
-      <img
-        src="https://s3.amazonaws.com/logged-assets/trust-badge/2022/mlh-trust-badge-2022-white.svg"
-        alt="Major League Hacking 2020 Hackathon Season"
-        style="width:100%"
-      />
-    </a>
-    <div id="particles-js"></div>
-    <img class="main-planet" :src="Planet" />
-    <div id="left">
-      <h1 class="landing-title">
-        Delta<span style="color:blue; font-weight: 300">Hacks</span>
-        7 
-      </h1>
-      <img class="vi-back" :src="VI" />
-      <div class="landing-left-container">
-        <a
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-button fade-in"
-          @click="enteringName = true"
-        >
-          DH7 Mailing list
-        </a>
-        <!-- <a
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-button fade-in"
-          href="https://www.my.deltahacks.com"
-        >Login</a> -->
-        <!-- <a class="landing-button fade-in" href="/DH-Schedule.pdf">Schedule</a>
-        <a class="landing-button fade-in" href="/DH-Challenges.pdf">Challenges</a>
-        <a class="landing-button fade-in" href="/DH-Workshops.pdf">Workshops</a> -->
-        <!-- <a
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-button fade-in"
-          v-scroll-to="'#sponsor'"
-        >
-          Sponsor
-        </a>-->
-        <div v-if="enteringName" class="email-group fade-in">
-          <div class="email-button" @click="(enteringName = false), (enteringEmail = false)">
-            <i
-              class="fa fa-arrow-circle-o-left fa-3x"
-              :style="{ alignSelf: 'center', marginRight: '19px', fontSize: '3.5em' }"
-            />
-          </div>
-          <input
-            type="text"
-            placeholder="Your Name"
-            id="email-input"
-            v-model="name"
-            required
-            @keyup.enter="(enteringName = false), (enteringEmail = true)"
-          />
-          <div class="email-button" @click="(enteringName = false), (enteringEmail = true)">
-            <i
-              v-show="name.length >= 2"
-              class="fa fa-arrow-circle-o-right fa-3x fade-in"
-              :style="{ alignSelf: 'center', fontSize: '3.5em' }"
-            />
-          </div>
-        </div>
-        <form v-on:submit.prevent="handleSubmit">
-          <div v-if="enteringEmail && !gotit" class="email-group">
-            <div class="email-button" @click="(enteringName = true), (enteringEmail = false)">
-              <i
-                class="fa fa-arrow-circle-o-left fa-3x"
-                :style="{ alignSelf: 'center', marginRight: '19px', fontSize: '3.5em' }"
-              />
-            </div>
-            <input type="email" placeholder="Your email" id="email-input" v-model="email" required />
-            <button type="submit" class="email-button">
-              <i
-                class="fa fa-arrow-circle-o-right fa-3x"
-                :style="{ alignSelf: 'center', fontSize: '4.2em' }"
-              />
-            </button>
-          </div>
-        </form>
-        <div
-          v-if="gotit"
-          class="fade-in"
-          style="font-family: Montserrat; font-size: 30px; font-weight: 600"
-        >Got it, thanks!</div>
-        <span
-          v-if="!enteringName && !enteringEmail && !gotit"
-          class="landing-date"
-        >McMaster University</span>
+  <div id="b">
+    <div class="flex-container">
+      <a
+        id="mlh-trust-badge"
+        class="mlh-badge"
+        href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2022-season&utm_content=white"
+        target="_blank"
+      >
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2022/mlh-trust-badge-2022-white.svg"
+          alt="Major League Hacking 2020 Hackathon Season"
+          style="width: 90%"
+        />
+      </a>
+      <div id="left">
+        <Header />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import 'particles.js';
-import VI from '@/assets/vi.svg';
-import Planet from '@/assets/planetpng.png';
-import Mlh from '@/assets/mlh.png';
-import axios from 'axios';
+import Vue from "vue";
+import Header from "@/components/Header.vue";
+import "particles.js";
+import Mlh from "@/assets/mlh.png";
 
 declare global {
   interface Window {
@@ -113,47 +33,43 @@ declare global {
 }
 
 export default Vue.extend({
-  name: 'particles',
+  name: "particles",
+  components: {
+    Header,
+  },
   mounted() {
     this.initParticles();
   },
   data() {
     return {
-      VI,
-      Planet,
       Mlh,
-      enteringName: false,
-      enteringEmail: false,
-      email: '',
-      name: '',
-      gotit: false,
     };
   },
   methods: {
     initParticles() {
-      window.particlesJS('particles-js', {
+      window.particlesJS("particles-js", {
         particles: {
           number: {
-            value: 150,
+            value: 220,
             density: {
               enable: true,
               value_area: 800,
             },
           },
           color: {
-            value: '#ffffff',
+            value: "#ffffff",
           },
           shape: {
-            type: 'circle',
+            type: "circle",
             stroke: {
               width: 0,
-              color: '#ffffff',
+              color: "#ffffff",
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
-              src: 'img/github.svg',
+              src: "img/github.svg",
               width: 50,
               height: 50,
             },
@@ -181,17 +97,17 @@ export default Vue.extend({
           line_linked: {
             enable: false,
             distance: 150,
-            color: '#ffffff',
+            color: "#ffffff",
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
             speed: 0.1,
-            direction: 'none',
+            direction: "none",
             random: true,
             straight: false,
-            out_mode: 'out',
+            out_mode: "out",
             bounce: false,
             attract: {
               enable: false,
@@ -201,15 +117,15 @@ export default Vue.extend({
           },
         },
         interactivity: {
-          detect_on: 'window',
+          detect_on: "window",
           events: {
             onhover: {
               enable: true,
-              mode: 'bubble',
+              mode: "bubble",
             },
             onclick: {
               enable: true,
-              mode: 'push',
+              mode: "push",
             },
             resize: true,
           },
@@ -242,43 +158,6 @@ export default Vue.extend({
         retina_detect: true,
       });
     },
-    handleSubmit() {
-      // Changed it to use query params bc post request wasn't working, most likely due to cors errors.
-
-      // tslint:disable-next-line
-      const email_address = this.$data.email;
-      // tslint:disable-next-line
-      const name_input = this.$data.name;
-
-      this.name = '';
-      this.email = '';
-
-      const params = {
-        email: email_address,
-        name: name_input,
-      };
-
-      this.gotit = true;
-      this.enteringName = false;
-      this.enteringEmail = false;
-
-      const esc = encodeURIComponent;
-      const query = Object.keys(params)
-        // @ts-ignore
-        .map((k) => esc(k) + '=' + esc(params[k]))
-        .join('&');
-      const url =
-        'https://us-central1-mydeltahacks.cloudfunctions.net/addEmailToMailchimp' +
-        '?' +
-        query;
-      fetch(url, { mode: 'cors' }).then((response) => {
-        /* :) */
-      });
-
-      setTimeout(() => {
-        this.gotit = false;
-      }, 4000);
-    },
   },
 });
 </script>
@@ -301,65 +180,45 @@ export default Vue.extend({
   }
 }
 
-#email-input {
-  height: 45px;
-  width: 350px;
-  text-align: center;
+#delta-title {
   font-weight: 600;
-  text-decoration: none;
-  font-size: 18px;
-  opacity: 0.99;
-  color: white;
-  border-radius: 30px;
-  margin-right: 20px !important;
-  outline: none;
-  /* margin-right: 10px !important;
-  margin-left: 10px !important; */
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.1s ease-in-out;
-  z-index: 10000;
-  border: none;
+}
+#hacks-title {
+  font-weight: 200;
 }
 
-#email-input::placeholder {
-  color: white;
-  opacity: 0.5;
+.bruh {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 50vw;
+  min-height: 720px;
 }
 
-#email-input:focus {
-  outline: none;
-  border: none;
+.bruh2 {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 50vw;
+  visibility: hidden;
 }
-.email-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#b1 {
+  z-index: 2;
 }
-.email-button {
-  border: 0;
-  padding: 0;
-  background: none;
-  z-index: 1000;
-  cursor: pointer;
-}
-.email-button > i {
-  color: white;
-}
-
 .flex-container {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   display: flex;
   flex-direction: row;
   flex-direction: row-reverse;
   align-content: center;
-  width: 90%;
-  padding-top: 2%;
+  width: 100%;
+  padding-top: 1.5%;
+  z-index: 1000;
 }
 
 #particles-js {
   width: 100%;
-  height: 100%;
+  height: 55%;
   position: absolute;
   top: 0;
   left: 0;
@@ -367,38 +226,30 @@ export default Vue.extend({
 }
 
 #left {
+  z-index: 12;
   flex: 1;
-  text-align: center;
-  /* background-image: url('../assets/landing-bg.svg'); */
-}
-
-.landing-date {
-  margin-top: 5vh;
-  font-size: 1em;
-  display: block;
-  font-weight: 600;
+  text-align: left;
+  padding-left: 10vw;
+  padding-top: 30vh;
 }
 
 .landing-title {
-  font-size: 5em;
+  font-size: max(70px, 4.5vw);
   color: white;
-  padding-top: 15%;
   font-weight: 600;
+  margin-bottom: 0vh;
+  margin-left: -1%;
 }
+
+.landing-subtitle {
+  margin-top: 0vh;
+  margin-bottom: 0vh;
+  font-size: max(25px, 1.2vw);
+  font-weight: 300;
+}
+
 .landing-left-mlh {
   margin: 2vh 0 0vh;
-}
-.landing-left-container {
-  margin: -2vh 5vw 0;
-  padding: 4vh 2vw 3vh;
-  background: rgb(236, 240, 241, 0.2);
-  /* background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 1)
-  ); */
-  border-radius: 40px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .mlh-logo {
@@ -428,160 +279,87 @@ export default Vue.extend({
   opacity: 1;
   transition: 0.4s;
 }
-.landing-button {
-  text-align: center;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 800;
-  opacity: 0.99;
-  padding: 10px 20px;
-  color: rgba(255, 255, 255, 1);
-  border-radius: 30px;
-  margin-right: 10px !important;
-  margin-left: 10px !important;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.1s ease-in-out;
-  cursor: pointer;
-  z-index: 99999;
-  position: relative;
-}
-
-.landing-button:hover {
-  color: white;
-  background-color: rgb(236, 240, 241, 0.3);
-  transition: 0.2s;
-}
-.landing-button:active {
-  color: white;
-  background-color: rgb(236, 240, 241, 0.6);
-  transition: 0.2s;
-}
-
-.vi-back {
-  display: none;
-  width: 15%;
-  opacity: 0.5;
-  position: relative;
-}
-
-.main-planet {
-  width: 40%;
-  height: 45%;
-  padding-top: 10%;
-  z-index: 1;
-  object-fit: contain;
-}
 
 .mlh-badge {
   display: block;
   max-width: 100px;
   min-width: 60px;
   position: fixed;
-  right: 50px;
+  right: 30px;
   top: 0;
   width: 10%;
   z-index: 10000;
+}
+.deadline {
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 700px) and (min-width: 1200px) {
   .flex-container {
     display: flex;
     flex-direction: column;
-    padding: 0;
-  }
-  #left {
-    width: 100%;
-    position: absolute;
-    margin-top: 70%;
-    padding: 0;
-  }
-  .landing-title {
-    font-size: 2.8em;
-  }
-  .main-planet {
-    width: 80%;
-    height: 50%;
-    align-self: center;
-    padding: 0;
-    padding-left: 10%;
-    padding-top: 0%;
-    z-index: 0;
-  }
-  #email-input {
-    font-size: 18px;
-    width: 70vw;
+    padding: 1vh;
   }
 
-  .landing-button {
-    z-index: 1000;
-    display: block;
-    text-align: center;
-    margin: 1.5vh auto;
+  .landing-title {
+    font-size: 4em;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 0vh;
   }
+
+  #left {
+    flex: 1;
+    text-align: center;
+    padding-left: -20vw;
+    padding-top: 0;
+  }
+
+  .landing-subtitle {
+    margin-top: 0vh;
+    font-size: 1.4em;
+    font-weight: 300;
+  }
+
   .landing-left-mlh {
     margin: 3vh 0 0;
     padding: 0vh 0px 0vh;
-  }
-
-  .landing-left-container {
-    margin-top: 5vh;
-    padding: 15px 10px;
-  }
-
-  .email-group {
-    width: 90%;
-    margin: 0 auto;
   }
 }
-@media only screen and (max-width: 1200px) {
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+
+@media only screen and (max-width: 1250px) {
+  .bruh {
+    visibility: hidden;
+  }
+  .bruh2 {
+    visibility: unset;
+    width: 100vw;
+    height: 75vw;
   }
   #left {
-    width: 100%;
-    position: absolute;
-    margin-top: 50%;
-    padding: 0;
+    margin-top: 3%;
   }
   .landing-title {
-    font-size: 2.8em;
+    font-size: 60px;
   }
-  .main-planet {
-    width: 80%;
-    height: 50%;
-    align-self: center;
-    padding: 0;
-    padding-left: 10%;
-    padding-top: 0%;
-    z-index: 0;
+
+  .landing-subtitle {
+    font-size: 27px;
   }
-  #email-input {
+  .flex-container {
+    padding-top: 1%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #particles-js {
+    height: 15%;
+  }
+  .landing-title {
+    font-size: 45px;
+  }
+  .landing-subtitle {
     font-size: 18px;
-    width: 70vw;
-  }
-
-  .landing-button {
-    z-index: 1000;
-    display: block;
-    text-align: center;
-    margin: 1.5vh auto;
-  }
-  .landing-left-mlh {
-    margin: 3vh 0 0;
-    padding: 0vh 0px 0vh;
-  }
-
-  .landing-left-container {
-    margin-top: 5vh;
-    padding: 15px 10px;
-  }
-
-  .email-group {
-    width: 90%;
-    margin: 0 auto;
   }
 }
 </style>

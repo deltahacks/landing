@@ -1,148 +1,237 @@
 <template>
-  <div :class="['about-container', left ? 'left' : 'right']">
-    <h2 class="info-title">{{ heading }}</h2>
-    <div class="about-description">
-      <p>{{ text }}</p>
-      <p class="blurb_sub">{{ sub }}</p>
-      <form :action="link">
-        <input class="about-button" type="submit" :value="button" />
+  <div :class="['container', align]">
+    <div id="beam" :class="align"></div>
+    <h2 class="heading">{{ header }}</h2>
+    <div id="corner" :class="['description', align]">
+      <p v-html="body"></p>
+      <form v-if="hasButton" :action="buttonLink">
+        <input class="button" type="submit" :value="buttonText" />
       </form>
     </div>
+    <form :class="align" v-if="hasButton" :action="buttonLink">
+      <input :class="['mbutton', align]" type="submit" :value="buttonText" />
+    </form>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 export default Vue.extend({
   props: {
-    link: String,
-    button: String,
-    sub: String,
-    text: String,
-    left: Boolean,
-    right: Boolean,
-    heading: {
-      default: 'This is a sample header',
+    align: {
       type: String,
+      default: "right",
     },
-    description: {
-      default:
-        'This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text. \
-                This is sample body text. This is sample body text. This is sample body text. This is sample body text. This is sample body text.',
+    header: {
       type: String,
+      default: "Placeholder Header",
     },
-
-    more_text: {
-      default: 'More text here. More text here. More text here',
+    body: {
       type: String,
+      default: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across Canada, working hard over 36 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks VI!`,
     },
+    hasButton: {
+      type: Boolean,
+      default: true,
+    },
+    buttonText: {
+      type: String,
+      default: "DeltaHacks VII Button",
+    },
+    buttonLink: String,
   },
 });
 </script>
 
 <style scoped>
 .right {
-  color: white;
   text-align: right;
   padding: 5%;
-  width: 78%;
   text-overflow: ellipsis;
 }
-
-.about-description {
-  padding: 1% 3%;
-  border-radius: 25px;
-  margin: 2.5vh inherit;
-  z-index: 40;
-  border-radius: 50px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.15);
-  padding-bottom: 2vh;
+#corner.right {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8vmin 100%, 0 calc(100% - 8vmin));
 }
 
 .left {
-  color: white;
   text-align: left;
   padding: 5%;
-  width: 90%;
   text-overflow: ellipsis;
 }
-
-.right p {
-  line-height: 22px;
-  margin-left: 25%;
+#corner.left {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8vmin),
+    calc(100% - 8vmin) 100%,
+    0 100%
+  );
 }
 
-.info-title {
-  padding: 1% 3%;
-  font-size: 35px;
-  font-weight: 800;
+/* #beam.left {
+  width: 400px;
+  height: 2px;
+  background-color: black;
+  margin-left: 42vw;
+  position: absolute;
+  z-index: -10;
+} */
+
+.center {
+  text-align: center;
+  padding: 5%;
+  text-overflow: ellipsis;
+}
+#corner.center {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8vmin),
+    calc(100% - 8vmin) 100%,
+    8vmin 100%,
+    0 calc(100% - 8vmin)
+  );
+}
+
+.heading {
+  color: black;
+  padding-bottom: 3%;
+  padding-left: 1%;
+  padding-right: 1%;
+  font-size: 4.5vmin;
+  font-weight: 600;
   margin: 0;
 }
 
-.about-button {
-  outline: none;
-  padding: 10px 20px;
+.description {
+  padding: 1% 3%;
+  z-index: 40;
+  background: rgb(85, 85, 85);
+  padding-bottom: 2vh;
+}
+
+.button {
   color: white;
-  font-size: 17px;
-  font-weight: 800;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  outline: none;
   border: none;
-  border-radius: 20px;
-  transition: 0.1s ease-in-out;
+  padding: 1.1vmin 2vmin;
+  font-size: 2.7vmin;
+  font-weight: 550;
+  background-color: rgb(30, 30, 30);
+  cursor: pointer;
+  margin: 1.5vh 0;
+  -webkit-appearance: none;
+}
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+.button:active {
+  background-color: rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
+}
+
+.mbutton {
+  color: white;
+  outline: none;
+  border: none;
+  padding: 2vmin 3vmin 2vmin 3vmin;
+  font-size: 4.5vmin;
+  font-weight: 550;
+  background-color: rgb(30, 30, 30);
   cursor: pointer;
   -webkit-appearance: none;
-  margin: 1.5vh 0;
+  display: none;
 }
-
-.about-button:hover {
-  color: white;
-  background-color: rgb(236, 240, 241, 0.3);
+.mbutton:hover {
+  background-color: rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
-
-.about-button:active {
-  color: white;
-  background-color: rgb(236, 240, 241, 0.6);
+.mbutton:active {
+  background-color: rgba(0, 0, 0, 0.25);
   transition: 0.2s;
-}
-
-@media screen and (max-width: 720px) {
-  .right {
-    width: 70%;
-  }
-  .right p {
-    margin-left: 0;
-  }
-  .about-container {
-    width: 100%;
-    padding: 0;
-    text-align: center;
-  }
-  .about-container > h2 {
-    padding: 0 5%;
-  }
-  .about-description {
-    margin-right: 4vw;
-    margin-left: 4vw;
-  }
-  .about-description > p {
-    padding: 0 5%;
-  }
-  .about-container > button {
-    margin: 0 5%;
-  }
 }
 
 p {
-  font-size: 20px;
+  color: white;
+  font-size: 2.4vmin;
 }
 
-p:not(.blurb_sub) {
-  text-align: center;
+@media screen and (max-width: 1250px) {
+  .heading {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .heading {
+    font-size: 7.25vmin;
+    font-weight: 650;
+    margin-bottom: 2vmin;
+    color: white;
+  }
+
+  p {
+    color: white;
+    font-size: 3.75vmin;
+  }
+  .description {
+    padding: 1vmin 1vmin 1vmin 1vmin;
+    z-index: 40;
+    background: rgb(85, 85, 85);
+  }
+  .button {
+    display: none;
+  }
+
+  .mbutton {
+    display: initial;
+  }
+
+  #corner.right {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 100%,
+      12.5vmin 100%,
+      0 calc(100% - 12.5vmin)
+    );
+  }
+
+  #corner.left {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 12.5vmin),
+      calc(100% - 12.5vmin) 100%,
+      0 100%
+    );
+  }
+
+  #corner.center {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 12.5vmin),
+      calc(100% - 12.5vmin) 100%,
+      12.5vmin 100%,
+      0 calc(100% - 12.5vmin)
+    );
+  }
+
+  .container {
+    width: 100%;
+    text-align: center;
+  }
+  .container > h2 {
+    padding: 0 5%;
+  }
+  .description > p {
+    padding: 0 5%;
+  }
+  .container > button {
+    margin: 0 5%;
+  }
 }
 </style>
+

@@ -1,22 +1,17 @@
 <template>
-  <div class="back">
+  <div class="backSponsor">
     <div class="container">
       <div v-if="main">
-        <img class="rocket-img" :src="rocket" />
-        <h1 id="sponsors-title">Current and Previous Sponsors</h1>
+        <h1 id="sponsors-title">Current and Former Sponsors</h1>
         <!-- <p id="sponsors-subtitle">
           Interested in sponsoring? Contact us at
           <a href="mailto:sponsorship@deltahacks.com"
             >sponsorship@deltahacks.com</a
           >
-        </p> -->
+        </p>-->
       </div>
       <div :class="['square', getClass]">
-        <div
-          v-for="(sponsor, index) in sponsorList"
-          v-bind:key="index"
-          v-scroll-reveal
-        >
+        <div v-for="(sponsor, index) in sponsorList" v-bind:key="index" v-scroll-reveal>
           <a :href="sponsor.href" target="_blank">
             <img
               :src="sponsor.logo"
@@ -28,36 +23,24 @@
           </a>
         </div>
       </div>
-      <div v-if="secondary">
-        <!-- <h1>PARTNERS</h1>
-        <hr />-->
-        <!-- PARTNERS LIST GOES HERE -->
-      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import Vue from "vue";
 // @ts-ignore
-import VueScrollReveal from 'vue-scroll-reveal';
-import rocket from '@/assets/blastoff.png';
+import VueScrollReveal from "vue-scroll-reveal";
 Vue.use(VueScrollReveal, {
-  class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+  class: "v-scroll-reveal", // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
   duration: 1000,
   scale: 1.35,
-  distance: '10px',
+  distance: "10px",
   mobile: true,
 });
 
 export default Vue.extend({
-  name: 'Sponsors',
-  components: {},
-  data() {
-    return {
-      rocket,
-    };
-  },
+  name: "Sponsors",
   props: {
     sponsorList: Array,
     main: Boolean,
@@ -75,72 +58,32 @@ export default Vue.extend({
   computed: {
     getClass() {
       if (this.main) {
-        return 'level--1';
+        return "level--1";
       } else if (this.secondary) {
-        return 'level--2';
+        return "level--2";
       }
     },
   },
 
   mounted() {
-    const VanillaTilt = require('vanilla-tilt');
+    const VanillaTilt = require("vanilla-tilt");
   },
 });
 </script>
 
 <style>
-/*
-
-Psuedo Elements
-
-*/
-
-::selection {
-  color: white;
-  background: grey;
-}
-
-/*
-
-Block level elements
-
-*/
-
-hr {
-  background-color: white;
-  height: 3px;
-  border: 0;
-  width: 50%;
-}
-
 img {
   user-select: none;
 }
-
-/*
-
-Classes
-
-*/
-html {
-  overflow-x: hidden;
-}
-.back {
-  background-color: rgba(239, 247, 255, 1);
+.backSponsor {
   width: 100vw;
-  /* height: 100vh; */
-  margin: 0;
-  margin-bottom: -30px;
-  padding-bottom: 10px;
+  padding-top: 60px;
 }
 .container {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
-  color: black;
-  /* padding-top: 20px; */
-  /* padding-bottom: 1000px; */
+  color: white;
 }
-
 .square {
   display: -webkit-flex;
   -webkit-flex-direction: row;
@@ -150,11 +93,7 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-bottom: 40px;
-}
-
-div > p > a {
-  color: red;
+  padding-bottom: 30px;
 }
 
 @media screen and (max-width: 500px) {
@@ -173,64 +112,45 @@ div > p > a {
   margin-top: 25px;
   line-height: 25px;
 }
-
 .level--1 > div > a > img {
   box-sizing: border-box;
   max-width: 300px;
   max-height: 300px;
 }
-
 .level--2 {
   width: 99%;
   margin-left: 0;
 }
-
 .level--2 > div {
   margin-left: 2%;
   margin-right: 2%;
   margin-top: 25px;
   line-height: 30px;
 }
-
 .level--2 > div > a > img {
   max-width: 225px;
   max-height: 225px;
 }
-
-.rocket-img {
-  z-index: 0 !important;
-  display: flex;
-  position: absolute;
-  margin-top: -55vh;
-  margin-left: -20vw;
-  /* overflow: hidden; */
-  min-width: 100vw;
-  max-width: 110vw;
-  min-height: 110vh;
-  max-height: 130vh;
-  padding: 0;
-  object-fit: cover;
-}
-
 #sponsors-title {
   font-weight: 800;
   position: relative;
-  z-index: 10;
-  margin-top: 0vh;
   font-size: 35px;
   align-items: center;
   text-align: center;
   justify-content: center;
 }
-
 #sponsors-subtitle {
   font-weight: bold;
   font-family: Montserrat;
   position: relative;
-  z-index: 10;
-    align-items: center;
+  align-items: center;
   text-align: center;
   justify-content: center;
 }
-</style>
 
+@media screen and (max-width: 720px) {
+  #sponsors-title {
+    font-size: 20px;
+  }
+}
+</style>
