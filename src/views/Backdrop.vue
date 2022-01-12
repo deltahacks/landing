@@ -259,7 +259,7 @@ export default Vue.extend({
 } /* Newly added styles */
 
 #billboard-1 {
-  margin-top: 28%;
+  margin-top: 10%;
   margin-left: -5%;
 }
 
