@@ -116,7 +116,6 @@ export default Vue.extend({
 .newbutton {
   z-index: -80;
   width: 70%;
-  padding-top: 10vw;
 }
 
 .fade-in {
