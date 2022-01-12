@@ -362,7 +362,7 @@ bottom*/
 
 @media screen and (max-width: 720px) {
   #billboard-1 {
-    margin-top: -10%;
+    margin-top: 10%;
     margin-left: -15%;
   }
   .mobileFaqBackgroundDark {
@@ -371,7 +371,7 @@ bottom*/
   }
 
   #billboard-2 {
-    margin-top: -30%;
+    margin-top: -40%;
     margin-left: -20%;
   }
 
@@ -385,11 +385,11 @@ bottom*/
   #faq1 {
     width: 100%;
     margin-left: 0;
-    margin-top: 40%;
+    margin-top: 16%;
   }
 
   .bottom {
-    margin-top: -25%;
+    margin-top: -15%;
   }
 
   #stats {
