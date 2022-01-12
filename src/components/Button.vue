@@ -64,6 +64,7 @@ body {
   align-items: center;
 }
 .wrapper {
+  margin-top: 3%;
   display: flex;
   justify-content: center;
 }

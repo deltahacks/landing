@@ -395,7 +395,7 @@ bottom*/
   #stats {
     width: 100%;
     margin-left: -3vw;
-    margin-top: 5%;
+    margin-top: -25%;
     margin-bottom: 18%;
   }
 
