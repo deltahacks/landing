@@ -6,7 +6,7 @@ export default {
     },
     {
       q: "What is DeltaHacks?",
-      a: `The word “delta Δ” stands for change, and we used this definition to name DeltaHacks - McMaster’s annual Hackathon for Change. This year, DeltaHacks will be a 500-particiapnt event taking place the first week of March 2021. We hope to inspire students to hack for positive changes that align with their passions - whether it's for the environment, health, inequality, education, or more!`,
+      a: `The word “delta Δ” stands for change, and we used this definition to name DeltaHacks - McMaster’s annual Hackathon for Change. This year, DeltaHacks will be a 500-particiapnt event taking place the first week of Jan 2022. We hope to inspire students to hack for positive changes that align with their passions - whether it's for the environment, health, inequality, education, or more!`,
     },
     {
       q: "Who can participate?",
