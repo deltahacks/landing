@@ -8,7 +8,7 @@
     <Button
       id="middle-button"
       buttonText="Event Schedule"
-      buttonLink="DH8Schedule.pdf"
+      buttonLink="https://docs.google.com/spreadsheets/d/1-x1vHZOw5bVOdanmbKYXCcYXNiV-hMEjBk6_4zU5wtU/edit?usp=drivesdk"
     />
     <Button
       id="bottom-button"
