@@ -3,14 +3,18 @@
     <Button
       id="top-button"
       buttonText="Attendee Package"
-      buttonLink="https://drive.google.com/file/d/1SyjFJFF4kRcehynNkD9GApXtZgzkcyue/view?usp=sharing"
+      buttonLink="DH8AttendeeInformationPackage.pdf"
     />
     <Button
       id="middle-button"
       buttonText="Event Schedule"
-      buttonLink="https://drive.google.com/file/d/1xfTDyh5FFJ5SY2zAwJwOzK7prgng10Z-/view?usp=sharing"
+      buttonLink="DH8Schedule.pdf"
     />
-    <Button id="bottom-button" buttonText="Login" buttonLink="https://my.deltahacks.com/" />
+    <Button
+      id="bottom-button"
+      buttonText="Login"
+      buttonLink="https://my.deltahacks.com/"
+    />
   </div>
 </template>
 
