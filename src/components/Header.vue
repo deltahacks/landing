@@ -1,8 +1,15 @@
 <template>
   <div class="newbutton">
-    <Button id="top-button" buttonText="Attendee Package" buttonLink="https://my.deltahacks.com/" />
-    <Button id="middle-button" buttonText="Event Schedule" buttonLink="https://my.deltahacks.com/" />
-
+    <Button
+      id="top-button"
+      buttonText="Attendee Package"
+      buttonLink="https://drive.google.com/file/d/1SyjFJFF4kRcehynNkD9GApXtZgzkcyue/view?usp=sharing"
+    />
+    <Button
+      id="middle-button"
+      buttonText="Event Schedule"
+      buttonLink="https://drive.google.com/file/d/1xfTDyh5FFJ5SY2zAwJwOzK7prgng10Z-/view?usp=sharing"
+    />
     <Button id="bottom-button" buttonText="Login" buttonLink="https://my.deltahacks.com/" />
   </div>
 </template>

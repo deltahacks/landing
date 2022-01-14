@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <a class="cta" :href="buttonLink">
+    <a class="cta" :href="buttonLink" target="_blank">
       <span>{{buttonText}}</span>
       <span>
         <svg
