@@ -5,7 +5,7 @@
       <div :class="align">
         <h2 class="heading">{{ header }}</h2>
         <p v-html="body"></p>
-        <form v-if="hasButton" :action="buttonLink">
+        <form v-if="hasButton" :action="buttonLink" target="_blank">
           <input class="button" type="submit" :value="buttonText" />
         </form>
       </div>

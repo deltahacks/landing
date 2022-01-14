@@ -8,8 +8,9 @@
     <a class="link" v-scroll-to="'#faq1'" @scroll="handleScroll">FAQ</a>
     <a class="link" v-scroll-to="'#sponsor'" @scroll="handleScroll">Sponsors</a>
     <a class="link" href="mailto:hello@deltahacks.com" target="“_blank”">Contact</a>
+    <!-- 
     <p class="bar">|</p>
-    <a href="https://www.my.deltahacks.com" id="login" class="link">Login</a>
+    <a href="https://www.my.deltahacks.com" class="link">Login</a>-->
   </div>
 </template>
 

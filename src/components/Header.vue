@@ -1,6 +1,20 @@
 <template>
   <div class="newbutton">
-    <Button buttonText="Apply Now!" buttonLink="https://my.deltahacks.com/" />
+    <Button
+      id="top-button"
+      buttonText="Attendee Package"
+      buttonLink="DH8AttendeeInformationPackage.pdf"
+    />
+    <Button
+      id="middle-button"
+      buttonText="Event Schedule"
+      buttonLink="DH8Schedule.pdf"
+    />
+    <Button
+      id="bottom-button"
+      buttonText="Login"
+      buttonLink="https://my.deltahacks.com/"
+    />
   </div>
 </template>
 
@@ -99,12 +113,21 @@ export default Vue.extend({
 </script>
 
 <style>
+#top-button {
+  padding-right: 5vw;
+}
+#middle-button {
+  padding-right: 3vw;
+}
+
+#bottom-button {
+  padding-right: 5vw;
+}
+
 .newbutton {
   z-index: -80;
-  width: 80%;
-  top: 35vw;
-  left: 3vw;
-  position: absolute;
+  width: 70%;
+  padding-top: 5vw;
 }
 
 .fade-in {

@@ -144,9 +144,9 @@ export default Vue.extend({
       threshholds: [0, 1400, 2800, 3600, 3900],
       th_mobile: [0, 1400, 2800, 3600, 4400],
       blurb1_text: `At DeltaHacks, we believe change comes from dreaming big. Each year we enable over 800 students from across North America, working hard over 24 hours, to bring their big ideas to life. Our team works diligently year round to provide a welcoming atmosphere to all of our participants. DeltaHacks gives you the platform to make an idea a reality, whether it be with a team, or on your own. Unleash your creativity and make something great, we'll handle the rest! Make big ideas a reality at DeltaHacks 8!`,
-      blurb1_button: `DeltaHacks 7 DevPost`,
-      blurb1_link: `https://deltahacks7.devpost.com/`,
-      blurb2_text: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 8th year running, DeltaHacks 8 is our biggest and best DeltaHacks yet. Join us this Jan and take part in an experience you won’t forget!`,
+      blurb1_button: `DeltaHacks 8 DevPost`,
+      blurb1_link: `https://deltahacks8.devpost.com/`,
+      blurb2_text: `DeltaHacks is the annual hackathon for change, it's even in the name! The primary focus of DeltaHacks is to enable hackers from all over to make a change, whether it be in education, finance, health or any other field, we're extremely passionate about hacking to make a positive change! We work with McMaster University to welcome hackers of all levels, from the novice to the most experienced! We supply the food, venue, and workshops to provide even the most seasoned veterans with new experiences. Now in our 8th year running, DeltaHacks 8 is our biggest and best DeltaHacks yet. Join us this March and take part in an experience you won’t forget!`,
     };
   },
   methods: {
@@ -259,7 +259,7 @@ export default Vue.extend({
 } /* Newly added styles */
 
 #billboard-1 {
-  margin-top: 28%;
+  margin-top: 10%;
   margin-left: -5%;
 }
 
@@ -362,7 +362,7 @@ bottom*/
 
 @media screen and (max-width: 720px) {
   #billboard-1 {
-    margin-top: -10%;
+    margin-top: 10%;
     margin-left: -15%;
   }
   .mobileFaqBackgroundDark {
@@ -371,7 +371,7 @@ bottom*/
   }
 
   #billboard-2 {
-    margin-top: -30%;
+    margin-top: -40%;
     margin-left: -20%;
   }
 
@@ -385,11 +385,11 @@ bottom*/
   #faq1 {
     width: 100%;
     margin-left: 0;
-    margin-top: 40%;
+    margin-top: 16%;
   }
 
   .bottom {
-    margin-top: -25%;
+    margin-top: -15%;
   }
 
   #stats {
