@@ -11,7 +11,7 @@
     "axios": "^0.21.3",
     "core-js": "^2.6.5",
     "particles.js": "^2.0.0",
-    "vanilla-tilt": "^1.7.0",
+    "vanilla-tilt": "^1.8.0",
     "vue": "^2.6.10",
     "vue-mq": "^1.0.1",
     "vue-parallaxy": "^1.1.1",
